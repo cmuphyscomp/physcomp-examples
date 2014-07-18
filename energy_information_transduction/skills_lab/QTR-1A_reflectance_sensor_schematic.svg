@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   version="1.2"
+   width="108.8749"
+   height="90.874901"
+   viewBox="0 0 30.726914 25.646916"
+   id="svg4780">
+  <metadata
+     id="metadata4828">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs4826" />
+  <g
+     transform="translate(0.12347104,0.123472)"
+     id="schematic">
+    <rect
+       width="16.607624"
+       height="14.9225"
+       x="8.633626"
+       y="5.23875"
+       id="rect4783"
+       style="fill:#ffffff;stroke:#000000;stroke-width:0.28930458;stroke-linecap:round" />
+    <line
+       class="pin"
+       x1="25.276501"
+       y1="12.982223"
+       x2="30.356501"
+       y2="12.982223"
+       id="connector11pin"
+       style="fill:none;stroke:#787878;stroke-width:0.246944;stroke-linecap:round" />
+    <text
+       x="24.7826"
+       y="13.444377"
+       id="text4786"
+       style="font-size:1.23471999px;text-anchor:end;fill:#8c8c8c;stroke:none;font-family:Droid Sans">OUT</text>
+    <rect
+       width="0.246944"
+       height="0.246944"
+       x="30.356501"
+       y="10.0365"
+       id="connector11terminal"
+       style="fill:none;stroke:none" />
+    <rect
+       width="0.246944"
+       height="0.246944"
+       x="30.356501"
+       y="12.5765"
+       id="connector10terminal"
+       style="fill:none;stroke:none" />
+    <rect
+       width="0.246944"
+       height="0.246944"
+       x="30.356501"
+       y="15.1165"
+       id="connector9terminal"
+       style="fill:none;stroke:none" />
+    <rect
+       width="0.246944"
+       height="0.246944"
+       x="-0.123472"
+       y="10.0365"
+       id="connector8terminal"
+       style="fill:none;stroke:none" />
+    <line
+       class="pin"
+       x1="15.24"
+       y1="20.196501"
+       x2="15.24"
+       y2="25.276501"
+       id="connector12pin"
+       style="fill:none;stroke:#787878;stroke-width:0.246944;stroke-linecap:round" />
+    <g
+       transform="translate(15.4869,19.7026)"
+       id="g4802">
+      <g
+         transform="matrix(0,-1,1,0,0,0)"
+         id="g4804">
+        <text
+           x="0"
+           y="0"
+           id="text4806"
+           style="font-size:1.23471999px;text-anchor:start;fill:#8c8c8c;stroke:none;font-family:Droid Sans">GND</text>
+      </g>
+    </g>
+    <rect
+       width="0.246944"
+       height="0.246944"
+       x="15.1165"
+       y="25.276501"
+       id="connector12terminal"
+       style="fill:none;stroke:none" />
+    <line
+       class="pin"
+       x1="15.24"
+       y1="0.123472"
+       x2="15.24"
+       y2="5.2034702"
+       id="connector13pin"
+       style="fill:none;stroke:#787878;stroke-width:0.246944;stroke-linecap:round" />
+    <g
+       transform="translate(15.4869,5.69736)"
+       id="g4810">
+      <g
+         transform="matrix(0,-1,1,0,0,0)"
+         id="g4812">
+        <text
+           x="0"
+           y="0"
+           id="text4814"
+           style="font-size:1.23471999px;text-anchor:end;fill:#8c8c8c;stroke:none;font-family:Droid Sans">VIN</text>
+      </g>
+    </g>
+    <rect
+       width="0.246944"
+       height="0.246944"
+       x="15.1165"
+       y="-0.123472"
+       id="connector13terminal"
+       style="fill:none;stroke:none" />
+    <text
+       x="14.834254"
+       y="11.000829"
+       id="text4300"
+       style="font-size:1.49931002px;text-anchor:middle;fill:#000000;stroke:none;font-family:Droid Sans">QTR-1A</text>
+    <text
+       x="15.3987"
+       y="11.4712"
+       id="text4818"
+       style="font-size:1.49931002px;text-anchor:middle;fill:#000000;stroke:none;font-family:Droid Sans" />
+    <text
+       x="15.3987"
+       y="13.0706"
+       id="text4820"
+       style="font-size:1.49931002px;text-anchor:middle;fill:#000000;stroke:none;font-family:Droid Sans" />
+    <text
+       x="15.3987"
+       y="14.6699"
+       id="text4822"
+       style="font-size:1.49931002px;text-anchor:middle;fill:#000000;stroke:none;font-family:Droid Sans" />
+    <text
+       x="14.834254"
+       y="13.258607"
+       id="text4302"
+       style="font-size:1.49931002px;text-anchor:middle;fill:#000000;stroke:none;font-family:Droid Sans">Reflectance</text>
+    <text
+       x="14.834254"
+       y="15.516385"
+       id="text4304"
+       style="font-size:1.49931002px;text-anchor:middle;fill:#000000;stroke:none;font-family:Droid Sans">Sensor</text>
+  </g>
+</svg>

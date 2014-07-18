@@ -1,0 +1,85 @@
+#N canvas 593 146 637 695 10;
+#X msg 135 45 /dev/tty.usbmodemfd121;
+#N canvas 608 52 673 665 Arduino-server 0;
+#X obj 49 508 mrpeach/slipdec 65536;
+#X obj 49 197 mrpeach/slipenc 65536;
+#X obj 49 134 inlet;
+#X obj 49 589 outlet;
+#X obj 219 132 inlet;
+#X msg 215 318 devices;
+#X text 216 504 slipdec extracts an OSC data packet from a serial data
+stream encoded using the SLIP protocol.;
+#X text 211 196 slipenc encodes an OSC packet using the SLIP protocol
+to delineate packet boundaries in the serial data stream. The argument
+to slipenc sets a maximum packet size.;
+#X text 274 314 Under OSX the Udoo SAM3X on the CN6 connector enumerates
+as /dev/tty.SLAB_USBtoUART;
+#X msg 217 376 close;
+#X text 217 552 unpackOSC decodes the OSC data packet into a stream
+of Pd messages \; see routeOSC for examples;
+#X obj 49 439 comport 99 57600;
+#X text 217 438 comport opens the specified serial port at the specified
+baud rate when it the object is initialized \; using an invalid device
+prevents it from opening the port until requestd;
+#X msg 219 174 devicename \$1 \, baud 57600;
+#X text 213 295 Click to print out the list of available serial devices.
+;
+#X text 216 357 Click to manually close the serial port.;
+#X text 46 69 The left inlet receives Pd lists specifying OSC messages.
+;
+#X text 49 30 Subpatch to manage the OSC messaging to and from the
+Arduino over a serial port.;
+#X text 216 102 The right inlet receives a message with a symbol naming
+the serial port.;
+#X obj 219 153 list;
+#X obj 49 165 osc/packOSC;
+#X obj 49 550 osc/unpackOSC;
+#X connect 0 0 21 0;
+#X connect 1 0 11 0;
+#X connect 2 0 20 0;
+#X connect 4 0 19 0;
+#X connect 5 0 11 0;
+#X connect 9 0 11 0;
+#X connect 11 0 0 0;
+#X connect 13 0 11 0;
+#X connect 19 0 13 0;
+#X connect 20 0 1 0;
+#X connect 21 0 3 0;
+#X restore 36 121 pd Arduino-server;
+#X text 153 115 This subpatch encapsulates the serial port protocol
+for sending and receiving OSC messages to and from the Arduino.;
+#X floatatom 36 195 5 0 0 0 - - -;
+#X text 285 37 Arduino Due serial port. Change this to match the serial
+port you choose in the Arduino IDE.;
+#X obj 36 161 osc/routeOSC /a/0;
+#X text 154 162 Receive OSC messages from analog pin 0;
+#X obj 39 230 hsl 128 15 0 1024 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 11894 1;
+#X msg 61 388 create;
+#X obj 36 495 gemwin;
+#X msg 85 412 destroy;
+#X msg 82 455 1;
+#X msg 120 455 0;
+#X msg 36 339 color \$1 \$1 \$1;
+#X obj 246 429 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 246 399 loadbang;
+#X text 139 332 Ambient light sensor data governs background color
+of gem window.;
+#X obj 36 279 expr ($f1 / 1024) * 1;
+#X text 179 279 Scale numbers from 0 - 1024 to 0 - 1;
+#X text 245 448 Click the toggle to reset the Gem window.;
+#X connect 0 0 1 1;
+#X connect 1 0 5 0;
+#X connect 3 0 7 0;
+#X connect 5 0 3 0;
+#X connect 7 0 17 0;
+#X connect 8 0 9 0;
+#X connect 10 0 9 0;
+#X connect 11 0 9 0;
+#X connect 12 0 9 0;
+#X connect 13 0 9 0;
+#X connect 14 0 8 0;
+#X connect 14 0 11 0;
+#X connect 15 0 14 0;
+#X connect 17 0 13 0;
