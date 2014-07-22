@@ -1,5 +1,5 @@
-#N canvas 420 65 711 454 10;
-#X msg 135 45 /dev/tty.usbmodemfd121;
+#N canvas 4 22 717 856 10;
+#X msg 135 145 /dev/tty.usbmodemfd121;
 #N canvas 608 52 673 665 Arduino-server 0;
 #X obj 49 508 mrpeach/slipdec 65536;
 #X obj 49 197 mrpeach/slipenc 65536;
@@ -45,17 +45,21 @@ the serial port.;
 #X connect 19 0 13 0;
 #X connect 20 0 1 0;
 #X connect 21 0 3 0;
-#X restore 36 121 pd Arduino-server;
-#X text 153 115 This subpatch encapsulates the serial port protocol
+#X restore 36 191 pd Arduino-server;
+#X text 153 185 This subpatch encapsulates the serial port protocol
 for sending and receiving OSC messages to and from the Arduino.;
-#X floatatom 36 195 5 0 0 0 - - -;
-#X text 285 37 Arduino Due serial port. Change this to match the serial
+#X floatatom 36 232 5 0 0 0 - - -;
+#X text 285 137 Arduino Due serial port. Change this to match the serial
 port you choose in the Arduino IDE.;
-#X obj 36 161 osc/routeOSC /a/0;
-#X text 154 162 Receive OSC messages from analog pin 0;
-#X obj 39 228 hsl 128 15 0 1024 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 6350 1;
+#X obj 36 268 osc/routeOSC /a/0;
+#X text 154 269 Receive OSC messages from analog pin 0;
+#X obj 36 335 signal_plot;
+#X obj 36 302 expr ($f1 / 1024);
+#X text 34 519 signal_plot expects input ranges of [0 \, 1].;
+#X text 153 302 Scale the incoming sensor values from [0 \, 1024] to
+[0 \, 1].;
 #X connect 0 0 1 1;
 #X connect 1 0 5 0;
-#X connect 3 0 7 0;
+#X connect 3 0 8 0;
 #X connect 5 0 3 0;
+#X connect 8 0 7 0;

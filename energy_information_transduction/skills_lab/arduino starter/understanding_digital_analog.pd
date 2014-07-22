@@ -1,0 +1,11 @@
+#N canvas 4 22 1436 856 10;
+#X text 236 142 Analog vs. Digital Signals Analog signals like sound
+and voltage are continuous. By contrast \, digital signals are discrete
+-- they are comprised of 0s and 1s. Microcontrollers like Arduinos
+can take both analog and digital signals as input \, and can output
+only digital signals. Arduino has both analog and digital pins. Digital
+pins can be either inputs or outputs. Analog pins are always inputs.
+The Arduino uses an analog-to-digital converter with 10bit resolution
+\, so analog values range from 0 to 1024 (2 ^ 10). At a given point
+in time \, a digital signal is always 0 or 1;
+#X text 803 187 PWM;
