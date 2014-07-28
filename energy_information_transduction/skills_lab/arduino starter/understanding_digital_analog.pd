@@ -1,11 +1,89 @@
-#N canvas 4 22 1436 856 10;
-#X text 236 142 Analog vs. Digital Signals Analog signals like sound
-and voltage are continuous. By contrast \, digital signals are discrete
--- they are comprised of 0s and 1s. Microcontrollers like Arduinos
-can take both analog and digital signals as input \, and can output
-only digital signals. Arduino has both analog and digital pins. Digital
-pins can be either inputs or outputs. Analog pins are always inputs.
-The Arduino uses an analog-to-digital converter with 10bit resolution
-\, so analog values range from 0 to 1024 (2 ^ 10). At a given point
-in time \, a digital signal is always 0 or 1;
-#X text 803 187 PWM;
+#N canvas 722 22 718 856 10;
+#X text -28 25 Analog vs. Digital Signals Analog signals -- like sound
+and voltage -- are continuous. By contrast \, digital signals are discrete:
+they are comprised of 0s and 1s. Microcontrollers like Arduinos read
+both analog and digital signals from the world \, and output digital
+signals. Arduino has analog and digital pins. Digital pins can be either
+inputs or outputs. Analog pins are always inputs. The Arduino uses
+an analog-to-digital converter with 10bit resolution \, so analog values
+range from 0 to 1024 (2 ^ 10). At a given point in time \, a digital
+signal is always 0 or 1;
+#X text -24 541 Analog Out: PWM Although digital pins are either HIGH
+(5V) or LOW (0V) \, with pulse-width modulation (PWM) it is possible
+to simulate a range of voltages between those extremes. By using PWM
+\, one can control the average voltage output from the Arduino. In
+this way \, it is possible to achieve analog results -- voltages between
+5V and 0V. The Arduino Due has 12 pins which can be used as PWM outputs.
+Read more about PWM here: http://arduino.cc/en/Tutorial/PWM;
+#N canvas 608 52 673 665 Arduino-server 0;
+#X obj 49 508 mrpeach/slipdec 65536;
+#X obj 49 197 mrpeach/slipenc 65536;
+#X obj 49 134 inlet;
+#X obj 49 589 outlet;
+#X obj 219 132 inlet;
+#X msg 215 318 devices;
+#X text 216 504 slipdec extracts an OSC data packet from a serial data
+stream encoded using the SLIP protocol.;
+#X text 211 196 slipenc encodes an OSC packet using the SLIP protocol
+to delineate packet boundaries in the serial data stream. The argument
+to slipenc sets a maximum packet size.;
+#X text 274 314 Under OSX the Udoo SAM3X on the CN6 connector enumerates
+as /dev/tty.SLAB_USBtoUART;
+#X msg 217 376 close;
+#X text 217 552 unpackOSC decodes the OSC data packet into a stream
+of Pd messages \; see routeOSC for examples;
+#X obj 49 439 comport 99 57600;
+#X text 217 438 comport opens the specified serial port at the specified
+baud rate when it the object is initialized \; using an invalid device
+prevents it from opening the port until requestd;
+#X msg 219 174 devicename \$1 \, baud 57600;
+#X text 213 295 Click to print out the list of available serial devices.
+;
+#X text 216 357 Click to manually close the serial port.;
+#X text 46 69 The left inlet receives Pd lists specifying OSC messages.
+;
+#X text 49 30 Subpatch to manage the OSC messaging to and from the
+Arduino over a serial port.;
+#X text 216 102 The right inlet receives a message with a symbol naming
+the serial port.;
+#X obj 219 153 list;
+#X obj 49 165 osc/packOSC;
+#X obj 49 550 osc/unpackOSC;
+#X connect 0 0 21 0;
+#X connect 1 0 11 0;
+#X connect 2 0 20 0;
+#X connect 4 0 19 0;
+#X connect 5 0 11 0;
+#X connect 9 0 11 0;
+#X connect 11 0 0 0;
+#X connect 13 0 11 0;
+#X connect 19 0 13 0;
+#X connect 20 0 1 0;
+#X connect 21 0 3 0;
+#X restore -23 341 pd Arduino-server;
+#X text 90 334 This subpatch encapsulates the serial port protocol
+for sending and receiving OSC messages to and from the Arduino.;
+#X obj -23 289 r osc-output;
+#X msg 76 290 /dev/tty.usbmodemfd121;
+#X text 74 238 Change this message to match your Arduino's serial port.
+Make sure to click it in Interact Mode to send it to Arduino-Server.
+;
+#X obj 341 545 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X msg 338 574 /a/2 \$1;
+#X obj 338 603 s osc-output;
+#X obj -23 376 osc/routeOSC /a/0;
+#X obj -20 409 hsl 128 15 0 1024 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X text 91 371 Send data (values from 0 - 1024) from analog pin 0 to
+a horizontal slider.;
+#X text -24 448 HINT: Look at the 'Pd window' (CMD + R) to see if the
+comport object succeeds in connecting to the Arduino via serial. Chances
+are \, you will need to change the name of the serial port you send
+to Arduino-server.;
+#X connect 2 0 10 0;
+#X connect 4 0 2 0;
+#X connect 5 0 2 1;
+#X connect 7 0 8 0;
+#X connect 8 0 9 0;
+#X connect 10 0 11 0;

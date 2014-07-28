@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   version="1.2"
+   width="0.89999998in"
+   height="0.89999998in"
+   viewBox="0 0 22.86 22.86"
+   id="svg2">
+  <metadata
+     id="metadata50">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs48" />
+  <g
+     id="schematic">
+    <rect
+       width="17.4625"
+       height="12.3825"
+       x="0.15875"
+       y="5.23875"
+       id="rect5"
+       style="fill:#ffffff;stroke:#000000;stroke-width:0.3175;stroke-linecap:round" />
+    <line
+       class="pin"
+       x1="17.6565"
+       y1="10.16"
+       x2="22.7365"
+       y2="10.16"
+       fill="none"
+       stroke="#787878"
+       stroke-width="0.246944"
+       stroke-linecap="round"
+       id="connector1pin"
+       style="fill:none;stroke:#787878;stroke-width:0.246944;stroke-linecap:round" />
+    <text
+       x="20.196501"
+       y="9.7895803"
+       id="text8"
+       style="font-size:0.881944px;text-anchor:middle;fill:#8c8c8c;stroke:none;font-family:Droid Sans">2</text>
+    <text
+       x="17.1626"
+       y="10.4069"
+       id="text10"
+       style="font-size:1.23471999px;text-anchor:end;fill:#8c8c8c;stroke:none;font-family:Droid Sans">R</text>
+    <rect
+       width="0.246944"
+       height="0.246944"
+       x="22.7365"
+       y="10.0365"
+       id="connector1terminal"
+       style="fill:none;stroke:none" />
+    <line
+       class="pin"
+       x1="7.6199999"
+       y1="17.6565"
+       x2="7.6199999"
+       y2="22.7365"
+       fill="none"
+       stroke="#787878"
+       stroke-width="0.246944"
+       stroke-linecap="round"
+       id="connector2pin"
+       style="fill:none;stroke:#787878;stroke-width:0.246944;stroke-linecap:round" />
+    <g
+       transform="translate(7.24958,20.1965)"
+       id="g14">
+      <g
+         transform="matrix(0,-1,1,0,0,0)"
+         id="g16">
+        <text
+           x="0"
+           y="0"
+           id="text18"
+           style="font-size:0.881944px;text-anchor:middle;fill:#8c8c8c;stroke:none;font-family:Droid Sans">3RRR</text>
+      </g>
+    </g>
+    <g
+       transform="translate(7.86694,17.1626)"
+       id="g20">
+      <g
+         transform="matrix(0,-1,1,0,0,0)"
+         id="g22">
+        <text
+           x="0"
+           y="0"
+           id="text24"
+           style="font-size:1.23471999px;text-anchor:start;fill:#8c8c8c;stroke:none;font-family:Droid Sans">V-</text>
+      </g>
+    </g>
+    <rect
+       width="0.246944"
+       height="0.246944"
+       x="7.4965301"
+       y="22.7365"
+       id="connector2terminal"
+       style="fill:none;stroke:none" />
+    <line
+       class="pin"
+       x1="7.6199999"
+       y1="0.123472"
+       x2="7.6199999"
+       y2="5.2034702"
+       fill="none"
+       stroke="#787878"
+       stroke-width="0.246944"
+       stroke-linecap="round"
+       id="connector0pin"
+       style="fill:none;stroke:#787878;stroke-width:0.246944;stroke-linecap:round" />
+    <g
+       transform="translate(7.24958,2.66347)"
+       id="g28">
+      <g
+         transform="matrix(0,-1,1,0,0,0)"
+         id="g30">
+        <text
+           x="0"
+           y="0"
+           id="text32"
+           style="font-size:0.881944px;text-anchor:middle;fill:#8c8c8c;stroke:none;font-family:Droid Sans">1</text>
+      </g>
+    </g>
+    <g
+       transform="translate(7.86694,5.69736)"
+       id="g34">
+      <g
+         transform="matrix(0,-1,1,0,0,0)"
+         id="g36">
+        <text
+           x="0"
+           y="0"
+           id="text38"
+           style="font-size:1.23471999px;text-anchor:end;fill:#8c8c8c;stroke:none;font-family:Droid Sans">V+</text>
+      </g>
+    </g>
+    <rect
+       width="0.246944"
+       height="0.246944"
+       x="7.4965301"
+       y="-0.123472"
+       id="connector0terminal"
+       style="fill:none;stroke:none" />
+    <text
+       x="9.0487499"
+       y="9.8719397"
+       id="label"
+       style="font-size:1.49931002px;text-anchor:middle;fill:#000000;stroke:none;font-family:Droid Sans">LM334</text>
+    <text
+       x="9.0487499"
+       y="11.4712"
+       id="text42"
+       style="font-size:1.49931002px;text-anchor:middle;fill:#000000;stroke:none;font-family:Droid Sans">Adjustable Current</text>
+    <text
+       x="9.0487499"
+       y="13.0706"
+       id="text44"
+       style="font-size:1.49931002px;text-anchor:middle;fill:#000000;stroke:none;font-family:Droid Sans">Source</text>
+  </g>
+</svg>
