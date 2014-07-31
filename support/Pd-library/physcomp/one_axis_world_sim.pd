@@ -1,0 +1,96 @@
+#N canvas 23 32 1196 668 10;
+#X obj 12 12 cnv 15 800 120 empty empty one_axis_world_sim 20 12 0
+14 -204800 -66577 0;
+#X obj 855 404 signal_plot;
+#X obj 81 427 signal_plot;
+#X msg 34 183 forward;
+#X msg 37 240 stop;
+#X msg 36 213 reverse;
+#X text 128 410 motor position plot;
+#N canvas 0 22 450 278 (subpatch) 0;
+#X array \$0-world 200 float 1;
+#A 0 0 0.0428572 0.0571432 0.0714293 0.0857153 0.100001 0.114287 0.128573
+0.142859 0.157146 0.178575 0.200004 0.207147 0.21429 0.242862 0.271429
+0.271429 0.278572 0.292858 0.300001 0.314292 0.314292 0.328578 0.328578
+0.342864 0.342864 0.342864 0.35715 0.35715 0.35715 0.371436 0.371436
+0.385722 0.400008 0.414294 0.414294 0.42858 0.442866 0.442866 0.442866
+0.442866 0.457152 0.457152 0.457152 0.457152 0.457152 0.457152 0.457152
+0.457152 0.457152 0.442866 0.442866 0.414294 0.400008 0.400008 0.400008
+0.385722 0.35715 0.342864 0.328578 0.314292 0.300006 0.271434 0.257148
+0.21429 0.171432 0.128573 0.114287 0.100001 0.100001 0.100001 0.100001
+0.100001 0.100001 0.100001 0.100001 0.100001 0.100001 0.128573 0.157146
+0.185718 0.200004 0.21429 0.242862 0.257148 0.266672 0.276196 0.28572
+0.300006 0.328578 0.328578 0.35715 0.371436 0.414294 0.419056 0.423818
+0.42858 0.442866 0.457152 0.471438 0.492867 0.514297 0.528583 0.542869
+0.557155 0.571441 0.59287 0.614299 0.628585 0.642871 0.671443 0.678586
+0.685729 0.700015 0.714301 0.728587 0.742873 0.742873 0.742873 0.742873
+0.742873 0.742873 0.742873 0.742873 0.742873 0.742873 0.742873 0.742873
+0.728587 0.728587 0.714301 0.700015 0.685729 0.671443 0.671443 0.657157
+0.642871 0.614299 0.600013 0.585727 0.571441 0.557155 0.542869 0.528583
+0.514297 0.485724 0.457152 0.442866 0.435723 0.42858 0.414294 0.400008
+0.385722 0.371436 0.35715 0.35715 0.342864 0.342864 0.328578 0.328578
+0.328578 0.328578 0.314292 0.314292 0.314292 0.314292 0.314292 0.314292
+0.300006 0.300006 0.300006 0.300006 0.28572 0.28572 0.271434 0.271434
+0.242862 0.242862 0.228576 0.200004 0.171432 0.157146 0.142859 0.128573
+0.100001 0.0857153 0.0571432 0.0428572 0.0428572 0.0285711 0.0285711
+0.0285711 0.0285711 0.0142851 0.0142851 -9.53674e-07 -9.53674e-07 -9.53674e-07
+-9.53674e-07 -9.53674e-07;
+#X coords 0 1 199 0 200 140 1 0 0;
+#X restore 463 438 graph;
+#X obj 464 626 hsl 200 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 6209 1;
+#X obj 698 435 vsl 15 140 0 1 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 3572 1;
+#X floatatom 722 434 6 0 0 0 - - -, f 6;
+#X obj 460 322 expr $f1 + 0.02 * (-1.0 + 0.001 * $f2);
+#X obj 463 264 t f b;
+#X obj 684 296 random 2001;
+#X text 910 386 light sensor plot;
+#X obj 110 182 inlet;
+#X text 150 184 The left inlet accepts motor commands.;
+#X text 26 68 creation arguments: none;
+#X text 210 79 The inlet accepts motor commands. The outlet emits simulated
+sensor signals. The motor position is not output since there is assumed
+to be no encoder on the motor \, just the external sensor.;
+#X obj 84 283 trivial_motor_sim 40 0.2 0 1;
+#X obj 463 205 expr 200 * $f1;
+#X text 107 262 The motor is assumed to move over a [0 \, 1] meter
+travel.;
+#X floatatom 625 608 7 0 0 0 - - -, f 7;
+#X text 210 20 Simulator for a single-axis motor and sensor system.
+The idealized motor is assumed to move a light sensor along a path.
+The output of the sensor is computed from a lookup table with added
+noise.;
+#X text 558 204 scale position to table index;
+#X text 514 304 add random noise;
+#X text 503 145 Simulated Sensor System;
+#X text 113 148 Simulated Motor System;
+#X obj 94 311 s \$0-motor-position;
+#X obj 82 385 r \$0-motor-position;
+#X obj 463 176 r \$0-motor-position;
+#X obj 463 588 r \$0-motor-position;
+#X obj 462 350 s \$0-light-level;
+#X obj 698 406 r \$0-light-level;
+#X obj 855 362 r \$0-light-level;
+#X obj 463 234 tabread4 \$0-world;
+#X obj 854 627 outlet;
+#X obj 854 602 r \$0-light-level;
+#X connect 3 0 19 0;
+#X connect 4 0 19 0;
+#X connect 5 0 19 0;
+#X connect 11 0 32 0;
+#X connect 12 0 11 0;
+#X connect 12 1 13 0;
+#X connect 13 0 11 1;
+#X connect 15 0 19 0;
+#X connect 19 0 28 0;
+#X connect 20 0 35 0;
+#X connect 29 0 2 0;
+#X connect 30 0 20 0;
+#X connect 31 0 8 0;
+#X connect 31 0 22 0;
+#X connect 33 0 9 0;
+#X connect 33 0 10 0;
+#X connect 34 0 1 0;
+#X connect 35 0 12 0;
+#X connect 37 0 36 0;

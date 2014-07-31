@@ -1,0 +1,40 @@
+#N canvas 472 42 704 674 10;
+#X obj 12 12 cnv 15 800 100 empty empty signal_plot 20 12 0 14 -204800
+-66577 0;
+#N canvas 0 22 450 278 (subpatch) 0;
+#X array \$0-plot 100 float 1;
+#A 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 1 0 1 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5
+0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5;
+#X coords 0 1.1 99 -0.1 200 140 2 0 0;
+#X restore 59 468 graph;
+#X obj 144 330 select 0;
+#X obj 46 133 inlet;
+#X obj 47 162 t b f;
+#X obj 92 285 t f f;
+#X obj 28 394 tabwrite \$0-plot;
+#X obj 144 388 s \$0-plot;
+#X text 207 329 reset plot at start of trace;
+#X text 142 257 count horizontal position;
+#X obj 130 207 + 1;
+#X obj 131 232 mod 100;
+#X obj 92 257 float 0;
+#X text 29 79 creation arguments: none;
+#X msg 144 359 const -0.1;
+#X text 141 9 A very basic oscilloscope object for visualizing sampled
+signals using an array. The input range is assumed to be [0 \, 1] \,
+e.g. \, digital signals. The array is cleared to a constant on retrace
+to mimic a basic oscilloscope trace.;
+#X connect 2 0 14 0;
+#X connect 3 0 4 0;
+#X connect 4 0 12 0;
+#X connect 4 1 6 0;
+#X connect 5 0 6 1;
+#X connect 5 1 2 0;
+#X connect 10 0 11 0;
+#X connect 11 0 12 1;
+#X connect 12 0 10 0;
+#X connect 12 0 5 0;
+#X connect 14 0 7 0;
+#X coords 0 -1 1 1 220 180 1 50 440;

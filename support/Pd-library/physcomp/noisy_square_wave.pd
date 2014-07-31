@@ -1,0 +1,58 @@
+#N canvas 908 148 777 621 10;
+#X obj 12 12 cnv 15 600 150 empty empty noisy_square_wave 20 12 0 14
+-204800 -66577 0;
+#X obj 77 521 < 0;
+#X text 191 14 Generate a square wave test signal with glitches on
+the transitions to simulate the bounce of a mechanical switch.;
+#X text 33 48 creation arguments: sampling-interval period;
+#X obj 78 256 metro \$1;
+#X obj 79 198 loadbang;
+#X text 153 67 The sampling interval is the signal sampling period
+specified in milliseconds. The generator emits a binary output at this
+fixed rate.;
+#X text 152 115 The period is the duration of the nominal square wave
+cycle in milliseconds. This must be several times longer than the sampling
+interval for the output to be meaningful.;
+#X obj 78 297 float 0;
+#X obj 148 297 + 1;
+#X text 179 297 elapsed time counter;
+#X obj 163 257 expr 0.001 * \$1;
+#X obj 344 292 expr 6283.19 / \$2;
+#X obj 342 264 loadbang;
+#X obj 78 338 t f b;
+#X obj 77 562 outlet;
+#X text 346 309 Compute the multiplier to convert seconds of elapsed
+time to angular radians based on the desired frequency.;
+#X text 212 375 Random term to 'fuzz' the transitions.;
+#X text 109 521 Discretize the noisy wave to a glitchy digital signal.
+;
+#X obj 129 376 random 2001;
+#X obj 129 398 - 1000;
+#X obj 236 559 print;
+#X obj 129 421 * 0.001;
+#X text 186 421 Uniform distribution over [-1 \, 1];
+#X floatatom 471 421 5 0 1 0 - - -;
+#X obj 471 371 loadbang;
+#X obj 77 480 expr sin($f1 * $f2) + ($f4 * $f3);
+#X text 512 422 noise coefficient;
+#X text 472 439 shift-drag to adjust;
+#X msg 471 395 0.55;
+#X connect 1 0 15 0;
+#X connect 4 0 8 0;
+#X connect 5 0 4 0;
+#X connect 5 0 11 0;
+#X connect 8 0 9 0;
+#X connect 8 0 14 0;
+#X connect 9 0 8 1;
+#X connect 11 0 9 1;
+#X connect 12 0 26 1;
+#X connect 13 0 12 0;
+#X connect 14 0 26 0;
+#X connect 14 1 19 0;
+#X connect 19 0 20 0;
+#X connect 20 0 22 0;
+#X connect 22 0 26 2;
+#X connect 24 0 26 3;
+#X connect 25 0 29 0;
+#X connect 26 0 1 0;
+#X connect 29 0 24 0;

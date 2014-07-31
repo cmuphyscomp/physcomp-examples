@@ -1,0 +1,72 @@
+#N canvas 748 22 602 707 10;
+#X declare;
+#X obj 12 12 cnv 15 400 60 empty empty advanced_vocabulary 20 12 0
+14 -204800 -66577 0;
+#X text 25 80 This was originally compiled from help-intro.pd from
+the "vanilla" Pd 0.45.4 help pages \, from section "5.reference". It
+has been selected to emphasize objects most relevant to processing
+control-rate sensor data and actuator commands as needed for physical
+computing.;
+#X obj 24 403 makefilename;
+#X text 128 404 - format a symbol with a variable field;
+#X obj 25 189 netsend;
+#X text 125 189 - send messages over the internet;
+#X obj 25 212 netreceive;
+#X text 125 212 - receive them;
+#X obj 26 273 qlist;
+#X text 126 273 - message sequencer;
+#X obj 26 297 textfile;
+#X text 126 297 - file to message converter;
+#X obj 26 355 openpanel;
+#X text 126 355 - "Open" dialog;
+#X obj 26 378 savepanel;
+#X text 126 378 - "Save as" dialog;
+#X obj 26 588 struct;
+#X text 126 588 - define a data structure;
+#X obj 26 612 drawcurve;
+#X obj 96 612 filledcurve;
+#X text 202 610 - draw a curve;
+#X obj 26 636 drawpolygon;
+#X obj 106 636 filledpolygon;
+#X text 204 635 - draw a polygon;
+#X obj 26 660 plot;
+#X text 126 660 - plot an array field;
+#X obj 26 684 drawnumber;
+#X text 126 684 - print a numeric value;
+#X obj 27 778 pointer;
+#X text 127 778 - point to an object belonging to a template;
+#X obj 27 802 get;
+#X text 127 802 - get numeric fields;
+#X obj 27 826 set;
+#X text 127 826 - change numeric fields;
+#X obj 27 850 element;
+#X text 127 850 - get an array element;
+#X obj 27 874 getsize;
+#X text 127 874 - get the size of an array;
+#X obj 27 898 setsize;
+#X text 127 898 - change the size of an array;
+#X obj 27 922 append;
+#X text 127 922 - add an element to a list;
+#X obj 27 946 scalar;
+#X text 20 558 ---------------------- DATA TEMPLATES ----------------------
+;
+#X text 20 718 ---------------------- ACCESSING DATA ----------------------
+;
+#X text 126 321 - general text handling;
+#X obj 26 321 textfile;
+#X text 127 945 - create a single scalar;
+#X text 22 168 ---------------- Communications ----------------------
+;
+#X text 30 35 A summary of more esoteric Pd operators potentially relevant
+to Intro to Physical Computing.;
+#X obj 24 432 soundfiler;
+#X text 127 432 - read and write tables to soundfiles;
+#X text 25 243 -------------------- Files ----------------------;
+#X text 21 467 -------------------- General ----------------------
+;
+#X obj 29 499 bag;
+#X text 129 499 - set of numbers;
+#X obj 27 526 declare;
+#X text 127 526 - set search path and/or load libraries;
+#X text 127 753 - general array creation and manipulation;
+#X obj 28 753 array;

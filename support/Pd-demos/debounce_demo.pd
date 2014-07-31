@@ -1,0 +1,21 @@
+#N canvas 176 22 1196 668 10;
+#X obj 12 12 cnv 15 800 120 empty empty debounce_demo 20 12 0 14 -204800
+-66577 0;
+#X obj 215 426 signal_plot;
+#X obj 33 174 noisy_square_wave 40 1000;
+#X obj 215 237 signal_plot;
+#X obj 34 251 debounce_filter 100;
+#X text 159 16 Demonstrate how a stateful filter can be used to reduce
+transition noise on a digital signal. This noise might typically result
+from the 'bouncing' of a mechanical switch as it changes state. The
+contacts of a switch can make intermittent contact for a brief interval
+as it closes or opens \, leading to false transitions in the electrical
+signal.;
+#X text 444 278 The top plot shows the output of a simulated mechanical
+switch opening and closing at regular intervals.;
+#X text 449 462 The bottom plot shows the cleaned-up estimate of the
+signal. Note that each transition is only recognized after a delay
+while the filter waits for the signal to settle.;
+#X connect 2 0 3 0;
+#X connect 2 0 4 0;
+#X connect 4 0 1 0;

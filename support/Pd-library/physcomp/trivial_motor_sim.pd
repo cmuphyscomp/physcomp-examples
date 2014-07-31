@@ -1,0 +1,101 @@
+#N canvas 611 40 963 636 10;
+#X obj 12 12 cnv 15 600 250 empty empty trivial_motor_sim 20 12 0 14
+-204800 -66577 0;
+#X obj 83 822 outlet;
+#X text 191 14 Simple simulation of a DC gearmotor. This is highly
+idealized \, it just generates a constant-velocity ramp until limits
+are reached. This ignores back-EMF \, current limits \, torque limits
+\, load inertia \, and other dynamic properties.;
+#X text 182 112 The sampling interval is the signal sampling period
+specified in milliseconds. The simulator emits a position signal output
+at this fixed rate.;
+#X text 181 201 The lower and upper limits specify the position of
+the limit stops. Choose very large magnitude numbers for a freely rotating
+motor with no stops.;
+#X text 51 89 creation arguments:;
+#X obj 80 280 inlet;
+#X text 143 280 inlet messages:;
+#X text 181 88 sampling-interval max-speed lower-limit upper-limit
+;
+#X text 182 160 max-speed is the maximum speed in output units/second
+\, assumed to be symmetric either forward or backward.;
+#X obj 78 520 metro \$1;
+#X obj 78 495 loadbang;
+#X obj 80 640 float 0;
+#X obj 278 461 float 0;
+#X text 138 641 motor position state register;
+#X obj 119 589 expr $f1 + 0.001 * \$1 * $f2;
+#X text 293 591 expression to integrate velocity into position: position
+= position + delta-time * velocity \; the delta-time is computed in
+seconds;
+#X text 75 477 sampling rate bang generator;
+#X obj 81 676 t f f;
+#X text 129 823 the left outlet has the sampled position;
+#X obj 514 734 t f f;
+#X obj 279 496 min;
+#X obj 278 527 max;
+#X obj 588 849 * \$2;
+#X obj 80 343 route forward stop reverse speed;
+#X obj 80 403 float \$2;
+#X obj 186 404 float \$2;
+#X obj 227 426 * -1;
+#X obj 137 404 float 0;
+#X text 250 277 forward \, stop \, reverse - messages to set speeds
+for bang-bang control speed <float> - message to set a specific speed
+;
+#X obj 80 373 bang;
+#X obj 186 374 bang;
+#X obj 137 374 bang;
+#X text 420 780 lower limit;
+#X text 599 781 upper limit;
+#X obj 501 780 > \$3;
+#X obj 560 779 < \$4;
+#X obj 484 819 t b f;
+#X obj 562 819 t b f;
+#X obj 286 409 r \$0-recompute-speed;
+#X obj 504 913 s \$0-recompute-speed;
+#X text 515 668 Check position against limits \, and limit the possible
+velocity to only allow motion away from the limit. The tests are set
+up to yield true for unconstrained states so that a zero will set the
+corresponding dynamic velocity limit.;
+#X text 320 528 lower dynamic velocity limit;
+#X text 327 461 current desired motor velocity in units/second;
+#X text 317 496 upper dynamic velocity limit;
+#X floatatom 550 510 5 0 0 0 - - -, f 5;
+#X floatatom 550 565 5 0 0 0 - - -, f 5;
+#X obj 510 874 expr -1 * \$2 * $f1;
+#X connect 6 0 24 0;
+#X connect 10 0 12 0;
+#X connect 11 0 10 0;
+#X connect 12 0 15 0;
+#X connect 12 0 18 0;
+#X connect 13 0 21 0;
+#X connect 13 0 45 0;
+#X connect 15 0 12 1;
+#X connect 18 0 1 0;
+#X connect 18 1 20 0;
+#X connect 20 0 35 0;
+#X connect 20 1 36 0;
+#X connect 21 0 22 0;
+#X connect 22 0 15 1;
+#X connect 22 0 46 0;
+#X connect 23 0 21 1;
+#X connect 24 0 30 0;
+#X connect 24 1 32 0;
+#X connect 24 2 31 0;
+#X connect 24 3 13 0;
+#X connect 25 0 13 0;
+#X connect 26 0 27 0;
+#X connect 27 0 13 0;
+#X connect 28 0 13 0;
+#X connect 30 0 25 0;
+#X connect 31 0 26 0;
+#X connect 32 0 28 0;
+#X connect 35 0 37 0;
+#X connect 36 0 38 0;
+#X connect 37 0 40 0;
+#X connect 37 1 47 0;
+#X connect 38 0 40 0;
+#X connect 38 1 23 0;
+#X connect 39 0 13 0;
+#X connect 47 0 22 1;

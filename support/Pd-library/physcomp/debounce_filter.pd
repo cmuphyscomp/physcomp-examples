@@ -1,0 +1,66 @@
+#N canvas 126 22 642 710 10;
+#X obj 12 12 cnv 15 800 120 empty empty debounce_filter 20 12 0 14
+-204800 -66577 0;
+#X obj 112 556 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X msg 118 489 0;
+#X obj 90 402 !=;
+#X floatatom 129 339 5 0 0 0 - - -;
+#X floatatom 129 365 5 0 0 0 - - -;
+#X obj 54 199 float;
+#X obj 90 429 select 1;
+#X obj 91 461 t b b;
+#X obj 79 584 spigot;
+#X obj 55 238 t b f f f b;
+#X obj 116 286 float;
+#X text 181 338 previous input display;
+#X text 181 367 current input display;
+#X text 181 396 emit a bang when current input is different from previous
+value;
+#X obj 61 620 float;
+#X text 182 583 allow only stable values to update the output register
+;
+#X text 182 612 output register to hold the stable estimated value
+\; it is sent a bang once per input so this patch acts as a filter
+\, with one output per input.;
+#X text 182 554 flag is true when input is stable;
+#X text 175 13 Filter a binary signal to reduce transition glitches
+\, e.g. resulting from the noise of a sensor or mechanical switch changing
+state.;
+#X text 29 65 creation arguments: debounce-period;
+#X obj 53 156 inlet;
+#X obj 62 656 outlet;
+#X obj 92 515 delay \$1;
+#X text 154 81 The debounce period is the minimum interval which the
+signal must remain stable to be considered in a valid new state. The
+period is specified in milliseconds.;
+#X text 182 473 reset the stable flag when input changes \, then set
+it again after the input has ceased changing for an interval. The delay
+is retriggerable \; additional input changes will keep extending the
+delay \, preventing the flag from returning to the stable state.;
+#X text 177 285 register containing 'previous' value from the last
+input cycle;
+#X text 178 190 1 - transfer previous value to right inlet of !=;
+#X text 178 203 2 - update previous value register;
+#X text 178 229 4 - if stable \, update output;
+#X text 178 216 3 - compare current value with previous value;
+#X text 179 242 5 - emit one output per input;
+#X connect 1 0 9 1;
+#X connect 2 0 1 0;
+#X connect 3 0 7 0;
+#X connect 6 0 10 0;
+#X connect 7 0 8 0;
+#X connect 8 0 23 0;
+#X connect 8 1 2 0;
+#X connect 9 0 15 1;
+#X connect 10 0 15 0;
+#X connect 10 1 9 0;
+#X connect 10 2 3 0;
+#X connect 10 2 5 0;
+#X connect 10 3 11 1;
+#X connect 10 4 11 0;
+#X connect 11 0 3 1;
+#X connect 11 0 4 0;
+#X connect 15 0 22 0;
+#X connect 21 0 6 0;
+#X connect 23 0 1 0;

@@ -1,0 +1,189 @@
+#N canvas 582 22 691 720 10;
+#X floatatom 179 820 5 0 0 0 - - -;
+#X obj 30 151 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X msg 30 174 /s/l \$1;
+#X text 28 133 LED;
+#X obj 68 894 tgl 15 1 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 35 917 spigot;
+#X floatatom 222 820 12 0 0 0 - - -;
+#X obj 249 782 print debug-msg;
+#X obj 308 738 print unknown-system-message;
+#X obj 158 667 print unknown-message;
+#X obj 282 735 tgl 15 1 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 249 758 spigot;
+#X obj 224 953 tgl 15 1 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 191 976 spigot;
+#X obj 277 952 print unknown-digital-input;
+#X obj 122 876 print unknown-analog-input;
+#X obj 35 939 print A0-value;
+#X obj 191 998 print PIN8-value;
+#X text 238 803 Time;
+#X text 187 802 LED;
+#N canvas 608 52 673 665 Arduino-server 0;
+#X obj 49 508 mrpeach/slipdec 65536;
+#X obj 49 197 mrpeach/slipenc 65536;
+#X obj 49 134 inlet;
+#X obj 49 589 outlet;
+#X obj 219 132 inlet;
+#X msg 215 318 devices;
+#X text 216 504 slipdec extracts an OSC data packet from a serial data
+stream encoded using the SLIP protocol.;
+#X text 211 196 slipenc encodes an OSC packet using the SLIP protocol
+to delineate packet boundaries in the serial data stream. The argument
+to slipenc sets a maximum packet size.;
+#X text 274 314 Under OSX the Udoo SAM3X on the CN6 connector enumerates
+as /dev/tty.SLAB_USBtoUART;
+#X msg 217 376 close;
+#X text 217 552 unpackOSC decodes the OSC data packet into a stream
+of Pd messages \; see routeOSC for examples;
+#X obj 49 439 comport 99 57600;
+#X text 217 438 comport opens the specified serial port at the specified
+baud rate when it the object is initialized \; using an invalid device
+prevents it from opening the port until requestd;
+#X msg 219 174 devicename \$1 \, baud 57600;
+#X text 213 295 Click to print out the list of available serial devices.
+;
+#X text 216 357 Click to manually close the serial port.;
+#X text 46 69 The left inlet receives Pd lists specifying OSC messages.
+;
+#X text 49 30 Subpatch to manage the OSC messaging to and from the
+Arduino over a serial port.;
+#X text 216 102 The right inlet receives a message with a symbol naming
+the serial port.;
+#X obj 219 153 list;
+#X obj 49 165 osc/packOSC;
+#X obj 49 550 osc/unpackOSC;
+#X connect 0 0 21 0;
+#X connect 1 0 11 0;
+#X connect 2 0 20 0;
+#X connect 4 0 19 0;
+#X connect 5 0 11 0;
+#X connect 9 0 11 0;
+#X connect 11 0 0 0;
+#X connect 13 0 11 0;
+#X connect 19 0 13 0;
+#X connect 20 0 1 0;
+#X connect 21 0 3 0;
+#X restore 35 614 pd Arduino-server;
+#X text 4 -113 Demonstration of using the Udoo SAM3X embedded Arduino
+over the serial port using the OSC library for data transport.;
+#X text 150 605 This subpatch encapsulates the serial port protocol
+for sending and receiving OSC messages to and from the Arduino.;
+#X msg 31 -33 /dev/ttymxc3;
+#X msg 31 19 /dev/tty.usbmodem1411;
+#X msg 31 -7 /dev/tty.SLAB_USBtoUART;
+#X text 178 -32 SAM3X from the Udoo i.MX6;
+#X text 179 -5 SAM3X from OS X laptop via CN6;
+#X text 179 20 Arduino Due from OS X laptop;
+#X text 28 -69 Choose the appropriate serial port below to connect
+to the Arduino.;
+#X obj 35 642 osc/routeOSC /a /d /s;
+#X obj 179 707 osc/routeOSC /l /m /db;
+#X obj 35 853 osc/routeOSC /0;
+#X obj 191 928 osc/routeOSC /8;
+#X obj 36 326 hsl 128 15 0 100 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X obj 33 352 * 0.01;
+#X msg 33 379 /a/2 \$1;
+#X text 99 308 PWM on PIN2;
+#X obj 134 580 r port-name;
+#X obj 31 71 s port-name;
+#X obj 35 581 r osc-output;
+#X obj 30 200 s osc-output;
+#X obj 34 406 s osc-output;
+#X obj 192 194 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 192 242 s osc-output;
+#X text 214 193 PIN3 digital output;
+#X msg 192 216 /d/3 \$1;
+#X obj 37 988 hsl 128 15 0 1024 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X text 41 968 A0 input;
+#X floatatom 191 1045 5 0 0 0 - - -;
+#X text 199 1023 PIN8 input;
+#X obj 67 503 tgl 15 1 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 34 526 spigot;
+#X obj 34 550 print osc-output;
+#X obj 34 482 r osc-output;
+#X obj 192 160 metro 1000;
+#X obj 192 138 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X text 213 137 Enable square wave on PIN3;
+#X text 89 502 Enable showing OSC output messages;
+#X obj 214 352 f 0;
+#X obj 244 352 + 0.1;
+#X obj 33 300 r pin2-pwm;
+#X obj 214 306 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X text 235 305 Enable sin wave on PIN2;
+#X obj 214 328 metro 100;
+#X obj 214 377 expr 50 + 50 * sin($f1);
+#X obj 214 401 s pin2-pwm;
+#X obj 434 369 hsl 180 15 0 180 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X obj 432 429 s osc-output;
+#X obj 431 343 r pin4-servo;
+#X text 425 280 Servo on PIN4;
+#X msg 431 402 /servo/4 \$1;
+#X msg 425 306 0;
+#X msg 491 306 180;
+#X msg 457 306 90;
+#X msg 31 45 /dev/ttyACM0;
+#X text 178 45 Arduino Due from Raspberry Pi;
+#X connect 1 0 2 0;
+#X connect 2 0 41 0;
+#X connect 4 0 5 1;
+#X connect 5 0 16 0;
+#X connect 10 0 11 1;
+#X connect 11 0 7 0;
+#X connect 12 0 13 1;
+#X connect 13 0 17 0;
+#X connect 20 0 30 0;
+#X connect 23 0 39 0;
+#X connect 24 0 39 0;
+#X connect 25 0 39 0;
+#X connect 30 0 32 0;
+#X connect 30 1 33 0;
+#X connect 30 2 31 0;
+#X connect 30 3 9 0;
+#X connect 31 0 0 0;
+#X connect 31 1 6 0;
+#X connect 31 2 11 0;
+#X connect 31 3 8 0;
+#X connect 32 0 5 0;
+#X connect 32 0 47 0;
+#X connect 32 1 15 0;
+#X connect 33 0 13 0;
+#X connect 33 0 49 0;
+#X connect 33 1 14 0;
+#X connect 34 0 35 0;
+#X connect 35 0 36 0;
+#X connect 36 0 42 0;
+#X connect 38 0 20 1;
+#X connect 40 0 20 0;
+#X connect 43 0 46 0;
+#X connect 46 0 44 0;
+#X connect 51 0 52 1;
+#X connect 52 0 53 0;
+#X connect 54 0 52 0;
+#X connect 55 0 43 0;
+#X connect 56 0 55 0;
+#X connect 59 0 60 0;
+#X connect 59 0 65 0;
+#X connect 60 0 59 1;
+#X connect 61 0 34 0;
+#X connect 62 0 64 0;
+#X connect 64 0 59 0;
+#X connect 65 0 66 0;
+#X connect 67 0 71 0;
+#X connect 69 0 67 0;
+#X connect 71 0 68 0;
+#X connect 72 0 67 0;
+#X connect 73 0 67 0;
+#X connect 74 0 67 0;
+#X connect 75 0 39 0;
