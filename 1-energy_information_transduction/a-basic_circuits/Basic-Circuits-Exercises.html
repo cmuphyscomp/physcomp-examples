@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <title>Unit 1A: Basic Circuits</title>
+    <style type="text/css">
+      body { margin: 36pt; max-width: 50em; }
+    </style>
+    <meta name="description" content="Unit 1A Notes">
+    <meta name="author" content="garthz">
+  </head>
+  <body>
+    <h1>16-223: Introduction to Physical Computing</h1>
+
+    <h2>Unit 1A: Basic Circuits Exercises</h2>
+
+    <h3>Exercise: Bench, Battery, Grid</h3>
+
+    <p>Objective: learn basic electrical safety, recognize AC and DC sources,
+    learn scale of voltage units.</p>
+
+    <p>Caution: this lesson involves measuring dangerous voltages from the AC
+    wall outlets.  Please observe meter settings carefully and avoid touching
+    any exposed metal.</p>
+
+    <p>Notes on schematic: don't show the bulb plugged in the wall outlet or
+    power supply, it will explode.  Or do we have 30V bulbs?</p>
+
+    <h4>Steps and observations.</h4>
+    <ol>
+      <li>Set the DMM to VDC.  Place probes on a 9V battery as shown. Observe
+      reading.  It should show approximately 9 Volts.</li>
+
+      <li>Reverse the probes on the battery.  Observe reading. It should be the
+      same magnitude with reversed sign.</li>
+
+      <li>Touch leads of 9V lamp to battery contacts.</li>
+
+      <li>Reverse lamp leads.  It should still light: incandescent lamps have no
+      polarity.</li>
+
+      <li>A 9V battery has a low enough voltage that it won't cause much current
+      flow through dry skin. However, now is a good time to start building the
+      habit of not touching wires or leads, and instead using a meter to check
+      potentials.</li>
+
+      <li>Set the DC power supply to 30Volts.</li>
+
+      <li>Repeat DC voltage measurements between read and black terminals.</li>
+
+      <li>Caution: the following step calls for measuring the AC wall outlet
+      voltage.  Line power has a high enough voltage to be fatal, so think
+      through how to make contact safely without any chance of exposed metal
+      contacting your body.</li>
+
+      <li>Set the DMM to VAC.  Outlet voltage is alternating current for power
+      delivery, this configures the meter to measure the RMS voltage.</li>
+
+      <li>Double-check that the probe connectors are inserted into the probe
+      ports for voltage measurement, NOT current measurement.</li>
+
+      <li>Carefully touch the probe tips to the metal blade contacts inside the
+      outlet.  Observe the reading, it should be approximately 120.</li>
+
+      <li>Repeat between each blade contact and the round grounding contact.
+      Observe readings.</li>
+    </ol>
+
+    <h4>Comments</h4>
+
+    <p>Our typical sensor circuits will all use DC supply voltages ranging from
+    3.3 to 12V.  Our typical actuator circuits will use DC supply voltages from
+    5V to 12V.  Many electronic components have tightly specified supply voltage
+    ranges and will malfunction or be destroyed outside that range. </li>
+
+    <hr />
+
+
+    <h3>Exercise: Continuity Tests</h3>
+
+    <p>Objective: learn typical scale of resistance units.</p>
+
+    <p>Metals are generally good at conducting electricity; they have low
+    resistance.  Common insulators (including air) have a resistance high enough
+    it can't be easily measured.  So the most basic resistance measurement is
+    the 'continuity check' which simply tests whether the resistance is low
+    enough to be considered a conductor, or whether it is unexpectedly high
+    representing an open circuit.</p>
+
+    <h4>Steps and observations.</h4>
+    <ol>
+
+      <li>Set the DMM to resistance: Ohms, or the large greek omega letter
+      &Omega;.  The DMM will emit a small voltage to measure the current which
+      results.</li>
+
+      <li>Hold the probe tips in your fingers.  Squeeze harder.  Moisten the
+      contact point.  This is safe, you should see a body resistance reading
+      which changes with conditions.</li>
+
+      <li>Touch the probes to a coin, keys, and metal tool surfaces.  If you
+      fail to see a low reading, try changing contact points, scratching the
+      surface, and pressing harder.</li>
+
+      <li>Touch the probes across the leads of a resistor.</li>
+
+      <li>Touch the probes across the leads of an LED.  Reverse the
+      connections.</li>
+    </ol>
+    
+    <h4>Comments</h4>
+    
+    <p>Typical resistance measurements along a short wire will be less than 1
+    ohm and are often dominated by the resistance of the contact point and probe
+    wires.  Component resistors are available in standard ranges from a fraction
+    of an ohm to tens of millions of ohms.  For our typical sensor circuits we
+    will be using resistors in the 100 to 10000 (10K) ohm range.</p>
+
+    <hr />
+    
+  </body>
+</html>
