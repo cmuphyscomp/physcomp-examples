@@ -14,6 +14,11 @@
 
     <h2>Unit 1A: Basic Circuits Exercises</h2>
 
+    <p>The following exercises are intended to be performed by pairs of
+    students.  These will familiarize you with the lab and basic electronic
+    equipment.</p>
+
+    <hr /><!-- ----------------------------------------------------------- -->
     <h3>Exercise: Bench, Battery, Grid</h3>
 
     <p>Objective: learn basic electrical safety, recognize AC and DC sources,
@@ -22,9 +27,6 @@
     <p>Caution: this lesson involves measuring dangerous voltages from the AC
     wall outlets.  Please observe meter settings carefully and avoid touching
     any exposed metal.</p>
-
-    <p>Notes on schematic: don't show the bulb plugged in the wall outlet or
-    power supply, it will explode.  Or do we have 30V bulbs?</p>
 
     <h4>Steps and observations.</h4>
     <ol>
@@ -44,9 +46,15 @@
       habit of not touching wires or leads, and instead using a meter to check
       potentials.</li>
 
-      <li>Set the DC power supply to 30Volts.</li>
+      <li>Set the DC power supply to 9 Volts.</li>
 
       <li>Repeat DC voltage measurements between read and black terminals.</li>
+
+      <li>Connect the lamp to the power supply terminals.</li>
+
+      <li>Trying varying the power supply voltage up and down by 2 Volts.  Check
+      the voltage using the DMM, not just the power supply display.  Observe the
+      response of the lamp.</li>
 
       <li>Caution: the following step calls for measuring the AC wall outlet
       voltage.  Line power has a high enough voltage to be fatal, so think
@@ -73,9 +81,7 @@
     5V to 12V.  Many electronic components have tightly specified supply voltage
     ranges and will malfunction or be destroyed outside that range. </li>
 
-    <hr />
-
-
+    <hr /><!-- ----------------------------------------------------------- -->
     <h3>Exercise: Continuity Tests</h3>
 
     <p>Objective: learn typical scale of resistance units.</p>
@@ -107,16 +113,99 @@
       <li>Touch the probes across the leads of an LED.  Reverse the
       connections.</li>
     </ol>
-    
+
     <h4>Comments</h4>
-    
+
     <p>Typical resistance measurements along a short wire will be less than 1
     ohm and are often dominated by the resistance of the contact point and probe
     wires.  Component resistors are available in standard ranges from a fraction
     of an ohm to tens of millions of ohms.  For our typical sensor circuits we
     will be using resistors in the 100 to 10000 (10K) ohm range.</p>
 
-    <hr />
-    
+    <hr /><!-- ----------------------------------------------------------- -->
+
+    <h3>Exercise: Power Switch</h3>
+
+    <p>Objective: test a simple circuit on a breadboard.</p>
+
+    <p>We will use solderless breadboards a lot for prototyping circuits.  The
+    connection points accept component leads and solid wire.  Each short row of
+    five poing is connected internally and is used for signal connections.  The
+    ong rows along the edges are connected internally and are normally used for
+    power distribution.</p>
+
+    <h4>Steps and observations.</h4>
+    <ol>
+
+      <li>Wire and test the circuit as shown with a switch and a bulb.</li>
+
+      <li>Measure the voltage across the lamp in both on and off states.
+	Voltage is measured between two points; the meter is placed
+	in <em>parallel</em> with the lamp.</li>
+
+      <li>Current is measured through a conductor; measuring the lamp current
+	requires connecting the meter in <em>series</em> with the lamp by
+	disconnecting either wire leading to the lamp and connecting the meter
+	across the opened connection.</li>
+
+      <li>Set the meter to DC current mode (mA) and move the positive probe to
+	the connector for current.</li>
+
+      <li>Open the lamp circuit, connect the meter in-circuit, and observe the
+	current in both on and off states.</li>
+
+      <li>The lamp acts as a resistor.  What is the computed resistance in the
+	on state?  This can be calculated from the current measured for a given
+	applied voltage.</li>
+    </ol>
+
+    <h4>Comments</h4>
+
+    <p>The basic rules of current flow and voltage potentials in a circuit graph
+    are captured
+    by <a href="http://en.wikipedia.org/wiki/Kirchhoff's_circuit_laws">Kirchhoff's
+    circuit laws</a>.</p>
+
+    <hr /><!-- ----------------------------------------------------------- -->
+
+    <h3>Exercise: Voltage Divider</h3>
+
+    <p>Objective: measure current flow in a resistive voltage divider.</p>
+
+    <p>Many sensor circuits we use will be built around an arrangement of series
+      resistances called a <em>voltage divider</em>.  This is a fundamental
+      construction will will appear again and again.</p>
+
+    <p>Two resistors in series form a single current pathway, so a voltage
+      applied across the pair will cause the same current to flow through each
+      of them.  However, the voltage drop across each resistor resulting from
+      that current is proportional to the resistance (V=i*R), so the voltage at
+      the intermediate node depends on the relative resistances.  In the
+      simplest case, if both resistances are the same, the voltage in the middle
+      will be the average of the voltage at each end.</p>
+
+    <p>We will use the voltage divider structure to allow a variable resistance
+      (e.g. sensor or switch) to control the voltage at the intermediate point.
+      This is useful for us because the analog-to-digital converter on the
+      Arduino senses applied voltage.</p>
+
+    <h4>Steps and observations.</h4>
+    <ol>
+      <li>Measure the exact resistance of each resistor.</li>
+
+      <li>Carefully measure the voltage Vin across the pair of resistors.</li>
+
+      <li>Compute the expected voltage V2 across the grounded resistor: V2 =
+      Vin*(R2/(R1+R2)), where R1 is the 'upper' resistor connected to the
+      positive supply and R2 is the 'lower' resistor connected to ground.</li>
+
+      <li>Vary the input voltage and repeat; you should be able to convince
+      yourself that the intermediate voltage scales proportionately.</li>
+    </ol>
+
+    <h4>Comments</h4>
+
+    <p>Also see <a href="http://en.wikipedia.org/wiki/Voltage_divider">Wikipedia</a>.</p>
+
   </body>
 </html>
