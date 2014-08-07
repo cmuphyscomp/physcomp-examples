@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <title>Unit 1A: Basic Circuits</title>
+    <style type="text/css">
+      body { margin: 36pt; max-width: 50em; }
+    </style>
+    <meta name="description" content="Unit 1A Notes">
+    <meta name="author" content="garthz">
+  </head>
+  <body>
+
+    <h3>Exercise: LED with current limiter</h3>
+
+    <p>Objective: safely limit LED current</p>
+
+    <p>An LED is a <em>Light Emitting Diode</em>, a type of semiconductor
+      component which emits light directly from a current. The light results
+      from energized electrons moving between quantum states, and so the light
+      emitted has narrow spectral bands with color depending upon the specific
+      chemical composition.  White LEDs are actually a composite structure of
+      multiple LEDs of different colors.  White LED light is still narrow-band,
+      unlike the wide-spectrum black-body white light emitted from incandescent
+      bulbs.</p>
+
+    <p>A <em>diode</em> is a two-terminal semiconductor device which only
+      conducts current in one direction.  For this reason, LEDs
+      are <em>polarized</em>, and will not light up if connected backward
+      (<em>reverse-biased</em>).</p>
+
+    <p>Diodes can be modeled as a non-linear resistance which changes with the
+      applied voltage: when reverse-biased, the resistance is very high, and
+      almost no current flows.  When forward-biased at small voltages below
+      the <em>forward voltage</em>, the resistance is still high and only a
+      small current flows.  Above the forward voltage, the resistance rapidly
+      drops and the diode can conduct substantial current.  For LEDs, this is
+      also the point at which they start to light up.</p>
+
+    <p>However, this poses a problem, since an LED connected directly to a power
+      source with a voltage higher than the forward voltage will enter a very
+      low-resistance state, conduct a lot of current, and often burn out or
+      melt. We will frequently solve this by using a <em>ballast resistor</em>
+      in series with the LED.  This forms a voltage divider which acts as a very
+      simple current regulator.</p>
+
+    <p>A typical red LED has a forward voltage of 1.6V and a full-on operating
+      current of 20mA.The calculation for choosing the right ballast resistor
+      follows this reasoning:</p>
+
+      <ol>
+	<li>the current flow through the resistor and LED should be 20mA for full brightness</li>
+	<li>the voltage drop across the resistor should bring the LED applied voltage to approximately the forward voltage</li>
+	<li>assuming a 5V supply voltage, a 3.4V drop across resistor brings the LED voltage to 1.6V</li>
+	<li>for the resistor, R=V/i, so R can be approximately 170 ohms (i.e. 3.4V / 0.020A).</li>
+      </ol>
+
+    <h4>Steps and observations.</h4>
+    <ol>
+
+      <li>Before applying power, measure the variable resistor and adjust it to the upper end of its resistance range.</l>
+      <li>Apply 5V and observe the LED light output.  Reverse the polarity of the LED to see both forward and backward states.</li>
+      <li>Measure the LED current while full-on.</li>
+      <li>Slowly adjust the variable resistor (a <em>potentiometer</em>) until the LED current is 20mA.</li>
+      <li>Measure the resistor value.</li>
+      <li>Measure the LED voltage drop, resistor voltage drop, and supply voltage.</li>
+      <li>Don't reduce the potentiometer setting further or it may be damaged.  Later you will deliberately destroy an LED to see the outcome.</li>
+    </ol>
+
+    <h4>Comments</h4>
+
+    <p>The potentiometer can be damaged by excessive current in this circuit
+      when the wiper moves close to the powered end since a lot of current will
+      flow through a small resistor.</p>
+
+    <p>Green and blue LEDs usually have a higher forward voltage, sometimes as
+      high as 3.5V.  Blue LEDs were invented much more recently than red LEDs, it
+      took many years to find an affordable chemical composition.</p>
+
+  </body>
+</html>
