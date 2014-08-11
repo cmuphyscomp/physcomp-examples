@@ -53,8 +53,8 @@ for sending and receiving OSC messages to and from the Arduino.;
 port you choose in the Arduino IDE.;
 #X obj 36 161 osc/routeOSC /a/0;
 #X obj 39 252 hsl 100 15 0 1024 0 0 empty empty x 70 -8 0 10 -262144
--1 -1 9330 1;
-#X obj 36 310 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+-1 -1 0 1;
+#X obj 36 310 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X msg 36 337 /s/l \$1;
 #X text 56 309 LED;
