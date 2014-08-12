@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <title>Unit 1A: Basic Circuits</title>
+    <style type="text/css">
+      body { margin: 36pt; max-width: 50em; }
+      span.eqn { white-space: nowrap; }
+    </style>
+    <meta name="description" content="Unit 1A Notes">
+    <meta name="author" content="garthz">
+  </head>
+  <body>
+
+    <h3>Exercise: Relay Driver</h3>
+
+    <p>Objective: connect two circuits using a relay.</p>
+
+    <p>A <a href="http://en.wikipedia.org/wiki/Relay">relay</a> is a mechanical
+      switch controlled by an electrical signal.  A current through the control
+      coil creates a magnetic field which physically moves an electrical contact
+      from a normally-closed (NC) contact to a normally-open (NO) contact. In
+      most relays, the switch immediately returns to the normally-closed state
+      when the coil is de-energized.  Relays come in many shapes, sizes, and
+      configurations; this exercise uses a relatively small relay controlled by
+      a 5V signal.</p>
+
+    <p>We can look at it in several ways: as an <em>interface</em> between an
+      informational signal and an energetic signal; as a
+      binary <em>amplifier</em> which allows a modest control signal to control a
+      high-power energetic circuit; as an <em>isolator</em> which allows the
+      input circuit to affect the output circuit without sharing any
+      current.</p>
+
+    <h4>Steps and observations.</h4>
+    <ol>
+      <li>Set the power supplies to the specified voltages first.  We are using
+      a low-voltage motor so the 3V is actually the &lsquo;high-power&rsquo;
+      energy supply and the 5V is the logic supply.</li>
+      <li>Manually connect and disconnect the coil circuit, listening for the physical motion inside the relay and observing the different output states.</li>
+      <li>Measure the coil current and resistance, and compute power dissipated by the coil.</li>
+      <li>Measure the motor current, and compute the dissipated by the motor.</li>
+      <li>Compute the power gain of the amplifier (output power/input power).</li>
+    </ol>
+
+    <h4>Comments</h4>
+
+    <p>Relays are relatively slow but very robust.  The contacts are just switch
+    contacts, so they have no polarity, and many relays are suitable for safely
+    switching AC line circuits.  There are other variants on relays such
+    as <em>latching relays</em> in which one coil is pulsed to change state and
+    another pulsed to change it back.</p>
+
+  </body>
+</html>
