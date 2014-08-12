@@ -1,4 +1,4 @@
-#N canvas 528 50 637 450 10;
+#N canvas 655 48 637 450 10;
 #X msg 135 65 /dev/tty.usbmodemfd121;
 #N canvas 608 52 673 665 Arduino-server 0;
 #X obj 49 508 mrpeach/slipdec 65536;
@@ -52,25 +52,19 @@ for sending and receiving OSC messages to and from the Arduino.;
 #X text 285 57 Arduino Due serial port. Change this to match the serial
 port you choose in the Arduino IDE.;
 #X obj 36 161 osc/routeOSC /a/0;
-#X obj 39 252 hsl 100 15 0 1024 0 0 empty empty x 70 -8 0 10 -262144
--1 -1 0 1;
-#X obj 36 310 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
-1;
-#X msg 36 337 /s/l \$1;
-#X text 56 309 LED;
-#X obj 36 363 s osc-output;
+#X obj 39 226 hsl 100 15 0 1024 0 0 empty empty empty 70 -8 0 10 -262144
+-1 -1 9523 1;
 #X obj 36 89 r osc-output;
-#X obj 36 282 > 700;
 #X text 78 193 Analog values range from 0 - 1024;
 #X text 154 162 Receive OSC messages from analog pin 0;
-#X text 121 234 <-- threshold;
-#X text 87 283 Turn on LED if value from sensor is above 700;
+#X obj 36 256 expr ($f1 / 1024) * 1;
+#X msg 36 290 /a/2 \$1;
+#X obj 36 323 s osc-output;
 #X connect 0 0 1 1;
 #X connect 1 0 5 0;
 #X connect 3 0 6 0;
 #X connect 5 0 3 0;
-#X connect 6 0 12 0;
-#X connect 7 0 8 0;
-#X connect 8 0 10 0;
-#X connect 11 0 1 0;
-#X connect 12 0 7 0;
+#X connect 6 0 10 0;
+#X connect 7 0 1 0;
+#X connect 10 0 11 0;
+#X connect 11 0 12 0;
