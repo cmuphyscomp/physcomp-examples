@@ -152,6 +152,45 @@
        these methods have scaled to the complexity of digital computing, but all
        still have application for particular problems.</p>
 
+    <p>Analog circuits refer to systems in which the energy or information is
+      represented by continuously varying electrical signals.  E.g. a
+      photoresistor exhibits a continuously varying resistance as a function of
+      the incident light, and in a circuit can be wired to produce a
+      continuously varying voltage or current.  A microphone produces a voltage
+      proportional to air pressure and represents sound as an oscillating
+      voltage.</p>
+
+    <p>Digital signals are discretized signals in which specific values of
+      voltage or current are defined to represent specific symbols.  In the most
+      common case, only two symbols are represented, labeled zero and one.  This
+      encodes a single binary digit, or bit, as the current or voltage on a
+      wire.  The specific values of voltage or current depend on the specific
+      components.  The Arduino follows the 5V CMOS convention, so voltages below
+      1.5V are considered zero or LOW and voltages above 3.7V are considered one
+      or HIGH.  Voltages in-between are potentially ambiguous but will be
+      arbitrated into a distinct value when passing through a digital input.
+      Please note that other microcontrollers such as the Arduino Due operate at
+      3.3V and circuits in laptops and cell phones at even lower voltages, so
+      these thresholds will be different.  Connecting between different logic
+      families can require level-translation circuitry if the values are not
+      compatible.</p>
+
+    <p><em>Schematics</em> are circuit diagrams showing the logical connection
+      of electronic components. A schematic does not define the physical layout
+      of components or conductors, so constructing a circuit from a schematic
+      requires applying additional knowledge.  However, a good schematic
+      contains enough information to construct a functional circuit assuming
+      common engineering experience. </p>
+
+    <p>Schematic signals are often named to convey intended purpose of a
+      connection.  In digital circuits, a bar over a name or a slash in front of
+      it indicates an <em>active-low</em> signal in which the low-voltage state
+      is the <em>active</em> state.  The meaning of active is relative to the
+      specific case: for example, an input labeled /RESET is active-low, so a
+      zero-voltage input is &ldquo;active&rdquo; in the sense that the circuit
+      is reset (and hence not operating).</p>
+
+
     <h3>Reference Links</h3>
     <ol>
       <li><a href="http://en.wikipedia.org/wiki/Electronic_color_code">Wikipedia: resistor color code</a></li>
@@ -160,6 +199,8 @@
       <li><a href="http://en.wikipedia.org/wiki/Light_emitting_diode">Wikipedia: Light emitting diode</a></li>
       <li><a href="http://en.wikipedia.org/wiki/Cds_cell">Wikipedia: Photoresistor</a></li>
       <li><a href="http://en.wikipedia.org/wiki/Force_Sensitive_Resistor">Wikipedia: Force-sensing resistor</a></li>
+      <li><a href="http://en.wikipedia.org/wiki/Relay">Relay</a></li>
+      <li><a href="http://en.wikipedia.org/wiki/Logic_level">Wikipedia: Logic level</a></li>
     </ol>
 
     <hr /><!-- --------------------------------------------------------------- -->
@@ -213,8 +254,11 @@
 	particularly easy to transmit from place to place.</li>
     </ol>
 
-    <p>The deliverables for this graded assignment are defined in the syllabus
-    section titled Grading Rubric.</p>
+    <p>The physical project can be built on a breadboard, with actuators and
+    sensors attached to scrap with tape and hot glue.</p>
+
+    <p>The full deliverables for this graded assignment are defined in the
+    syllabus section titled Grading Rubric.</p>
 
     <hr /><!-- --------------------------------------------------------------- -->
     <h3>Challenge Yourself</h3>
