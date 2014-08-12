@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <title>Unit 1A: Basic Circuits</title>
+    <style type="text/css">
+      body { margin: 36pt; max-width: 50em; }
+      span.eqn { white-space: nowrap; }
+    </style>
+    <meta name="description" content="Unit 1A Notes">
+    <meta name="author" content="garthz">
+  </head>
+  <body>
+
+    <h3>Exercise: Multichannel Driver</h3>
+
+    <p>Objective: interface multiple motors using an integrated driver.</p>
+
+    <p>An <a href="http://en.wikipedia.org/wiki/Integrated_circuit">integrated
+	circuit</a> (aka IC or chip) is a multi-component circuit fabricated on
+	a single piece of semiconductor material.  The complexity ranges from a
+	just a few transistors up to billions of components in a high-end CPU
+	chip.</p>
+
+    <p>This exercise uses a ULN2803 driver which provides the equivalent of
+      eight individual transistor drive circuits in a single package, enough to
+      drive eight relays or turn eight motors on an off.  It is polarized, so
+      each channel is either on or off and conducts only one direction.  The
+      outputs are <em>open-collector</em>, which in practice means they sink a
+      positive current to a common ground.</p>
+
+    <p>Unlike the MOSFET, the bipolar transistors have a modest voltage drop and
+      dissipate more power for the same output current.  We use these parts
+      because they are inexpensive, robust, and have the convenience of multiple
+      channels.</p>
+
+    <p>Note that the inputs are engineered for 5V logic, but the outputs are
+      rated to 50V, so the load can be a DC load at a substantial higher voltage
+      than the logic.  Each output is rated for 500&nbsp;mA maximum current, but
+      in practice the maximum load that can be switched is a function of the
+      overall dissipation.  E.g., running too many outputs at too high a current
+      may exceed the total heating limit, which is a function of the package
+      type and heat-sinking.</p>
+
+    <p>The outputs include <em>clamp diodes</em> connected to the COM terminal
+      which help absorb voltage spikes typically created when motors or relay
+      coils turn off.</p>
+
+    <h4>Steps and observations.</h4>
+    <ol>
+      <li>Wire up the circuit, trying to use only the schematic.  This is also a good opportunity to look at the data sheet for the ULN2803.</li>
+      <li>Using a jumper wire, apply 5V (&lsquo;HIGH&rsquo;) to IN7 and IN8,
+      observing the motor activity.</li>
+    </ol>
+
+    <h4>Comments</h4>
+
+    <p>The actual topology of each channel is a <em>Darlington pair</em>, a
+      circuit which uses two bipolar transistors cascaded for higher gain.  The
+      data sheet includes a schematic approximating the circuit for each
+      channel.</p>
+
+    <p>The logic symbol is drawn as a triangle with a circle at the output
+    representing an <em>inverted</em> output which is active-low.  In practice,
+    the &lsquo;low&rsquo; output is generally sinking power through the load, so
+    it still represents the &lsquo;active&rsquo; state, i.e., a high input turns
+    the load on.</p>
+
+    <p>Like the MOSFET circuit, note the input and output circuits are not
+      isolated from each other.</p>
+
+  </body>
+</html>
