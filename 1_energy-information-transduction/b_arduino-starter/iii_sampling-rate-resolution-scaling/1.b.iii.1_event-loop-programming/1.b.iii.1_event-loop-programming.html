@@ -40,9 +40,16 @@
       since that is what allows predictable filtering such as smoothing and
       boundary detection.</p>
 
+    <p>The simplest form of polling is a synchronous system in which all
+      computations run within a single fixed time cycle.  However, in this
+      example the input and output can run at very different rates, since each
+      output must change at a different audio rate and the input changes at a
+      much slower human control rate.  So this example uses a form of
+      asynchronous polling.</p.>
+
     <p>The basic structure of our event loop will be built around a set of
-    timers which are polled as fast as possible.  Each timer is simply a
-    timestamp with associated interval:</p>
+      timers which are polled as fast as possible.  Each timer is simply a
+      timestamp with associated interval:</p>
 
     <pre>
       long next_output_time_1 = 0;        // timestamp in microseconds for when next to update output 1
