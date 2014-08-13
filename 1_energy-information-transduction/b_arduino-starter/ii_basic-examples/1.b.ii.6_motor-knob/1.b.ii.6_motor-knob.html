@@ -14,7 +14,7 @@
 
     <h3>Exercise: Motor Knob</h3>
  
-    <p>Objective: control a stepper motor using an drive module.</p>
+    <p>Objective: control a stepper motor using a driver module.</p>
 
     <p>A <a href="http://en.wikipedia.org/wiki/Stepper_motor">stepper motor</a>
       uses a toothed rotor and multiple drive coils to create motion in discrete
@@ -28,10 +28,13 @@
       error.</p>
 
     <p>This exercise uses a driver module which takes care of cycling the
-      currents appropriately through the two coils of a bipola stepper motor.
+      currents appropriately through the two coils of a bipolar stepper motor.
       The primary inputs to the driver are <em>direction</em> and <em>step</em>.
       The additional inputs control fractional stepping and the overall driver
       power state.</p>
+
+    <p>As a simple one-in one-out demonstration, the exercise uses a
+      potentiometer as an analog position command control input.</p>
 
     <h4>Steps and observations</h4>
     <ol>
@@ -39,14 +42,14 @@
 
       <li>Observe the stepper motor motion.</li>
 
-      <li>Try moving the MS1 jumper between 5V and GND and observing the
-	resulting change in step rate.  The driver is capable
+      <li>Try moving the MS1 pull-up resistor between 5V and GND and observing
+	the resulting change in step rate.  The driver is capable
 	of <em>microstepping</em> in which the coils can be driven using PWM
 	rather simply on or off in order to divide the fundamental step into
 	smaller angles.</li>
 
       <li>Read the data sheet for the driver and configure the driver for even
-	smaller steps.</li>
+	finer steps.</li>
 
     </ol>
 
