@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <title>Unit 1B: Arduino Starter</title>
+    <style type="text/css">
+      body { margin: 36pt; max-width: 50em; }
+      span.eqn { white-space: nowrap; }
+    </style>
+    <meta name="description" content="Unit 1B Notes">
+    <meta name="author" content="garthz">
+  </head>
+  <body>
+
+    <h3>Exercise: Servo Sweep</h3>
+ 
+    <p>Objective: control a hobby servomotor module.</p>
+
+    <p>Hobby servos are feedback-controlled motors which move an output shaft to
+      a specified position.  Internally they use a potentiometer to measure the
+      actual position.  The internal circuit compares the actual and commanded
+      position and generates positive and negative motor current pulses to
+      operate a tiny gearmotor.  They are a very convenient modular way to
+      create controlled physical motion.</p>
+
+    <p>The commanded position is specified using a specific format of PWM in
+      which pulses between approximately 1-2&nbsp;ms repeat at approximately
+      50&nbsp;Hz.  The different pulse widths correpond to different positions.
+      Note that is a significantly different waveform than the motor PWM, since
+      the <em>duty cycle</em> is always very low, i.e., the pulse on-time is
+      always much shorter than the cycle time.</p>
+
+    <h4>Steps and observations</h4>
+    <ol>
+      <li>Load and run the Servo/Sweep sketch.  This uses the Servo library, an included add-on to the base library.</li>
+      <li>Observe the servo motion.</li>
+      <li>Observe the PWM command signal on the oscilloscope.</li>
+      <li>Try varying the numbers governing the motion limits.</li>
+      <li>Try varying the delay to change the speed.</li>
+      <li>Determine the maximum speed possible.</li>
+    </ol>
+
+    <h4>Comments</h4>
+
+    <p>Note that trajectories and speed control are only possible by issuing position commands at intervals.</p>
+
+    <p>As a challenge, rewrite the program to avoid <code>delay()</code> and
+      operate two servos simultanously on different trajectories.</p>
+
+
+  </body>
+</html>
