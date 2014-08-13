@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <title>Unit 1B: Arduino Starter</title>
+    <style type="text/css">
+      body { margin: 36pt; max-width: 50em; }
+      span.eqn { white-space: nowrap; }
+    </style>
+    <meta name="description" content="Unit 1B Notes">
+    <meta name="author" content="garthz">
+  </head>
+  <body>
+
+    <h3>Exercise: Blink Motor</h3>
+
+    <p>Objective: drive a DC motor from an Arduino program.</p>
+
+    <p>A DC motor is a starting point for controlling physical motion.  By
+      itself, a DC motor spins fast with low torque, so they are usually coupled
+      with a mechanical transmission.  If the transmission is an integrated
+      gearbox, it is called <em>gearmotor</em>.  This example also works with
+      gearmotors, which are useful for driving practical loads with a minimum of
+      mechanical fabrication.</p>
+
+    <p>Unlike the bulb, the DC motor is polarized, and reversing the current
+    will reverse the direction of motion.  The circuit in this exercise is
+    unipolar, and can only drive current through the motor in one direction.  It
+    is possible, however, to vary the motor speed by turning the transistor
+    drive on and off rapidly to vary the <em>average</em> current through the
+    motor.  This is called <em>pulse-width modulation</em>, or PWM.</p>
+
+    <h4>Steps and observations</h4>
+    <ol>
+      <li>Load and run the Blink sketch.</li>
+      <li>Note that pin 13 is still connected to the onboard LED.  Observe the motor and LED activity.</li>
+      <li>This time, explore the limits of timing.  How short a pulse will still create movement?</li>
+      <li>Load the Fade sketch, which uses <code>analogWrite()</code> to create a PWM waveform on pin 9.</li>
+      <li>Rewire the transistor base to pin 9.</li>
+      <li>Observe the change in motor motion.</li>
+      <li>Observe the PWM signal on pin 9 using the oscilloscope.</li>
+    </ol>
+
+    <h4>Comments</h4>
+
+    <p>The Arduino PWM run at a very audible 490&nbsp;Hz frequency.  Commercial
+      motor drivers usually run at 20&nbsp;kHz or higher so the noise is above
+      the range of human hearing.</p>
+
+  </body>
+</html>
