@@ -10,211 +10,40 @@
     <meta name="author" content="garthz">
   </head>
   <body>
-    <h2>Basic Circuits: Overview</h2>
+    <h2>PureData Starter: Overview</h2>
 
-    <p>This first unit is about establishing core electrical concepts and
-       standard vocabulary for talking about electronics.  Everybody in the
-       class is starting from a different level of experience (perhaps none) but
-       needs to develop a common language for working together.</p>
+    <p>This section is an introduction to physical computing with the real-time data-flow programing language PureData. Such environments take their name (&quot;data-flow&quot;) after their visual analogy of graphical modules that intake and process data and pass it along to other modules. </p>
 
-    <p>The following list is an informal summary of basic electrical concepts
-       which will be used throughout the course.  Please read through everything
-       and keep this for reference.  If the terminology is unfamiliar, it will
-       become familiar through practice with the exercises.  If it is review,
-       then please help your classmates with understanding the exercises.</p>
-
+    <hr />
     <h3>Takeaway Lessons</h3>
 
-    <p>Electricity is the flow of electrons through a conductor.</p>
-
-    <p>Electricity is invisible; we use instruments such as multimeters and
-       oscilloscopes to measure it and render it visible.</p>
-
-    <p>An electrical current conveys energy.</p>
-
-    <p>Electric potential is measured in volts.  Potential can exist between any
-       two points in a circuit or conductor; it is a relative measure.  It is a
-       measure of potential energy, and exists whether or not a current is
-       flowing between those two points.</p>
-
-    <p>Electric current is measured in amperes (Amps).  Current is the volume of
-       electron flow past a point.</p>
-
-    <p>Electrical currents can be vary with time.  The simplest case is the AC
-       (alternating current) wall power in which the voltage is formed as a 60
-       Hz sine wave (in the US) for transmission efficiency.  In contrast, our
-       lab power supplies and batteries will output DC (direct current) which
-       has a constant voltage.</p>
-
-    <p>An electrical current can encode information. </p>
-
-    <p>Information can be conveyed even with very small amounts of energy.  In
-       practice there are very different kinds of electrical signals and
-       circuits for processing information (e.g. from sensors) versus actuating
-       mechanical systems (e.g. motors, speakers).</p>
-
-    <p>Resistance is measured in ohms.  Resistance is a property of matter and
-       is measured along a pathway through a conductor.  </p>
-
-    <p>An electric potential across a resistance causes a current to flow
-       through it.</p>
-
-    <p>A current flowing through a resistance converts electrical energy to
-       heat. This is commonly termed dissipation.</p>
-
-    <p>Electricity flow is loosely analogous to water flow: current is analogous
-       to the volume of flow of water through a pipe, voltage is analogous to
-       the pressure difference between two locations, and resistance is
-       analogous to friction.  However, it is good practice to think directly in
-       terms of electrical properties rather than relying on this
-       comparison.</p>
-
-    <p>An insulator is a material with very high resistance, i.e., a typical
-       voltage will cause negligible current flow through it.</p>
-
-    <p>The relationship between current, voltage, and resistance in an
-       electrical path is described by Ohm's Law: V=i*R. This is
-       an empirical relationship which holds true for most common conductors.
-       Ohm's Law can be trivially rewritten as i=V/R and R=V/i.</p>
-
-    <p>A resistor is a type of electronic component engineered for a precise and
-       constant resistance property with a guaranteed minimum capability for
-       dissipating energy.  In general, physically larger resistors have more
-       dissipation capacity.  Resistors come in a variety of physical shapes and
-       means of electrical connection.  No resistor is precisely the specified
-       value; resistors are specified with a tolerance range.  Highly precise
-       resistors generally cost more.  In practice, resistors have no dynamic
-       behavior.</p>
-
-    <p>In practice, resistors are used to relate current and voltage within a
-       circuit rather than to generate heat.  Heat is normally an undesirable
-       side-effect.</p>
-
-    <p>There are many other types of passive and active components: capacitors,
-       inductors, diodes, transistors, LEDs, lamps, integrated circuits, motors,
-       solenoids, and thousands more.</p>
-
-    <p>The DMM (digital multi-meter) measures fundamental properties of an
-       electrical signal: voltage and current.  It also measures electrical
-       properties of materials (either components or conductors): resistance,
-       capacitance, and inductance.  The DMM is most useful for measuring
-       relatively constant properties, as the numeric display doesn't show rapid
-       variation well.</p>
-
-    <p>The oscilloscope draws a dynamic graph of the voltage of an electrical
-       signal.  It is most useful for visualizing time-varying signals.  The
-       oscilloscope can plot a signal over many orders of magnitude of time
-       scale; in the course we will generally deal with signals varying at
-       scales ranging from microseconds to seconds, but modern electronics
-       involves signals at nanosecond scales and shorter.  In contrast, human
-       perception operates at scales closer to tenths of a second.</p>
-
-    <p>Sensors are transducers which convert a physical signal to an electrical
-       signal.  Some common transducers have variable resistance, e.g., for a
-       given voltage across them, the current through them will vary depending
-       upon physical state.  Two examples: a switch has a resistance near zero
-       or near infinity depending on position, a CdS photocell has a resistance
-       varying from about 1000 ohms to millions of ohms depending on light
-       intensity.  Sensors can have a time-varying response: the switch changes
-       resistance near-instantly, the CdS photocell can take hundreds of
-       milliseconds to respond to a sudden change.  There exists a vast variety
-       of sensors to couple nearly any physical process of interest into
-       electrical information.  Optical sensors are especially useful building
-       blocks since many other physical effects can be transduced to a variation
-       in light, and then transduced from light to a variation in
-       electricity.</p>
-
-    <p>Circuits are arrangements of components and conductors engineered for a
-       particular purpose.  You must learn to recognize certain fundamental
-       circuit structures which will be used throughout the course.</p>
-
-    <p>A circuit is a graph; circuit topology matters more than exact physical
-       layout.  This becomes less true at the extremes: low-voltage,
-       high-current, or high-frequency circuits require more attention to
-       physical layout.  For this course this will come into play with DC motor
-       circuits.</p>
-
-    <p>A short-circuit (or "short") is an unintended low-resistance connection
-       between two points, e.g.  bare wires touching accidentally, a stray drop
-       of solder bridging two pins, or a DMM probe touching two circuit board
-       traces. The effects of a short can range from nothing to smoke and
-       destruction, depending on the location and available energy.</p>
-
-    <p>Electrical engineering has been wildly successful at providing means for
-       converting energy and information to and from electrical form and
-       providing tools for manipulating electrical energy and information.
-       Historically, computation and signal processing has also been performed
-       in other domains. The first closed-loop control system was actually a
-       mechanical computation performed with a flyball governor.  Elaborate
-       mechanical computers were constructed to represent mathematical functions
-       before the advent of electronic computing. Analog electronic computers
-       were used before digital electronic computers were developed.  None of
-       these methods have scaled to the complexity of digital computing, but all
-       still have application for particular problems.</p>
+    <ul>
+      <li>PureData offers tremendous flexibility: one one environment you can work with physical computing, audio analysis and syntehsis, video analysis and synthesis and more. PureData is free and open source, and it works on personal computers (Windows, OS X, Linux), smart phones (iOS, Android), embedded platforms (Raspberry Pi, Udoo, BeagleBone)</li>
+      <li>PureData is good at: rapid prototyping of interactive audio/visual systems, controlling multiple parallel processes with complex timing; audio analysis and synthesis, </li>
+      <li>PureData is bad at: recurssive programming, graphical user interfaces, intergration of documentation, following computer science conventions for naming</li>
+      <li>PureData is very extensible: you can extend PureData's functionality with C/C++, Python or a range of other text-based programming languages</li>
+    </ul>
 
     <h3>Reference Links</h3>
     <ol>
-      <li><a href="http://en.wikipedia.org/wiki/Electronic_color_code">Wikipedia: resistor color code</a></li>
-      <li><a href="http://en.wikipedia.org/wiki/Voltage_divider">Wikipedia: voltage divider</a></li>
-      <li><a href="http://en.wikipedia.org/wiki/Kirchhoff's_circuit_laws">Wikipedia: Kirchhoff's circuit laws</a></li>
-      <li><a href="http://en.wikipedia.org/wiki/Light_emitting_diode">Wikipedia: Light emitting diode</a></li>
-      <li><a href="http://en.wikipedia.org/wiki/Cds_cell">Wikipedia: Photoresistor</a></li>
-      <li><a href="http://en.wikipedia.org/wiki/Force_Sensitive_Resistor">Wikipedia: Force-sensing resistor</a></li>
+      <li><a href="http://en.wikipedia.org/wiki/Pure_Data">Wikipedia: Pure Data</a></li>
+      <li><a href="http://en.wikipedia.org/wiki/Dataflow_programming">Wikipedia: Dataflow Programming</a></li>
+      <li><a href="http://en.wikipedia.org/wiki/Dreamachine">Wikipedia: Dreammachine</a></li>
     </ol>
 
     <hr /><!-- --------------------------------------------------------------- -->
     <h3>Lab Exercises</h3>
 
     <p>The lab exercises are intended to be performed by pairs of students.
-      These will familiarize you with the lab and basic electronic equipment.
-      The exercises will be performed in the lab during class time, but also
-      outside class as needed.  The lab exercises are not graded but are
-      essential for developing the vocabulary and skills to fulfill the graded
-      assignments.</p>
-
-    <p>The lab exercises are divided into two parts, <em>Ohm</em> and
-      <em>Schematics and Breadboards</em>, each containing a number of
-      exercises.  The lab exercises are detailed on the course website
-      under <a href="http://physcomp.org/assignments/">assignments</a> and as a
-      set of notes and schematics in
-      the <a href="https://github.com/cmuphyscomp/physcomp-examples/tree/master/1_energy-information-transduction/a_basic-circuits">physcomp-examples
-      github distribution</a>.  The github files can be checked out to your own
-      computer for reference.</p>
+      These will familiarize you with processes you have already explored with micro-controllers, but now with a personal computer or Raspberry Pi. They will also familiarize you with the work flow for using PureData on a laptop to communicate with a micro-controller, as well as PureData on an Raspberry Pi</p>
 
     <hr /><!-- --------------------------------------------------------------- -->
-    <h3>Graded Project: One In - One Out with basic circuits</h3>
+    <h3>Graded Project: Dream Machine</h3>
 
 
-    <p>The project assignments are intended to be performed by groups of
-    students.</p
+    <p>The graded project is inspired by the Dreammachine, &quot;a <a href="http://en.wikipedia.org/wiki/Stroboscopic" title="Stroboscopic">stroboscopic</a> flicker device that produces visual stimuli. Artist <a href="http://en.wikipedia.org/wiki/Brion_Gysin" title="Brion Gysin">Brion Gysin</a> and <a href="http://en.wikipedia.org/wiki/William_S._Burroughs" title="William S. Burroughs">William S. Burroughs</a>'s "systems adviser" <a href="http://en.wikipedia.org/wiki/Ian_Sommerville_(technician)" title="Ian Sommerville (technician)">Ian Sommerville</a> created the dreamachine after reading <a href="http://en.wikipedia.org/wiki/William_Grey_Walter" title="William Grey Walter">William Grey Walter</a>'s book, <em>The Living Brain</em>.&quot;  The goal is to make an enchanted object that uses sound, light and movement to create a dream-like state for the viewer. </p
 
-    <p>Use electricity to create a connection between two physical processes,
-      e.g., allow one process to control or affect another.  This is the essence
-      of the single-input single-output system.  Solving the task is trivial: a
-      battery, switch, and lamp are sufficient.  The hard part is identifying
-      and achieving an interesting purpose.</p>
-
-    <p>One In - One Out is many things:</p>
-
-    <ol>
-
-      <li>It is about creating a process: energy and information enters, energy
-      and information is emitted.  The circuit becomes part of a larger
-      system.</li>
-
-      <li>It is about creating a relationship: otherwise disjoint elements can
-	be connected indirectly via electricity to accomplish a human
-	purpose.</li>
-
-      <li>It is about controlling time: all circuits involve delay (even if very
-      short).</li>
-
-      <li>It is about crossing space: electricity is an energy form which is
-	particularly easy to transmit from place to place.</li>
-    </ol>
-
-    <p>The deliverables for this graded assignment are defined in the syllabus
-    section titled Grading Rubric.</p>
+    >
 
     <hr /><!-- --------------------------------------------------------------- -->
     <h3>Challenge Yourself</h3>
@@ -223,28 +52,13 @@
        some of the optional challenge exercises.</p>
 
     <ol>
-      <li>Heat-sink a resistor to keep it intact for higher voltages in the
-	smoke-a-resistor exercise.</li>
+      <li>Create a automaton percussive instrument that performs changing rhythmic patterns</li>
 
-      <li>Create a sensor, i.e. a transducer converting a signal from one form
-	of energy to another.  Hint: the input or output could involve
-	mechanical, electrical, thermal, or optical energy.  Mechanical energy
-	includes pneumatics and sound.</li>
-
-      <li>Create an actuator, i.e., a transducer converting energy from one form
-	to another to create a change in the world.  Hint: consider all possible
-	forms of energy for both representing the control signal and performing
-	the action.  Hint: if you wrap wire around a rod of metal and pass
-	current through it you get a magnet.</li>
-
-      <li>Create a system with time-varying behavior.  Hint: the dynamics can
-	stem from either the electrical or mechanical domain.  E.g., clocks,
-	pendula, hourglasses, discharging capacitors, low-frequency oscillators,
-	etc.</li>
+      <li>Create a PureData based client-server system where a central server running PureData sends messages to numerous client computers running PureData, which in turn generate sound or actuate kinetic elements</li>
     </ol>
 
     <!-- --------------------------------------------------------------- -->
-    <h3>Examples</h3>
+  <h3>Examples</h3>
     <p>Inspiration for project ideas can be found on
     the <a href="http://physcomp.org/wow/">course website</a>.</p>
 
