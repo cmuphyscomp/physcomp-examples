@@ -40,12 +40,12 @@
 
     <p>Physical properties such as position and light intensity are
       intrinsically <em>analog</em> since they have continuity in time and
-      space.  In contrast, physical computational processes involve operations
-      on numbers representing measurements of the physical properties.  We
-      use <em>analog to digital converters</em> (ADCs) to make periodic
-      measurements of electrical signals to create digital representations.
-      These numerical digital signals are sampled in both time and value, since
-      ADCs have a finite precision and speed.</p>
+      space.  In contrast, computational processes involve operations on numbers
+      representing measurements of the physical properties.  We use <em>analog
+      to digital converters</em> (ADCs) to make periodic measurements of
+      electrical signals to create digital representations.  These numerical
+      digital signals are sampled in both time and value, since ADCs have a
+      finite precision and speed.</p>
 
     <p>The physical world is one of simultaneity: all atoms are constantly in
       motion, all physical processes are unfolding in parallel.  Computation as
@@ -53,6 +53,24 @@
       at a time (or in small batches).  Signal processing programs managing
       signals at different sample rates must simulate this simultaneity through
       program structure and time management.</p>
+
+    <p>Digital logic signals use voltages to represent discrete symbols, usually
+      just a binary one or zero.  More complex symbols, e.g. numbers, require
+      multiple bits, either encoded on a set of wires (a <em>parallel data
+      bus</em>) or over time on a single wire used as a <em>serial data
+      bus</em>.  Because every digital number is represented using a finite set
+      of bits it has finite precision and range.</p>
+
+    <p>Digital logic circuits are generally intended only to convey information
+      and are hence designed to handle only modest levels of current at
+      particular voltages.  Controlling enough energy to operate an actuator
+      almost always requires amplification via a driver circuit.</p>
+
+    <p>Systems which only manipulate outputs are said to be <em>open-loop</em>.
+      Systems which use <em>feedback</em> that measures the physical effect of
+      an output to govern the output are said to be <em>closed-loop</em>.  Hobby
+      servos are a simple example of a closed-loop position-controlled
+      servomotor.</p>
 
     <p>[this is still being fleshed out as the lab notes are written...]</p>
 
@@ -65,6 +83,7 @@
       <li><a href="http://en.wikipedia.org/wiki/Stepper_motor">Wikipedia: Stepper motor</a></li>
       <li><a href="http://en.wikipedia.org/wiki/Nyquist%E2%80%93Shannon_sampling_theorem">Wikipedia: Nyquist-Shannon sampling theorem</a></li>
       <li><a href="http://en.wikipedia.org/wiki/Event_loop">Wikipedia: Event loop</a></li>
+      <li><a href="http://en.wikipedia.org/wiki/PID_controller">Wikipedia: PID controller</a></li>
     </ol>
 
     <hr /><!-- --------------------------------------------------------------- -->
@@ -134,6 +153,10 @@
        some of the optional challenge exercises.</p>
 
     <ol>
+
+      <li>Try the <a href="http://arduino.cc/en/Tutorial/RCtime">Arduino RCtime
+	  tutorial</a> in which a photoresistor-capacitor circuit is used to
+	  form an ad-hoc ADC using a single digital pin.</li>
 
       <li>Create a regulatory system, i.e., a <em>controller</em>, which uses
 	information measured from the system, i.e. <em>feedback</em>, to maintain

@@ -14,7 +14,7 @@
 
     <h3>Exercise: Event-Loop Programming</h3>
  
-    <p>Objective: create several simultaneous signals mapped from an input.</p>
+    <p>Objective: create several simultaneous signals to explore program event scheduling.</p>
 
     <p>The world is intrinsically a parallel, simultaneous place, but computers
       are serial, sequential devices.  Even modern multi-core machines are still
@@ -29,11 +29,11 @@
       at the level of applications or threads, but on a tiny computer such as
       the Arduino we can do essentially the same at the level of individual I/O
       operations.  So rather than initiating an I/O operation and waiting for it
-      to finish, the time is noted for when to perform the next operation, and
-      the program shifts immediately to checking whether it is time for some
-      other action.  This sequential testing for readiness is
-      called <em>polling</em>, and this iteration is one form of an <em>event
-      loop</em> or event-driven programming.</p>
+      to finish, the time is recorded for when to next check the operation, and
+      the program continues checking whether some other action is ready.
+      This sequential testing for readiness is called <em>polling</em>, and this
+      iteration is one form of an <em>event loop</em> or event-driven
+      programming.</p>
 
     <p>This process also highlights that all digitized signals are sampled in
       time.  It is useful if those samples are also periodic at a fixed rate,
@@ -118,16 +118,6 @@
       previous time stamps, but care must be taken to handle initialization
       correctly, e.g., checking whether the current time is ver different from
       the time stamps.</p>
-
-    <p>As a challenge, try adding a smoothing filter to the potentiometer input.
-      This can be as simple as a basic first-order filter:</p>
-
-    <pre>
-      static float smoothed_value = 0.0;                  // filtered value of the input
-      int new_value      =  analogRead( analogPin );      // read the current input 
-      float difference   =  new_value - smoothed_value;   // compute the 'error'
-      smoothed_value     += 0.1 * difference;             // apply a constant gain to move the smoothed value toward the reading
-    </pre>
 
     <p>Experienced programmers will also recognize the possibility of creating a
       data object type representing a timed task, either as a C structure or a
