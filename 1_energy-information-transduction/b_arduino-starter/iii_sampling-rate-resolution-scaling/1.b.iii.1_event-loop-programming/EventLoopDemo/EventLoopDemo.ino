@@ -1,5 +1,11 @@
 // EventLoopDemo.ino : demonstrate generation of two simultaneous square waves at different rates
 
+// The example program generates audio-frequency square waves at different
+// pitches on pins 4 and 5 to demonstrate a simple event-loop control structure
+// allowing parallel execution of two timed tasks.  The exercise asks the
+// student to add an analog potentiometer input and use the input value to
+// modulate the pitch by varying the waveform timing.
+
 // Define the pin numbers on which the outputs are generated.
 const int outputPin1 = 4;
 const int outputPin2 = 5;

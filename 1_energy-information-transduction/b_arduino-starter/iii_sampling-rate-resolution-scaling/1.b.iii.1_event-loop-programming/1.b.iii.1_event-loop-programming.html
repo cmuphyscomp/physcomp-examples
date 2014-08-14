@@ -83,8 +83,15 @@
     <h4>Steps and observations</h4>
     <ol>
 
-      <li>Load and test the included EventLoopDemo sketch by observing the
-	outputs on an oscilloscope.</li>
+      <li>Load and run the included EventLoopDemo sketch.  The example program
+	generates audio-frequency square waves at different pitches on pins 4
+	and 5 to demonstrate a simple event-loop control structure allowing
+	parallel execution of two timed tasks.  In a later step you will
+	read an analog potentiometer input and use the input value to modulate
+	the pitch by varying the waveform timing.</li>
+
+      <li>Observe the initial outputs on an oscilloscope and measure the period
+	of the waveforms.</li>
 
       <li>Design and construct an Arduino circuit incorporating a potentiometer
 	for analog input and two audio speakers for digital output.  The
@@ -113,7 +120,7 @@
       the time stamps.</p>
 
     <p>As a challenge, try adding a smoothing filter to the potentiometer input.
-    This can be as simple as a basic first-order filter:</p>
+      This can be as simple as a basic first-order filter:</p>
 
     <pre>
       static float smoothed_value = 0.0;                  // filtered value of the input
@@ -121,6 +128,10 @@
       float difference   =  new_value - smoothed_value;   // compute the 'error'
       smoothed_value     += 0.1 * difference;             // apply a constant gain to move the smoothed value toward the reading
     </pre>
+
+    <p>Experienced programmers will also recognize the possibility of creating a
+      data object type representing a timed task, either as a C structure or a
+      C++ class.  This would reduce the repetition in the code.</p>
 
   </body>
 </html>
