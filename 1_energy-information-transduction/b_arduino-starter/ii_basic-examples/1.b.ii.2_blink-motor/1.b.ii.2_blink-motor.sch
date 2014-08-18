@@ -757,38 +757,46 @@ In this library the device names are the same as the pin names of the symbols, t
 <instance part="GND1" gate="1" x="53.34" y="-10.16" rot="R90"/>
 </instances>
 <busses>
-<bus name="B$2">
-<segment>
-<wire x1="93.98" y1="50.8" x2="93.98" y2="66.04" width="0.762" layer="92"/>
-<wire x1="93.98" y1="66.04" x2="38.1" y2="66.04" width="0.762" layer="92"/>
-<wire x1="38.1" y1="66.04" x2="38.1" y2="-7.62" width="0.762" layer="92"/>
-</segment>
-</bus>
-<bus name="B$3">
-<segment>
-<wire x1="91.44" y1="50.8" x2="91.44" y2="60.96" width="0.762" layer="92"/>
-<wire x1="91.44" y1="60.96" x2="60.96" y2="60.96" width="0.762" layer="92"/>
-<wire x1="60.96" y1="60.96" x2="60.96" y2="-20.32" width="0.762" layer="92"/>
-<wire x1="60.96" y1="-20.32" x2="43.18" y2="-20.32" width="0.762" layer="92"/>
-<wire x1="43.18" y1="-20.32" x2="43.18" y2="-10.16" width="0.762" layer="92"/>
-<wire x1="50.8" y1="-10.16" x2="43.18" y2="-10.16" width="0.762" layer="92"/>
-</segment>
-</bus>
-<bus name="B$4">
-<segment>
-<wire x1="43.18" y1="5.08" x2="40.64" y2="5.08" width="0.762" layer="92"/>
-<wire x1="40.64" y1="5.08" x2="40.64" y2="-2.54" width="0.762" layer="92"/>
-<wire x1="40.64" y1="-2.54" x2="43.18" y2="-2.54" width="0.762" layer="92"/>
-</segment>
-</bus>
-<bus name="B$5">
-<segment>
-<wire x1="55.88" y1="12.7" x2="55.88" y2="5.08" width="0.762" layer="92"/>
-<wire x1="55.88" y1="5.08" x2="53.34" y2="5.08" width="0.762" layer="92"/>
-</segment>
-</bus>
 </busses>
 <nets>
+<net name="N$1" class="0">
+<segment>
+<wire x1="53.34" y1="5.08" x2="55.88" y2="5.08" width="0.1524" layer="91"/>
+<wire x1="55.88" y1="5.08" x2="55.88" y2="15.24" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$2" class="0">
+<segment>
+<wire x1="43.18" y1="5.08" x2="40.64" y2="5.08" width="0.1524" layer="91"/>
+<wire x1="40.64" y1="5.08" x2="40.64" y2="-2.54" width="0.1524" layer="91"/>
+<pinref part="T1" gate="G$1" pin="C"/>
+<wire x1="40.64" y1="-2.54" x2="43.18" y2="-2.54" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$3" class="0">
+<segment>
+<pinref part="T1" gate="G$1" pin="B"/>
+<wire x1="38.1" y1="-7.62" x2="38.1" y2="60.96" width="0.1524" layer="91"/>
+<pinref part="PCB1" gate="G$1" pin="13"/>
+<wire x1="38.1" y1="60.96" x2="93.98" y2="60.96" width="0.1524" layer="91"/>
+<wire x1="93.98" y1="60.96" x2="93.98" y2="50.8" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="0V" class="0">
+<segment>
+<pinref part="GND1" gate="1" pin="0V"/>
+<pinref part="T1" gate="G$1" pin="E"/>
+<wire x1="50.8" y1="-10.16" x2="43.18" y2="-10.16" width="0.1524" layer="91"/>
+<wire x1="43.18" y1="-10.16" x2="43.18" y2="-12.7" width="0.1524" layer="91"/>
+<wire x1="43.18" y1="-12.7" x2="43.18" y2="-20.32" width="0.1524" layer="91"/>
+<junction x="43.18" y="-12.7"/>
+<wire x1="43.18" y1="-20.32" x2="60.96" y2="-20.32" width="0.1524" layer="91"/>
+<wire x1="60.96" y1="-20.32" x2="60.96" y2="55.88" width="0.1524" layer="91"/>
+<pinref part="PCB1" gate="G$1" pin="GND"/>
+<wire x1="60.96" y1="55.88" x2="91.44" y2="55.88" width="0.1524" layer="91"/>
+<wire x1="91.44" y1="55.88" x2="91.44" y2="50.8" width="0.1524" layer="91"/>
+</segment>
+</net>
 </nets>
 </sheet>
 </sheets>

@@ -677,12 +677,6 @@ In this library the device names are the same as the pin names of the symbols, t
 <text x="-2.54" y="3.175" size="1.778" layer="96">&gt;VALUE</text>
 <pin name="+12V" x="0" y="-2.54" visible="off" length="short" direction="sup" rot="R90"/>
 </symbol>
-<symbol name="-12V">
-<wire x1="-0.635" y1="-1.27" x2="0.635" y2="-1.27" width="0.1524" layer="94"/>
-<circle x="0" y="-1.27" radius="1.27" width="0.254" layer="94"/>
-<text x="-3.175" y="-4.699" size="1.778" layer="96">&gt;VALUE</text>
-<pin name="-12V" x="0" y="2.54" visible="off" length="short" direction="sup" rot="R270"/>
-</symbol>
 </symbols>
 <devicesets>
 <deviceset name="+12V" prefix="SUPPLY">
@@ -698,10 +692,30 @@ In this library the device names are the same as the pin names of the symbols, t
 </device>
 </devices>
 </deviceset>
-<deviceset name="-12V" prefix="SUPPLY">
+</devicesets>
+</library>
+<library name="supply1">
+<description>&lt;b&gt;Supply Symbols&lt;/b&gt;&lt;p&gt;
+ GND, VCC, 0V, +5V, -5V, etc.&lt;p&gt;
+ Please keep in mind, that these devices are necessary for the
+ automatic wiring of the supply signals.&lt;p&gt;
+ The pin name defined in the symbol is identical to the net which is to be wired automatically.&lt;p&gt;
+ In this library the device names are the same as the pin names of the symbols, therefore the correct signal names appear next to the supply symbols in the schematic.&lt;p&gt;
+ &lt;author&gt;Created by librarian@cadsoft.de&lt;/author&gt;</description>
+<packages>
+</packages>
+<symbols>
+<symbol name="0V">
+<wire x1="-1.905" y1="0" x2="1.905" y2="0" width="0.254" layer="94"/>
+<text x="-1.905" y="-2.54" size="1.778" layer="96">&gt;VALUE</text>
+<pin name="0V" x="0" y="2.54" visible="off" length="short" direction="sup" rot="R270"/>
+</symbol>
+</symbols>
+<devicesets>
+<deviceset name="0V" prefix="GND">
 <description>&lt;b&gt;SUPPLY SYMBOL&lt;/b&gt;</description>
 <gates>
-<gate name="G$1" symbol="-12V" x="0" y="0"/>
+<gate name="1" symbol="0V" x="0" y="0"/>
 </gates>
 <devices>
 <device name="">
@@ -726,7 +740,7 @@ In this library the device names are the same as the pin names of the symbols, t
 <part name="PCB1" library="E14_Arduino_published" deviceset="ARDUINO_UNO" device=""/>
 <part name="T1" library="transistor" deviceset="2N706" device=""/>
 <part name="SUPPLY1" library="supply2" deviceset="+12V" device=""/>
-<part name="SUPPLY2" library="supply2" deviceset="-12V" device=""/>
+<part name="GND1" library="supply1" deviceset="0V" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -740,7 +754,7 @@ In this library the device names are the same as the pin names of the symbols, t
 <instance part="PCB1" gate="G$1" x="106.68" y="30.48"/>
 <instance part="T1" gate="G$1" x="40.64" y="-7.62"/>
 <instance part="SUPPLY1" gate="+12V" x="55.88" y="15.24"/>
-<instance part="SUPPLY2" gate="G$1" x="48.26" y="-10.16" rot="R180"/>
+<instance part="GND1" gate="1" x="53.34" y="-10.16" rot="R90"/>
 </instances>
 <busses>
 <bus name="B$2">
@@ -750,11 +764,6 @@ In this library the device names are the same as the pin names of the symbols, t
 <wire x1="38.1" y1="66.04" x2="38.1" y2="-7.62" width="0.762" layer="92"/>
 </segment>
 </bus>
-<bus name="B$1">
-<segment>
-<wire x1="48.26" y1="-12.7" x2="43.18" y2="-12.7" width="0.762" layer="92"/>
-</segment>
-</bus>
 <bus name="B$3">
 <segment>
 <wire x1="91.44" y1="50.8" x2="91.44" y2="60.96" width="0.762" layer="92"/>
@@ -762,6 +771,7 @@ In this library the device names are the same as the pin names of the symbols, t
 <wire x1="60.96" y1="60.96" x2="60.96" y2="-20.32" width="0.762" layer="92"/>
 <wire x1="60.96" y1="-20.32" x2="43.18" y2="-20.32" width="0.762" layer="92"/>
 <wire x1="43.18" y1="-20.32" x2="43.18" y2="-10.16" width="0.762" layer="92"/>
+<wire x1="50.8" y1="-10.16" x2="43.18" y2="-10.16" width="0.762" layer="92"/>
 </segment>
 </bus>
 <bus name="B$4">
