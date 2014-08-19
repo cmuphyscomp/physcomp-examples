@@ -57,7 +57,7 @@
        x="12.0826"
        y="12.9469"
        id="text12"
-       style="font-size:1.23471999px;text-anchor:end;fill:#8c8c8c;stroke:none;font-family:Droid Sans">VOUT</text>
+       style="font-size:3.23471999px;text-anchor:end;fill:#8c8c8c;stroke:none;font-family:Droid Sans">VOUT</text>
     <rect
        width="0.246944"
        height="0.246944"
@@ -100,7 +100,7 @@
                        x="0"
                        y="0"
                        id="text32"
-                       style="font-size:1.23471999px;text-anchor:start;fill:#8c8c8c;stroke:none;font-family:Droid Sans">GND</text>
+                       style="font-size:3.23471999px;text-anchor:start;fill:#8c8c8c;stroke:none;font-family:Droid Sans">GND</text>
                   </g>
                 </g>
               </g>
@@ -151,7 +151,7 @@
                        x="0"
                        y="0"
                        id="text52"
-                       style="font-size:1.23471999px;text-anchor:end;fill:#8c8c8c;stroke:none;font-family:Droid Sans">VIN</text>
+                       style="font-size:3.23471999px;text-anchor:end;fill:#8c8c8c;stroke:none;font-family:Droid Sans">VIN</text>
                   </g>
                 </g>
               </g>
@@ -171,31 +171,31 @@
        x="5.3798609"
        y="10.436384"
        id="label"
-       style="font-size:1.49931002px;text-anchor:middle;fill:#000000;stroke:none;font-family:Droid Sans">Pololu</text>
+       style="font-size:3.49931002px;text-anchor:middle;fill:#000000;stroke:none;font-family:Droid Sans">Pololu</text>
     <text
        x="5.3798609"
        y="12.035645"
        id="text56"
-       style="font-size:1.49931002px;text-anchor:middle;fill:#000000;stroke:none;font-family:Droid Sans">5V</text>
+       style="font-size:3.49931002px;text-anchor:middle;fill:#000000;stroke:none;font-family:Droid Sans">5V</text>
     <text
        x="5.3798609"
        y="13.635044"
        id="text58"
-       style="font-size:1.49931002px;text-anchor:middle;fill:#000000;stroke:none;font-family:Droid Sans">Step-Up</text>
+       style="font-size:3.49931002px;text-anchor:middle;fill:#000000;stroke:none;font-family:Droid Sans">Step-Up</text>
     <text
        x="5.3798609"
        y="15.234344"
        id="text60"
-       style="font-size:1.49931002px;text-anchor:middle;fill:#000000;stroke:none;font-family:Droid Sans">Voltage</text>
+       style="font-size:3.49931002px;text-anchor:middle;fill:#000000;stroke:none;font-family:Droid Sans">Voltage</text>
     <text
        x="5.3798609"
        y="16.833643"
        id="text62"
-       style="font-size:1.49931002px;text-anchor:middle;fill:#000000;stroke:none;font-family:Droid Sans">Regulator</text>
+       style="font-size:3.49931002px;text-anchor:middle;fill:#000000;stroke:none;font-family:Droid Sans">Regulator</text>
     <text
        x="6.50875"
        y="17.8685"
        id="text64"
-       style="font-size:1.49931002px;text-anchor:middle;fill:#000000;stroke:none;font-family:Droid Sans" />
+       style="font-size:3.49931002px;text-anchor:middle;fill:#000000;stroke:none;font-family:Droid Sans" />
   </g>
 </svg>
