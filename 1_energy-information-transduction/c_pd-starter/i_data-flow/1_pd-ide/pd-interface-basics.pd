@@ -1,0 +1,11 @@
+#N canvas 722 22 718 856 10;
+#X obj 66 277 osc~ 200;
+#X text 63 66 HOW TO FIND HELP ---------------- Open the help browser
+(CMD + B) to access Pd manuals \, and help files pertaining to specific
+Pd objects. To access the help file for an object on your canvas \,
+right click it and select 'help'. Try it with this [osc~] object:;
+#X text 65 330 HOW TO SET SEARCH PATHS ----------------------- At some
+point \, you may want to use objects that aren't already included with
+Pd \; these are called externals. To use externals \, Pd needs to know
+where to look for them. You can modify your search paths by opening
+Preferences (CMD + \, ).;
