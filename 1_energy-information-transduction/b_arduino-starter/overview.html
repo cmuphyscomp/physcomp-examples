@@ -3,14 +3,11 @@
   <head>
     <meta charset="utf-8" />
     <title>Arduino Starter: Overview</title>
-    <style type="text/css">
-      body { margin: 36pt; max-width: 50em; }
-    </style>
+    <style type="text/css">span.eqn { white-space: nowrap; }</style>
     <meta name="description" content="Arduino starter overview">
     <meta name="author" content="garthz">
   </head>
   <body>
-    <h2>Arduino Starter: Overview</h2>
 
     <p>This section is about establishing core concepts of computation as
       related to physical interface.  This connects the behavior of the physical
@@ -26,10 +23,10 @@
     <h3>Takeaway Lessons</h3>
 
     <p>An Arduino is a small low-power computer with many conventional elements:
-      read/write RAM memory, read-only ROM memory, a CPU which executes logical
-      and mathematical instructions, and input/output peripheral circuitry.
-      This class of computers are called <em>microcontrollers</em> reflecting
-      their use as microprocessors controlling hardware.</p>
+      read/write memory (RAM), read-only memory (ROM), a CPU which executes
+      logical and mathematical instructions, and input/output peripheral
+      circuitry.  This class of computers are called <em>microcontrollers</em>
+      reflecting their use as microprocessors controlling hardware.</p>
 
     <p>Microcontrollers are appropriate for physical computing tasks with low
       computational requirements.  They have low power consumption and
@@ -58,21 +55,19 @@
       just a binary one or zero.  More complex symbols, e.g. numbers, require
       multiple bits, either encoded on a set of wires (a <em>parallel data
       bus</em>) or over time on a single wire used as a <em>serial data
-      bus</em>.  Because every digital number is represented using a finite set
-      of bits it has finite precision and range.</p>
+      bus</em>.  Every digital number is represented using a finite set of bits
+      and thus has finite precision and range.</p>
 
     <p>Digital logic circuits are generally intended only to convey information
-      and are hence designed to handle only modest levels of current at
-      particular voltages.  Controlling enough energy to operate an actuator
-      almost always requires amplification via a driver circuit.</p>
+      and are hence designed to output only small currents at logic-level
+      voltages.  Controlling enough energy to operate an actuator almost always
+      requires amplification via a driver circuit.</p>
 
     <p>Systems which only manipulate outputs are said to be <em>open-loop</em>.
-      Systems which use <em>feedback</em> that measures the physical effect of
+      Systems using <em>feedback</em> that measures the physical effect of
       an output to govern the output are said to be <em>closed-loop</em>.  Hobby
       servos are a simple example of a closed-loop position-controlled
       servomotor.</p>
-
-    <p>[this is still being fleshed out as the lab notes are written...]</p>
 
     <h3>Reference Links</h3>
     <ol>
