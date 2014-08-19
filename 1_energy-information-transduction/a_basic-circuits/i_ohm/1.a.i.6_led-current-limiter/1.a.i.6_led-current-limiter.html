@@ -2,18 +2,16 @@
 <html lang="en-US">
   <head>
     <meta charset="utf-8" />
-    <title>Unit 1A: Basic Circuits</title>
-    <style type="text/css">
-      body { margin: 36pt; max-width: 50em; }
-    </style>
-    <meta name="description" content="Unit 1A Notes">
+    <title>Exercise: LED with current limiter</title>
+    <style type="text/css">span.eqn { white-space: nowrap; }</style>
+    <meta name="description" content="exercise notes">
     <meta name="author" content="garthz">
   </head>
   <body>
 
-    <h3>Exercise: LED with current limiter</h3>
+    <h4>Objective</h4>
 
-    <p>Objective: safely limit LED current</p>
+    <p>Light an LED using a safely limited current.</p>
 
     <p>An LED is a <em>Light Emitting Diode</em>, a type of semiconductor
       component which emits light directly from a current. The light results
@@ -45,17 +43,19 @@
       simple current regulator.</p>
 
     <p>A typical red LED has a forward voltage of 1.6V and a full-on operating
-      current of 20mA.The calculation for choosing the right ballast resistor
+      current of 20&nbsp;mA.The calculation for choosing the right ballast resistor
       follows this reasoning:</p>
 
       <ol>
-	<li>the current flow through the resistor and LED should be 20mA for full brightness</li>
+	<li>the current flow through the resistor and LED should be 20&nbsp;mA for full brightness</li>
 	<li>the voltage drop across the resistor should bring the LED applied voltage to approximately the forward voltage</li>
 	<li>assuming a 5V supply voltage, a 3.4V drop across resistor brings the LED voltage to 1.6V</li>
-	<li>for the resistor, R=V/i, so R can be approximately 170 ohms (i.e. 3.4V / 0.020A).</li>
+	<li>for the resistor, <span class="eqn">R = V / i</eqn>, so R can be
+	approximately 170&nbsp;ohms (i.e. <span class="eqn">3.4V /
+	0.020A</span>).</li>
       </ol>
 
-    <h4>Steps and observations.</h4>
+    <h4>Steps and observations</h4>
     <ol>
 
       <li>Before applying power, measure the variable resistor and adjust it to the upper end of its resistance range.</l>

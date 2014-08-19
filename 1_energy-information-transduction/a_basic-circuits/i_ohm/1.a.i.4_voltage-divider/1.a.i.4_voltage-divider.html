@@ -2,17 +2,15 @@
 <html lang="en-US">
   <head>
     <meta charset="utf-8" />
-    <title>Unit 1A: Basic Circuits</title>
-    <style type="text/css">
-      body { margin: 36pt; max-width: 50em; }
-    </style>
-    <meta name="description" content="Unit 1A Notes">
+    <title>Exercise: Voltage Divider</title>
+    <style type="text/css">span.eqn { white-space: nowrap; }</style>
+    <meta name="description" content="exercise notes">
     <meta name="author" content="garthz">
   </head>
   <body>
-    <h3>Exercise: Voltage Divider</h3>
+    <h4>Objective</h4>
 
-    <p>Objective: measure voltages and compute current flow in a resistive voltage divider.</p>
+    <p>Measure voltages and compute current flow in a resistive voltage divider.</p>
 
     <p>Many sensor circuits we use will be built around an arrangement of series
       resistances called a <em>voltage divider</em>.  This is a fundamental
@@ -21,32 +19,33 @@
     <p>Two resistors in series form a single current pathway, so a voltage
       applied across the pair will cause the same current to flow through each
       of them.  However, the voltage drop across each resistor resulting from
-      that current is proportional to the resistance (V=i*R), so the voltage at
-      the intermediate node depends on the relative resistances.  In the
-      simplest case, if both resistances are the same, the voltage in the middle
-      will be the average of the voltage at each end.</p>
+      that current is proportional to the resistance <span class="eqn">(V = i *
+      R)</span>, so the voltage at the intermediate node depends on the relative
+      resistances.  In the simplest case, if both resistances are the same, the
+      voltage in the middle will be the average of the voltage at each end.</p>
 
     <p>We will use the voltage divider structure to allow a variable resistance
       (e.g. sensor or switch) to control the voltage at the intermediate point.
       This is useful for us because the analog-to-digital converter on the
       Arduino senses applied voltage.</p>
 
-    <h4>Steps and observations.</h4>
+    <h4>Steps and observations</h4>
     <ol>
       <li>Measure the exact resistance of each resistor.</li>
 
       <li>Carefully measure the voltage Vin applied across the series pair of
       resistors.</li>
 
-      <li>Compute the expected voltage V1 across the grounded resistor: V1 =
-	Vin*(R1/(R1+R2)), where R2 is the 'upper' resistor connected to the
-	positive supply and R1 is the 'lower' resistor connected to ground.</li>
+      <li>Compute the expected voltage V1 across the grounded
+	resistor: <span class="eqn">V1 = Vin * (R1 / (R1+R2))</span>, where R2
+	is the 'upper' resistor connected to the positive supply and R1 is the
+	'lower' resistor connected to ground.</li>
 
       <li>Vary the input voltage and repeat; you should be able to convince
 	yourself that the intermediate voltage scales proportionately.</li>
 
       <li>Open the circuit and measure the actual current through the divider.
-	Compare against the predicted value i=Vin/(R1+R2).</li>
+	Compare against the predicted value <span class="eqn">i = Vin / (R1+R2)</span>.</li>
     </ol>
 
     <h4>Comments</h4>

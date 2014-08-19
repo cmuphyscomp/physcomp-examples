@@ -2,18 +2,16 @@
 <html lang="en-US">
   <head>
     <meta charset="utf-8" />
-    <title>Unit 1A: Basic Circuits</title>
-    <style type="text/css">
-      body { margin: 36pt; max-width: 50em; }
-    </style>
-    <meta name="description" content="Unit 1A Notes">
+    <title>Exercise: Photocell with bias resistor</title>
+    <style type="text/css">span.eqn { white-space: nowrap; }</style>
+    <meta name="description" content="exercise notes">
     <meta name="author" content="garthz">
   </head>
   <body>
 
-    <h3>Exercise: Photocell with bias resistor</h3>
+    <h4>Objective</h4>
 
-    <p>Objective: convert light into a varying voltage.</p>
+    <p>Measure changing light level as a varying voltage.</p>
 
     <p>A <em>CdS photocell</em>
       (i.e. <a href="http://en.wikipedia.org/wiki/Cds_cell">Cadmium-Sulfide
@@ -21,20 +19,30 @@
       changes in response to illumination.  They are relatively slow, with a time constant of hundreds of milliseconds, but useful
       for measuring ambient light and shadow.  The resistance decreases in bright light.</p>
 
-    <p>A voltage divider circuit can be used for forming a voltage which depends on the light level.</p>
+    <p>A voltage divider circuit can be used for forming a voltage which depends
+      on the light level.  The value of the fixed resistor depends upon the
+      desired sensitivity range; a good starting point is 10K ohms.</p>
 
-    <h4>Steps and observations.</h4>
+    <h4>Steps and observations</h4>
     <ol>
 
       <li>Measure the resistance of the photocell over different illumination conditions.</li>
       <li>Measure the photocell voltage in the given circuit over different illumination conditions.</li>
       <li>Using the oscilloscope to observe the photocell voltage, try creating
 	rapidly changing shadows to estimate the response speed.</li>
+      <li>Construct a simple setup to indirectly measure a physical property
+	using a photocell.  This can be as simple as using paper to occlude the
+	light sensor as a function of mechanical position. (Keep this simple,
+	this should only take a minute or two.)</li>
     </ol>
 
     <h4>Comments</h4>
 
-    <p>Rapid light changes and optically encoded data are better measured with phototransistors and photodiodes.</p>
+    <p>Rapid light changes and optically encoded data are better measured with
+      phototransistors and photodiodes.  But even slow and cheap light sensors
+      can be adapted to measure many other properties indirectly,
+      e.g. chemicals, dust, mechanical position, acceleration, proximity,
+      etc.</p>
 
   </body>
 </html>
