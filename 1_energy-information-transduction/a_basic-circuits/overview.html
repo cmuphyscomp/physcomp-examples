@@ -3,16 +3,12 @@
   <head>
     <meta charset="utf-8" />
     <title>Basic Circuits: Overview</title>
-    <style type="text/css">
-      body { margin: 36pt; max-width: 50em; }
-    </style>
+    <style type="text/css">span.eqn { white-space: nowrap; }</style>
     <meta name="description" content="basic circuits overview">
     <meta name="author" content="garthz">
   </head>
   <body>
-    <h2>Basic Circuits: Overview</h2>
-
-    <p>This first unit is about establishing core electrical concepts and
+    <p>This first section is about establishing core electrical concepts and
        standard vocabulary for talking about electronics.  Everybody in the
        class is starting from a different level of experience (perhaps none) but
        needs to develop a common language for working together.</p>
@@ -37,10 +33,10 @@
        measure of potential energy, and exists whether or not a current is
        flowing between those two points.</p>
 
-    <p>Electric current is measured in amperes (Amps).  Current is the volume of
+    <p>Electric current is measured in amperes (amps).  Current is the volume of
        electron flow past a point.</p>
 
-    <p>Electrical currents can be vary with time.  The simplest case is the AC
+    <p>Electrical currents can vary with time.  The simplest case is the AC
        (alternating current) wall power in which the voltage is formed as a 60
        Hz sine wave (in the US) for transmission efficiency.  In contrast, our
        lab power supplies and batteries will output DC (direct current) which
@@ -53,14 +49,27 @@
        circuits for processing information (e.g. from sensors) versus actuating
        mechanical systems (e.g. motors, speakers).</p>
 
-    <p>Resistance is measured in ohms.  Resistance is a property of matter and
-       is measured along a pathway through a conductor.  </p>
+    <p>An electric potential across a <em>resistance</em> causes a current to
+      flow through it. Resistance is measured in ohms and is measured along a
+      pathway through a conductor.</p>
 
-    <p>An electric potential across a resistance causes a current to flow
-       through it.</p>
+    <p>Virtually all materials have a finite <em>resistivity</em>, which is a
+      property of the material.  The resistance of a path through a material is
+      a function of the resistivity and the length and cross-section of the
+      conductive path.  Longer and thinner wires have more resistance, shorter
+      and thicker wires have less resistance.  Copper has lower resistivity than
+      aluminum or steel; silver is better yet.</p>
 
     <p>A current flowing through a resistance converts electrical energy to
-       heat. This is commonly termed dissipation.</p>
+       heat. This is commonly termed <em>dissipation</em>.</p>
+
+    <p>An insulator is a material with very high resistance, i.e., a typical
+       voltage will cause negligible current flow through it.</p>
+
+    <p>The relationship between current, voltage, and resistance in an
+       electrical path is described by Ohm's Law: <span class="eqn">V = i *
+       R</span>.  Ohm's Law can be trivially rewritten as <span class="eqn">i =
+       V / R</span> and <span class="eqn">R = V / i</span>.</p>
 
     <p>Electricity flow is loosely analogous to water flow: current is analogous
        to the volume of flow of water through a pipe, voltage is analogous to
@@ -69,22 +78,29 @@
        terms of electrical properties rather than relying on this
        comparison.</p>
 
-    <p>An insulator is a material with very high resistance, i.e., a typical
-       voltage will cause negligible current flow through it.</p>
-
-    <p>The relationship between current, voltage, and resistance in an
-       electrical path is described by Ohm's Law: V=i*R. This is
-       an empirical relationship which holds true for most common conductors.
-       Ohm's Law can be trivially rewritten as i=V/R and R=V/i.</p>
-
     <p>A resistor is a type of electronic component engineered for a precise and
-       constant resistance property with a guaranteed minimum capability for
-       dissipating energy.  In general, physically larger resistors have more
-       dissipation capacity.  Resistors come in a variety of physical shapes and
-       means of electrical connection.  No resistor is precisely the specified
-       value; resistors are specified with a tolerance range.  Highly precise
-       resistors generally cost more.  In practice, resistors have no dynamic
-       behavior.</p>
+       constant resistance property.  Resistors are designed with a guaranteed
+       minimum capability for dissipating energy.  In general, physically larger
+       resistors have more dissipation capacity.  Resistors come in a variety of
+       physical shapes and means of electrical connection.  No resistor is
+       precisely the specified value; resistors are specified with a tolerance
+       range.  Highly precise resistors generally cost more.  In practice,
+       resistors have no dynamic behavior.</p>
+
+    <p>Resistors have a constant value for any voltage and current within their
+      rating.  Ohm's Law for a resistor means that current and voltage follow a
+      simple linear relationship given a constant R.</p>
+
+    <p>Wires can be viewed as resistors with low resistance values.  Ideally the
+      resistance is low enough not to affect circuit operation, but in circuits
+      delivering energy the wire resistance needs to be considered.</p>
+
+    <p>A <em>short-circuit</em> (or "short") is an unintended low-resistance
+       connection between two points, e.g.  bare wires touching accidentally, a
+       stray drop of solder bridging two pins, or a DMM probe touching two
+       circuit board traces. The effects of a short can range from nothing to
+       smoke and destruction, depending on the location and available
+       energy.</p>
 
     <p>In practice, resistors are used to relate current and voltage within a
        circuit rather than to generate heat.  Heat is normally an undesirable
@@ -94,12 +110,27 @@
        inductors, diodes, transistors, LEDs, lamps, integrated circuits, motors,
        solenoids, and thousands more.</p>
 
+    <p>Unlike resistors, most components do not have a simple constant
+      resistance.</p>
+
     <p>The DMM (digital multi-meter) measures fundamental properties of an
        electrical signal: voltage and current.  It also measures electrical
        properties of materials (either components or conductors): resistance,
        capacitance, and inductance.  The DMM is most useful for measuring
        relatively constant properties, as the numeric display doesn't show rapid
        variation well.</p>
+
+    <p>Measuring voltage with a DMM requires attaching it between two points,
+      since voltage is a relative measure.</p>
+
+    <p>Measuring current with a DMM requires routing a signal <em>through</em>
+      the meter, since current is a measurement of flow.  This frequently
+      requires modifying the circuit by <em>opening</em> a connection and
+      replacing it with the path through the meter.  The meter itself has a
+      different physical connection point for measuring current that offers a
+      low-resistance path: for this reason it is very important not to use the
+      current input unless actually measuring current, otherwise you will short
+      out a circuit and potentially damage the meter.</p>
 
     <p>The oscilloscope draws a dynamic graph of the voltage of an electrical
        signal.  It is most useful for visualizing time-varying signals.  The
@@ -134,12 +165,6 @@
        physical layout.  For this course this will come into play with DC motor
        circuits.</p>
 
-    <p>A short-circuit (or "short") is an unintended low-resistance connection
-       between two points, e.g.  bare wires touching accidentally, a stray drop
-       of solder bridging two pins, or a DMM probe touching two circuit board
-       traces. The effects of a short can range from nothing to smoke and
-       destruction, depending on the location and available energy.</p>
-
     <p>Electrical engineering has been wildly successful at providing means for
        converting energy and information to and from electrical form and
        providing tools for manipulating electrical energy and information.
@@ -163,17 +188,19 @@
     <p>Digital signals are discretized signals in which specific values of
       voltage or current are defined to represent specific symbols.  In the most
       common case, only two symbols are represented, labeled zero and one.  This
-      encodes a single binary digit, or bit, as the current or voltage on a
-      wire.  The specific values of voltage or current depend on the specific
-      components.  The Arduino follows the 5V CMOS convention, so voltages below
-      1.5V are considered zero or LOW and voltages above 3.7V are considered one
-      or HIGH.  Voltages in-between are potentially ambiguous but will be
-      arbitrated into a distinct value when passing through a digital input.
-      Please note that other microcontrollers such as the Arduino Due operate at
-      3.3V and circuits in laptops and cell phones at even lower voltages, so
-      these thresholds will be different.  Connecting between different logic
-      families can require level-translation circuitry if the values are not
-      compatible.</p>
+      encodes a single binary digit, or <em>bit</em>, as the current or voltage
+      on a wire.</p>
+
+    <p>The specific values of voltage or current representing a digital symbol
+      depend on the specific components.  The Arduino follows the 5V CMOS
+      convention, so voltages below 1.5V are considered zero or LOW and voltages
+      above 3.7V are considered one or HIGH.  Voltages in-between are
+      potentially ambiguous but will be arbitrated into a distinct value when
+      passing through a digital input.  Please note that other microcontrollers
+      such as the Arduino Due operate at 3.3V and circuits in laptops and cell
+      phones at even lower voltages, so these thresholds will be different.
+      Connecting between different logic families can require level-translation
+      circuitry if the values are not compatible.</p>
 
     <p><em>Schematics</em> are circuit diagrams showing the logical connection
       of electronic components. A schematic does not define the physical layout
@@ -216,7 +243,7 @@
       essential for developing the vocabulary and skills to fulfill the graded
       assignments.</p>
 
-    <p>The lab exercises are divided into two parts, <em>Ohm</em> and
+    <p>The lab exercises are divided into two parts, <em>Ohm's Law</em> and
       <em>Schematics and Breadboards</em>, each containing a number of
       exercises.  The lab exercises are detailed on the course website
       under <a href="http://physcomp.org/assignments/">assignments</a> and as a
