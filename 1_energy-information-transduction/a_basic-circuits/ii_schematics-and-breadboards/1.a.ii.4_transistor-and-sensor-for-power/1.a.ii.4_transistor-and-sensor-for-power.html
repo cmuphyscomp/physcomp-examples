@@ -2,25 +2,22 @@
 <html lang="en-US">
   <head>
     <meta charset="utf-8" />
-    <title>Unit 1A: Basic Circuits</title>
-    <style type="text/css">
-      body { margin: 36pt; max-width: 50em; }
-      span.eqn { white-space: nowrap; }
-    </style>
-    <meta name="description" content="Unit 1A Notes">
+    <title>Exercise: Linear One-In One-Out</title>
+    <style type="text/css">span.eqn { white-space: nowrap; }</style>
+    <meta name="description" content="exercise notes">
     <meta name="author" content="garthz">
   </head>
   <body>
 
-    <h3>Exercise: Linear One-In One-Out</h3>
+    <h4>Objective</h4>
 
-    <p>Objective: connect light to motion via electricity.</p>
+    <p>Connect light to motion via electricity.</p>
 
     <p>This exercise uses a single-input single-output system which couples a
       light level to a motor activation.  A photoresistor modulates the base
       current of a bipolar transistor, controlling the current flowing through
       the collector and emitter to operate a motor.  This represents one
-      particular minimal solution to the first graded assignment.</p>
+      possible minimal solution to the first graded assignment.</p>
 
     <p>This is an analog circuit inasmuch as the photoresistor current can be
       set to keep the transistor operating in a linear range, continuously
@@ -28,7 +25,7 @@
       transistor will either saturate or shutoff and act as a digital device in
       that it will simply be ON or OFF.</p>
 
-    <h4>Steps and observations.</h4>
+    <h4>Steps and observations</h4>
     <ol>
       <li>Wire up the circuit, trying to use only the schematic.</li>
       <li>Modulate the incident light, observing the motor, trying to find the
@@ -38,13 +35,13 @@
 
     <h4>Comments</h4>
 
-    <p>In practice, transistor circuits have additional <em>bias resistors</em>
-      to supply positive or negative currents to keep the transistor operating
-      in the desired region. This is a deep topic which leads into the art of
-      analog circuit design.  For an idea of this, look up &ldquo;audio
-      circuits&rdquo; on Google Images
-      and <a href="https://www.google.com/search?q=audio+circuits&tbm=isch">see what
-      comes out</a>.</p>
+    <p>In practice, transistor circuits usually have additional <em>bias
+      resistors</em> to supply positive or negative currents to keep the
+      transistor operating in the desired region. This is a deep topic which
+      leads into the art of analog circuit design.  For an idea of this, look up
+      &ldquo;audio circuits&rdquo; on Google Images
+      and <a href="https://www.google.com/search?q=audio+circuits&tbm=isch">see
+      what comes out</a>.</p>
 
     <p>This circuit is a very simple example of
       a <a href="http://en.wikipedia.org/wiki/Amplifier#Class_A">class-A

@@ -2,19 +2,16 @@
 <html lang="en-US">
   <head>
     <meta charset="utf-8" />
-    <title>Unit 1A: Basic Circuits</title>
-    <style type="text/css">
-      body { margin: 36pt; max-width: 50em; }
-      span.eqn { white-space: nowrap; }
-    </style>
-    <meta name="description" content="Unit 1A Notes">
+    <title>Exercise: Relay Driver</title>
+    <style type="text/css">span.eqn { white-space: nowrap; }</style>
+    <meta name="description" content="exercise notes">
     <meta name="author" content="garthz">
   </head>
   <body>
 
-    <h3>Exercise: Relay Driver</h3>
+    <h4>Objective</h4>
 
-    <p>Objective: connect two circuits using a relay.</p>
+    <p>Connect two circuits using a relay.</p>
 
     <p>A <a href="http://en.wikipedia.org/wiki/Relay">relay</a> is a mechanical
       switch controlled by an electrical signal.  A current through the control
@@ -32,7 +29,7 @@
       input circuit to affect the output circuit without sharing any
       current.</p>
 
-    <h4>Steps and observations.</h4>
+    <h4>Steps and observations</h4>
     <ol>
       <li>Try wiring the circuit only from the schematic rather than the
 	breadboard diagram; now is the time to become used to reading schematics
@@ -49,12 +46,23 @@
     <h4>Comments</h4>
 
     <p>Relays are relatively slow but very robust.  The contacts are just switch
-    contacts, so they have no polarity, and many relays are suitable for safely
-    switching AC line circuits.  There are other variants on relays such
-    as <em>latching relays</em> in which one coil is pulsed to change state and
-    another pulsed to change it back.  There are relays with many sets of
-    contacts for controlling multiple output circuits from a single control
-    coil.</p>
+      contacts, so they have no polarity, and many relays are suitable for
+      safely switching AC line circuits.  There are other variants on relays
+      such as <em>latching relays</em> in which one coil is pulsed to change
+      state and another pulsed to change it back.  There are relays with many
+      sets of contacts for controlling multiple output circuits from a single
+      control coil.</p>
+
+    <p>Relays are the original form of logic component; it is possible to build
+      a <a href="http://en.wikipedia.org/wiki/Harvard_Mark_I">programmable
+      computer using nothing but relays</a>.  The early automatic telephone
+      switches made extensive use
+      of <a href="http://en.wikipedia.org/wiki/Stepping_switch">elaborate
+      electromechanical switches</a>.</p>
+
+    <p>Small challenge: set up a relay circuit in which the coil current passes
+      through the NC contact in series with the coil.  What do you expect will
+      happen?</p>
 
   </body>
 </html>
