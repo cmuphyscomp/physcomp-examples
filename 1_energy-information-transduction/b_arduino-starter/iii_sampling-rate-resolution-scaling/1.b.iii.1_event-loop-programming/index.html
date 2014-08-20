@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <title>Unit 1B: Arduino Starter</title>
+    <style type="text/css">body { margin: 36pt; max-width: 50em; } span.eqn { white-space: nowrap; }</style>
+  </head>
+  <body>
+    <h2>Unit 1B: Arduino Starter</h2>
+<h3>Exercise: Event-Loop Programming</h3>
+ 
+    <p>Objective: create several simultaneous signals to explore program event scheduling.</p>
+
+    <p>The world is intrinsically a parallel, simultaneous place, but computers
+      are serial, sequential devices.  Even modern multi-core machines are still
+      constructed around many small execution units rapidly performing many tiny
+      computations in sequence.  So bridging the gap between information in the
+      physical world and as represented in a computation ultimately requires
+      creating the illusion of simultaneity through careful attention to time
+      within a program.</p>
+
+    <p>The essence of multiprocessing is rapidly alternating between multiple
+      tasks through some form of time-slicing.  Operating systems perform this
+      at the level of applications or threads, but on a tiny computer such as
+      the Arduino we can do essentially the same at the level of individual I/O
+      operations.  So rather than initiating an I/O operation and waiting for it
+      to finish, the time is recorded for when to next check the operation, and
+      the program continues checking whether some other action is ready.
+      This sequential testing for readiness is called <em>polling</em>, and this
+      iteration is one form of an <em>event loop</em> or event-driven
+      programming.</p>
+
+    <p>This process also highlights that all digitized signals are sampled in
+      time.  It is useful if those samples are also periodic at a fixed rate,
+      since that is what allows predictable filtering such as smoothing and
+      boundary detection.</p>
+
+    <p>The simplest form of polling is a synchronous system in which all
+      computations run within a single fixed time cycle.  However, in this
+      example the input and output can run at very different rates, since each
+      output must change at a different audio rate and the input changes at a
+      much slower human control rate.  So this example uses a form of
+      asynchronous polling.
+
+    </p><p>The basic structure of our event loop will be built around a set of
+      timers which are polled as fast as possible.  Each timer is simply a
+      timestamp with associated interval:</p>
+
+    <pre>
+      long next_output_time_1 = 0;        // timestamp in microseconds for when next to update output 1
+      long next_output_time_2 = 0;        // timestamp in microseconds for when next to update output 2
+
+      long output_interval_1 = 500;       // interval in microseconds between output 1 updates
+      long output_interval_2 = 700;       // interval in microseconds between output 2 updates
+
+      int output_state_1 = LOW;           // current state of output 1
+      int output_state_2 = LOW;           // current state of output 2
+
+      void loop() {
+        long now = micros();   // read the current time in microseconds
+
+        if (now &gt; next_output_time_1) {     // if the time has expired
+          next_output_time_1 = now + output_interval_1;    // reset the timer for the next polling point
+          // update output 1, e.g. toggle it
+          if (output_state_1 == LOW) output_state_1 = HIGH; else output_state_1 = LOW;
+          digitalWrite( outputPin1, output_state_1 );
+        }      
+
+        if (now &gt; next_output_time_2) {     // if the time has expired
+          next_output_time_2 = now + output_interval_2;    // reset the timer for the next polling point
+          // update output 2, e.g. toggle it
+          if (output_state_2 == LOW) output_state_2 = HIGH; else output_state_2 = LOW;
+          digitalWrite( outputPin2, output_state_2 );
+        }      
+      }
+    </pre>
+
+    <h4>Steps and observations</h4>
+    <ol>
+
+      <li>Load and run the included EventLoopDemo sketch.  The example program
+	generates audio-frequency square waves at different pitches on pins 4
+	and 5 to demonstrate a simple event-loop control structure allowing
+	parallel execution of two timed tasks.  In a later step you will
+	read an analog potentiometer input and use the input value to modulate
+	the pitch by varying the waveform timing.</li>
+
+      <li>Observe the initial outputs on an oscilloscope and measure the period
+	of the waveforms.</li>
+
+      <li>Design and construct an Arduino circuit incorporating a potentiometer
+	for analog input and two audio speakers for digital output.  The
+	speakers can be driven by digital outputs using a ULN2803, attached the
+	output pins defined in the sample sketch.  The speaker drive circuit can
+	use the same structure as the previous ULN2303 exercise, replacing the
+	LED with the speaker.</li>
+
+      <li>Add an additional timed task to read the potentiometer at a slower rate.</li>
+      
+      <li>Add a simple linear mapping to update the output frequencies based on
+      the potentiometer input value, i.e., map the analog input to the output
+      intervals.</li>
+
+    </ol>
+
+    <h4>Comments</h4>
+
+    <p>The event loop example as shown is subject to variation in the sample
+      rate termed <em>jitter</em> since each time stamp is computed from the
+      current time rather than the previous time stamp.  So variation in the
+      execution time of each polling loop can create variation in the overall
+      sampling rate.  This can be fixed by computing new time stamps from the
+      previous time stamps, but care must be taken to handle initialization
+      correctly, e.g., checking whether the current time is ver different from
+      the time stamps.</p>
+
+    <p>Experienced programmers will also recognize the possibility of creating a
+      data object type representing a timed task, either as a C structure or a
+      C++ class.  This would reduce the repetition in the code.</p>
+
+      <h4>Sub-Folders</h4>
+    <ol>
+      <li><a href="EventLoopDemo">EventLoopDemo</a></li>
+    </ol>
+  </body>
+</html>

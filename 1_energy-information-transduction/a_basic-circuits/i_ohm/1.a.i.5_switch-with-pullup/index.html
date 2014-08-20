@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <title>Exercise: Switch with pullup</title>
+    <style type="text/css">body { margin: 36pt; max-width: 50em; } span.eqn { white-space: nowrap; }</style>
+  </head>
+  <body>
+    <h2>Exercise: Switch with pullup</h2>
+<h4>Objective</h4>
+
+    <p>Sense a mechanical action as a varying voltage.</p>
+
+    <p>A switch is a special case of a resistor with two states, either
+      near-zero resistance or near-infinite resistance.  A resistor in series
+      with a switch is a very common voltage divider construction in which
+      the <em>pull-up resistor</em> can supply a small current through the
+      switch.  If the switch is closed, it's resistance is near zero, so the
+      output is connected directly to ground.  If the switch is open, the
+      current through the resistor is zero, so there is no voltage drop and the
+      output is <em>pulled up</em> to the supply voltage.</p>
+
+    <h4>Steps and observations</h4>
+    <ol>
+      <li>Measure the exact resistor value.</li>
+      <li>Measure the supply voltage.</li>
+      <li>Measure the voltage across the switch in both states.</li>
+      <li>Measure the current through the resistor in both states. Compare to predictions.</li>
+      <li>Create a simple switch from wire and use it to sense some kind of mechanical activity. (Keep this simple,
+	this should only take a minute or two.)</li>
+    </ol>
+
+    <h4>Comments</h4>
+
+    <p>The DMM in voltage mode has a very high effective resistance, so it
+      senses a voltage without any significant current flowing through the
+      probes.  If the circuit attached to a voltage divider has a resistance
+      closer to the values in the divider, then the analysis is more complicated
+      since current also flows out through the output node.  Arduino inputs,
+      both digital and analog, have very high resistance and only very small
+      currents flow into them.</p>
+
+    <p>Note that with the switch closed a current flows through the resistor
+      which is entirely dissipated as heat.  The higher the resistor value, the
+      smaller the dissipation.  In practice, the resistor value isn't very
+      critical and values from 1K to 100K will work fine with our components.
+      Overall, the higher the value, the lower the power loss, but the weaker
+      the signal available at the output.  However, designing electronics for
+      long-life battery operation requires careful attention to minimizing these
+      dissipation losses.</p>
+
+  <img class="alignnone" src="1.a.i.5_switch-with-pullup.png" />
+<img class="alignnone" src="1.a.i.5_switch-with-pullup_bb.png" />
+<img class="alignnone" src="1.a.i.5_switch-with-pullup_schem.png" />
+    <h4>Other Files</h4>
+    <ol>
+      <li><a href="1.a.i.5_switch-with-pullup.fzz">1.a.i.5_switch-with-pullup.fzz</a></li>
+    </ol>
+  </body>
+</html>

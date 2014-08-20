@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <title>Exercise: Linear One-In One-Out</title>
+    <style type="text/css">body { margin: 36pt; max-width: 50em; } span.eqn { white-space: nowrap; }</style>
+  </head>
+  <body>
+    <h2>Exercise: Linear One-In One-Out</h2>
+<h4>Objective</h4>
+
+    <p>Connect light to motion via electricity.</p>
+
+    <p>This exercise uses a single-input single-output system which couples a
+      light level to a motor activation.  A photoresistor modulates the base
+      current of a bipolar transistor, controlling the current flowing through
+      the collector and emitter to operate a motor.  This represents one
+      possible minimal solution to the first graded assignment.</p>
+
+    <p>This is an analog circuit inasmuch as the photoresistor current can be
+      set to keep the transistor operating in a linear range, continuously
+      varying the motor speed.  If the base current is high or low enough, the
+      transistor will either saturate or shutoff and act as a digital device in
+      that it will simply be ON or OFF.</p>
+
+    <h4>Steps and observations</h4>
+    <ol>
+      <li>Wire up the circuit, trying to use only the schematic.</li>
+      <li>Modulate the incident light, observing the motor, trying to find the
+      linear operating region.  If necessary, adjust the supply
+      voltages.</li>
+    </ol>
+
+    <h4>Comments</h4>
+
+    <p>In practice, transistor circuits usually have additional <em>bias
+      resistors</em> to supply positive or negative currents to keep the
+      transistor operating in the desired region. This is a deep topic which
+      leads into the art of analog circuit design.  For an idea of this, look up
+      &#8220;audio circuits&#8221; on Google Images
+      and <a href="https://www.google.com/search?q=audio+circuits&amp;tbm=isch">see
+      what comes out</a>.</p>
+
+    <p>This circuit is a very simple example of
+      a <a href="http://en.wikipedia.org/wiki/Amplifier#Class_A">class-A
+      amplifier</a> using
+      a <a href="http://en.wikipedia.org/wiki/Common-emitter">common-emitter
+      topology</a>; there are many other types of amplifying transistor
+      circuits.  In general we will use PWM to control motor speed using a
+      simple type of class-D amplifier for better power efficiency.</p>
+
+  <img class="alignnone" src="1.a.ii.4_transistor-and-sensor-for-power_bb.png" />
+<img class="alignnone" src="1.a.ii.4_transistor-and-sensor-for-power_schem.png" />
+    <h4>Other Files</h4>
+    <ol>
+      <li><a href="1.a.ii.4_transistor-and-sensor-for-power.fzz">1.a.ii.4_transistor-and-sensor-for-power.fzz</a></li>
+    </ol>
+  </body>
+</html>

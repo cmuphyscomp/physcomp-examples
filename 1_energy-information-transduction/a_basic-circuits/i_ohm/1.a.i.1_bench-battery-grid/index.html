@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <title>Exercise: Bench, Battery, Grid</title>
+    <style type="text/css">body { margin: 36pt; max-width: 50em; } span.eqn { white-space: nowrap; }</style>
+  </head>
+  <body>
+    <h2>Exercise: Bench, Battery, Grid</h2>
+<h4>Objective</h4>
+
+    <p>Learn basic electrical safety, recognize AC and DC sources, learn scale
+      of voltage units.</p>
+
+    <p>Caution: this lesson involves measuring dangerous voltages from the AC
+      wall outlets.  Please observe meter settings carefully and avoid touching
+      any exposed metal.</p>
+
+    <h4>Steps and observations</h4>
+    <ol>
+      <li>Set the DMM to VDC.  Place probes on a 9V battery as shown. Observe
+	reading.  It should show approximately 9 volts.</li>
+
+      <li>Reverse the probes on the battery.  Observe reading. It should be the
+	same magnitude with reversed sign.</li>
+
+      <li>Find an incandescent lamp.  The lab stocks a grab-bag of lamps with
+	different voltage ratings.  Touch leads of lamp to battery contacts.  If
+	the lamp doesn't light, try a smaller one.  If it burns out, try a
+	larger one.</li>
+
+      <li>Reverse lamp leads.  It should still light: incandescent lamps have no
+	polarity.</li>
+
+      <li>A 9V battery has a low enough voltage that it won't cause much current
+	flow through dry skin. However, now is a good time to start building the
+	habit of not touching wires or leads, and instead using a meter to check
+	potentials.</li>
+
+      <li>Note: the lab doesn't have enough power supplies for every student
+	pair to work with their own; please share, multiple circuits can be
+	connected in parallel to each supply.</li>
+
+      <li>Set the DC power supply to 9 Volts.</li>
+
+      <li>Repeat DC voltage measurements between red and black terminals.</li>
+
+      <li>Connect the lamp to the power supply terminals.</li>
+
+      <li>Trying varying the power supply voltage up and down by 2 Volts.  Check
+	the voltage using the DMM, not just the power supply display.  Observe the
+	response of the lamp.</li>
+
+      <li><b>Caution</b>: the following step calls for measuring the AC wall outlet
+	voltage.  Line power has a high enough voltage to be fatal, so think
+	through how to make contact safely without any chance of exposed metal
+	contacting your body.</li>
+
+      <li>Set the DMM to VAC.  Outlet voltage is alternating current for power
+	delivery, so this configures the meter to measure the <em>RMS</em>
+	voltage.</li>
+
+      <li>Double-check that the probe connectors are inserted into the probe
+	ports for voltage measurement, NOT current measurement.</li>
+
+      <li>Carefully touch the probe tips to the metal blade contacts inside the
+	outlet.  Observe the reading, it should be approximately 120.</li>
+
+      <li>Repeat between each blade contact and the round grounding contact.
+	Observe readings.</li>
+    </ol>
+
+    <h4>Comments</h4>
+
+    <p>Our typical sensor circuits will all use DC supply voltages ranging from
+      3.3 to 12V.  Our typical actuator circuits will use DC supply voltages from
+      5V to 12V.  Many electronic components have tightly specified supply voltage
+      ranges and will malfunction or be destroyed outside that range. </p>
+
+  <img class="alignnone" src="1.a.i.1_bench-battery-grid_bb.png" />
+<img class="alignnone" src="1.a.i.1_bench-battery-grid_schem.png" />
+    <h4>Other Files</h4>
+    <ol>
+      <li><a href="1.a.i.1_bench-battery-grid.fzz">1.a.i.1_bench-battery-grid.fzz</a></li>
+      <li><a href="1.a.i.1_bench-battery-grid.s##">1.a.i.1_bench-battery-grid.s##</a></li>
+      <li><a href="1.a.i.1_bench-battery-grid.sch">1.a.i.1_bench-battery-grid.sch</a></li>
+    </ol>
+  </body>
+</html>

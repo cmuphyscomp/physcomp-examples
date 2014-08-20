@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <title>Exercise: Smoke a Resistor</title>
+    <style type="text/css">body { margin: 36pt; max-width: 50em; } span.eqn { white-space: nowrap; }</style>
+  </head>
+  <body>
+    <h2>Exercise: Smoke a Resistor</h2>
+<h4>Objective</h4>
+
+    <p>Destroy a resistor to observe the effects of excessive dissipation.
+    Destroy a red LED to observe the non-linear current characteristic.</p>
+
+    <p>Resistors generate heat as current flows through them.  If the applied
+      voltage rises too high, they will heat up until they smoke or melt.  The
+      power dissipated is the voltage drop multiplied by the
+      current: <span class="eqn">P = V * i</span>.  Since the voltage drop
+      across a resistor is proportional to the current <span class="eqn">(V = i
+      * R)</span>, the power dissipated can also be expressed
+      as <span class="eqn"> P = i<sup>2</sup> * R</span> or
+      <span class="eqn">P = V<sup>2</sup> / R</span>.</p>
+
+
+    <p>The small resistors we use in the lab are rated for 0.25 Watts of
+      dissipation.  So for example, a 100 ohm resistor will dissipate 0.25 Watts
+      with an applied voltage of 5V: the current will be
+      50&#160;mA <span class="eqn">(5V / 100 ohms)</span>, and the power will be
+      0.25&#160;Watts <span class="eqn">(5V * 0.050 A)</span>.  As the voltage
+      increases they will dissipate power according to the square of the
+      voltage, so they will get hotter and hotter and quickly fail.</p>
+
+    <h4>Steps and observations</h4>
+    <ol>
+      <li>Adjust the power supply for 5V output.  Measure the resulting current
+	through a 100 ohm quarter-watt resistor.</li>
+
+      <li>Check if the resistor is getting warm.</li>
+
+      <li>Raise the power supply to 7V output, which will double the dissipated
+	energy to a half-Watt: <span class="eqn">P = V<sup>2</sup> / R = 7*7 /
+	100 = 0.49W</span>.</li>
+
+      <li>Check if the resistor getting warm.  Careful not to burn yourself.</li>
+
+      <li>Continue raising the power voltage slowly until the resistor fails.
+      Note the final voltage and current.</li>
+
+      <li>As noted in the previous LED exercise, LEDs have a non-linear
+	characteristic in which the current rapidly rises as the voltage climbs.
+	Find an inexpensive red LED and measure its <em>forward voltage</em>
+	using the diode measurement function on the DMM.  For a red LED, this
+	will typically be in the vicinity of 1.6V.</li>
+
+      <li>Set the power supply about half a volt below the forward voltage.
+	Attach the LED.  Very slowly increase the applied voltage, observing the
+	LED.  The light should get very bright very quickly around the forward
+	voltage, and at just a slightly higher voltage, the LED will heat up and
+	stop working permanently.</li>
+    </ol>
+
+    <h4>Comments</h4>
+
+    <p>Resistors are cheap, so this is pretty harmless, even if it smells bad.
+      It is heartbreaking to overvoltage an expensive component and &#8220;let
+      out the magic smoke&#8221; so it stops working.</p>
+
+  <img class="alignnone" src="1.a.i.10_smoke-a-resistor_bb.png" />
+<img class="alignnone" src="1.a.i.10_smoke-a-resistor_schem.png" />
+    <h4>Other Files</h4>
+    <ol>
+      <li><a href="1.a.i.10_smoke-a-resistor.fzz">1.a.i.10_smoke-a-resistor.fzz</a></li>
+    </ol>
+  </body>
+</html>

@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <title>Unit 1B: Arduino Starter</title>
+    <style type="text/css">body { margin: 36pt; max-width: 50em; } span.eqn { white-space: nowrap; }</style>
+  </head>
+  <body>
+    <h2>Unit 1B: Arduino Starter</h2>
+<h3>Exercise: Digital Read Serial</h3>
+ 
+    <p>Objective: measure a binary physical property as a single-bit number.</p>
+
+    <p>Some devices in the physical world do approximate a digital reality:
+      switches are usually either on or off.  But even these devices have
+      non-ideal properties reflecting the physical reality, e.g. switch contacts
+      can &#8220;bounce&#8221; as they make contact, creating a momentary pulse
+      train rather than a clean on/off transition.</p>
+
+    <h4>Steps and observations</h4>
+    <ol>
+      <li>Load and run the DigitalReadSerial sketch.</li>
+      <li>Observe the numbers printed in the serial monitor as the switch changes state.</li>
+      <li>Try to observe switch bounce, e.g. several transitions measured for a single physical transition.</li>
+    </ol>
+
+    <h4>Comments</h4>
+
+    <p>A digital input is essentially a single-bit analog-to-digital converter,
+      albeit with an ambiguously defined threshold between the voltages
+      representing zero and one.  The digital input sampling rate can be much
+      higher than the 10-bit ADC, so much higher frequency digital signals could
+      be processed with careful real-time programming.</p>
+
+    <p>A related challenge exercise is
+      the <a href="http://arduino.cc/en/Tutorial/RCtime">Arduino RCtime
+      tutorial</a> in which a photoresistor-capacitor circuit is used to form an
+      ad-hoc ADC using a single digital I/O pin.  Multiple bits of conversion
+      resolution are obtained from measuring the single input bit over time.</p>
+
+
+  <img class="alignnone" src="1.b.ii.4_digital-read-serial_bb.png" />
+<img class="alignnone" src="1.b.ii.4_digital-read-serial_img.jpg" />
+<img class="alignnone" src="1.b.ii.4_digital-read-serial_schem.png" />
+    <h4>Other Files</h4>
+    <ol>
+      <li><a href="1.b.ii.4_digital-read-serial.fzz">1.b.ii.4_digital-read-serial.fzz</a></li>
+    </ol>
+  </body>
+</html>

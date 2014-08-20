@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <title>Exercise: Transistor Driver</title>
+    <style type="text/css">body { margin: 36pt; max-width: 50em; } span.eqn { white-space: nowrap; }</style>
+  </head>
+  <body>
+    <h2>Exercise: Transistor Driver</h2>
+<h4>Objective</h4>
+
+    <p>Amplify a control signal using a transistor.</p>
+
+    <p>A <a href="http://en.wikipedia.org/wiki/Transistor">transistor</a> is a
+      type of three-terminal semiconductor component which allows a control
+      current or voltage at the <em>base</em> or <em>gate</em> terminal to
+      affect the current flowing through the device.
+      A <a href="http://en.wikipedia.org/wiki/MOSFET">MOSFET</a> is a particular
+      type of transistor with very high current gain; the gate input has very
+      high impedance, such that a gate voltage with very little current can
+      control the current flowing between the <em>source</em>
+      and <em>drain</em>.  This makes it very convenient for interfacing
+      logic-level signals to loads such as motors.</p>
+
+    <p>MOSFETs have a linear range in which the current is proportional to the
+      gate voltage, but this exercise will use it in a <em>saturation</em> mode
+      in which it is either on or off.  MOSFETS come in both P-channel and
+      N-channel varieties exhibiting different polarities; this exercise uses an
+      N-channel MOSFET in which a small positive gate voltage relative to the
+      source terminal will cause a positive current to flow from drain to source,
+      activating the motor.</p>
+
+    <p>MOSFETs have very low forward voltage, i.e., the voltage drop across the
+      source and drain can be very low, meaning there is very little power
+      dissipated for a given current.</p>
+
+    <h4>Steps and observations</h4>
+    <ol>
+      <li>Set the power supplies to the specified voltages first.  We are using
+	a low-voltage motor so the 1V is actually the &#8216;high-power&#8217;
+	energy supply and the 5V is the logic supply.  The MOSFET can handle
+	substantially higher currents than used by this motor.</li>
+      <li>Manually connect and disconnect the gate voltage, observing the motor
+      operation.  If disconnecting the gate does not turn off the transistor,
+      try grounding the gate.  Even a small static charge on the gate can be
+      enough to turn it on.</li>
+      <li>Measure the gate current and resistance, and compute the power
+      dissipated by the gate input.  (It should be very low.)</li>
+      <li>Measure the motor current, and compute the power dissipated by the motor.</li>
+      <li>Compute the power gain of the amplifier: the output power divided by the input power.</li>
+    </ol>
+
+    <h4>Comments</h4>
+
+    <p>Note that unlike the relay circuit, the input and output circuits are not
+      isolated from each other.</p>
+
+    <p>MOSFETS are fast and silent.  Modern MOSFETS can handle relatively high
+      power loads with minimal dissipation.  The parts are polarized, and
+      driving an output with both positive and negative current (e.g. for
+      directional control) requires multiple parts and steering logic, e.g. an
+      H-Bridge configuration.  The polarization also makes them unsuitable for
+      controlling AC circuits.  More details can be found on
+      the <a href="http://www.irf.com/product-info/datasheets/data/irf540n.pdf">data
+      sheet for the IRF540 MOSFETs we stock in the lab</a>.</p>
+
+    <p>Note that the MOSFET symbol includes a
+      reverse-biased <a href="http://en.wikipedia.org/wiki/Zener_diode">Zener
+      diode</a> which exists as a byproduct of the transistor structure.  If the
+      voltage across the MOSFET becomes sufficiently reversed, it will begin to
+      conduct (&#8220;avalanche&#8221;) and can be destroyed.  This circuit has
+      no apparent negative voltages, however, the motor coil is an inductor
+      which can create negative voltage spikes as it turns off.  With larger
+      motors in particular, it can be important to place
+      a <a href="http://en.wikipedia.org/wiki/Flyback_diode">protective clamp
+      diode</a> around the motor which normally does not conduct but turns on to
+      absorb large reverse voltages.</p>
+
+  <img class="alignnone" src="1.a.ii.2_transistor-driver_bb.png" />
+<img class="alignnone" src="1.a.ii.2_transistor-driver_schem.png" />
+    <h4>Other Files</h4>
+    <ol>
+      <li><a href="1.a.ii.2_transistor-driver.fzz">1.a.ii.2_transistor-driver.fzz</a></li>
+    </ol>
+  </body>
+</html>
