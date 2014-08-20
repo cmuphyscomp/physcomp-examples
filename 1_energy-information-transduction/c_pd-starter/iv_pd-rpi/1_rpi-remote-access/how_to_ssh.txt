@@ -1,0 +1,18 @@
+How to use SSH to connect to your Raspberry Pi remotely:
+
+1. Find your Pi's IP address
+
+    Type the following into a Terminal window running on your Pi:
+
+    > hostname -I
+
+    Take note of the returned IP address. Now you can SSH into your Pi from another computer.
+
+2. SSH into your Pi
+
+    Type this command into a Terminal window running on your computer, replacing <IP> with the IP of your Pi:
+
+    > ssh@<IP>
+
+    You will be prompted for your username and password. You are now connected to the Pi remotely and can execute commands.
+
