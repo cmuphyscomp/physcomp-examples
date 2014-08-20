@@ -40,25 +40,25 @@ def write_index_file( path, title, html_body_text, image_file_names, other_files
     <style type="text/css">body { margin: 36pt; max-width: 50em; } span.eqn { white-space: nowrap; }</style>
   </head>
   <body>
-    <h1>%s</h1>        
-""" % (title, title) )
+    <h2>%s</h2>\n""" % (title, title) )
 
         index_file.write( html_body_text )
         for img in image_file_names:
             index_file.write( """<img class="alignnone" src="%s" />\n""" % img )
 
         if len(other_files) > 0:
-            index_file.write("""<h4>Other Files</h4><ol>""")
+            index_file.write("""    <h4>Other Files</h4>\n    <ol>\n""")
             for name in other_files:
-                index_file.write("""<li><a href="%s">%s</a></li>""" % ( name, name ))
-            index_file.write("""</ol>\n""")
+                index_file.write("""      <li><a href="%s">%s</a></li>\n""" % ( name, name ))
+            index_file.write("""    </ol>\n""")
 
         if len(subdirs) > 0:
-            index_file.write("""<h4>Sub-Folders</h4><ol>""")
+            index_file.write("""    <h4>Sub-Folders</h4>\n    <ol>\n""")
             for name in subdirs:
-                index_file.write("""<li><a href="%s">%s</a></li>""" % ( name, name ))
-            index_file.write("""</ol>\n""")
+                index_file.write("""      <li><a href="%s">%s</a></li>\n""" % ( name, name ))
+            index_file.write("""    </ol>\n""")
 
+        index_file.write( """  </body>\n</html>\n""" )
 
 ################################################################
 html_pattern     = re.compile( ".*\.html$" ).match
@@ -102,12 +102,14 @@ def walk_unit_pages( base_input_path ):
         if len(html_files) > 1:
             print "Warning, folder has more than one html file: ", root
             index_file_name = root + '/index.html'
-            write_index_file( index_file_name, title = "physcomp", html_body_text = "", images, html_files + other_files, dirs )
+            relpath = os.path.relpath( root, "../../")
+            write_index_file( index_file_name, title = relpath, html_body_text = "", image_file_names = images, other_files = html_files + other_files, subdirs = dirs )
 
         elif len(html_files) < 1:
             print "Warning, folder has no html file: ", root
             index_file_name = root + '/index.html'
-            write_index_file( index_file_name, title = "physcomp", html_body_text = "", images, other_files, dirs )
+            relpath = os.path.relpath( root, "../../")
+            write_index_file( index_file_name, title = relpath , html_body_text = "", image_file_names = images, other_files = other_files, subdirs = dirs )
 
         elif len(html_files) == 1:
             index_file_name = root + '/index.html'
@@ -128,5 +130,9 @@ if __name__ == "__main__":
     # print "file is '%s'" % args.filename
     # print "body is '%s'" % body
 
-    # walk_unit_pages( "../../1_energy-information-transduction" )
-    walk_unit_pages( "../../1_energy-information-transduction/b_arduino-starter")
+    if os.path.basename(os.getcwd()) != 'github-web':
+        print "Error: this script must be run from within the github-web folder."
+        exit(1)
+
+    walk_unit_pages( "../../1_energy-information-transduction" )
+    # walk_unit_pages( "../../1_energy-information-transduction/b_arduino-starter")
