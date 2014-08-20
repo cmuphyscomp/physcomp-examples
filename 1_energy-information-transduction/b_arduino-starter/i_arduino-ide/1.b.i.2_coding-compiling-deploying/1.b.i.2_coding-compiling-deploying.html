@@ -2,23 +2,20 @@
 <html lang="en-US">
   <head>
     <meta charset="utf-8" />
-    <title>Unit 1B: Arduino Starter</title>
-    <style type="text/css">
-      body { margin: 36pt; max-width: 50em; }
-      span.eqn { white-space: nowrap; }
-    </style>
-    <meta name="description" content="Unit 1B Notes">
+    <title>Exercise: Coding, Compiling, Deploying</title>
+    <style type="text/css">span.eqn { white-space: nowrap; }</style>
+    <meta name="description" content="exercise notes">
     <meta name="author" content="garthz">
   </head>
   <body>
 
-    <h3>Exercise: Coding, Compiling, Deploying</h3>
+    <h4>Objective</h4>
 
-    <p>Objective: running a program on an Arduino.</p>
+    <p>Running a program on an Arduino.</p>
 
     <p>The best references for getting started with the Arduino are supplied
-    with the IDE: the help menu includes a section for Getting Started which
-    covers operation and Reference which covers the language.</p>
+    with the IDE: the <b>Help</b> menu includes a section for <b>Getting Started</b> which
+    covers operation and <b>Reference</b> which covers the language.</p>
 
     <p>In addition, the main Arduino site has similar introduction pages:
       <ol>
@@ -31,8 +28,10 @@
     <ol>
       <li>Connect an Arduino Uno to the host computer with the IDE.</li>
       <li>Configure the IDE for the Uno as per the Getting Started guide.</li>
+
       <li>Load the Examples/01.Basics/Blink sketch.  This program uses just the
-      LED onboard the Uno, so no additional circuit is required.</li>
+	LED onboard the Uno, so no additional external circuit is required.</li>
+
       <li>Verify/Compile the program to check that the program text is valid.</li>
       <li>Upload to the Uno and check that the LED blinks when the program runs.</li>
       <li>Change the numbers in the <code>delay</code> statements; the units are milliseconds.</li>
@@ -42,7 +41,7 @@
       <li>Observe the measurements of analog noise printed to the monitor.
 	Attach a wire to A0 and touch it with your finger to change the noise
 	input.</li>
-      <li>The serial monitor is your primary means for seeing debugging output
+      <li>The serial monitor is your primary means for seeing the debugging output
       from your programs; you should become familiar with the Serial library and
       printing out text and numbers.</li>
     </ol>
