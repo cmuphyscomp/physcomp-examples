@@ -29,18 +29,18 @@ def extract_html_elements( path ):
     return (body_string, title_string)
 
 ################################################################
-def write_index_file( path, title, html_body_text, image_file_names, other_files, subdirs ):
+def write_index_file( path, csspath, title, html_body_text, image_file_names, other_files, subdirs ):
     with open( path, "w" ) as index_file:
 
         index_file.write( """<!doctype html>
 <html lang="en-US">
   <head>
     <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="%s" />
     <title>%s</title>
-    <style type="text/css">body { margin: 36pt; max-width: 50em; } span.eqn { white-space: nowrap; }</style>
   </head>
   <body>
-    <h2>%s</h2>\n""" % (title, title) )
+    <h2>%s</h2>\n""" % ( csspath, title, title) )
 
         index_file.write( html_body_text )
         for img in image_file_names:
@@ -90,6 +90,13 @@ def walk_unit_pages( base_input_path ):
         html_files = list()
         other_files = list()
 
+        # find the folder path within the repository naming scheme
+        relpath = os.path.relpath( root, "../../")
+
+        # compute the path to the css file to include in every index file for styling
+        depth = len( relpath.split('/' ))
+        csspath = "/".join( [ ".." for i in range(depth) ] ) + "/support/github-web/physcomp.css"
+
         for file in files:
             if html_pattern( file ):
                 if not index_pattern( file ):
@@ -102,19 +109,22 @@ def walk_unit_pages( base_input_path ):
         if len(html_files) > 1:
             print "Warning, folder has more than one html file: ", root
             index_file_name = root + '/index.html'
-            relpath = os.path.relpath( root, "../../")
-            write_index_file( index_file_name, title = relpath, html_body_text = "", image_file_names = images, other_files = html_files + other_files, subdirs = dirs )
+            write_index_file( index_file_name, csspath = csspath, title = relpath, html_body_text = "", image_file_names = images, \
+                              other_files = html_files + other_files, subdirs = dirs )
 
         elif len(html_files) < 1:
             print "Warning, folder has no html file: ", root
             index_file_name = root + '/index.html'
             relpath = os.path.relpath( root, "../../")
-            write_index_file( index_file_name, title = relpath , html_body_text = "", image_file_names = images, other_files = other_files, subdirs = dirs )
+            write_index_file( index_file_name, csspath = csspath, title = relpath , html_body_text = "", image_file_names = images, \
+                              other_files = other_files, subdirs = dirs )
 
         elif len(html_files) == 1:
             index_file_name = root + '/index.html'
             body_text, title = extract_html_elements( root + '/' + html_files[0] )
-            write_index_file( index_file_name, title, body_text, images, other_files, dirs )
+            write_index_file( index_file_name, csspath = csspath, title = title, html_body_text = body_text, image_file_names = images, \
+                              other_files = other_files, subdirs = dirs )
+
 
 ################################################################
 if __name__ == "__main__":
