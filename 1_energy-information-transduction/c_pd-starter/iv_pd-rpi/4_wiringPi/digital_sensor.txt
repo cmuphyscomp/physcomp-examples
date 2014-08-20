@@ -1,0 +1,10 @@
+Refer to the schematic to see how to build the circuit for this exercise.  
+
+Set WiringPi pin 0 (GPIO-BCM 17) as an input:
+
+> gpio mode 0 input
+
+Read the state of pin 0. This should change with the state of the button:
+
+> gpio read 0
+
