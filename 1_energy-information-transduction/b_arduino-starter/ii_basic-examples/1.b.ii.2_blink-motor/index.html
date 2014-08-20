@@ -3,13 +3,13 @@
   <head>
     <meta charset="utf-8" />
     <link rel="stylesheet" type="text/css" href="../../../../support/github-web/physcomp.css" />
-    <title>Unit 1B: Arduino Starter</title>
+    <title>Exercise: Blink Motor</title>
   </head>
   <body>
-    <h2>Unit 1B: Arduino Starter</h2>
-<h3>Exercise: Blink Motor</h3>
+    <h2>Exercise: Blink Motor</h2>
+<h4>Objective</h4>
 
-    <p>Objective: drive a DC motor from an Arduino program.</p>
+    <p>Drive a DC motor from an Arduino program.</p>
 
     <p>A DC motor is a starting point for controlling physical motion.  By
       itself, a DC motor spins fast with low torque, so they are usually coupled
@@ -27,6 +27,8 @@
 
     <h4>Steps and observations</h4>
     <ol>
+      <li>Adjust the motor power supply for a safe full-speed voltage. (Many lab
+	motors run on less than than the 12V drawn on the schematic.)</li>
       <li>Load and run the Blink sketch.</li>
       <li>Note that pin 13 is still connected to the onboard LED.  Observe the motor and LED activity.</li>
       <li>This time, explore the limits of timing.  How short a pulse will still create movement?</li>
@@ -43,7 +45,7 @@
       the range of human hearing.</p>
 
     <p>Even though the PWM signal is a digital waveform using only LOW and HIGH
-      voltage levels, it is still an analog encoding.  The signal encodes a
+      voltage levels, it is still an analog encoding.  A PWM signal encodes a
       single numeric value in the <em>duty cycle</em>, the ratio of ON time to
       the cycle time, and there is no intrinsic discretization to a pulse width.
       The Arduino generates the PWM signal using a digital circuit so this

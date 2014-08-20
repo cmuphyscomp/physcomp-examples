@@ -3,13 +3,13 @@
   <head>
     <meta charset="utf-8" />
     <link rel="stylesheet" type="text/css" href="../../../../support/github-web/physcomp.css" />
-    <title>Unit 1B: Arduino Starter</title>
+    <title>Exercise: Analog Read Serial</title>
   </head>
   <body>
-    <h2>Unit 1B: Arduino Starter</h2>
-<h3>Exercise: Analog Read Serial</h3>
- 
-    <p>Objective: measure an physical property as a number.</p>
+    <h2>Exercise: Analog Read Serial</h2>
+<h4>Objective</h4>
+
+    <p>Measure an physical property as a number.</p>
 
     <p>The world is an analog place; physical phenomena have continuity and
       exist over time.  To represent a physical property computationally, the
@@ -27,9 +27,19 @@
       <li>Load and run the AnalogReadSerial sketch.</li>
       <li>Observe the numbers printed in the serial monitor as the light level varies.</li>
       <li>Try slowing the <em>sampling rate</em> by increasing the delay.</li>
-      <li>Determine the highest and lowest values observed given available light levels.</li>
+      <li>Determine the highest and lowest values observed given the available light levels.</li>
       <li>Observe the noise in the numbers for different constant light inputs.</li>
-      <li>Formulate a strategy for <em>calibrating</em> the measurement to yield similar values in similar situations.  Hint: how can repeatable lighting conditions be created?</li>
+
+      <li>The numbers produced by the ADC are a voltage measurement expressed in
+	the somewhat arbitrary units of the converter (e.g. 4.9&#160;mV/unit).
+	Formulate a strategy for <em>calibrating</em> the measurement so that
+	the number has useful semantic meaning.  What are useful units for
+	expressing the light intensity?  Hint: the arithmetic for the
+	calibration mapping can be as simple as multiplying by a constant gain
+	and adding an offset (e.g. a linear function); the key point is choosing
+	a units system which is understandable and deciding how to take
+	repeatable reference measurements.</li>
+	
     </ol>
 
     <h4>Comments</h4>

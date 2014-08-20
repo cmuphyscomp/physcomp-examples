@@ -3,13 +3,13 @@
   <head>
     <meta charset="utf-8" />
     <link rel="stylesheet" type="text/css" href="../../../../support/github-web/physcomp.css" />
-    <title>Unit 1B: Arduino Starter</title>
+    <title>Exercise: Motor Knob</title>
   </head>
   <body>
-    <h2>Unit 1B: Arduino Starter</h2>
-<h3>Exercise: Motor Knob</h3>
+    <h2>Exercise: Motor Knob</h2>
+<h4>Objective</h4>
  
-    <p>Objective: control a stepper motor using a driver module.</p>
+    <p>Control a stepper motor using a driver module.</p>
 
     <p>A <a href="http://en.wikipedia.org/wiki/Stepper_motor">stepper motor</a>
       uses a toothed rotor and multiple drive coils to create motion in discrete
@@ -22,18 +22,23 @@
       position.  The microcontroller has have no means of detecting this
       error.</p>
 
-    <p>This exercise uses a driver module which takes care of cycling the
-      currents appropriately through the two coils of a bipolar stepper motor.
-      The primary inputs to the driver are <em>direction</em> and <em>step</em>.
-      The additional inputs control fractional stepping and the overall driver
-      power state.</p>
+    <p>This exercise uses
+      an <a href="http://www.allegromicro.com/~/media/Files/Datasheets/A4983-Datasheet.ashx">A4983</a>
+      driver module which takes care of cycling the currents appropriately
+      through the two coils of a bipolar stepper motor.  The primary inputs to
+      the driver are <em>direction</em> and <em>step</em>.  The additional
+      inputs control fractional stepping and the overall driver power state.</p>
 
     <p>As a simple one-in one-out demonstration, the exercise uses a
       potentiometer as an analog position command control input.</p>
 
     <h4>Steps and observations</h4>
     <ol>
-      <li>Load and run the associated sketch from the course materials.</li>
+      <li>Load and run the KnobToStepper sketch from the course materials,
+	located in the same folder as this file.  (Note: there is a MotorKnob
+	sketch included in the Arduino IDE which assumes the stepper motor is
+	directly driven from the Arduino; instead we will use a modular driver
+	for this exercise.)</li>
 
       <li>Observe the stepper motor motion.</li>
 

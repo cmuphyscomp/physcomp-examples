@@ -3,13 +3,13 @@
   <head>
     <meta charset="utf-8" />
     <link rel="stylesheet" type="text/css" href="../../../../support/github-web/physcomp.css" />
-    <title>Unit 1B: Arduino Starter</title>
+    <title>Exercise: Servo Sweep</title>
   </head>
   <body>
-    <h2>Unit 1B: Arduino Starter</h2>
-<h3>Exercise: Servo Sweep</h3>
+    <h2>Exercise: Servo Sweep</h2>
+<h4>Objective</h4>
  
-    <p>Objective: control a hobby servomotor module.</p>
+    <p>Control a hobby servomotor module.</p>
 
     <p>Hobby servos are feedback-controlled motors which move an output shaft to
       a specified position.  Internally they use a potentiometer to measure the
@@ -20,7 +20,7 @@
 
     <p>The commanded position is specified using a specific format of PWM in
       which pulses with duration approximately 1-2&#160;ms repeat at
-      approximately 50&#160;Hz.  The different pulse widths correpond to
+      approximately 50&#160;Hz.  The different pulse widths correspond to
       different positions.  Note that this a significantly different waveform
       than the motor PWM, since the <em>duty cycle</em> is always very low,
       i.e., the pulse on-time is always much shorter than the cycle time.</p>
@@ -40,8 +40,8 @@
     <p>Note that trajectories and speed control are only possible by issuing position commands at intervals.</p>
 
     <p>As a challenge, rewrite the program to avoid <code>delay()</code> and
-      operate two servos simultanously on different trajectories.</p>
-
+      operate two servos simultanously on different trajectories.  This will be
+      taken up in more detail in an upcoming exercise.</p>
 
   <img class="alignnone" src="1.b.ii.5_servo-sweep_bb.png" />
 <img class="alignnone" src="1.b.ii.5_servo-sweep_img.jpg" />
