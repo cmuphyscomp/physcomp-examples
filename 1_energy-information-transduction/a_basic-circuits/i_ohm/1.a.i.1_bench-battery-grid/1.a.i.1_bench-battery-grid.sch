@@ -268,6 +268,33 @@ In this library the device names are the same as the pin names of the symbols, t
 </deviceset>
 </devicesets>
 </library>
+<library name="voltmeter">
+<packages>
+</packages>
+<symbols>
+<symbol name="VOLTMETER">
+<pin name="COM" x="-15.24" y="7.62" length="middle" direction="in"/>
+<pin name="VIN" x="-25.4" y="7.62" length="middle" direction="in" rot="R180"/>
+<circle x="-20.32" y="7.62" radius="5.08" width="0.254" layer="95"/>
+<text x="-20.32" y="7.62" size="2.54" layer="95" align="center">V</text>
+<text x="-20.32" y="7.62" size="2.54" layer="95" align="center">V</text>
+</symbol>
+</symbols>
+<devicesets>
+<deviceset name="VOLTMETER">
+<gates>
+<gate name="G$1" symbol="VOLTMETER" x="-7.62" y="-5.08"/>
+</gates>
+<devices>
+<device name="">
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+</devicesets>
+</library>
 </libraries>
 <attributes>
 </attributes>
@@ -284,6 +311,9 @@ In this library the device names are the same as the pin names of the symbols, t
 <part name="BAT1" library="special" deviceset="BATTERY" device="" value="+9V"/>
 <part name="GND1" library="supply1" deviceset="GND" device=""/>
 <part name="GND2" library="supply1" deviceset="GND" device=""/>
+<part name="U$1" library="voltmeter" deviceset="VOLTMETER" device=""/>
+<part name="U$2" library="voltmeter" deviceset="VOLTMETER" device=""/>
+<part name="U$3" library="voltmeter" deviceset="VOLTMETER" device=""/>
 </parts>
 <sheets>
 <sheet>

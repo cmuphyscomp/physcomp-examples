@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <title>1C: PD Starter</title>
+    <style type="text/css">
+      body { margin: 36pt; max-width: 50em; }
+      span.eqn { white-space: nowrap; }
+    </style>
+    <meta name="description" content="Unit 1A Notes">
+    <meta name="author" content="garthz">
+  </head>
+  <body>
+
+    <h3>Exercise: Reading a Digital Sensor with Raspberry Pi GPIO</h3>
+
+    <p>Objective: Read from a button attached to a pin on the Pi</p>
+
+    <p>Refer to the schematic to see how to build the circuit for this exercise.</p>
+
+    <h4>Steps and observations</h4>
+    <ol>
+      <li>Refer to the schematic to see how to build the circuit for this exercise.</li>
+
+      <li>Set WiringPi pin 0 (GPIO-BCM 17) as an input:</li>
+
+      > gpio mode 0 input
+    
+      <li>Read the state of pin 0. This should change with the state of the button:</li>
+
+      > gpio read 0
+    </ol>
+  </body>
+</html>
+

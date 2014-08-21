@@ -1,0 +1,13 @@
+Importantly, WiringPi uses a different pin numbering scheme from the Pi Clobber. Enter 'gpio readall' to see a table that shows which BCM-GPIO pin numbers correspond to which WiringPi pins.
+
+Control a lightbulb with PWM from pin 18. 
+
+The Pi doesn't provide enough voltage for the lightbulb, so you will need to use an external power source with a 2N 3904 transistor. Connect the gate pin of the transistor to pin 1 from the Pi. 
+
+Set WiringPi pin 1 (BCM-GPIO pin 18) to PWM mode. Note that this is the only pin on the Pi that supports hardware PWM, hence it is the only PWM pin that can be used with the gpio command:
+
+> gpio mode 1 pwm
+
+Set the lightbulb to half-brightness:
+
+> gpio pwm 1 512
