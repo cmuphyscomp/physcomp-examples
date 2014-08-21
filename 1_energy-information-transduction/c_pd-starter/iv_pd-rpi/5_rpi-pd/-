@@ -1,0 +1,8 @@
+Attach an LED to pin 17 (WiringPi pin 0), and open led_with_pwm.pd.
+
+Attach a [metro] object to the toggle to get it to rapidly blink on and 
+off.
+
+
+
+
