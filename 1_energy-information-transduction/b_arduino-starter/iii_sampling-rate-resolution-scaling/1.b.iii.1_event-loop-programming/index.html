@@ -3,13 +3,12 @@
   <head>
     <meta charset="utf-8" />
     <link rel="stylesheet" type="text/css" href="../../../../support/github-web/physcomp.css" />
-    <title>Unit 1B: Arduino Starter</title>
+    <title>Exercise: Event-Loop Programming</title>
   </head>
   <body>
-    <h2>Unit 1B: Arduino Starter</h2>
-<h3>Exercise: Event-Loop Programming</h3>
- 
-    <p>Objective: create several simultaneous signals to explore program event scheduling.</p>
+    <h2>Exercise: Event-Loop Programming</h2>
+<h4>Objective</h4>
+    <p>Create several simultaneous signals to explore program event scheduling.</p>
 
     <p>The world is intrinsically a parallel, simultaneous place, but computers
       are serial, sequential devices.  Even modern multi-core machines are still
@@ -78,12 +77,13 @@
     <h4>Steps and observations</h4>
     <ol>
 
-      <li>Load and run the included EventLoopDemo sketch.  The example program
-	generates audio-frequency square waves at different pitches on pins 4
-	and 5 to demonstrate a simple event-loop control structure allowing
-	parallel execution of two timed tasks.  In a later step you will
-	read an analog potentiometer input and use the input value to modulate
-	the pitch by varying the waveform timing.</li>
+      <li>Load and run the
+	included <a href="http://cmuphyscomp.github.io/physcomp-examples/1_energy-information-transduction/b_arduino-starter/iii_sampling-rate-resolution-scaling/1.b.iii.1_event-loop-programming/EventLoopDemo/EventLoopDemo.ino">EventLoopDemo
+	sketch</a>.  The example program generates audio-frequency square waves
+	at different pitches on pins 4 and 5 to demonstrate a simple event-loop
+	control structure allowing parallel execution of two timed tasks.  In a
+	later step you will read an analog potentiometer input and use the input
+	value to modulate the pitch by varying the waveform timing.</li>
 
       <li>Observe the initial outputs on an oscilloscope and measure the period
 	of the waveforms.</li>
@@ -93,7 +93,11 @@
 	speakers can be driven by digital outputs using a ULN2803, attached the
 	output pins defined in the sample sketch.  The speaker drive circuit can
 	use the same structure as the previous ULN2303 exercise, replacing the
-	LED with the speaker.</li>
+	LED with the speaker.  A small speaker is typically about 8&#160;ohms
+	and can handle a fraction of a Watt; assuming 1/8&#160;Watt, the power
+	supply voltage would be typically be about a volt above the ULN2803
+	forward drop, so start with a power supply voltage of 1.6V and
+	experiment.</li>
 
       <li>Add an additional timed task to read the potentiometer at a slower rate.</li>
       
@@ -111,7 +115,7 @@
       execution time of each polling loop can create variation in the overall
       sampling rate.  This can be fixed by computing new time stamps from the
       previous time stamps, but care must be taken to handle initialization
-      correctly, e.g., checking whether the current time is ver different from
+      correctly, e.g., checking whether the current time is very different from
       the time stamps.</p>
 
     <p>Experienced programmers will also recognize the possibility of creating a
