@@ -50,7 +50,7 @@
 <layer number="92" name="Busses" color="1" fill="1" visible="yes" active="yes"/>
 <layer number="93" name="Pins" color="2" fill="1" visible="no" active="yes"/>
 <layer number="94" name="Symbols" color="4" fill="1" visible="yes" active="yes"/>
-<layer number="95" name="Names" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="95" name="Names" color="7" fill="1" visible="no" active="yes"/>
 <layer number="96" name="Values" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="97" name="Info" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="98" name="Guide" color="6" fill="1" visible="yes" active="yes"/>
@@ -270,23 +270,32 @@ In this library the device names are the same as the pin names of the symbols, t
 </library>
 <library name="voltmeter">
 <packages>
+<package name="VOLTMETER">
+<circle x="0" y="0" radius="3.5921" width="0.127" layer="21"/>
+<text x="0" y="0" size="2.1844" layer="21" align="center">V</text>
+<pad name="P$1" x="-3.81" y="0" drill="0.8" shape="square"/>
+<pad name="P$2" x="3.81" y="0" drill="0.8" shape="square"/>
+</package>
 </packages>
 <symbols>
 <symbol name="VOLTMETER">
-<pin name="COM" x="-15.24" y="7.62" length="middle" direction="in"/>
-<pin name="VIN" x="-25.4" y="7.62" length="middle" direction="in" rot="R180"/>
-<circle x="-20.32" y="7.62" radius="5.08" width="0.254" layer="95"/>
-<text x="-20.32" y="7.62" size="2.54" layer="95" align="center">V</text>
-<text x="-20.32" y="7.62" size="2.54" layer="95" align="center">V</text>
+<circle x="0" y="0" radius="7.184203125" width="0.254" layer="94"/>
+<text x="0" y="0" size="5.08" layer="94" align="center">V</text>
+<pin name="VIN" x="-7.62" y="0" length="middle" rot="R180"/>
+<pin name="GND" x="7.62" y="0" length="middle"/>
 </symbol>
 </symbols>
 <devicesets>
 <deviceset name="VOLTMETER">
 <gates>
-<gate name="G$1" symbol="VOLTMETER" x="-7.62" y="-5.08"/>
+<gate name="G$1" symbol="VOLTMETER" x="0" y="0"/>
 </gates>
 <devices>
-<device name="">
+<device name="" package="VOLTMETER">
+<connects>
+<connect gate="G$1" pin="GND" pad="P$1"/>
+<connect gate="G$1" pin="VIN" pad="P$2"/>
+</connects>
 <technologies>
 <technology name=""/>
 </technologies>
@@ -320,16 +329,61 @@ In this library the device names are the same as the pin names of the symbols, t
 <plain>
 </plain>
 <instances>
-<instance part="SUPPLY1" gate="G$1" x="22.86" y="45.72"/>
-<instance part="LMP1" gate="G$1" x="68.58" y="66.04"/>
-<instance part="SUPPLY2" gate="G$1" x="45.72" y="45.72"/>
-<instance part="BAT1" gate="G$1" x="73.66" y="45.72"/>
-<instance part="GND1" gate="1" x="22.86" y="30.48"/>
-<instance part="GND2" gate="1" x="45.72" y="30.48"/>
+<instance part="SUPPLY1" gate="G$1" x="-22.86" y="63.5"/>
+<instance part="LMP1" gate="G$1" x="63.5" y="71.12"/>
+<instance part="SUPPLY2" gate="G$1" x="15.24" y="63.5"/>
+<instance part="BAT1" gate="G$1" x="66.04" y="50.8"/>
+<instance part="GND1" gate="1" x="2.54" y="38.1"/>
+<instance part="GND2" gate="1" x="40.64" y="38.1"/>
+<instance part="U$1" gate="G$1" x="66.04" y="30.48"/>
+<instance part="U$2" gate="G$1" x="27.94" y="50.8"/>
+<instance part="U$3" gate="G$1" x="-10.16" y="50.8"/>
 </instances>
 <busses>
 </busses>
 <nets>
+<net name="+9V" class="0">
+<segment>
+<pinref part="SUPPLY1" gate="G$1" pin="+9V"/>
+<wire x1="-22.86" y1="60.96" x2="-22.86" y2="50.8" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="SUPPLY2" gate="G$1" pin="+9V"/>
+<wire x1="15.24" y1="60.96" x2="15.24" y2="50.8" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="GND" class="0">
+<segment>
+<pinref part="GND1" gate="1" pin="GND"/>
+<wire x1="2.54" y1="50.8" x2="2.54" y2="40.64" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="GND2" gate="1" pin="GND"/>
+<wire x1="40.64" y1="50.8" x2="40.64" y2="40.64" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$1" class="0">
+<segment>
+<pinref part="BAT1" gate="G$1" pin="+"/>
+<wire x1="60.96" y1="50.8" x2="60.96" y2="66.04" width="0.1524" layer="91"/>
+<pinref part="LMP1" gate="G$1" pin="1"/>
+<wire x1="60.96" y1="66.04" x2="63.5" y2="66.04" width="0.1524" layer="91"/>
+<wire x1="53.34" y1="30.48" x2="53.34" y2="50.8" width="0.1524" layer="91"/>
+<wire x1="53.34" y1="50.8" x2="60.96" y2="50.8" width="0.1524" layer="91"/>
+<junction x="60.96" y="50.8"/>
+</segment>
+</net>
+<net name="N$2" class="0">
+<segment>
+<pinref part="BAT1" gate="G$1" pin="-"/>
+<wire x1="71.12" y1="50.8" x2="71.12" y2="66.04" width="0.1524" layer="91"/>
+<pinref part="LMP1" gate="G$1" pin="2"/>
+<wire x1="71.12" y1="66.04" x2="66.04" y2="66.04" width="0.1524" layer="91"/>
+<wire x1="78.74" y1="30.48" x2="78.74" y2="50.8" width="0.1524" layer="91"/>
+<wire x1="78.74" y1="50.8" x2="71.12" y2="50.8" width="0.1524" layer="91"/>
+<junction x="71.12" y="50.8"/>
+</segment>
+</net>
 </nets>
 </sheet>
 </sheets>
