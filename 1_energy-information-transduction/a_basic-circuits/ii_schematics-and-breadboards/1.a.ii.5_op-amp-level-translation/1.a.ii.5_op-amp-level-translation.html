@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <title>Exercise: Op-Amp Level Translation</title>
+    <style type="text/css">span.eqn { white-space: nowrap; }</style>
+    <meta name="description" content="exercise notes">
+    <meta name="author" content="garthz">
+  </head>
+  <body>
+
+    <h4>Objective</h4>
+
+    <p>Use an op-amp circuit to match a sensor signal output to a driver signal input.</p>
+
+    <p>Many physical computing projects face the problem of translating an
+      analog voltage from one range to another.  For example, the Sharp range
+      finders put out a signal from 0 to 2.5V, but the MOSFETs turn-on voltage
+      is closer to 3.5-4.0V.  An effective way to match one signal type to
+      another is to add an amplifier stage which applies a <strong>gain</strong>
+      and <strong>offset</strong> using a linear <strong>op-amp</strong>, short
+      for &ldquo;operational amplifier.&rdquo; We have the TL072P op-amp in
+      stock, which includes two op-amps in an 8-pin package.</p>
+
+    <p>Many op-amp circuits are designed for a dual supply, meaning they assume
+      the availability of matched positive and negative supplies centered around
+      the zero ground voltage.  However, it is more convenient for our purposes
+      to just use a single supply, so some care may be required when using
+      cookbook circuits.</p>
+    
+    <h4>Reference Guides</h4>
+    <ul>
+      <li><a href="http://www.ti.com.cn/cn/lit/ds/symlink/tl072.pdf">TL027 data sheet</a></li>
+      <li><a href="http://www.irf.com/product-info/datasheets/data/irf540n.pdf">IRF540 MOSFET data sheet</a></li>
+      <li><a href="http://www.ti.com/lit/an/sboa092a/sboa092a.pdf">TI Handbook Of Operational Amplifier Applications</a></li>
+      <li><a href="http://www.ti.com/ww/en/bobpease/assets/AN-31.pdf">National Semiconductor Op Amp Circuit Collection</a></li>
+      <li><a href="http://www.ti.com/lit/an/sloa030a/sloa030a.pdf">TI Single-Supply Op Amp Design Techniques</a></li>
+    </ul>
+
+    <h4>Steps and observations</h4>
+    <ol>
+      <li>Wire up the circuit, trying to use only the schematic.</li>
+      <li>Modulate the distance of the object nearest the sensor, observing the behavior of the non-inverting and inverting output.</li>
+    </ol>
+
+    <h4>Comments</h4>
+
+
+  </body>
+</html>
