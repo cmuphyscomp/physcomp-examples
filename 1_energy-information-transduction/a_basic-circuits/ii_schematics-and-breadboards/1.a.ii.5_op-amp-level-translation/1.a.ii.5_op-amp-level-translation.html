@@ -15,18 +15,60 @@
 
     <p>Many physical computing projects face the problem of translating an
       analog voltage from one range to another.  For example, the Sharp range
-      finders put out a signal from 0 to 2.5V, but the MOSFETs turn-on voltage
-      is closer to 3.5-4.0V.  An effective way to match one signal type to
-      another is to add an amplifier stage which applies a <strong>gain</strong>
-      and <strong>offset</strong> using a linear <strong>op-amp</strong>, short
-      for &ldquo;operational amplifier.&rdquo; We have the TL072P op-amp in
-      stock, which includes two op-amps in an 8-pin package.</p>
+      finders put out a signal from 0 to 3.0V, but the IRF540 MOSFET turn-on
+      voltage is closer to 3.5-4.0V.  An effective way to match one signal type
+      to another is to add an amplifier stage which applies
+      a <strong>gain</strong> and <strong>offset</strong> using a
+      linear <strong>op-amp</strong>, short for
+      &ldquo;<a href="http://en.wikipedia.org/wiki/Operational_amplifier">operational
+      amplifier</a>.&rdquo; An op-amp is a basic building block for many kinds
+      of linear circuits, including amplifiers, filters, oscillators, mixers,
+      integrators, differentiators, etc.  It can also be used to make non-linear
+      circuits, such as a comparator or a Schmitt trigger.  The reference guides
+      below include many sample circuits.</p>
+
+    <p>Op-amps were originally constructed as modules of discrete components,
+      but we will be using integrated circuit op-amps built on a single chip.
+      The idealization of an op-amp is a differential amplifier with arbitrarily
+      large gain: <span class="eqn">Vout = G * (V+ - V-)</span>, where G is
+      infinite.  The ideal op-amp has zero input current and infinite output
+      voltage range.  The infinite gain implies a simple heuristic, which is
+      that for a negative-feedback circuit in equilibrium, the output must be at
+      a voltage such that the inputs V+ and V- have equal voltage.  Otherwise,
+      even a tiny difference of input voltage would lead to an infinite
+      output.</p>
+
+    <p>In practice, the op-amps we use have inputs with very high input
+      impedance which draw essentially no current.  The output is limited to a
+      range within the supply voltages (the &lsquo;rails&rsquo;).  The gain is
+      quite high but not infinite.  In practical circuits, the overall gain is
+      set by constructing a resistor network which defines the relationship
+      between the changes in the output and the changes in the input.  If a
+      large output voltage change is required at the output to maintain the
+      equal-input equilibrium for a small change of input signal, then the
+      signal will be amplified.</p>
+
+    <p>This exercise explores two basic amplifier circuits, an inverting
+      amplifier and a non-inverting amplifier.  Each uses four resistors to
+      control the gain and offset.  In each case, two resistors between the
+      supply and ground form a voltage divider to affect the offset voltage, and
+      two resistors form a voltage divider between the input and the output to
+      control the gain.  Each of these examples is a special case of a general
+      difference amplifier in which one or the other of the inputs is tied to
+      the supply voltage.</p>
 
     <p>Many op-amp circuits are designed for a dual supply, meaning they assume
       the availability of matched positive and negative supplies centered around
       the zero ground voltage.  However, it is more convenient for our purposes
       to just use a single supply, so some care may be required when using
       cookbook circuits.</p>
+
+    <p>We have the TL072P op-amp in stock, which includes two op-amps in an
+      8-pin package.  The TL072 isn't designed for single-supply operation, so
+      this part will be replaced with a 'rail-to-rail' part in a revised version
+      of this exercise.  For the time being, the circuit works but is sensitive
+      to the gain and offset settings, as the op-amp output needs to stay within
+      a range roughly between 1.3 and 4.0 Volts.</p>
     
     <h4>Reference Guides</h4>
     <ul>
@@ -39,12 +81,27 @@
 
     <h4>Steps and observations</h4>
     <ol>
-      <li>Wire up the circuit, trying to use only the schematic.</li>
-      <li>Modulate the distance of the object nearest the sensor, observing the behavior of the non-inverting and inverting output.</li>
+      <li>Wire up the inverting amplifier circuit.</li>
+
+      <li>Modulate the distance of the object nearest the sensor.  The distance
+	sensor emits a higher voltage for near objects, which normally would
+	turn on the LED at close range.  Due to the signal inversion, the LED
+	turns off at close range.</li>
+
+      <li>Wire up the non-inverting circuit.  Note that the role of positive and negative inputs has swapped.</li>
+
+      <li>Using a DMM, adjust the pot until the V- terminal is at 1.8V.</li>
+
+      <li>Modulate the distance of the object nearest the sensor.  The amplifier
+	is applying gain to match the 0-3V sensor signal to the higher voltage
+	required to turn on the MOSFET; the LED should now turn on with an
+	object at close range.</li>
     </ol>
 
     <h4>Comments</h4>
 
+    <p>If you experiment, you can find the <em>linear range</em> of the MOSFET
+    in which it is neither fully on or fully off.</p>
 
   </body>
 </html>
