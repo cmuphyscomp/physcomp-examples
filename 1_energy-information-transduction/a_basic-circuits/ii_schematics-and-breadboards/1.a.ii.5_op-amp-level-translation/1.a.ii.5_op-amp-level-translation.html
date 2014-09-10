@@ -49,13 +49,10 @@
       signal will be amplified.</p>
 
     <p>This exercise explores two basic amplifier circuits, an inverting
-      amplifier and a non-inverting amplifier.  Each uses four resistors to
-      control the gain and offset.  In each case, two resistors between the
-      supply and ground form a voltage divider to affect the offset voltage, and
-      two resistors form a voltage divider between the input and the output to
-      control the gain.  Each of these examples is a special case of a general
-      difference amplifier in which one or the other of the inputs is tied to
-      the supply voltage.</p>
+      amplifier and a non-inverting amplifier.  Each uses four resistors to form
+      two voltage dividers, one to control the gain and one for offset.  In each
+      case, the voltage divider between the output and the V- terminal controls
+      the gain.</p>
 
     <p>Many op-amp circuits are designed for a dual supply, meaning they assume
       the availability of matched positive and negative supplies centered around
@@ -88,14 +85,13 @@
 	turn on the LED at close range.  Due to the signal inversion, the LED
 	turns off at close range.</li>
 
-      <li>Wire up the non-inverting circuit.  Note that the role of positive and negative inputs has swapped.</li>
-
-      <li>Using a DMM, adjust the pot until the V- terminal is at 1.8V.</li>
+      <li>Wire up the non-inverting circuit.</li>
 
       <li>Modulate the distance of the object nearest the sensor.  The amplifier
 	is applying gain to match the 0-3V sensor signal to the higher voltage
-	required to turn on the MOSFET; the LED should now turn on with an
-	object at close range.</li>
+	required to turn on the MOSFET; adjust the gain pot until the LED turns
+	on with an object at close range and off with an object at far
+	range.</li>
     </ol>
 
     <h4>Comments</h4>

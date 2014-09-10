@@ -7465,8 +7465,6 @@ Source: http://www.bourns.com/data/global/PDFs/3223.PDF</description>
 <part name="SUPPLY6" library="supply2" deviceset="GND" device=""/>
 <part name="SUPPLY7" library="supply2" deviceset="+5V" device=""/>
 <part name="SUPPLY8" library="supply2" deviceset="GND" device=""/>
-<part name="SUPPLY9" library="supply2" deviceset="GND" device=""/>
-<part name="SUPPLY10" library="supply2" deviceset="+5V" device=""/>
 <part name="R8" library="resistor" deviceset="R-US_" device="0204/7" value="100K"/>
 <part name="R9" library="resistor" deviceset="R-US_" device="0204/7" value="100K"/>
 <part name="Q1" library="transistor-fet" deviceset="IRF540" device=""/>
@@ -7478,6 +7476,8 @@ Source: http://www.bourns.com/data/global/PDFs/3223.PDF</description>
 <part name="R6" library="pot" deviceset="TRIM_US-" device="B25V" value="10K"/>
 <part name="SUPPLY13" library="supply2" deviceset="GND" device=""/>
 <part name="SUPPLY14" library="supply2" deviceset="+5V" device=""/>
+<part name="SUPPLY1" library="supply2" deviceset="GND" device=""/>
+<part name="SUPPLY9" library="supply2" deviceset="+5V" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -7490,9 +7490,9 @@ Sensor</text>
 <text x="218.44" y="142.24" size="1.778" layer="91">100 mA
 high-intensity
 LED</text>
-<text x="88.9" y="33.02" size="1.778" layer="91">Adjust for 1.8V on pin 2</text>
 <text x="22.86" y="66.04" size="1.778" layer="91">This schematic shows two alternate
 circuits using most of the same parts.</text>
+<text x="96.52" y="30.48" size="1.778" layer="91">Gain Control</text>
 </plain>
 <instances>
 <instance part="FRAME1" gate="G$1" x="0" y="0"/>
@@ -7524,8 +7524,6 @@ circuits using most of the same parts.</text>
 <instance part="SUPPLY6" gate="GND" x="53.34" y="96.52"/>
 <instance part="SUPPLY7" gate="+5V" x="86.36" y="147.32"/>
 <instance part="SUPPLY8" gate="GND" x="119.38" y="139.7"/>
-<instance part="SUPPLY9" gate="GND" x="119.38" y="40.64"/>
-<instance part="SUPPLY10" gate="+5V" x="83.82" y="45.72"/>
 <instance part="R8" gate="G$1" x="93.98" y="78.74" smashed="yes">
 <attribute name="NAME" x="89.9414" y="82.55" size="1.778" layer="95" rot="R90"/>
 <attribute name="VALUE" x="92.202" y="82.55" size="1.778" layer="96" rot="R90"/>
@@ -7547,6 +7545,8 @@ circuits using most of the same parts.</text>
 <instance part="SUPPLY13" gate="GND" x="109.22" y="50.8"/>
 <instance part="SUPPLY14" gate="+5V" x="109.22" y="71.12"/>
 <instance part="IC2" gate="P" x="109.22" y="60.96"/>
+<instance part="SUPPLY1" gate="GND" x="83.82" y="40.64"/>
+<instance part="SUPPLY9" gate="+5V" x="124.46" y="81.28"/>
 </instances>
 <busses>
 </busses>
@@ -7568,16 +7568,16 @@ circuits using most of the same parts.</text>
 <wire x1="119.38" y1="142.24" x2="114.3" y2="142.24" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<pinref part="SUPPLY9" gate="GND" pin="GND"/>
-<wire x1="109.22" y1="43.18" x2="119.38" y2="43.18" width="0.1524" layer="91"/>
-</segment>
-<segment>
 <pinref part="Q1" gate="G$1" pin="S"/>
 <pinref part="SUPPLY2" gate="GND" pin="GND"/>
 </segment>
 <segment>
 <pinref part="SUPPLY13" gate="GND" pin="GND"/>
 <pinref part="IC2" gate="P" pin="V-"/>
+</segment>
+<segment>
+<wire x1="93.98" y1="43.18" x2="83.82" y2="43.18" width="0.1524" layer="91"/>
+<pinref part="SUPPLY1" gate="GND" pin="GND"/>
 </segment>
 </net>
 <net name="+5V" class="0">
@@ -7598,10 +7598,6 @@ circuits using most of the same parts.</text>
 <wire x1="86.36" y1="142.24" x2="86.36" y2="144.78" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<pinref part="SUPPLY10" gate="+5V" pin="+5V"/>
-<wire x1="93.98" y1="43.18" x2="83.82" y2="43.18" width="0.1524" layer="91"/>
-</segment>
-<segment>
 <pinref part="LED1" gate="G$1" pin="A"/>
 <pinref part="SUPPLY11" gate="+5V" pin="+5V"/>
 <wire x1="210.82" y1="152.4" x2="210.82" y2="149.86" width="0.1524" layer="91"/>
@@ -7609,6 +7605,11 @@ circuits using most of the same parts.</text>
 <segment>
 <pinref part="SUPPLY14" gate="+5V" pin="+5V"/>
 <pinref part="IC2" gate="P" pin="V+"/>
+</segment>
+<segment>
+<pinref part="R9" gate="G$1" pin="2"/>
+<wire x1="119.38" y1="78.74" x2="124.46" y2="78.74" width="0.1524" layer="91"/>
+<pinref part="SUPPLY9" gate="+5V" pin="+5V"/>
 </segment>
 </net>
 <net name="N$1" class="0">
@@ -7664,18 +7665,6 @@ circuits using most of the same parts.</text>
 <pinref part="IC2" gate="A" pin="+IN"/>
 </segment>
 </net>
-<net name="N$7" class="0">
-<segment>
-<pinref part="R9" gate="G$1" pin="2"/>
-<wire x1="119.38" y1="78.74" x2="124.46" y2="78.74" width="0.1524" layer="91"/>
-<wire x1="124.46" y1="78.74" x2="124.46" y2="60.96" width="0.1524" layer="91"/>
-<wire x1="124.46" y1="60.96" x2="116.84" y2="60.96" width="0.1524" layer="91"/>
-<pinref part="IC2" gate="A" pin="OUT"/>
-<wire x1="124.46" y1="60.96" x2="180.34" y2="60.96" width="0.1524" layer="91"/>
-<wire x1="180.34" y1="60.96" x2="180.34" y2="114.3" width="0.1524" layer="91"/>
-<junction x="124.46" y="60.96"/>
-</segment>
-</net>
 <net name="N$8" class="0">
 <segment>
 <wire x1="101.6" y1="58.42" x2="101.6" y2="48.26" width="0.1524" layer="91"/>
@@ -7702,6 +7691,17 @@ circuits using most of the same parts.</text>
 <pinref part="R8" gate="G$1" pin="1"/>
 <wire x1="86.36" y1="78.74" x2="88.9" y2="78.74" width="0.1524" layer="91"/>
 <wire x1="86.36" y1="78.74" x2="86.36" y2="91.44" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$11" class="0">
+<segment>
+<wire x1="109.22" y1="43.18" x2="121.92" y2="43.18" width="0.1524" layer="91"/>
+<pinref part="IC2" gate="A" pin="OUT"/>
+<wire x1="116.84" y1="60.96" x2="121.92" y2="60.96" width="0.1524" layer="91"/>
+<wire x1="121.92" y1="60.96" x2="180.34" y2="60.96" width="0.1524" layer="91"/>
+<wire x1="180.34" y1="60.96" x2="180.34" y2="114.3" width="0.1524" layer="91"/>
+<wire x1="121.92" y1="43.18" x2="121.92" y2="60.96" width="0.1524" layer="91"/>
+<junction x="121.92" y="60.96"/>
 </segment>
 </net>
 </nets>
