@@ -5,6 +5,7 @@
 import argparse
 import os
 import re
+import json
 
 # under Macports, use py27-lxml
 import lxml.etree
@@ -29,6 +30,51 @@ def extract_html_elements( path ):
     return (body_string, title_string)
 
 ################################################################
+# Keep track of all generated posts in order to emit a single description of the whole assignments tree.
+
+post_list = list()
+
+def add_post_to_list( folder, depth, title, parent ):
+    # generate a full URL to the post source text
+    post_url = "http://cmuphyscomp.github.io/physcomp-examples/%s/post.html" % folder
+
+    # generate a permalink with underscores converted to dashes
+    permalink = "assignments/" + folder.replace("_","-")
+
+    # create a string defining the parent; it isn't clear yet what WordPress will need
+    parent = parent.replace("_","-")
+
+    # create a dictionary and save it in the global list
+    post_record = { "post": post_url, "title": title, "parent": parent, "permalink": permalink }
+    post_list.append( post_record )
+
+def write_post_list_file( dest_path ):
+    with open( dest_path, "w" ) as output:
+        output.write( json.dumps( post_list, indent = 0 ) )
+
+################################################################
+# Write the contents of a WordPress post for a given unit, section, part, or exercise within the assignments tree.
+
+def write_post_file( path, folder, depth, title, html_body_text, image_file_names, other_files, subdirs ):
+    with open( path, "w" ) as post_file:
+        post_file.write( html_body_text )
+        for img in image_file_names:
+            post_file.write( """<img id="assignment-image" class="alignnone" src="http://cmuphyscomp.github.io/physcomp-examples/%s/%s" width="960" height="%%100" />\n""" % (folder, img ))
+
+        if len(other_files) > 0:
+            post_file.write("""    <h4>Other Files</h4>\n    <ol>\n""")
+            for name in other_files:
+                post_file.write("""      <li><a href="http://cmuphyscomp.github.io/physcomp-examples/%s/%s">%s</a></li>\n""" % ( folder, name, name ))
+            post_file.write("""    </ol>\n""")
+
+        if depth == 4 and len(subdirs) > 0:
+            post_file.write("""    <h4>Sub-Folders</h4>\n    <ol>\n""")
+            for name in subdirs:
+                post_file.write("""      <li><a href="http://cmuphyscomp.github.io/physcomp-examples/%s/%s">%s</a></li>\n""" % ( folder, name, name ))
+            post_file.write("""    </ol>\n""")
+
+################################################################
+# Write a fully self-contained HTML file to serve as a folder index.html file.
 def write_index_file( path, csspath, title, html_body_text, image_file_names, other_files, subdirs ):
     with open( path, "w" ) as index_file:
 
@@ -63,6 +109,7 @@ def write_index_file( path, csspath, title, html_body_text, image_file_names, ot
 ################################################################
 html_pattern     = re.compile( ".*\.html$" ).match
 index_pattern    = re.compile( "index.html$" ).match
+post_pattern     = re.compile( "post.html$" ).match
 png_pattern      = re.compile( ".*\.png$" ).match
 jpg_pattern      = re.compile( ".*\.jpg$" ).match
 ignore_pattern   = re.compile( "(.*~|.DS_Store)$" ).match
@@ -71,6 +118,31 @@ unit_pattern     = re.compile( "([1-9])_(.*)$" ).match
 section_pattern  = re.compile( "([a-z])_(.*)$" ).match
 part_pattern     = re.compile( "([iv]+)_(.*)$" ).match
 exercise_pattern = re.compile( "(.*)_(.*)$" ).match
+
+################################################################
+# generate a title prefix based on the position in the syllabus
+def title_prefix( folder, depth ):
+    if depth == 1:
+        match = unit_pattern( folder )
+        if match:
+            return "Unit %s: " % match.group(1)
+
+    elif depth == 2:
+        match = section_pattern( folder )
+        if match:
+            return "Section %s: " % match.group(1).upper()
+
+    elif depth == 3:
+        match = part_pattern( folder )
+        if match:
+            return "Part %s: " % match.group(1)
+
+    elif depth == 4:
+        match = exercise_pattern( folder )
+        if match:
+            return match.group(1) + " "
+
+    return ""
 
 ################################################################
 def walk_unit_pages( base_input_path ):
@@ -94,12 +166,15 @@ def walk_unit_pages( base_input_path ):
         relpath = os.path.relpath( root, "../../")
 
         # compute the path to the css file to include in every index file for styling
-        depth = len( relpath.split('/' ))
+        path_parts = relpath.split('/' )
+        depth = len( path_parts )
         csspath = "/".join( [ ".." for i in range(depth) ] ) + "/support/github-web/physcomp.css"
+
+        # print "Processing ",root,"at depth",depth
 
         for file in files:
             if html_pattern( file ):
-                if not index_pattern( file ):
+                if not index_pattern( file ) and not post_pattern(file):
                     html_files.append( file )
             elif png_pattern( file ) or jpg_pattern( file ):
                 images.append( file )
@@ -113,7 +188,10 @@ def walk_unit_pages( base_input_path ):
                               other_files = html_files + other_files, subdirs = dirs )
 
         elif len(html_files) < 1:
-            print "Warning, folder has no html file: ", root
+
+            # folders at depth 5 and greater are within exercises and may just be data files, so suppress the warning:
+            if depth < 5: print "Warning, folder has no html file: ", root
+
             index_file_name = root + '/index.html'
             relpath = os.path.relpath( root, "../../")
             write_index_file( index_file_name, csspath = csspath, title = relpath , html_body_text = "", image_file_names = images, \
@@ -125,6 +203,15 @@ def walk_unit_pages( base_input_path ):
             write_index_file( index_file_name, csspath = csspath, title = title, html_body_text = body_text, image_file_names = images, \
                               other_files = other_files, subdirs = dirs )
 
+            # folders at depths up to four generate WordPress posts
+            if depth <= 4:
+                post_file_name = root + '/post.html'
+                prefix = title_prefix( path_parts[-1], depth )
+                write_post_file( post_file_name, folder=relpath, depth=depth, title = prefix+title, html_body_text = body_text, image_file_names = images, \
+                                 other_files = other_files, subdirs = dirs )
+
+                parent = "/".join( path_parts[0:-1] )
+                add_post_to_list( relpath, depth, prefix+title, parent )
 
 ################################################################
 if __name__ == "__main__":
@@ -146,3 +233,5 @@ if __name__ == "__main__":
 
     walk_unit_pages( "../../1_energy-information-transduction" )
     # walk_unit_pages( "../../1_energy-information-transduction/b_arduino-starter")
+
+    write_post_list_file( "assignments.json" )
