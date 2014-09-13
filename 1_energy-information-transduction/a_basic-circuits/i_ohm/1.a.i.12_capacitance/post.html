@@ -1,0 +1,77 @@
+<h4>Objective</h4>
+
+    <p>Understand an basic resistor-capacitor (RC) timing circuit.</p>
+
+    <p><a href="&gt;http://en.wikipedia.org/wiki/Capacitance"><em>Capacitance</em></a>
+      is a fundamental property of all bodies which describes their ability to
+      store electrical
+      charges. <a href="http://en.wikipedia.org/wiki/Capacitor"><em>Capacitors</em></a>
+      are two-terminal electronic components engineered for specific capacitance
+      properties.  Capacitors are used for a variety of purposes in circuits,
+      including energy storage, power supply smoothing, signal filtering, and
+      timing.</p>
+
+    <p>Unlike resistors, the fundamental relation between voltage across a
+      capacitor and the current flowing through it is described by
+      a <em>differential equation</em> involving time.  For this reason,
+      capacitor circuits always involve an element of temporal behavior.</p>
+
+    <p>In this example, a resistor and a capacitor form a very simple timing
+      circuit.  When the momentary switch is closed, current flows through the
+      resistor and charges the capacitor.  As current stores charge in the
+      capacitor, the OUT voltage rises.  As the OUT voltage rises, the voltage
+      drop across the resistor is reduced and so the charging current flow is
+      reduced.  This leads to a characteristic first-order exponential response
+      in which the voltage climbs rapidly at first and then slows to
+      asymptotically approach the source voltage, with a <em>time constant</em>
+      of <span class="eqn">t = R * C</span>.  With the given values (10K Ohms
+      and 100 microFarads), the time constant is 1&#160;second, so the waveform
+      will easily be seen on an oscilloscope and can almost be seen on a
+      DMM.</p>
+
+    <p>Once the capacitor is charged and the switch is opened, it will hold
+      charge and energy and the OUT voltage will ideally remain constant.  Any
+      real-life capacitor has a finite leakage, so in practice, the voltage will
+      slowly decline back toward zero.</p>
+
+    <p>Capacitors come in both polarized and non-polarized varieties, depending
+      on the type of material in use.  In general, larger capacitors
+      are <em>electrolytic</em> and are polarized, as in the diagram.</p>
+
+    <h4>Steps and observations</h4>
+
+    <ol>
+      <li>Wire the circuit, being sure to observe the capacitor polarity.  There
+	are additional 100&#160;uF parts in the Assorted bin, or you can use a
+	larger size if needed.</li>
+
+      <li>Observe the OUT voltage on an oscilloscope for three conditions: while
+	the momentary switch is closed, with the switch open, and while shorting
+	the capacitor with a jumper wire.</li>
+    </ol>
+
+    <h4>Comments</h4>
+
+    <p>For a challenge, try adding a diode to create a
+      simple <a href="http://en.wikipedia.org/wiki/Envelope_detector"><em>envelope
+      detector</em></a>.</p>
+
+    <p>Modern touch screens measure the capacitance of a human finger touching
+      the surface.</p>
+
+    <p>Very large capacitors can produce dangerously high currents and sparks
+      when shorted.  Extremely large
+      &#8220;<a href="http://en.wikipedia.org/wiki/Supercapacitor">supercapacitors</a>&#8221;
+      have been recently developed for energy storage and are used in
+      regenerative braking systems on electric vehicles to capture energy.</p>
+
+    <p>This is the barest scrape into the rich dynamic behavior possible with
+      capacitor circuits. There are an endless number of analog filter and
+      timing circuits using capacitors.  A related component is
+      the <em>inductor</em> which also has complementary dynamic behavior
+      involving asymptotic current changes.</p>
+  <img id="assignment-image" class="alignnone" src="http://cmuphyscomp.github.io/physcomp-examples/1_energy-information-transduction/a_basic-circuits/i_ohm/1.a.i.12_capacitance/1.a.i.12_capacitance_schem.png" width="960" height="%100" />
+    <h4>Other Files</h4>
+    <ol>
+      <li><a href="http://cmuphyscomp.github.io/physcomp-examples/1_energy-information-transduction/a_basic-circuits/i_ohm/1.a.i.12_capacitance/1.a.i.12_capacitance_schem.sch">1.a.i.12_capacitance_schem.sch</a></li>
+    </ol>

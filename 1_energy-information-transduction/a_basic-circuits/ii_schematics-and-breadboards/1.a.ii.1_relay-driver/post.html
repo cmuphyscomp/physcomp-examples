@@ -1,0 +1,61 @@
+<h4>Objective</h4>
+
+    <p>Connect two circuits using a relay.</p>
+
+    <p>A <a href="http://en.wikipedia.org/wiki/Relay">relay</a> is a mechanical
+      switch controlled by an electrical signal.  A current through the control
+      coil creates a magnetic field which physically moves an electrical contact
+      from a normally-closed (NC) contact to a normally-open (NO) contact. In
+      most relays, the switch immediately returns to the normally-closed state
+      when the coil is de-energized.  Relays come in many shapes, sizes, and
+      configurations; this exercise uses a relatively small relay controlled by
+      a 5V signal.</p>
+
+    <p>We can look at it in several ways: as an <em>interface</em> between an
+      informational signal and an energetic signal; as a
+      binary <em>amplifier</em> which allows a modest control signal to control a
+      high-power energetic circuit; as an <em>isolator</em> which allows the
+      input circuit to affect the output circuit without sharing any
+      current.</p>
+
+    <h4>Steps and observations</h4>
+    <ol>
+      <li>Try wiring the circuit only from the schematic rather than the
+	breadboard diagram; now is the time to become used to reading schematics
+	and rendering them onto the breadboard using your own judgement.</li>
+      <li>Set the power supplies to the specified voltages first.  We are using
+      a low-voltage motor so the 3V is actually the &#8216;high-power&#8217;
+      energy supply and the 5V is the logic supply.</li>
+      <li>Manually connect and disconnect the coil circuit, listening for the physical motion inside the relay and observing the different output states.</li>
+      <li>Measure the coil current and resistance, and compute the power dissipated by the coil.</li>
+      <li>Measure the motor current, and compute the power dissipated by the motor.</li>
+      <li>Compute the power gain of the amplifier: the output power divided by the input power.</li>
+    </ol>
+
+    <h4>Comments</h4>
+
+    <p>Relays are relatively slow but very robust.  The contacts are just switch
+      contacts, so they have no polarity, and many relays are suitable for
+      safely switching AC line circuits.  There are other variants on relays
+      such as <em>latching relays</em> in which one coil is pulsed to change
+      state and another pulsed to change it back.  There are relays with many
+      sets of contacts for controlling multiple output circuits from a single
+      control coil.</p>
+
+    <p>Relays are the original form of logic component; it is possible to build
+      a <a href="http://en.wikipedia.org/wiki/Harvard_Mark_I">programmable
+      computer using nothing but relays</a>.  The early automatic telephone
+      switches made extensive use
+      of <a href="http://en.wikipedia.org/wiki/Stepping_switch">elaborate
+      electromechanical switches</a>.</p>
+
+    <p>Small challenge: set up a relay circuit in which the coil current passes
+      through the NC contact in series with the coil.  What do you expect will
+      happen?</p>
+
+  <img id="assignment-image" class="alignnone" src="http://cmuphyscomp.github.io/physcomp-examples/1_energy-information-transduction/a_basic-circuits/ii_schematics-and-breadboards/1.a.ii.1_relay-driver/1.a.ii.1_relay-driver_bb.png" width="960" height="%100" />
+<img id="assignment-image" class="alignnone" src="http://cmuphyscomp.github.io/physcomp-examples/1_energy-information-transduction/a_basic-circuits/ii_schematics-and-breadboards/1.a.ii.1_relay-driver/1.a.ii.1_relay-driver_schem.png" width="960" height="%100" />
+    <h4>Other Files</h4>
+    <ol>
+      <li><a href="http://cmuphyscomp.github.io/physcomp-examples/1_energy-information-transduction/a_basic-circuits/ii_schematics-and-breadboards/1.a.ii.1_relay-driver/1.a.ii.1_relay-driver.fzz">1.a.ii.1_relay-driver.fzz</a></li>
+    </ol>

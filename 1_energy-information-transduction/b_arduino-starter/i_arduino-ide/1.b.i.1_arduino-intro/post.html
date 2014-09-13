@@ -1,0 +1,72 @@
+<h4>Objective</h4>
+
+    <p>Understand the basic nature of an Arduino; find the Arduino software tools.</p>
+
+    <p>The <a href="http://arduino.cc/"><em>Arduino</em></a> is a tiny computer
+      with specialized hardware suitable for physical interfacing and easy
+      programming.  Or rather, there
+      are <a href="http://arduino.cc/en/Main/Boards">many variants</a> available
+      in different configurations which share a common programming system and
+      design philosophy.  We'll focus on the basic Arduino Uno.</p>
+
+    <p>The Arduino runs programs from built-in FLASH read-only memory.  When
+      powered up, it boots very quickly and starts running the stored program.
+      This is convenient for physical interfacing; the world doesn't wait for
+      booting up.  It is low-power and works reasonably well with battery
+      supplies.  It has built-in analog-to-digital conversion for reading analog
+      sensor inputs.  It can generate pulse-width-modulated (PWM) signals for
+      operating servos and motors.  It doesn't have any sort of graphic display,
+      so understanding and debugging program flow requires a host computer and
+      careful reasoning from the limited data that can be sent to it.</p>
+
+    <p>The Arduino comes with a software application called the Arduino IDE
+      (or <em>Integrated Development Environment</em>) which combines a program
+      text editor, a <em>compiler</em> which translates the program text into
+      machine code, and a <em>bootstrap loader</em> which can program the
+      machine code representing your program into read-only memory on the
+      Arduino microprocessor.</p>
+
+    <p>The identity of the Arduino is rooted in the programming language as
+      defined by the supplied libraries.  The underlying language is C++, but
+      the built-in libraries use a selected subset of C++ to keep the syntax
+      beginner-friendly.</p>
+
+    <p>The computational capacity of an Arduino is vastly smaller than a
+      contemporary laptop or cellphone: the Arduino Uno has only 32K of ROM and
+      2K of RAM, executing 8-bit instructions at 16&#160;MHz.  The laptop
+      computer used to write this text has 8&#160;million times more persistent
+      storage and 4&#160;million times more transient storage.  Computation
+      rates are harder to compare, but the basic clock rate of this laptop is
+      80&#160;times faster, and the effective processing rate even more
+      multiplied.  But the Arduino consumes substantially less power, and is
+      substantially easier to program at a hardware level.</p>
+
+    <h4>Steps and observations</h4>
+    <ol>
+      <li>Familiarize yourself with
+	the <a href="http://arduino.cc/en/Main/ArduinoBoardUno">Arduino Uno</a>:
+	find one in the lab, look at the physical and electrical interfaces,
+	read the specs, look up any unfamiliar nomenclature.</li>
+
+      <li>Find and launch the Arduino application.  If you are using your own computer, 
+	<a href="http://arduino.cc/en/Main/Software">the IDE can be installed
+	from the main Arduino site</a>.</li>
+
+    </ol>
+
+    <h4>Comments</h4>
+
+    <p>The IDE package actually contains all of the source code for the
+      libraries, so with a little digging it is possible to read everything that
+      is compiled and loaded.</p>
+
+    <p>The <a href="http://arduino.cc/en/uploads/Main/arduino-uno-schematic.pdf">Arduino
+	Uno circuit diagram</a> can help with understanding all the parts on the
+	board.  There are actually two microcontrollers, with one devoted to the
+	USB connection, and the other running user programs and interfacing to
+	the pins.  The 3.3V supply is provided by a linear regulator attached to
+	the 5V supply.  The power supply automatically switches between USB and
+	external power.  The USB supply is fused to try to protect the attached
+	computer from short circuits.</p>
+
+  

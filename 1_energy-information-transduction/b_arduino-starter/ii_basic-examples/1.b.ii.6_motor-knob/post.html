@@ -1,0 +1,60 @@
+<h4>Objective</h4>
+ 
+    <p>Control a stepper motor using a driver module.</p>
+
+    <p>A <a href="http://en.wikipedia.org/wiki/Stepper_motor">stepper motor</a>
+      uses a toothed rotor and multiple drive coils to create motion in discrete
+      steps.  The fundamental angular size of the steps is determined by the
+      physical spacing of the internal magnetic teeth.  Steppers motors
+      are <em>open-loop</em> since there is no sensor involved in controlling
+      position, the driver simply cycles the coil currents and assumes the motor
+      moves synchronously.  If the motor encounters too high a torque, the
+      magnetic forces can be overcome and the rotor will slip to a different
+      position.  The microcontroller has have no means of detecting this
+      error.</p>
+
+    <p>This exercise uses
+      an <a href="http://www.allegromicro.com/~/media/Files/Datasheets/A4983-Datasheet.ashx">A4983</a>
+      driver module which takes care of cycling the currents appropriately
+      through the two coils of a bipolar stepper motor.  The primary inputs to
+      the driver are <em>direction</em> and <em>step</em>.  The additional
+      inputs control fractional stepping and the overall driver power state.</p>
+
+    <p>As a simple one-in one-out demonstration, the exercise uses a
+      potentiometer as an analog position command control input.</p>
+
+    <h4>Steps and observations</h4>
+    <ol>
+      <li>Load and run the KnobToStepper sketch from the course materials,
+	located in the same folder as this file.  (Note: there is a MotorKnob
+	sketch included in the Arduino IDE which assumes the stepper motor is
+	directly driven from the Arduino; instead we will use a modular driver
+	for this exercise.)</li>
+
+      <li>Observe the stepper motor motion.</li>
+
+      <li>Try moving the MS1 pull-up resistor between 5V and GND and observing
+	the resulting change in step rate.  The driver is capable
+	of <em>microstepping</em> in which the coils can be driven using PWM
+	rather simply on or off in order to divide the fundamental step into
+	smaller angles.</li>
+
+      <li>Read the data sheet for the driver and configure the driver for even
+	finer steps.</li>
+
+    </ol>
+
+    <h4>Comments</h4>
+
+    <p>Stepper motors can move relatively fast but at too high a rate can lose count.</p>
+
+  <img id="assignment-image" class="alignnone" src="http://cmuphyscomp.github.io/physcomp-examples/1_energy-information-transduction/b_arduino-starter/ii_basic-examples/1.b.ii.6_motor-knob/1.b.ii.6_motor-knob_bb.png" width="960" height="%100" />
+<img id="assignment-image" class="alignnone" src="http://cmuphyscomp.github.io/physcomp-examples/1_energy-information-transduction/b_arduino-starter/ii_basic-examples/1.b.ii.6_motor-knob/1.b.ii.6_motor-knob_schem.png" width="960" height="%100" />
+    <h4>Other Files</h4>
+    <ol>
+      <li><a href="http://cmuphyscomp.github.io/physcomp-examples/1_energy-information-transduction/b_arduino-starter/ii_basic-examples/1.b.ii.6_motor-knob/1.b.ii.6_motor-knob.fzz">1.b.ii.6_motor-knob.fzz</a></li>
+    </ol>
+    <h4>Sub-Folders</h4>
+    <ol>
+      <li><a href="http://cmuphyscomp.github.io/physcomp-examples/1_energy-information-transduction/b_arduino-starter/ii_basic-examples/1.b.ii.6_motor-knob/KnobToStepper">KnobToStepper</a></li>
+    </ol>

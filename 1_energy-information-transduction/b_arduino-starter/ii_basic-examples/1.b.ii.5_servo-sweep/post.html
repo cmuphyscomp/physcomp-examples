@@ -1,0 +1,43 @@
+<h4>Objective</h4>
+ 
+    <p>Control a hobby servomotor module.</p>
+
+    <p>Hobby servos are feedback-controlled motors which move an output shaft to
+      a specified position.  Internally they use a potentiometer to measure the
+      actual position.  The internal circuit compares the actual and commanded
+      position and generates positive and negative motor current pulses to
+      operate a tiny gearmotor.  They are a very convenient modular way to
+      create controlled physical motion.</p>
+
+    <p>The commanded position is specified using a specific format of PWM in
+      which pulses with duration approximately 1-2&#160;ms repeat at
+      approximately 50&#160;Hz.  The different pulse widths correspond to
+      different positions.  Note that this a significantly different waveform
+      than the motor PWM, since the <em>duty cycle</em> is always very low,
+      i.e., the pulse on-time is always much shorter than the cycle time.</p>
+
+    <h4>Steps and observations</h4>
+    <ol>
+      <li>Load and run the Servo/Sweep sketch.  This uses the Servo library, an included add-on to the base library.</li>
+      <li>Observe the servo motion.</li>
+      <li>Observe the PWM command signal on the oscilloscope.</li>
+      <li>Try varying the numbers governing the motion limits.</li>
+      <li>Try varying the delay to change the speed.</li>
+      <li>Determine the maximum speed possible.</li>
+    </ol>
+
+    <h4>Comments</h4>
+
+    <p>Note that trajectories and speed control are only possible by issuing position commands at intervals.</p>
+
+    <p>As a challenge, rewrite the program to avoid <code>delay()</code> and
+      operate two servos simultanously on different trajectories.  This will be
+      taken up in more detail in an upcoming exercise.</p>
+
+  <img id="assignment-image" class="alignnone" src="http://cmuphyscomp.github.io/physcomp-examples/1_energy-information-transduction/b_arduino-starter/ii_basic-examples/1.b.ii.5_servo-sweep/1.b.ii.5_servo-sweep_bb.png" width="960" height="%100" />
+<img id="assignment-image" class="alignnone" src="http://cmuphyscomp.github.io/physcomp-examples/1_energy-information-transduction/b_arduino-starter/ii_basic-examples/1.b.ii.5_servo-sweep/1.b.ii.5_servo-sweep_img.jpg" width="960" height="%100" />
+<img id="assignment-image" class="alignnone" src="http://cmuphyscomp.github.io/physcomp-examples/1_energy-information-transduction/b_arduino-starter/ii_basic-examples/1.b.ii.5_servo-sweep/1.b.ii.5_servo-sweep_schem.png" width="960" height="%100" />
+    <h4>Other Files</h4>
+    <ol>
+      <li><a href="http://cmuphyscomp.github.io/physcomp-examples/1_energy-information-transduction/b_arduino-starter/ii_basic-examples/1.b.ii.5_servo-sweep/1.b.ii.5_servo-sweep.fzz">1.b.ii.5_servo-sweep.fzz</a></li>
+    </ol>

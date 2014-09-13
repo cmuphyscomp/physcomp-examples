@@ -1,0 +1,95 @@
+<h4>Objective</h4>
+
+    <p>Test different types of voltage regulation components.</p>
+
+    <p>Power supplies are the heart of any electronics project, as every circuit
+      needs a source of energy, and usually with very specific electrical
+      characteristics.  Most of our circuits will require regulated DC supplies,
+      with energy coming either from a battery or the building electrical
+      system.  Unless otherwise specified, <em>regulated</em> means the voltage
+      is controlled to a constant level despite changes in the load.</p>
+
+	  
+    <p>We will use two basic categories of voltage regulators: linear and
+      switching.</p>
+
+    <p>In brief, a linear regulator acts as a variable resistor governed by
+      feedback to keep the output voltage at a fixed level.  Linear regulators
+      can only step voltages down, and the excess energy is dissipated as heat.
+      So for example, a 5V linear regulator providing a 500&#160;mA current from
+      a 12V supply creates a 7V voltage drop.  That represents 3.5&#160;Watts of
+      heat dissipated in the package, which typically means the package needs a
+      good heatsink to carry that heat away.
+    </p>
+
+    <p>A switching regulator chops the input current at a high frequency and
+      either pulses it through an inductor (a coil) to generate higher voltages
+      via inductive effects, or filters it through capacitors and/or inductors
+      to generate a lower voltage.  The upside of the complexity is much higher
+      efficiency, and hence less heat.  The downside is the potential for supply
+      noise, since the switching frequency can appear in the output.  But the
+      efficiency almost always outweighs the complexity in consumer
+      applications, especially for battery circuits.</p>
+
+
+    <h4>Steps and observations</h4>
+
+    <ol>
+      <li>Wire up each circuit, being very careful to observe the correct input
+	polarity.</li>
+
+      <li>Measure the unloaded outputs.  Not all switching regulators perform
+	well without any load at all.</li>
+
+      <li>Find a power resistor or component representing a reasonable load.
+	E.g., dissipating 100&#160;mA from a 5V regulator can be accomplished
+	using a 0.5&#160;Watt 50&#160;ohm resistor, or a lamp or motor with
+	similar properties.  (Hint: a half-watt 50&#160;ohm resistor can be
+	formed from two quarter-watt 100&#160;ohm resistors in parallel.)</li>
+      <li>Measure the loaded output.</li>
+      <li>For the switching regulators, using the oscilloscope try to observe
+	the switching rate as a high-frequency fluctuation on the output.  This
+	signal might be 20-100&#160;kHz.</li>
+    </ol>
+
+    <h4>Comments</h4>
+
+    <p>In the first example of a linear regulator, the the load is only
+      consuming 2.5&#160;Watts of energy while the regulator dissipates
+      3.5&#160;Watts, so this circuit is operating at only 42% efficiency.  Linear
+      regulator circuits are simple to use and inexpensive, so they are
+      applicable for low-power applications or where efficiency and heating are
+      not a problem.  The primary advantage is they are potentially low-noise
+      compared to switching regulators, so they often appear in high-fidelity
+      audio applications.</p>
+    
+    <p>In contrast, switching regulators typically operate as 85% efficiency or
+      higher.  The availability has been remarkably eased by the introduction of
+      simple integrated circuits which implement the chopping and feedback
+      function.  Consumer 'wall-wart' power supplies used to only use simple
+      linear regulation (or no regulation), but nearly all modern power supplies
+      for consumer electronics are now switch-mode.</p>
+
+    <p>A good debugging heuristic for any project is to begin solving problems
+      by checking the power supply.  There are many, many possible problems, so for example:
+      </p><ol>
+	<li>overloading a power supply can cause the voltage to drop or current limits to trip</li>
+	<li>power supplies connect across every circuit subsystem, so signal problems can be linked in subtle ways</li>
+	<li>high-current signals from motors can create voltages in the ground wires (&#8220;ground bounce&#8221;)</li>
+	<li>digital supply noise can couple into analog circuits and inject noise</li>
+	<li>etc., etc.</li>
+      </ol>
+    
+
+  <img id="assignment-image" class="alignnone" src="http://cmuphyscomp.github.io/physcomp-examples/1_energy-information-transduction/a_basic-circuits/i_ohm/1.a.i.11_voltage-regulation/1.a.i.11_voltage-regulation-step-down_bb.png" width="960" height="%100" />
+<img id="assignment-image" class="alignnone" src="http://cmuphyscomp.github.io/physcomp-examples/1_energy-information-transduction/a_basic-circuits/i_ohm/1.a.i.11_voltage-regulation/1.a.i.11_voltage-regulation-step-down_schem.png" width="960" height="%100" />
+<img id="assignment-image" class="alignnone" src="http://cmuphyscomp.github.io/physcomp-examples/1_energy-information-transduction/a_basic-circuits/i_ohm/1.a.i.11_voltage-regulation/1.a.i.11_voltage-regulation-step-up-step-down_bb.png" width="960" height="%100" />
+<img id="assignment-image" class="alignnone" src="http://cmuphyscomp.github.io/physcomp-examples/1_energy-information-transduction/a_basic-circuits/i_ohm/1.a.i.11_voltage-regulation/1.a.i.11_voltage-regulation-step-up-step-down_schem.png" width="960" height="%100" />
+<img id="assignment-image" class="alignnone" src="http://cmuphyscomp.github.io/physcomp-examples/1_energy-information-transduction/a_basic-circuits/i_ohm/1.a.i.11_voltage-regulation/1.a.i.11_voltage-regulation_bb.png" width="960" height="%100" />
+<img id="assignment-image" class="alignnone" src="http://cmuphyscomp.github.io/physcomp-examples/1_energy-information-transduction/a_basic-circuits/i_ohm/1.a.i.11_voltage-regulation/1.a.i.11_voltage-regulation_schem.png" width="960" height="%100" />
+    <h4>Other Files</h4>
+    <ol>
+      <li><a href="http://cmuphyscomp.github.io/physcomp-examples/1_energy-information-transduction/a_basic-circuits/i_ohm/1.a.i.11_voltage-regulation/1.a.i.11_voltage-regulation-step-down.fzz">1.a.i.11_voltage-regulation-step-down.fzz</a></li>
+      <li><a href="http://cmuphyscomp.github.io/physcomp-examples/1_energy-information-transduction/a_basic-circuits/i_ohm/1.a.i.11_voltage-regulation/1.a.i.11_voltage-regulation-step-up-step-down.fzz">1.a.i.11_voltage-regulation-step-up-step-down.fzz</a></li>
+      <li><a href="http://cmuphyscomp.github.io/physcomp-examples/1_energy-information-transduction/a_basic-circuits/i_ohm/1.a.i.11_voltage-regulation/1.a.i.11_voltage-regulation.fzz">1.a.i.11_voltage-regulation.fzz</a></li>
+    </ol>

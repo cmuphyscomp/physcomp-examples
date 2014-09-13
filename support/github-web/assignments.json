@@ -1,0 +1,338 @@
+[
+{
+"post": "http://cmuphyscomp.github.io/physcomp-examples/1_energy-information-transduction/post.html", 
+"permalink": "assignments/1-energy-information-transduction", 
+"parent": "", 
+"title": "Unit 1: Unit 1 Energy, Information, Transduction: Overview"
+}, 
+{
+"post": "http://cmuphyscomp.github.io/physcomp-examples/1_energy-information-transduction/a_basic-circuits/post.html", 
+"permalink": "assignments/1-energy-information-transduction/a-basic-circuits", 
+"parent": "1-energy-information-transduction", 
+"title": "Section A: Basic Circuits: Overview"
+}, 
+{
+"post": "http://cmuphyscomp.github.io/physcomp-examples/1_energy-information-transduction/a_basic-circuits/i_ohm/post.html", 
+"permalink": "assignments/1-energy-information-transduction/a-basic-circuits/i-ohm", 
+"parent": "1-energy-information-transduction/a-basic-circuits", 
+"title": "Part i: Ohm's Law: Overview"
+}, 
+{
+"post": "http://cmuphyscomp.github.io/physcomp-examples/1_energy-information-transduction/a_basic-circuits/i_ohm/1.a.i.10_smoke-a-resistor/post.html", 
+"permalink": "assignments/1-energy-information-transduction/a-basic-circuits/i-ohm/1.a.i.10-smoke-a-resistor", 
+"parent": "1-energy-information-transduction/a-basic-circuits/i-ohm", 
+"title": "1.a.i.10 Exercise: Smoke a Resistor"
+}, 
+{
+"post": "http://cmuphyscomp.github.io/physcomp-examples/1_energy-information-transduction/a_basic-circuits/i_ohm/1.a.i.11_voltage-regulation/post.html", 
+"permalink": "assignments/1-energy-information-transduction/a-basic-circuits/i-ohm/1.a.i.11-voltage-regulation", 
+"parent": "1-energy-information-transduction/a-basic-circuits/i-ohm", 
+"title": "1.a.i.11 Exercise: Voltage Regulation"
+}, 
+{
+"post": "http://cmuphyscomp.github.io/physcomp-examples/1_energy-information-transduction/a_basic-circuits/i_ohm/1.a.i.12_capacitance/post.html", 
+"permalink": "assignments/1-energy-information-transduction/a-basic-circuits/i-ohm/1.a.i.12-capacitance", 
+"parent": "1-energy-information-transduction/a-basic-circuits/i-ohm", 
+"title": "1.a.i.12 Exercise: Capacitance"
+}, 
+{
+"post": "http://cmuphyscomp.github.io/physcomp-examples/1_energy-information-transduction/a_basic-circuits/i_ohm/1.a.i.1_bench-battery-grid/post.html", 
+"permalink": "assignments/1-energy-information-transduction/a-basic-circuits/i-ohm/1.a.i.1-bench-battery-grid", 
+"parent": "1-energy-information-transduction/a-basic-circuits/i-ohm", 
+"title": "1.a.i.1 Exercise: Bench, Battery, Grid"
+}, 
+{
+"post": "http://cmuphyscomp.github.io/physcomp-examples/1_energy-information-transduction/a_basic-circuits/i_ohm/1.a.i.2_continuity-tests/post.html", 
+"permalink": "assignments/1-energy-information-transduction/a-basic-circuits/i-ohm/1.a.i.2-continuity-tests", 
+"parent": "1-energy-information-transduction/a-basic-circuits/i-ohm", 
+"title": "1.a.i.2 Exercise: Continuity Tests"
+}, 
+{
+"post": "http://cmuphyscomp.github.io/physcomp-examples/1_energy-information-transduction/a_basic-circuits/i_ohm/1.a.i.3_power-switch/post.html", 
+"permalink": "assignments/1-energy-information-transduction/a-basic-circuits/i-ohm/1.a.i.3-power-switch", 
+"parent": "1-energy-information-transduction/a-basic-circuits/i-ohm", 
+"title": "1.a.i.3 Exercise: Power Switch"
+}, 
+{
+"post": "http://cmuphyscomp.github.io/physcomp-examples/1_energy-information-transduction/a_basic-circuits/i_ohm/1.a.i.4_voltage-divider/post.html", 
+"permalink": "assignments/1-energy-information-transduction/a-basic-circuits/i-ohm/1.a.i.4-voltage-divider", 
+"parent": "1-energy-information-transduction/a-basic-circuits/i-ohm", 
+"title": "1.a.i.4 Exercise: Voltage Divider"
+}, 
+{
+"post": "http://cmuphyscomp.github.io/physcomp-examples/1_energy-information-transduction/a_basic-circuits/i_ohm/1.a.i.5_switch-with-pullup/post.html", 
+"permalink": "assignments/1-energy-information-transduction/a-basic-circuits/i-ohm/1.a.i.5-switch-with-pullup", 
+"parent": "1-energy-information-transduction/a-basic-circuits/i-ohm", 
+"title": "1.a.i.5 Exercise: Switch with pullup"
+}, 
+{
+"post": "http://cmuphyscomp.github.io/physcomp-examples/1_energy-information-transduction/a_basic-circuits/i_ohm/1.a.i.6_led-current-limiter/post.html", 
+"permalink": "assignments/1-energy-information-transduction/a-basic-circuits/i-ohm/1.a.i.6-led-current-limiter", 
+"parent": "1-energy-information-transduction/a-basic-circuits/i-ohm", 
+"title": "1.a.i.6 Exercise: LED with current limiter"
+}, 
+{
+"post": "http://cmuphyscomp.github.io/physcomp-examples/1_energy-information-transduction/a_basic-circuits/i_ohm/1.a.i.7_photocell-with-bias-resistor/post.html", 
+"permalink": "assignments/1-energy-information-transduction/a-basic-circuits/i-ohm/1.a.i.7-photocell-with-bias-resistor", 
+"parent": "1-energy-information-transduction/a-basic-circuits/i-ohm", 
+"title": "1.a.i.7 Exercise: Photocell with bias resistor"
+}, 
+{
+"post": "http://cmuphyscomp.github.io/physcomp-examples/1_energy-information-transduction/a_basic-circuits/i_ohm/1.a.i.8_pressure-pad-with-bias-resistor/post.html", 
+"permalink": "assignments/1-energy-information-transduction/a-basic-circuits/i-ohm/1.a.i.8-pressure-pad-with-bias-resistor", 
+"parent": "1-energy-information-transduction/a-basic-circuits/i-ohm", 
+"title": "1.a.i.8 Exercise: Pressure pad with bias resistor"
+}, 
+{
+"post": "http://cmuphyscomp.github.io/physcomp-examples/1_energy-information-transduction/a_basic-circuits/i_ohm/1.a.i.9_transducer-with-dmm/post.html", 
+"permalink": "assignments/1-energy-information-transduction/a-basic-circuits/i-ohm/1.a.i.9-transducer-with-dmm", 
+"parent": "1-energy-information-transduction/a-basic-circuits/i-ohm", 
+"title": "1.a.i.9 Exercise: Transducer with DMM"
+}, 
+{
+"post": "http://cmuphyscomp.github.io/physcomp-examples/1_energy-information-transduction/a_basic-circuits/ii_schematics-and-breadboards/post.html", 
+"permalink": "assignments/1-energy-information-transduction/a-basic-circuits/ii-schematics-and-breadboards", 
+"parent": "1-energy-information-transduction/a-basic-circuits", 
+"title": "Part ii: Schematics and Breadboards: Overview"
+}, 
+{
+"post": "http://cmuphyscomp.github.io/physcomp-examples/1_energy-information-transduction/a_basic-circuits/ii_schematics-and-breadboards/1.a.ii.1_relay-driver/post.html", 
+"permalink": "assignments/1-energy-information-transduction/a-basic-circuits/ii-schematics-and-breadboards/1.a.ii.1-relay-driver", 
+"parent": "1-energy-information-transduction/a-basic-circuits/ii-schematics-and-breadboards", 
+"title": "1.a.ii.1 Exercise: Relay Driver"
+}, 
+{
+"post": "http://cmuphyscomp.github.io/physcomp-examples/1_energy-information-transduction/a_basic-circuits/ii_schematics-and-breadboards/1.a.ii.2_transistor-driver/post.html", 
+"permalink": "assignments/1-energy-information-transduction/a-basic-circuits/ii-schematics-and-breadboards/1.a.ii.2-transistor-driver", 
+"parent": "1-energy-information-transduction/a-basic-circuits/ii-schematics-and-breadboards", 
+"title": "1.a.ii.2 Exercise: Transistor Driver"
+}, 
+{
+"post": "http://cmuphyscomp.github.io/physcomp-examples/1_energy-information-transduction/a_basic-circuits/ii_schematics-and-breadboards/1.a.ii.3_multichannel-driver/post.html", 
+"permalink": "assignments/1-energy-information-transduction/a-basic-circuits/ii-schematics-and-breadboards/1.a.ii.3-multichannel-driver", 
+"parent": "1-energy-information-transduction/a-basic-circuits/ii-schematics-and-breadboards", 
+"title": "1.a.ii.3 Exercise: Multichannel Driver"
+}, 
+{
+"post": "http://cmuphyscomp.github.io/physcomp-examples/1_energy-information-transduction/a_basic-circuits/ii_schematics-and-breadboards/1.a.ii.4_transistor-and-sensor-for-power/post.html", 
+"permalink": "assignments/1-energy-information-transduction/a-basic-circuits/ii-schematics-and-breadboards/1.a.ii.4-transistor-and-sensor-for-power", 
+"parent": "1-energy-information-transduction/a-basic-circuits/ii-schematics-and-breadboards", 
+"title": "1.a.ii.4 Exercise: Linear One-In One-Out"
+}, 
+{
+"post": "http://cmuphyscomp.github.io/physcomp-examples/1_energy-information-transduction/a_basic-circuits/ii_schematics-and-breadboards/1.a.ii.5_op-amp-level-translation/post.html", 
+"permalink": "assignments/1-energy-information-transduction/a-basic-circuits/ii-schematics-and-breadboards/1.a.ii.5-op-amp-level-translation", 
+"parent": "1-energy-information-transduction/a-basic-circuits/ii-schematics-and-breadboards", 
+"title": "1.a.ii.5 Exercise: Op-Amp Level Translation"
+}, 
+{
+"post": "http://cmuphyscomp.github.io/physcomp-examples/1_energy-information-transduction/b_arduino-starter/post.html", 
+"permalink": "assignments/1-energy-information-transduction/b-arduino-starter", 
+"parent": "1-energy-information-transduction", 
+"title": "Section B: Arduino Starter: Overview"
+}, 
+{
+"post": "http://cmuphyscomp.github.io/physcomp-examples/1_energy-information-transduction/b_arduino-starter/i_arduino-ide/post.html", 
+"permalink": "assignments/1-energy-information-transduction/b-arduino-starter/i-arduino-ide", 
+"parent": "1-energy-information-transduction/b-arduino-starter", 
+"title": "Part i: Arduino IDE: Overview"
+}, 
+{
+"post": "http://cmuphyscomp.github.io/physcomp-examples/1_energy-information-transduction/b_arduino-starter/i_arduino-ide/1.b.i.1_arduino-intro/post.html", 
+"permalink": "assignments/1-energy-information-transduction/b-arduino-starter/i-arduino-ide/1.b.i.1-arduino-intro", 
+"parent": "1-energy-information-transduction/b-arduino-starter/i-arduino-ide", 
+"title": "1.b.i.1 Exercise: Arduino Introduction"
+}, 
+{
+"post": "http://cmuphyscomp.github.io/physcomp-examples/1_energy-information-transduction/b_arduino-starter/i_arduino-ide/1.b.i.2_coding-compiling-deploying/post.html", 
+"permalink": "assignments/1-energy-information-transduction/b-arduino-starter/i-arduino-ide/1.b.i.2-coding-compiling-deploying", 
+"parent": "1-energy-information-transduction/b-arduino-starter/i-arduino-ide", 
+"title": "1.b.i.2 Exercise: Coding, Compiling, Deploying"
+}, 
+{
+"post": "http://cmuphyscomp.github.io/physcomp-examples/1_energy-information-transduction/b_arduino-starter/ii_basic-examples/post.html", 
+"permalink": "assignments/1-energy-information-transduction/b-arduino-starter/ii-basic-examples", 
+"parent": "1-energy-information-transduction/b-arduino-starter", 
+"title": "Part ii: Arduino Basic Examples: Overview"
+}, 
+{
+"post": "http://cmuphyscomp.github.io/physcomp-examples/1_energy-information-transduction/b_arduino-starter/ii_basic-examples/1.b.ii.1_blink-bulb/post.html", 
+"permalink": "assignments/1-energy-information-transduction/b-arduino-starter/ii-basic-examples/1.b.ii.1-blink-bulb", 
+"parent": "1-energy-information-transduction/b-arduino-starter/ii-basic-examples", 
+"title": "1.b.ii.1 Exercise: Blink Bulb"
+}, 
+{
+"post": "http://cmuphyscomp.github.io/physcomp-examples/1_energy-information-transduction/b_arduino-starter/ii_basic-examples/1.b.ii.2_blink-motor/post.html", 
+"permalink": "assignments/1-energy-information-transduction/b-arduino-starter/ii-basic-examples/1.b.ii.2-blink-motor", 
+"parent": "1-energy-information-transduction/b-arduino-starter/ii-basic-examples", 
+"title": "1.b.ii.2 Exercise: Blink Motor"
+}, 
+{
+"post": "http://cmuphyscomp.github.io/physcomp-examples/1_energy-information-transduction/b_arduino-starter/ii_basic-examples/1.b.ii.3_analog-read-serial/post.html", 
+"permalink": "assignments/1-energy-information-transduction/b-arduino-starter/ii-basic-examples/1.b.ii.3-analog-read-serial", 
+"parent": "1-energy-information-transduction/b-arduino-starter/ii-basic-examples", 
+"title": "1.b.ii.3 Exercise: Analog Read Serial"
+}, 
+{
+"post": "http://cmuphyscomp.github.io/physcomp-examples/1_energy-information-transduction/b_arduino-starter/ii_basic-examples/1.b.ii.4_digital-read-serial/post.html", 
+"permalink": "assignments/1-energy-information-transduction/b-arduino-starter/ii-basic-examples/1.b.ii.4-digital-read-serial", 
+"parent": "1-energy-information-transduction/b-arduino-starter/ii-basic-examples", 
+"title": "1.b.ii.4 Exercise: Digital Read Serial"
+}, 
+{
+"post": "http://cmuphyscomp.github.io/physcomp-examples/1_energy-information-transduction/b_arduino-starter/ii_basic-examples/1.b.ii.5_servo-sweep/post.html", 
+"permalink": "assignments/1-energy-information-transduction/b-arduino-starter/ii-basic-examples/1.b.ii.5-servo-sweep", 
+"parent": "1-energy-information-transduction/b-arduino-starter/ii-basic-examples", 
+"title": "1.b.ii.5 Exercise: Servo Sweep"
+}, 
+{
+"post": "http://cmuphyscomp.github.io/physcomp-examples/1_energy-information-transduction/b_arduino-starter/ii_basic-examples/1.b.ii.6_motor-knob/post.html", 
+"permalink": "assignments/1-energy-information-transduction/b-arduino-starter/ii-basic-examples/1.b.ii.6-motor-knob", 
+"parent": "1-energy-information-transduction/b-arduino-starter/ii-basic-examples", 
+"title": "1.b.ii.6 Exercise: Motor Knob"
+}, 
+{
+"post": "http://cmuphyscomp.github.io/physcomp-examples/1_energy-information-transduction/b_arduino-starter/iii_sampling-rate-resolution-scaling/post.html", 
+"permalink": "assignments/1-energy-information-transduction/b-arduino-starter/iii-sampling-rate-resolution-scaling", 
+"parent": "1-energy-information-transduction/b-arduino-starter", 
+"title": "Part iii: Arduino Sampling Rate, Resolution, Scaling: Overview"
+}, 
+{
+"post": "http://cmuphyscomp.github.io/physcomp-examples/1_energy-information-transduction/b_arduino-starter/iii_sampling-rate-resolution-scaling/1.b.iii.1_event-loop-programming/post.html", 
+"permalink": "assignments/1-energy-information-transduction/b-arduino-starter/iii-sampling-rate-resolution-scaling/1.b.iii.1-event-loop-programming", 
+"parent": "1-energy-information-transduction/b-arduino-starter/iii-sampling-rate-resolution-scaling", 
+"title": "1.b.iii.1 Exercise: Event-Loop Programming"
+}, 
+{
+"post": "http://cmuphyscomp.github.io/physcomp-examples/1_energy-information-transduction/b_arduino-starter/iii_sampling-rate-resolution-scaling/1.b.iii.2_resolution-and-mapping/post.html", 
+"permalink": "assignments/1-energy-information-transduction/b-arduino-starter/iii-sampling-rate-resolution-scaling/1.b.iii.2-resolution-and-mapping", 
+"parent": "1-energy-information-transduction/b-arduino-starter/iii-sampling-rate-resolution-scaling", 
+"title": "1.b.iii.2 Exercise: Resolution and Mapping"
+}, 
+{
+"post": "http://cmuphyscomp.github.io/physcomp-examples/1_energy-information-transduction/b_arduino-starter/iv_serial-interfaces/post.html", 
+"permalink": "assignments/1-energy-information-transduction/b-arduino-starter/iv-serial-interfaces", 
+"parent": "1-energy-information-transduction/b-arduino-starter", 
+"title": "Part iv: Arduino Serial Interfaces: Overview"
+}, 
+{
+"post": "http://cmuphyscomp.github.io/physcomp-examples/1_energy-information-transduction/b_arduino-starter/iv_serial-interfaces/1.b.iv.1_Adafruit-PWM-I2C/post.html", 
+"permalink": "assignments/1-energy-information-transduction/b-arduino-starter/iv-serial-interfaces/1.b.iv.1-Adafruit-PWM-I2C", 
+"parent": "1-energy-information-transduction/b-arduino-starter/iv-serial-interfaces", 
+"title": "1.b.iv.1 Exercise: Adafruit PWM I2C Module"
+}, 
+{
+"post": "http://cmuphyscomp.github.io/physcomp-examples/1_energy-information-transduction/b_arduino-starter/iv_serial-interfaces/1.b.iv.2_MPU6050-IMU-I2C/post.html", 
+"permalink": "assignments/1-energy-information-transduction/b-arduino-starter/iv-serial-interfaces/1.b.iv.2-MPU6050-IMU-I2C", 
+"parent": "1-energy-information-transduction/b-arduino-starter/iv-serial-interfaces", 
+"title": "1.b.iv.2 Exercise: MPU6050 IMU I2C Module"
+}, 
+{
+"post": "http://cmuphyscomp.github.io/physcomp-examples/1_energy-information-transduction/b_arduino-starter/iv_serial-interfaces/1.b.iv.3_WS2801-LED-SPI/post.html", 
+"permalink": "assignments/1-energy-information-transduction/b-arduino-starter/iv-serial-interfaces/1.b.iv.3-WS2801-LED-SPI", 
+"parent": "1-energy-information-transduction/b-arduino-starter/iv-serial-interfaces", 
+"title": "1.b.iv.3 Exercise: WS2801 RGB LED SPI Module"
+}, 
+{
+"post": "http://cmuphyscomp.github.io/physcomp-examples/1_energy-information-transduction/c_pd-starter/post.html", 
+"permalink": "assignments/1-energy-information-transduction/c-pd-starter", 
+"parent": "1-energy-information-transduction", 
+"title": "Section C: Basic Circuits: Overview"
+}, 
+{
+"post": "http://cmuphyscomp.github.io/physcomp-examples/1_energy-information-transduction/c_pd-starter/i_data-flow/1_pd-ide/post.html", 
+"permalink": "assignments/1-energy-information-transduction/c-pd-starter/i-data-flow/1-pd-ide", 
+"parent": "1-energy-information-transduction/c-pd-starter/i-data-flow", 
+"title": "1 Unit 1A: Basic Circuits"
+}, 
+{
+"post": "http://cmuphyscomp.github.io/physcomp-examples/1_energy-information-transduction/c_pd-starter/i_data-flow/2_pd-events-signals/post.html", 
+"permalink": "assignments/1-energy-information-transduction/c-pd-starter/i-data-flow/2-pd-events-signals", 
+"parent": "1-energy-information-transduction/c-pd-starter/i-data-flow", 
+"title": "2 Unit 1A: Basic Circuits"
+}, 
+{
+"post": "http://cmuphyscomp.github.io/physcomp-examples/1_energy-information-transduction/c_pd-starter/i_data-flow/3_pd-externals/post.html", 
+"permalink": "assignments/1-energy-information-transduction/c-pd-starter/i-data-flow/3-pd-externals", 
+"parent": "1-energy-information-transduction/c-pd-starter/i-data-flow", 
+"title": "3 Unit 1A: Basic Circuits"
+}, 
+{
+"post": "http://cmuphyscomp.github.io/physcomp-examples/1_energy-information-transduction/c_pd-starter/i_data-flow/4_pd-lists/post.html", 
+"permalink": "assignments/1-energy-information-transduction/c-pd-starter/i-data-flow/4-pd-lists", 
+"parent": "1-energy-information-transduction/c-pd-starter/i-data-flow", 
+"title": "4 Unit 1A: Basic Circuits"
+}, 
+{
+"post": "http://cmuphyscomp.github.io/physcomp-examples/1_energy-information-transduction/c_pd-starter/i_data-flow/5_pd-arduino/post.html", 
+"permalink": "assignments/1-energy-information-transduction/c-pd-starter/i-data-flow/5-pd-arduino", 
+"parent": "1-energy-information-transduction/c-pd-starter/i-data-flow", 
+"title": "5 Unit 1A: Basic Circuits"
+}, 
+{
+"post": "http://cmuphyscomp.github.io/physcomp-examples/1_energy-information-transduction/c_pd-starter/ii_phys-comp-pd/1_sensor-to-gui/post.html", 
+"permalink": "assignments/1-energy-information-transduction/c-pd-starter/ii-phys-comp-pd/1-sensor-to-gui", 
+"parent": "1-energy-information-transduction/c-pd-starter/ii-phys-comp-pd", 
+"title": "1 Unit 1A: Basic Circuits"
+}, 
+{
+"post": "http://cmuphyscomp.github.io/physcomp-examples/1_energy-information-transduction/c_pd-starter/ii_phys-comp-pd/2_sensor-to-led/post.html", 
+"permalink": "assignments/1-energy-information-transduction/c-pd-starter/ii-phys-comp-pd/2-sensor-to-led", 
+"parent": "1-energy-information-transduction/c-pd-starter/ii-phys-comp-pd", 
+"title": "2 Unit 1A: Basic Circuits"
+}, 
+{
+"post": "http://cmuphyscomp.github.io/physcomp-examples/1_energy-information-transduction/c_pd-starter/ii_phys-comp-pd/3_sensor-to-actuator/post.html", 
+"permalink": "assignments/1-energy-information-transduction/c-pd-starter/ii-phys-comp-pd/3-sensor-to-actuator", 
+"parent": "1-energy-information-transduction/c-pd-starter/ii-phys-comp-pd", 
+"title": "3 Unit 1A: Basic Circuits"
+}, 
+{
+"post": "http://cmuphyscomp.github.io/physcomp-examples/1_energy-information-transduction/c_pd-starter/iii_advanced-pd/1_sensor-to-sound/post.html", 
+"permalink": "assignments/1-energy-information-transduction/c-pd-starter/iii-advanced-pd/1-sensor-to-sound", 
+"parent": "1-energy-information-transduction/c-pd-starter/iii-advanced-pd", 
+"title": "1 Unit 1A: Basic Circuits"
+}, 
+{
+"post": "http://cmuphyscomp.github.io/physcomp-examples/1_energy-information-transduction/c_pd-starter/iii_advanced-pd/2_complex-timing/post.html", 
+"permalink": "assignments/1-energy-information-transduction/c-pd-starter/iii-advanced-pd/2-complex-timing", 
+"parent": "1-energy-information-transduction/c-pd-starter/iii-advanced-pd", 
+"title": "2 Unit 1A: Basic Circuits"
+}, 
+{
+"post": "http://cmuphyscomp.github.io/physcomp-examples/1_energy-information-transduction/c_pd-starter/iv_pd-rpi/1_rpi-remote-access/post.html", 
+"permalink": "assignments/1-energy-information-transduction/c-pd-starter/iv-pd-rpi/1-rpi-remote-access", 
+"parent": "1-energy-information-transduction/c-pd-starter/iv-pd-rpi", 
+"title": "1 Unit 1A: Basic Circuits"
+}, 
+{
+"post": "http://cmuphyscomp.github.io/physcomp-examples/1_energy-information-transduction/c_pd-starter/iv_pd-rpi/1_sensor-to-sound copy 4/post.html", 
+"permalink": "assignments/1-energy-information-transduction/c-pd-starter/iv-pd-rpi/1-sensor-to-sound copy 4", 
+"parent": "1-energy-information-transduction/c-pd-starter/iv-pd-rpi", 
+"title": "1 Unit 1A: Basic Circuits"
+}, 
+{
+"post": "http://cmuphyscomp.github.io/physcomp-examples/1_energy-information-transduction/c_pd-starter/iv_pd-rpi/2_rpi-puppet/post.html", 
+"permalink": "assignments/1-energy-information-transduction/c-pd-starter/iv-pd-rpi/2-rpi-puppet", 
+"parent": "1-energy-information-transduction/c-pd-starter/iv-pd-rpi", 
+"title": "2 Unit 1A: Basic Circuits"
+}, 
+{
+"post": "http://cmuphyscomp.github.io/physcomp-examples/1_energy-information-transduction/c_pd-starter/iv_pd-rpi/3_rpi-arduino/post.html", 
+"permalink": "assignments/1-energy-information-transduction/c-pd-starter/iv-pd-rpi/3-rpi-arduino", 
+"parent": "1-energy-information-transduction/c-pd-starter/iv-pd-rpi", 
+"title": "3 Unit 1A: Basic Circuits"
+}, 
+{
+"post": "http://cmuphyscomp.github.io/physcomp-examples/1_energy-information-transduction/c_pd-starter/iv_pd-rpi/5_rpi-pd/post.html", 
+"permalink": "assignments/1-energy-information-transduction/c-pd-starter/iv-pd-rpi/5-rpi-pd", 
+"parent": "1-energy-information-transduction/c-pd-starter/iv-pd-rpi", 
+"title": "5 Unit 1A: Basic Circuits"
+}, 
+{
+"post": "http://cmuphyscomp.github.io/physcomp-examples/1_energy-information-transduction/c_pd-starter/v_dream-machine/post.html", 
+"permalink": "assignments/1-energy-information-transduction/c-pd-starter/v-dream-machine", 
+"parent": "1-energy-information-transduction/c-pd-starter", 
+"title": "Part v: Unit 1A: Basic Circuits"
+}
+]

@@ -1,0 +1,161 @@
+<p>This section is about establishing core concepts of computation as
+      related to physical interface.  This connects the behavior of the physical
+      world of electrical signals to the logical world of programs, numbers, and
+      symbols.</p>
+
+    <p>For the exercises and assignments, we will be using
+      the <a href="http://arduino.cc/"><em>Arduino</em></a>, a popular
+      microcontroller for physical computing.  The following list is an informal
+      summary of basic concepts related to computation with physical signals and
+      the Arduino.</p>
+
+    <h3>Takeaway Lessons</h3>
+
+    <p>An Arduino is a small low-power computer with many conventional elements:
+      read/write memory (RAM), read-only memory (ROM), a CPU which executes
+      logical and mathematical instructions, and input/output peripheral
+      circuitry.  This class of computers are called <em>microcontrollers</em>
+      reflecting their use as microprocessors controlling hardware.</p>
+
+    <p>Microcontrollers are appropriate for physical computing tasks with low
+      computational requirements.  They have low power consumption and
+      input/output peripherals specialized for hardware such as
+      analog-to-digital converters and PWM waveform generators.  They have
+      a single-threaded programming model with no operating system so writing
+      hardware-oriented programs can be very simple.</p>
+
+    <p>Physical properties such as position and light intensity are
+      intrinsically <em>analog</em> since they have continuity in time and
+      space.  In contrast, computational processes involve operations on numbers
+      representing measurements of the physical properties.  We use <em>analog
+      to digital converters</em> (ADCs) to make periodic measurements of
+      electrical signals to create digital representations.  These numerical
+      digital signals are sampled in both time and value, since ADCs have a
+      finite precision and speed.</p>
+
+    <p>The physical world is one of simultaneity: all atoms are constantly in
+      motion, all physical processes are unfolding in parallel.  Computation as
+      we know it is essentially serial and local: programs process numbers one
+      at a time (or in small batches).  Signal processing programs managing
+      signals at different sample rates must simulate this simultaneity through
+      program structure and time management.</p>
+
+    <p>Digital logic signals use voltages to represent discrete symbols, usually
+      just a binary one or zero.  More complex symbols, e.g. numbers, require
+      multiple bits, either encoded on a set of wires (a <em>parallel data
+      bus</em>) or over time on a single wire used as a <em>serial data
+      bus</em>.  Every digital number is represented using a finite set of bits
+      and thus has finite precision and range.</p>
+
+    <p>Digital logic circuits are generally intended only to convey information
+      and are hence designed to output only small currents at logic-level
+      voltages.  Controlling enough energy to operate an actuator almost always
+      requires amplification via a driver circuit.</p>
+
+    <p>Systems which only manipulate outputs are said to be <em>open-loop</em>.
+      Systems using <em>feedback</em> that measures the physical effect of
+      an output to govern the output are said to be <em>closed-loop</em>.  Hobby
+      servos are a simple example of a closed-loop position-controlled
+      servomotor.</p>
+
+    <h3>Reference Links</h3>
+    <ol>
+      <li><a href="http://arduino.cc/en/Main/Software">Arduino: IDE</a></li>
+      <li><a href="http://arduino.cc/en/Guide/HomePage">Arduino: Getting Started</a></li>
+      <li><a href="http://arduino.cc/en/Reference/HomePage">Arduino: Reference</a></li>
+      <li><a href="http://arduino.cc/en/uploads/Main/arduino-uno-schematic.pdf">Arduino: Uno circuit diagram</a></li>
+      <li><a href="http://arduino.cc/en/Tutorial/Sketch">Arduino Tutorial: Examples (guide to tutorials)</a></li>
+      <li><a href="http://arduino.cc/en/Tutorial/Sketch">Arduino Tutorial: First Sketch (programming introduction)</a></li>
+      <li><a href="http://en.wikipedia.org/wiki/Stepper_motor">Wikipedia: Stepper motor</a></li>
+      <li><a href="http://en.wikipedia.org/wiki/Nyquist%E2%80%93Shannon_sampling_theorem">Wikipedia: Nyquist-Shannon sampling theorem</a></li>
+      <li><a href="http://en.wikipedia.org/wiki/Event_loop">Wikipedia: Event loop</a></li>
+      <li><a href="http://en.wikipedia.org/wiki/PID_controller">Wikipedia: PID controller</a></li>
+    </ol>
+
+    <hr/><!-- --------------------------------------------------------------- -->
+    <h3>Lab Exercises</h3>
+
+    <p>The lab exercises are intended to be performed by pairs of students.
+      These will familiarize you with operating the Arduino software, building
+      circuits to connect between the analog and digital, and digital
+      representation of physical quantities.  The exercises will be performed in
+      the lab during class time, but also outside class as needed.  The lab
+      exercises are not graded but are essential for developing the vocabulary
+      and skills to fulfill the graded assignments.</p>
+
+    <p>The lab exercises are divided into four parts, each containing a number
+      of exercises.  The lab exercises are detailed on the course website
+      under <a href="http://physcomp.org/assignments/">assignments</a> and as a
+      set of notes and schematics in
+      the <a href="https://github.com/cmuphyscomp/physcomp-examples/tree/master/1_energy-information-transduction/b_arduino-starter">physcomp-examples
+      github distribution</a>.  The github files can be checked out to your own
+      computer for reference.</p>
+
+    <hr/><!-- --------------------------------------------------------------- -->
+    <h3>Graded Project: One In - One Out with a microcontroller</h3>
+
+    <p>The project assignments are intended to be performed by groups of
+    students.</p>
+
+    <p>Create a one-in-one-out system using circuitry and a microcontroller.
+      The general goals remain the same as the basic circuits assignment.  The
+      system should take advantage of the complex and versatile behavior enabled
+      by software, creating a process in which energy and information are
+      transformed <em>computationally</em> to connect one process to
+      another.</p>
+
+    <p>One In - One Out with computation can be many things:</p>
+
+    <ol>
+      <li>Energy and information enters, information is transformed, energy and
+	information is emitted, all to accomplish a human purpose.</li>
+
+      <li>The information itself can be inspected symbolically, however, the
+	output should be a physical effect rather than symbolic information.</li>
+
+      <li>Computation can apply arbitrarily complex mappings between input and
+	output if needed.</li>
+
+      <li>The information may be easily interpretable or not, i.e. a
+	quantifiable measurement or a signal resulting from a more complex
+	interaction.</li>
+
+      <li>The possibilities for using time are broader; computational processes
+	always involve some delay, but now can involve memory and potentially
+	long delays.</li>
+    </ol>
+
+    <p>The physical project can be built on a breadboard, with actuators and
+      sensors attached to scrap with tape and hot glue.</p>
+
+    <p>The deliverables for this graded assignment are defined in the syllabus
+      section titled Grading Rubric.</p>
+
+
+    <hr/><!-- --------------------------------------------------------------- -->
+    <h3>Challenge Yourself</h3>
+
+    <p>Any one who completes the basic exercises should consider undertaking
+       some of the optional challenge exercises.</p>
+
+    <ol>
+
+      <li>Try the <a href="http://arduino.cc/en/Tutorial/RCtime">Arduino RCtime
+	  tutorial</a> in which a photoresistor-capacitor circuit is used to
+	  form an ad-hoc ADC using a single digital pin.</li>
+
+      <li>Create a regulatory system, i.e., a <em>controller</em>, which uses
+	information measured from the system, i.e. <em>feedback</em>, to maintain
+	a state of the system.</li>
+
+      <li>Create a musical system which focuses on physically creating rhythms
+	or patterns of sound.</li>
+
+    </ol>
+    <hr/>
+
+    <!-- --------------------------------------------------------------- -->
+    <h3>Examples</h3>
+    <p>Inspiration for project ideas can be found on
+    the <a href="http://physcomp.org/wow/">course website</a>.</p>
+  

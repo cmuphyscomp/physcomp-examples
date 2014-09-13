@@ -1,0 +1,57 @@
+<h4>Objective</h4>
+
+    <p>Measure an physical property as a number.</p>
+
+    <p>The world is an analog place; physical phenomena have continuity and
+      exist over time.  To represent a physical property computationally, the
+      physical process information must be transduced into electrical form and
+      then converted from an analog voltage into a digital number by
+      an <em>analog-to-digital converter</em>, or ADC.</p>
+
+    <p>This is a wide and deep topic ranging from signal and information theory
+      to robotics and epistemology, and the entire semester will just begin to
+      explore this idea.  But to start, this exercise will represent a single
+      light level as a stream of integers.</p>
+
+    <h4>Steps and observations</h4>
+    <ol>
+      <li>Load and run the AnalogReadSerial sketch.</li>
+      <li>Observe the numbers printed in the serial monitor as the light level varies.</li>
+      <li>Try slowing the <em>sampling rate</em> by increasing the delay.</li>
+      <li>Determine the highest and lowest values observed given the available light levels.</li>
+      <li>Observe the noise in the numbers for different constant light inputs.</li>
+
+      <li>The numbers produced by the ADC are a voltage measurement expressed in
+	the somewhat arbitrary units of the converter (e.g. 4.9&#160;mV/unit).
+	Formulate a strategy for <em>calibrating</em> the measurement so that
+	the number has useful semantic meaning.  What are useful units for
+	expressing the light intensity?  Hint: the arithmetic for the
+	calibration mapping can be as simple as multiplying by a constant gain
+	and adding an offset (e.g. a linear function); the key point is choosing
+	a units system which is understandable and deciding how to take
+	repeatable reference measurements.</li>
+	
+    </ol>
+
+    <h4>Comments</h4>
+
+    <p>The Arduino analog inputs are converted at 10&#160;bits of precision,
+      that is, voltages between 0&#160;and 5V are measured as integer numbers
+      between 0 and 1023, with a nominal resolution of about 4.9&#160;mV per
+      step.  However, analog noise in the conversion also limits the precision,
+      so the minimum detectable signal change may be somewhat larger.</p>
+
+    <p>The frequency resolution is determined by the sampling rate and the
+      <a href="http://en.wikipedia.org/wiki/Nyquist%E2%80%93Shannon_sampling_theorem">Nyquist-Shannon
+      sampling theorem</a>, which states that a periodic sampling rate must be
+      at least twice as fast as the highest frequency in the input.  The Arduino
+      ADC converter runs at a maximum of about 10&#160;kHz, so in principle it
+      can measure signals which vary at up to a 5&#160;kHz rate.</p>
+
+  <img id="assignment-image" class="alignnone" src="http://cmuphyscomp.github.io/physcomp-examples/1_energy-information-transduction/b_arduino-starter/ii_basic-examples/1.b.ii.3_analog-read-serial/1.b.ii.3_analog-read-serial_bb.png" width="960" height="%100" />
+<img id="assignment-image" class="alignnone" src="http://cmuphyscomp.github.io/physcomp-examples/1_energy-information-transduction/b_arduino-starter/ii_basic-examples/1.b.ii.3_analog-read-serial/1.b.ii.3_analog-read-serial_img.jpg" width="960" height="%100" />
+<img id="assignment-image" class="alignnone" src="http://cmuphyscomp.github.io/physcomp-examples/1_energy-information-transduction/b_arduino-starter/ii_basic-examples/1.b.ii.3_analog-read-serial/1.b.ii.3_analog-read-serial_schem.png" width="960" height="%100" />
+    <h4>Other Files</h4>
+    <ol>
+      <li><a href="http://cmuphyscomp.github.io/physcomp-examples/1_energy-information-transduction/b_arduino-starter/ii_basic-examples/1.b.ii.3_analog-read-serial/1.b.ii.3_analog-read-serial.fzz">1.b.ii.3_analog-read-serial.fzz</a></li>
+    </ol>

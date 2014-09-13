@@ -1,0 +1,55 @@
+<h4>Objective</h4>
+
+    <p>Drive a DC motor from an Arduino program.</p>
+
+    <p>A DC motor is a starting point for controlling physical motion.  By
+      itself, a DC motor spins fast with low torque, so they are usually coupled
+      with a mechanical transmission.  If the transmission is an integrated
+      gearbox, it is called <em>gearmotor</em>.  This example also works with
+      gearmotors, which are useful for driving practical loads with a minimum of
+      mechanical fabrication.</p>
+
+    <p>Unlike the bulb, the DC motor is polarized, and reversing the current
+      will reverse the direction of motion.  The circuit in this exercise is
+      unipolar, and can only drive current through the motor in one direction.
+      It is possible, however, to vary the motor speed by turning the transistor
+      drive on and off rapidly to vary the <em>average</em> current through the
+      motor.  This is called <em>pulse-width modulation</em>, or PWM.</p>
+
+    <h4>Steps and observations</h4>
+    <ol>
+      <li>Adjust the motor power supply for a safe full-speed voltage. (Many lab
+	motors run on less than than the 12V drawn on the schematic.)</li>
+      <li>Load and run the Blink sketch.</li>
+      <li>Note that pin 13 is still connected to the onboard LED.  Observe the motor and LED activity.</li>
+      <li>This time, explore the limits of timing.  How short a pulse will still create movement?</li>
+      <li>Load the Fade sketch, which uses <code>analogWrite()</code> to create a PWM waveform on pin 9.</li>
+      <li>Rewire the transistor base to pin 9.</li>
+      <li>Observe the change in motor motion.</li>
+      <li>Observe the PWM signal on pin 9 using the oscilloscope.</li>
+    </ol>
+
+    <h4>Comments</h4>
+
+    <p>The Arduino PWM run at a very audible 490&#160;Hz frequency.  Commercial
+      motor drivers usually run at 20&#160;kHz or higher so the noise is above
+      the range of human hearing.</p>
+
+    <p>Even though the PWM signal is a digital waveform using only LOW and HIGH
+      voltage levels, it is still an analog encoding.  A PWM signal encodes a
+      single numeric value in the <em>duty cycle</em>, the ratio of ON time to
+      the cycle time, and there is no intrinsic discretization to a pulse width.
+      The Arduino generates the PWM signal using a digital circuit so this
+      particular PWM is quantized as a multiple of the CPU clock period, but it
+      is also possible to generate PWM signals from analog circuits with no
+      intrinsic resolution limit.</p>
+
+  <img id="assignment-image" class="alignnone" src="http://cmuphyscomp.github.io/physcomp-examples/1_energy-information-transduction/b_arduino-starter/ii_basic-examples/1.b.ii.2_blink-motor/1.b.ii.2_blink-motor_bb.png" width="960" height="%100" />
+<img id="assignment-image" class="alignnone" src="http://cmuphyscomp.github.io/physcomp-examples/1_energy-information-transduction/b_arduino-starter/ii_basic-examples/1.b.ii.2_blink-motor/1.b.ii.2_blink-motor_img.jpg" width="960" height="%100" />
+<img id="assignment-image" class="alignnone" src="http://cmuphyscomp.github.io/physcomp-examples/1_energy-information-transduction/b_arduino-starter/ii_basic-examples/1.b.ii.2_blink-motor/1.b.ii.2_blink-motor_schem.png" width="960" height="%100" />
+    <h4>Other Files</h4>
+    <ol>
+      <li><a href="http://cmuphyscomp.github.io/physcomp-examples/1_energy-information-transduction/b_arduino-starter/ii_basic-examples/1.b.ii.2_blink-motor/1.b.ii.2_blink-motor.fzz">1.b.ii.2_blink-motor.fzz</a></li>
+      <li><a href="http://cmuphyscomp.github.io/physcomp-examples/1_energy-information-transduction/b_arduino-starter/ii_basic-examples/1.b.ii.2_blink-motor/1.b.ii.2_blink-motor.s#1">1.b.ii.2_blink-motor.s#1</a></li>
+      <li><a href="http://cmuphyscomp.github.io/physcomp-examples/1_energy-information-transduction/b_arduino-starter/ii_basic-examples/1.b.ii.2_blink-motor/1.b.ii.2_blink-motor.sch">1.b.ii.2_blink-motor.sch</a></li>
+    </ol>
