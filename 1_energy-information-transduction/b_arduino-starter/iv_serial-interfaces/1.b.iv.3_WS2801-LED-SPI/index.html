@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="../../../../support/github-web/physcomp.css" />
+    <title>Exercise: I</title>
+  </head>
+  <body>
+    <h2>Exercise: I</h2>
+<h4>Objective</h4>
+ 
+    <p>Communicate digital data between an Arduino and a WS2801 LED RGB module using an SPI bus.</p>
+
+    <p>Please be sure to review the general information about I<sup>2</sup>C and
+      SPI in exercise 1.b.iv.1 prior to starting this one.</p>
+
+    <p>This exercise will use a
+      <a href="http://www.bestlightingbuy.com/12v-ws2801-digital-intelligent-led-strip.html">RGB
+	LED strip module</a> based on
+	the <a href="http://www.adafruit.com/datasheets/WS2801.pdf">WS2801
+	constant current LED driver</a>, also available in
+	a <a href="http://www.adafruit.com/search?q=ws2801&amp;b=1">variety of other
+	form factors</a>.</p>
+
+    <p>These modules accept a 24-bit color value over an SPI bus, then begin to
+      relay any additional bits to the downstream SPI connection.  This allows
+      daisy-chaining many RGB LEDs into an individually addressable array of
+      pixels.  Once a short pause occurs in the input data, the received values
+      are transferred to the internal PWM generator.  This allows simultanous
+      update of the whole chain for clean animation.</p>
+
+    <h4>Steps and observations</h4>
+    <ol>
+      <li>Download or find the complete <code>WS2801_test</code> sketch included with the exercise.
+	If you have cloned the course materials from github, it will be in the same folder as this page, or it can be
+	<a href="http://cmuphyscomp.github.io/physcomp-examples/1_energy-information-transduction/b_arduino-starter/iv_serial-interfaces/&#10;1.b.iv.3_WS2801-LED-SPI/WS2801_test/">
+	  downloaded direct from github</a>.
+
+      </li><li>Plug the RGB module into a breadboard and use solid wire to make the
+	following three connections from the Arduino to the module. Note
+	carefully that this module uses 12V; be very careful to keep the 12V wiring away from the Arduino:
+	<ol>
+	  <li> PIN11 (MOSI)  -&gt;  DAT </li>
+	  <li> PIN13 (SCK)   -&gt;  CLK </li>
+	  <li> GND           -&gt;  GND </li>
+	</ol>
+	
+	MOSI is an acronym for Master-Out Slave-In. Since this example only
+	outputs data and does not receive, MISO is left unconnected.</li>
+
+      <li>Set up a bench supply for 12V and attach it to the Arduino GND and the 12V input on the module.</li>
+      <li>Attach the Arduino to your computer and install the sketch.</li>
+      <li>Observe the changing colors.</li>
+      <li>Using an oscilloscope, observe the clock and data lines.  The data rate is fast, so you should see one very short burst per output frame.</li>
+    </ol>
+
+    <h4>Comments</h4>
+
+    <p>It is possible to control hundreds of LEDs on a single strand.  This is
+      becoming a very popular way to produce architectural lighting and POV
+      displays.</p>
+
+      <h4>Sub-Folders</h4>
+    <ol>
+      <li><a href="WS2801_test">WS2801_test</a></li>
+    </ol>
+  </body>
+</html>
