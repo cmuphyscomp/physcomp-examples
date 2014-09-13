@@ -3,7 +3,7 @@
 "post": "http://cmuphyscomp.github.io/physcomp-examples/1_energy-information-transduction/post.html", 
 "permalink": "assignments/1-energy-information-transduction", 
 "parent": "", 
-"title": "Unit 1: Unit 1 Energy, Information, Transduction: Overview"
+"title": "Unit 1: Energy, Information, Transduction: Overview"
 }, 
 {
 "post": "http://cmuphyscomp.github.io/physcomp-examples/1_energy-information-transduction/a_basic-circuits/post.html", 
@@ -237,7 +237,7 @@
 "post": "http://cmuphyscomp.github.io/physcomp-examples/1_energy-information-transduction/c_pd-starter/post.html", 
 "permalink": "assignments/1-energy-information-transduction/c-pd-starter", 
 "parent": "1-energy-information-transduction", 
-"title": "Section C: Basic Circuits: Overview"
+"title": "Section C: PureData Starter: Overview"
 }, 
 {
 "post": "http://cmuphyscomp.github.io/physcomp-examples/1_energy-information-transduction/c_pd-starter/i_data-flow/1_pd-ide/post.html", 
