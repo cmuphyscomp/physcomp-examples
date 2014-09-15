@@ -1,36 +1,42 @@
-#N canvas 571 211 718 856 10;
-#X obj 63 557 osc~ 200;
-#X text 62 636 HOW TO SET SEARCH PATHS ----------------------- At some
+#N canvas 492 22 718 856 10;
+#X obj 63 569 osc~ 200;
+#X text 62 648 HOW TO SET SEARCH PATHS ----------------------- At some
 point \, you may want to use objects that aren't already included with
 Pd \; these are called externals. To use externals \, Pd needs to know
 where to look for them. You can modify your search paths by opening
 Preferences (CMD + \, ).;
-#X text 63 466 HOW TO FIND HELP ---------------- Open the help browser
+#X text 63 478 HOW TO FIND HELP ---------------- Open the help browser
 (CMD + B) to access Pd manuals \, and help files pertaining to specific
 Pd objects. To access the help file for an object on your canvas \,
 right click it and select 'help'. Try it with this [osc~] object:;
 #X text 66 31 PureData (or "pd" for short) is a free \, opensource
 "data-flow" programming environment;
 #X text 67 126 e.g.;
-#X obj 138 149 +;
-#X obj 195 149 print;
-#X floatatom 332 151 5 0 0 0 - - -, f 5;
-#X text 67 87 That means create objects (see under the "Put" menu):
-;
-#X floatatom 112 278 5 0 0 0 - - -, f 5;
-#X floatatom 167 280 5 0 0 0 - - -, f 5;
-#X obj 140 322 *;
-#X floatatom 143 363 5 0 0 0 - - -, f 5;
-#X obj 253 150 osc~ 400;
+#X obj 115 130 +;
+#X obj 172 130 print;
+#X floatatom 309 132 5 0 0 0 - - -, f 5;
+#X floatatom 112 311 5 0 0 0 - - -, f 5;
+#X floatatom 167 313 5 0 0 0 - - -, f 5;
+#X obj 140 355 *;
+#X floatatom 143 396 5 0 0 0 - - -, f 5;
+#X obj 230 131 osc~ 400;
 #X text 13 32 1);
-#X text 22 192 2);
-#X text 25 419 3);
-#X text 65 193 That means create objects (look the "Put" menu) and
+#X text 22 225 2);
+#X text 25 431 3);
+#X text 65 226 That means create objects (look the "Put" menu) and
 you onnect their outlets (small dashes at the buttom of object box)
 to the inlets of other objects (small dashes at the top of the object
 box);
-#X text 61 421 Every object has a "help file" that shows you how to
+#X text 61 433 Every object has a "help file" that shows you how to
 use it.;
-#X connect 9 0 11 0;
-#X connect 10 0 11 1;
-#X connect 11 0 12 0;
+#X text 67 87 That means create objects (see under the "Put" menu):
+;
+#X text 66 168 NOTE: The patch must be in "Edit Mode" (see under "Edit"
+menu) in order to add objects.;
+#X text 211 312 NOTE: Take the patch OUT of "Edit Mode" in order to
+interacti with GUI elements!;
+#X text 211 352 Challenge: do you notice a difference between the left
+and right inlets of this object?;
+#X connect 8 0 10 0;
+#X connect 9 0 10 1;
+#X connect 10 0 11 0;
