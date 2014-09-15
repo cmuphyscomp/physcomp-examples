@@ -1,11 +1,11 @@
 #N canvas 571 211 718 856 10;
-#X obj 64 512 osc~ 200;
-#X text 63 591 HOW TO SET SEARCH PATHS ----------------------- At some
+#X obj 63 557 osc~ 200;
+#X text 62 636 HOW TO SET SEARCH PATHS ----------------------- At some
 point \, you may want to use objects that aren't already included with
 Pd \; these are called externals. To use externals \, Pd needs to know
 where to look for them. You can modify your search paths by opening
 Preferences (CMD + \, ).;
-#X text 64 421 HOW TO FIND HELP ---------------- Open the help browser
+#X text 63 466 HOW TO FIND HELP ---------------- Open the help browser
 (CMD + B) to access Pd manuals \, and help files pertaining to specific
 Pd objects. To access the help file for an object on your canvas \,
 right click it and select 'help'. Try it with this [osc~] object:;
@@ -14,19 +14,23 @@ right click it and select 'help'. Try it with this [osc~] object:;
 #X text 67 126 e.g.;
 #X obj 138 149 +;
 #X obj 195 149 print;
-#X obj 253 150 cycle~;
-#X floatatom 324 151 5 0 0 0 - - -;
+#X floatatom 332 151 5 0 0 0 - - -, f 5;
 #X text 67 87 That means create objects (see under the "Put" menu):
 ;
+#X floatatom 112 278 5 0 0 0 - - -, f 5;
+#X floatatom 167 280 5 0 0 0 - - -, f 5;
+#X obj 140 322 *;
+#X floatatom 143 363 5 0 0 0 - - -, f 5;
+#X obj 253 150 osc~ 400;
+#X text 13 32 1);
+#X text 22 192 2);
+#X text 25 419 3);
 #X text 65 193 That means create objects (look the "Put" menu) and
 you onnect their outlets (small dashes at the buttom of object box)
 to the inlets of other objects (small dashes at the top of the object
 box);
-#X floatatom 112 278 5 0 0 0 - - -;
-#X floatatom 167 280 5 0 0 0 - - -;
-#X obj 140 322 *;
-#X floatatom 143 363 5 0 0 0 - - -;
-#X text 13 32 1);
-#X connect 11 0 13 0;
-#X connect 12 0 13 1;
-#X connect 13 0 14 0;
+#X text 61 421 Every object has a "help file" that shows you how to
+use it.;
+#X connect 9 0 11 0;
+#X connect 10 0 11 1;
+#X connect 11 0 12 0;
