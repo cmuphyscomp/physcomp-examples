@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #N canvas 0 22 1436 804 10;
 #X text 63 31 PureData (or "pd" for short) is a free \, opensource
 "data-flow" programming environment;
@@ -5,84 +6,108 @@
 #X obj 101 383 print;
 #X floatatom 639 74 5 0 0 0 - - -;
 #X floatatom 694 76 5 0 0 0 - - -;
+=======
+#N canvas 36 28 1142 730 10;
+#X text 63 31 PureData (or "pd" for short) is a free \, opensource
+"data-flow" programming environment;
+#X text 102 531 e.g.;
+#X obj 142 386 print;
+#X floatatom 639 74 5 0 0 0 - - -, f 5;
+#X floatatom 694 76 5 0 0 0 - - -, f 5;
+>>>>>>> FETCH_HEAD
 #X obj 667 118 *;
 #X floatatom 670 159 5 0 0 0 - - -;
 #X text 13 32 1);
 #X text 63 67 That means you create objects and you connect them so
 that data flows from one to the other and makes things happen;
-#X obj 154 384 moses;
-#X obj 201 384 +;
+#X obj 195 387 moses;
+#X obj 242 387 +;
 #X text 88 206 -add an object by looking under the "Put" menu (or using
 the keyboard shortcuts).;
 #X text 11 289 3);
-#X text 63 329 Named objects (press Command-1 / Control-1 \, then type
+#X text 60 341 Named objects (press Command-1 / Control-1 \, then type
 name of object into the box):;
-#X text 62 430 GUI objects (look under the "Put" menu or use the keyboard
-shortcuts);
-#X obj 102 479 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+#X obj 144 468 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X obj 127 478 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 169 467 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
-#X obj 175 479 hradio 15 1 0 8 empty empty empty 0 -8 0 10 -262144
+#X obj 191 468 hradio 15 1 0 8 empty empty empty 0 -8 0 10 -262144
 -1 -1 0;
-#X obj 319 482 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+#X obj 319 469 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
 -262144 -1 -1 0 256;
 #X text 602 76 e.g.;
 #X text 12 137 2);
 #X text 12 137 2);
-#X text 62 137 In order to create objects:;
-#X obj 239 384 sin;
-#X obj 270 384 metro;
-#X text 6 565 4);
-#X text 58 291 There are two kinds of objects:;
+#X obj 280 387 sin;
+#X obj 311 387 metro;
+#X text 6 599 4);
 #X text 601 27 Connect objects by drawing a patch chord from the OUTLET
 of one object to the INLET of another object;
-#X text 52 565 PureData Objects have INLETS and OUTLETS;
-#X text 53 587 Data goes into the object thru the INLETS;
-#X text 51 603 (small dash along the top of the object);
-#X text 53 627 Data comes out of the objects thru the OUTLETS;
-#X text 51 643 (small dash along the bottom of the object);
+#X text 52 599 PureData Objects have INLETS and OUTLETS;
+#X text 53 621 Data goes into the object thru the INLETS;
+#X text 51 637 (small dash along the top of the object);
+#X text 53 661 Data comes out of the objects thru the OUTLETS;
+#X text 51 677 (small dash along the bottom of the object);
 #X text 738 115 NOTE: do you notice a difference between the left and
 right inlets of this object?;
 #X text 556 28 5);
-#X text 561 199 6);
-#X obj 645 343 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+#X text 561 207 6);
+#X obj 645 351 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X obj 645 282 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 645 290 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
+<<<<<<< HEAD
 #X obj 645 369 random 127;
 #X obj 645 313 metro 500;
 #X obj 362 606 sqrt;
 #X floatatom 361 567 5 0 0 0 - - -;
 #X floatatom 360 644 5 0 0 0 - - -;
 #X obj 648 405 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
+=======
+#X obj 645 377 random 127;
+#X obj 645 321 metro 500;
+#X obj 362 640 sqrt;
+#X floatatom 361 601 5 0 0 0 - - -, f 5;
+#X floatatom 360 678 5 0 0 0 - - -, f 5;
+#X obj 648 413 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
+>>>>>>> FETCH_HEAD
 -1 -1 0 1;
-#X text 563 456 7);
-#X text 599 456 Every object in PureData has a Help File that shows
+#X text 563 474 7);
+#X text 599 474 Every object in PureData has a Help File that shows
 you how to use the object. To see the helpfile \, put the patch in
 "Edit Mode" \, right-click on the object and select "Help";
-#X text 567 570 8);
+#X text 566 599 8);
 #X text 88 162 -put the patch in "Edit Mode" (see under the "Edit"
 menu" or press Command+E / Control+E);
-#X text 598 567 More HELP: Open the help browser (Command+B / Control+B)
+#X text 597 596 More HELP: Open the help browser (Command+B / Control+B)
 to access Pd manuals \, and help files pertaining to specific Pd objects.
 To access the help file for an object on your canvas \, right click
 it and select 'help'. Try it with this [osc~] object:;
-#X text 606 198 In order to interact with the patch:;
-#X text 642 225 -take the patch OUT of "Edit Mode" (see under the "Edit"
+#X text 606 206 In order to interact with the patch:;
+#X text 642 233 -take the patch OUT of "Edit Mode" (see under the "Edit"
 menu" or press Command+E / Control+E);
-#X text 60 382 e.g.;
-#X obj 655 520 random 127;
-#X text 668 280 <<< click here! (put the patch OUT of "Edit Mode" first)
+#X text 101 385 e.g.;
+#X obj 655 538 random 127;
+#X text 668 288 <<< click here! (put the patch OUT of "Edit Mode" first)
 ;
-#X text 730 519 <<< try it!;
-#X text 608 279 e.g.;
+#X text 730 537 <<< try it!;
+#X text 608 287 e.g.;
+#X text 58 291 There are three kinds of objects:;
+#X text 61 421 GUI objects (look under the "Put" menu or use the keyboard
+shortcuts);
+#X text 62 492 Messages (look under the "Put" menu or use the keyboard
+shortcuts);
+#X text 103 465 e.g.;
+#X msg 138 529 this is a messages;
+#X msg 138 551 foo bar joo joo;
+#X text 62 137 In order to create objects:;
+#X text 256 531 <<< note curved right side!;
 #X connect 3 0 5 0;
 #X connect 4 0 5 1;
 #X connect 5 0 6 0;
-#X connect 36 0 38 0;
+#X connect 33 0 35 0;
+#X connect 34 0 36 0;
+#X connect 35 0 40 0;
+#X connect 36 0 33 0;
 #X connect 37 0 39 0;
-#X connect 38 0 43 0;
-#X connect 39 0 36 0;
-#X connect 40 0 42 0;
-#X connect 41 0 40 0;
+#X connect 38 0 37 0;
