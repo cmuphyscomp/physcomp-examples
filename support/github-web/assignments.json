@@ -186,12 +186,6 @@
 "title": "1.b.ii.5 Exercise: Servo Sweep"
 }, 
 {
-"post": "http://cmuphyscomp.github.io/physcomp-examples/1_energy-information-transduction/b_arduino-starter/ii_basic-examples/1.b.ii.6_motor-knob/post.html", 
-"permalink": "assignments/1-energy-information-transduction/b-arduino-starter/ii-basic-examples/1.b.ii.6-motor-knob", 
-"parent": "1-energy-information-transduction/b-arduino-starter/ii-basic-examples", 
-"title": "1.b.ii.6 Exercise: Motor Knob"
-}, 
-{
 "post": "http://cmuphyscomp.github.io/physcomp-examples/1_energy-information-transduction/b_arduino-starter/iii_sampling-rate-resolution-scaling/post.html", 
 "permalink": "assignments/1-energy-information-transduction/b-arduino-starter/iii-sampling-rate-resolution-scaling", 
 "parent": "1-energy-information-transduction/b-arduino-starter", 
@@ -264,28 +258,28 @@
 "title": "4 Unit 1A: Basic Circuits"
 }, 
 {
-"post": "http://cmuphyscomp.github.io/physcomp-examples/1_energy-information-transduction/c_pd-starter/i_data-flow/5_pd-arduino/post.html", 
-"permalink": "assignments/1-energy-information-transduction/c-pd-starter/i-data-flow/5-pd-arduino", 
-"parent": "1-energy-information-transduction/c-pd-starter/i-data-flow", 
-"title": "5 Unit 1A: Basic Circuits"
-}, 
-{
-"post": "http://cmuphyscomp.github.io/physcomp-examples/1_energy-information-transduction/c_pd-starter/ii_phys-comp-pd/1_sensor-to-gui/post.html", 
-"permalink": "assignments/1-energy-information-transduction/c-pd-starter/ii-phys-comp-pd/1-sensor-to-gui", 
+"post": "http://cmuphyscomp.github.io/physcomp-examples/1_energy-information-transduction/c_pd-starter/ii_phys-comp-pd/1.c.ii.1_pd-arduino/post.html", 
+"permalink": "assignments/1-energy-information-transduction/c-pd-starter/ii-phys-comp-pd/1.c.ii.1-pd-arduino", 
 "parent": "1-energy-information-transduction/c-pd-starter/ii-phys-comp-pd", 
-"title": "1 Unit 1A: Basic Circuits"
+"title": "1.c.ii.1 Exercise: PureData and Arduino"
 }, 
 {
-"post": "http://cmuphyscomp.github.io/physcomp-examples/1_energy-information-transduction/c_pd-starter/ii_phys-comp-pd/2_sensor-to-led/post.html", 
-"permalink": "assignments/1-energy-information-transduction/c-pd-starter/ii-phys-comp-pd/2-sensor-to-led", 
+"post": "http://cmuphyscomp.github.io/physcomp-examples/1_energy-information-transduction/c_pd-starter/ii_phys-comp-pd/2_sensor-to-gui/post.html", 
+"permalink": "assignments/1-energy-information-transduction/c-pd-starter/ii-phys-comp-pd/2-sensor-to-gui", 
 "parent": "1-energy-information-transduction/c-pd-starter/ii-phys-comp-pd", 
 "title": "2 Unit 1A: Basic Circuits"
 }, 
 {
-"post": "http://cmuphyscomp.github.io/physcomp-examples/1_energy-information-transduction/c_pd-starter/ii_phys-comp-pd/3_sensor-to-actuator/post.html", 
-"permalink": "assignments/1-energy-information-transduction/c-pd-starter/ii-phys-comp-pd/3-sensor-to-actuator", 
+"post": "http://cmuphyscomp.github.io/physcomp-examples/1_energy-information-transduction/c_pd-starter/ii_phys-comp-pd/3_sensor-to-led/post.html", 
+"permalink": "assignments/1-energy-information-transduction/c-pd-starter/ii-phys-comp-pd/3-sensor-to-led", 
 "parent": "1-energy-information-transduction/c-pd-starter/ii-phys-comp-pd", 
 "title": "3 Unit 1A: Basic Circuits"
+}, 
+{
+"post": "http://cmuphyscomp.github.io/physcomp-examples/1_energy-information-transduction/c_pd-starter/ii_phys-comp-pd/4_sensor-to-actuator/post.html", 
+"permalink": "assignments/1-energy-information-transduction/c-pd-starter/ii-phys-comp-pd/4-sensor-to-actuator", 
+"parent": "1-energy-information-transduction/c-pd-starter/ii-phys-comp-pd", 
+"title": "4 Unit 1A: Basic Circuits"
 }, 
 {
 "post": "http://cmuphyscomp.github.io/physcomp-examples/1_energy-information-transduction/c_pd-starter/iii_advanced-pd/1_sensor-to-sound/post.html", 
