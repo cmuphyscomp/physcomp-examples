@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="../../../../support/github-web/physcomp.css" />
+    <title>Exercise: PureData and Arduino</title>
+  </head>
+  <body>
+    <h2>Exercise: PureData and Arduino</h2>
+<h4>Objective</h4>
+ 
+    <p>Communicate data between Pure Data and an Arduino using the USB serial bus.</p>
+
+    <p>The Arduino IDE and Pure Data solve different problems well.  The Arduino
+      has easy direct access to its hardware interface, and can create and
+      respond to electrical signals with very low latency.  Pure Data is
+      well-suited to interactive real-time programming, but the latency and
+      jitter is considerable higher than on a microcontroller, and on a laptop
+      lacks access to hardware interfaces.  This exercise will demonstrate one
+      way of coordinating Pure Data and the Arduino to take advantage of the
+      best features of each by linking them using a simple ASCII message
+      protocol over the USB serial bus.</p>
+
+    <p>The serial communication does introduce significant latency between the
+      Arduino and Pd, so this approach is strongest for systems in which Pd is
+      used for tasks such as the GUI, visual display, sequencing, and overall
+      event control.  It would not be suitable for high-bandwidth tasks such as
+      cycling individual digital outputs to create a stepper motor waveform.
+      However, the extensibility of the protocol means that you can add those
+      low-level hardware behaviors to the Arduino client program and invoke them
+      via messages.</p>
+
+    <p>Setting up the exercise requires a couple of preparatory steps:</p>
+
+    <ol>
+      <li>Compiling and loading the OneInOneOutASCII Arduino sketch on an Arduino Uno.</li>
+      <li>Determining the exact name of the serial port offered by the Arduino over USB.</li>
+      <li>Running the OneInOneOutAsciiTest PureData patch in pd-extended on your laptop.  (The patch requires the moocow library and won't work in 'vanilla' Pd.)</li>
+      <li>Verifying or setting the serial port name in the patch.</li>
+    </ol>
+
+    <p>The OneInOneOutASCII sketch is provided in the course distribution in the
+      folder named support/Arduino/OneInOneOutASCII.  If you have not cloned the
+      course materials from github, you
+      can <a href="http://cmuphyscomp.github.io/physcomp-examples/support/Arduino/OneInOneOutASCII/OneInOneOutASCII.ino">download
+      it directly from github</a>.  The source code of the sketch provides
+      details of the messaging scheme</p>
+
+    <p>The Pd patch is available in the same materials folder as this file or 
+      <a href="http://cmuphyscomp.github.io/physcomp-examples/1_energy-information-transduction/c_pd-starter/ii_phys-comp-pd/1.c.ii.1_pd-arduino/OneInOneOutAsciiTest.pd">
+	directly from github</a>.
+
+    </p><h4>Steps and observations</h4>
+
+    <ol>
+      <li>Upload the OneInOneOutASCII sketch onto an Arduino Uno.  </li>
+
+      <li>Open the Serial Monitor, set the baud rate to 115200 and the line
+	ending to Newline.  You should see data messages start to stream
+	by.</li>
+
+      <li>Enter 'poll 1000' in the input box and press enter.  The message rate should slow.</li>
+      <li>Enter 'led 0' in the input box and press enter.  The LED marked L should go off.</li>
+      <li>Enter 'led 1' in the input box and press enter.  The LED marked L should go on again.</li>
+      <li>Note the exact serial port name from the Tools/Port menu in the Arduino IDE.</li>
+      <li>Exit the Arduino IDE and load the OneInOneOutAsciiTest.pd patch in pd-extended.</li>
+
+      <li>Near the top of the sketch are a set of message objects naming
+	different serial ports.  If one matches the port name on your machine,
+	click it to open the port.  If not, edit one of the boxes to match the
+	port name and then click it.</li>
+
+      <li>Right below is a toggle labeled LED.  Click it several times to send
+	led control messages and observe the Arduino LED.  On each press you
+	should also see the RX LED flash briefly as the message is received on
+	the Arduino.</li>
+
+      <li>Further down on the patch is a number box labeled 'Time'.  Verify that
+	it is continuously changing with the microsecond clock values from the
+	Arduino.</li>
+
+      <li>Explore the other GUI areas on the patch.</li>
+
+    </ol>
+
+    <h4>Comments</h4>
+    
+    <p>This particular Arduino IDE sketch is going to serve as the basis for all
+      the following exercises in which we connect hardware to the Arduino and
+      control it from Pd.</p>
+
+    <p>For a challenge, examine the source code for both the sketch and the
+      patch and work out how to add additional message types.</p>
+
+
+      <h4>Other Files</h4>
+    <ol>
+      <li><a href="OneInOneOutAsciiTest.pd">OneInOneOutAsciiTest.pd</a></li>
+    </ol>
+  </body>
+</html>
