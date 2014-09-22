@@ -1,21 +1,17 @@
-// OneInOneOut.ino : Arduino program to act as an simplified hardware I/O server on the Udoo.
+// OneInOneOutOSC.ino : Arduino program to act as an simplified hardware I/O server using OSC.
 
 // Copyright (c) 2014, Garth Zeglin.  All rights reserved. Licensed under the terms
 // of the BSD 3-clause license as included in LICENSE.
 
-// The Udoo includes a Linux computer (i.MX6 CPU) and an embedded Arduino Due
-// (SAM3X microcontroller).  This example is intended as a starting point for
-// adding low-latency hardware-level computing on the Arduino (SAM3X) coupled to
-// dynamic code (e.g. Pd) on the Linux host(i.MX6) using an extensible
-// communications scheme in the OSC protocol. The OSC message scheme is similar
-// to the SerialOscuino scheme, but simplified for clarity.
+// This example is intended as a starting point for adding low-latency
+// hardware-level computing on an Arduino coupled to dynamic code (e.g. Pd) on a
+// laptop or Raspberry Pi.  The communications between the Arduino and the host
+// uses the OSC protocol ("Open Sound Control").  This is an extensible
+// message-based protocol.  The particular OSC message scheme is similar to the
+// SerialOscuino scheme, but simplified for clarity.
 
-// This can be compiled using the Arduino IDE on an separate computer and
-// programmed into the Udoo SAM3X using the CN6 micro-USB connector by removing
-// the jumper J18, located between the WiFi module and the RST pushbutton.
-
-// Under OS X, the SiLabs driver must be installed, after which the SAM3X will
-// appear as /dev/tty.SLAB_USBtoUART in the Arduino IDE 'Tools/Port' menu.
+// This sketch currently works on an Arduino Due but *not* on an Arduino Uno
+// due to limitations of the OSC library.
 
 /****************************************************************/
 /**** OSC addressing scheme *************************************/
@@ -81,7 +77,7 @@ SLIPEncodedSerial SLIPSerial(Serial);
 const int baud_rate = 57600;  
 
 // Interval in milliseconds between input samples.
-static unsigned int hardware_polling_interval = 50;
+static unsigned int hardware_polling_interval = 1000;
 
 // Create a hobby servo control signal generator.
 static Servo servo_output;

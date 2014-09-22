@@ -2,7 +2,7 @@
 <html lang="en-US">
   <head>
     <meta charset="utf-8" />
-    <title>Exercise: Motor Knob</title>
+    <title>Exercise: Stepper Motor Knob</title>
     <style type="text/css">span.eqn { white-space: nowrap; }</style>
     <meta name="description" content="exercise notes">
     <meta name="author" content="garthz">
@@ -25,19 +25,37 @@
       error.</p>
 
     <p>This exercise uses
-      an <a href="http://www.allegromicro.com/~/media/Files/Datasheets/A4983-Datasheet.ashx">A4983</a>
-      driver module which takes care of cycling the currents appropriately
-      through the two coils of a bipolar stepper motor.  The primary inputs to
-      the driver are <em>direction</em> and <em>step</em>.  The additional
-      inputs control fractional stepping and the overall driver power state.</p>
+      an <a href="http://www.allegromicro.com/~/media/Files/Datasheets/A4988-Datasheet.ashx">
+      stepper motor driver</a> module which takes care of cycling the currents
+      appropriately through the two coils of a bipolar stepper motor.  The
+      primary inputs to the driver are <em>direction</em> and <em>step</em>.
+      The additional inputs control fractional stepping and the overall driver
+      power state.</p>
 
     <p>As a simple one-in one-out demonstration, the exercise uses a
       potentiometer as an analog position command control input.</p>
 
     <h4>Steps and observations</h4>
     <ol>
+      <li>Use a DMM to measure the winding resistance of the stepper motor.  A
+	bipolar stepper motor will have two independent windings which should be
+	clearly observable as a low resistance between two separate wire
+	pairs.</li>
+
+      <li>The lab stocks several different kinds of stepper motors and stepper
+	motor drivers.  Please check the motor type: if the rated voltage is
+	less than 8V (e.g. 2.7V), you will need to use
+	the <a href="http://www.pololu.com/product/2134">low-voltage DRV8834
+	stepper motor driver</a>.  If the rated voltage is more than 8V
+	(e.g. 10-12V), you should use
+	the <a href="http://www.pololu.com/product/1182">A4988 stepper motor
+	driver</a>, which is a newer replacement for the
+	<a href="http://www.allegromicro.com/~/media/Files/Datasheets/A4983-Datasheet.ashx">A4983</a>.</li>
+
       <li>Load and run the KnobToStepper sketch from the course materials,
-	located in the same folder as this file.  (Note: there is a MotorKnob
+	located in the same folder as this file if you have cloned the github distribution.  If not, it is
+	<a href="http://cmuphyscomp.github.io/physcomp-examples/1_energy-information-transduction/b_arduino-starter/ii_basic-examples/1.b.ii.6_stepper-motor-knob/KnobToStepper/KnobToStepper.ino">directly
+	downloadable from github</a>. (Note: there is a MotorKnob
 	sketch included in the Arduino IDE which assumes the stepper motor is
 	directly driven from the Arduino; instead we will use a modular driver
 	for this exercise.)</li>
