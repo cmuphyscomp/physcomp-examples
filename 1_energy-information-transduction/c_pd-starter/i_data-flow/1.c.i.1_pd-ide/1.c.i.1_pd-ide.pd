@@ -1,22 +1,12 @@
-<<<<<<< HEAD
-#N canvas 0 22 1436 804 10;
-#X text 63 31 PureData (or "pd" for short) is a free \, opensource
-"data-flow" programming environment;
-#X text 61 476 e.g.;
-#X obj 101 383 print;
-#X floatatom 639 74 5 0 0 0 - - -;
-#X floatatom 694 76 5 0 0 0 - - -;
-=======
-#N canvas 36 28 1142 730 10;
+#N canvas 11 24 1142 730 10;
 #X text 63 31 PureData (or "pd" for short) is a free \, opensource
 "data-flow" programming environment;
 #X text 102 531 e.g.;
 #X obj 142 386 print;
 #X floatatom 639 74 5 0 0 0 - - -, f 5;
 #X floatatom 694 76 5 0 0 0 - - -, f 5;
->>>>>>> FETCH_HEAD
 #X obj 667 118 *;
-#X floatatom 670 159 5 0 0 0 - - -;
+#X floatatom 670 159 5 0 0 0 - - -, f 5;
 #X text 13 32 1);
 #X text 63 67 That means you create objects and you connect them so
 that data flows from one to the other and makes things happen;
@@ -56,21 +46,12 @@ right inlets of this object?;
 -1 -1;
 #X obj 645 290 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
-<<<<<<< HEAD
-#X obj 645 369 random 127;
-#X obj 645 313 metro 500;
-#X obj 362 606 sqrt;
-#X floatatom 361 567 5 0 0 0 - - -;
-#X floatatom 360 644 5 0 0 0 - - -;
-#X obj 648 405 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
-=======
 #X obj 645 377 random 127;
 #X obj 645 321 metro 500;
 #X obj 362 640 sqrt;
 #X floatatom 361 601 5 0 0 0 - - -, f 5;
 #X floatatom 360 678 5 0 0 0 - - -, f 5;
 #X obj 648 413 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
->>>>>>> FETCH_HEAD
 -1 -1 0 1;
 #X text 563 474 7);
 #X text 599 474 Every object in PureData has a Help File that shows
