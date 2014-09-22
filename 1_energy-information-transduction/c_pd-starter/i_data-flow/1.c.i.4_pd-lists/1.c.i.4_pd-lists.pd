@@ -1,0 +1,14 @@
+#N canvas 12 22 554 716 10;
+#X obj 1 154 list;
+#X text -107 38 Begin with helpfiles for the following objects and
+sets of object;
+#X text 30 381 look at the help file;
+#X text -50 123 standard objects;
+#X text -52 211 3rd party abstracionts (pd patches);
+#X text -52 319 3rd party externals (compiled C code);
+#X text -3 261 Look at the patch called "list-abs-intro.pd" \, part
+of "list-abs";
+#X text -2 426 Look at the patch called "zl-help.pd" \, part of "cyclone"
+package;
+#X obj 0 382 zl;
+#X text 45 158 look at the help file;
