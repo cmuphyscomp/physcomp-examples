@@ -1,4 +1,4 @@
-#N canvas 36 28 1142 730 10;
+#N canvas 11 24 1142 730 10;
 #X text 63 31 PureData (or "pd" for short) is a free \, opensource
 "data-flow" programming environment;
 #X text 102 531 e.g.;
