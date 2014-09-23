@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <title>Exercise: Arduino Sensor to LED through Pure Data</title>
+    <style type="text/css">span.eqn { white-space: nowrap; }</style>
+    <meta name="description" content="exercise notes">
+    <meta name="author" content="garthz">
+  </head>
+  <body>
+
+    <h4>Objective</h4>
+ 
+    <p>Map a physical measurement through Pure Data from an Arduino input to output.</p>
+
+    <p>Please review the notes for 1.c.ii.1 as all of them apply to this
+      exercise as well.  This exercise assumes you have an Arduino programmed
+      with the OneInOneOutASCII sketch to communicate physical data to and from
+      an Arduino.  The Pd patches are available in the same materials folder as
+      this file.</p>
+
+    <h4>Steps and observations</h4>
+
+    <ol>
+      <li>Open the 1.c.ii.3_SensorToLED.pd patch in Pd-extended.</li>
+      
+      <li>Open the connection to the Arduino using one of the serial port name
+	message objects.</li>
+
+      <li>After it starts, you should see time and analog values appear in the patch.</li>
+
+      <li>The console should show the outgoing PWM commands.</li>
+
+      <li>Attach an analog sensor to A0 and LED to Pin 2 as illustrated and see the change in display.</li>
+
+    </ol>
+
+    <h4>Comments</h4>
+    
+    <p>Looping the data through Pd adds significant latency.  Can you get a LED
+      and optical sensor to oscillate by changing the numerical mapping and
+      physically positioning the devices?</p>
+
+  </body>
+</html>
