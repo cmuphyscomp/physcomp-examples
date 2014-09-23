@@ -1,0 +1,75 @@
+#N canvas 875 -1011 868 919 10;
+#X obj 49 186 inlet;
+#X obj 121 963 outlet;
+#X obj 137 216 inlet;
+#X msg 325 293 devices;
+#X msg 325 344 close;
+#X text 179 562 comport opens the specified serial port at the specified
+baud rate when it the object is initialized \; using an invalid device
+prevents it from opening the port until requestd;
+#X text 323 270 Click to print out the list of available serial devices.
+;
+#X text 324 325 Click to manually close the serial port.;
+#X obj 138 278 list;
+#X obj 20 9 cnv 15 800 120 empty empty Arduino_Server 20 12 0 12 -204800
+-66577 0;
+#X text 46 156 The left inlet receives Pd lists specifying messages.
+;
+#X msg 138 299 devicename \$1 \, baud 115200;
+#X text 134 186 The middle inlet receives a message with a symbol naming
+the serial port.;
+#X obj 326 240 inlet;
+#X text 321 219 The right inlet processes additional comport commands.
+;
+#X obj 50 578 comport 99 115200;
+#X obj 206 856 t a;
+#X obj 121 856 list prepend;
+#X obj 83 728 t f f;
+#X obj 121 896 spigot;
+#X obj 83 763 sel 10;
+#X obj 138 764 == 10;
+#X obj 83 802 t b b;
+#X obj 50 697 sel 13;
+#X text 116 697 ignore carriage-return characters;
+#X text 180 754 detect line-feed characters and trigger output of an
+accumulated list of input characters;
+#X text 234 857 list accumulator;
+#X text 230 926 object from moocow to parse a list of input characters
+into a Pd message;
+#X text 149 796 two bangs: one to emit complete list \, one to reset
+accumulator. Otherwise right outlet of sel just stores character.;
+#X text 171 895 enable list to be emitted only when complete;
+#X obj 121 931 moocow/bytes2any;
+#X obj 51 395 moocow/any2bytes 80 13;
+#X text 166 964 The outlet emits Pd messages;
+#X text 195 392 Use the moocow library to convert an arbitrary Pd message
+to an ASCII representation as a list of byte character values.;
+#X text 117 655 The following graph buffers characters until a line
+is received then parses it as a Pd list.;
+#X text 154 13 Abstraction to manage the messaging to and from the
+Arduino OneInOneOutASCII sketch over a serial port.;
+#X text 153 52 This requires the optional moocow package to provide
+any2bytes and bytes2any. Moocow is included in Pd-extended by default.
+;
+#X connect 0 0 31 0;
+#X connect 2 0 8 0;
+#X connect 3 0 15 0;
+#X connect 4 0 15 0;
+#X connect 8 0 11 0;
+#X connect 11 0 15 0;
+#X connect 13 0 15 0;
+#X connect 15 0 23 0;
+#X connect 16 0 17 1;
+#X connect 17 0 16 0;
+#X connect 17 0 19 0;
+#X connect 18 0 20 0;
+#X connect 18 1 21 0;
+#X connect 19 0 30 0;
+#X connect 20 0 22 0;
+#X connect 20 1 17 0;
+#X connect 21 0 19 1;
+#X connect 22 0 17 1;
+#X connect 22 1 17 0;
+#X connect 23 1 18 0;
+#X connect 30 0 1 0;
+#X connect 31 0 15 0;
