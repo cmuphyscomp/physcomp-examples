@@ -1,4 +1,4 @@
-#N canvas 314 22 691 720 10;
+#N canvas 679 -922 679 719 10;
 #X floatatom 345 961 5 0 0 0 - - -;
 #X obj 59 358 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
@@ -21,7 +21,7 @@
 #X obj 309 1172 print PIN8-value;
 #X text 273 942 Time;
 #X text 353 943 LED;
-#N canvas 872 -1058 692 693 Arduino-server 0;
+#N canvas 872 22 692 693 Arduino-server 1;
 #X obj 49 186 inlet;
 #X obj 121 963 outlet;
 #X obj 137 216 inlet;
@@ -94,75 +94,57 @@ is received then parses it as a Pd list.;
 #X connect 31 0 1 0;
 #X connect 32 0 16 0;
 #X restore 84 804 pd Arduino-server;
-#X text 199 795 This subpatch encapsulates the serial port protocol
-for sending and receiving OSC messages to and from the Arduino.;
-#X msg 56 252 /dev/tty.usbmodem1411;
+#X msg 28 251 /dev/tty.usbmodem1411;
 #X obj 65 533 hsl 128 15 0 100 0 0 empty empty empty -2 -8 0 10 -262144
 -1 -1 0 1;
-#X obj 62 559 * 0.01;
 #X text 132 515 PWM on PIN2;
-#X obj 183 770 r port-name;
-#X obj 56 304 s port-name;
-#X obj 84 771 r osc-output;
-#X obj 59 407 s osc-output;
-#X obj 63 613 s osc-output;
+#X obj 169 771 r port-name;
+#X obj 28 303 s port-name;
+#X obj 84 771 r port-output;
+#X obj 59 407 s port-output;
+#X obj 62 636 s port-output;
 #X obj 221 401 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
-#X obj 221 449 s osc-output;
-#X text 243 400 PIN3 digital output;
+#X obj 221 449 s port-output;
 #X obj 83 1221 hsl 128 15 0 1024 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 4514 1;
+-1 -1 4601 1;
 #X text 87 1201 A0 input;
 #X floatatom 309 1219 5 0 0 0 - - -;
 #X text 317 1197 PIN8 input;
 #X obj 116 693 tgl 15 1 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X obj 83 716 spigot;
-#X obj 83 740 print osc-output;
-#X obj 83 672 r osc-output;
+#X obj 83 740 print port-output;
+#X obj 83 672 r port-output;
 #X obj 221 367 metro 1000;
 #X obj 221 345 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
-#X text 242 344 Enable square wave on PIN3;
-#X text 138 692 Enable showing OSC output messages;
 #X obj 243 559 f 0;
 #X obj 273 559 + 0.1;
-#X obj 62 507 r pin2-pwm;
 #X obj 243 513 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
-#X text 264 512 Enable sin wave on PIN2;
 #X obj 243 535 metro 100;
 #X obj 243 584 expr 50 + 50 * sin($f1);
-#X obj 243 608 s pin2-pwm;
 #X obj 463 576 hsl 180 15 0 180 0 0 empty empty empty -2 -8 0 10 -262144
 -1 -1 0 1;
-#X obj 461 636 s osc-output;
+#X obj 461 636 s port-output;
 #X obj 460 550 r pin4-servo;
 #X text 454 487 Servo on PIN4;
 #X msg 454 513 0;
 #X msg 520 513 180;
 #X msg 486 513 90;
-#X msg 56 278 /dev/ttyACM0;
-#X msg 55 226 /dev/tty.usbmodem1411;
-#X text 208 226 What serial port does your Arduino provide?;
-#X text 204 253 Arduino Uno on MacBook Air right-side USB port;
-#X text 203 278 Arduino Uno on Raspberry Pi;
-#X obj 22 22 cnv 15 800 120 empty empty OneInOneOutAsciiTest 20 12
-0 14 -204800 -66577 0;
+#X msg 28 277 /dev/ttyACM0;
+#X text 165 251 Arduino Uno on MacBook Air right-side USB port;
+#X text 164 279 Arduino Uno on Raspberry Pi;
+#X obj 22 1 cnv 15 600 120 empty empty OneInOneOutAsciiTest 20 12 0
+14 -204800 -66577 0;
 #X msg 59 381 led \$1;
-#X msg 221 423 dig 3 \$1;
-#X msg 62 586 pwm 2 \$1;
 #X msg 460 609 svo 4 \$1;
-#X text 215 25 Demonstration of communicating with an Arduino Uno running
+#X text 215 4 Demonstration of communicating with an Arduino Uno running
 the OneInOneOutASCII skech. Messages are sent bidirectionally over
 the serial port using a plain text protocol.;
-#X obj 22 151 cnv 15 400 60 empty empty empty 20 12 0 14 -262130 -66577
+#X obj 22 130 cnv 15 400 80 empty empty empty 20 12 0 14 -262130 -66577
 0;
-#X text 37 157 Choose the appropriate serial port below to connect
-to the Arduino \, or edit a message to set the Arduino serial port
-defined on your particular machine.;
-#X msg 326 756 close;
-#X text 325 737 Click to manually close the serial port.;
 #X obj 81 1067 route 0;
 #X obj 309 1102 route 8;
 #X obj 81 852 route ana dig clk led dbg;
@@ -170,57 +152,89 @@ defined on your particular machine.;
 #X msg 457 388 poll 1000;
 #X text 523 358 50 Hz sampling;
 #X text 477 335 Set the data output rate;
-#X obj 456 422 s osc-output;
+#X obj 456 422 s port-output;
 #X text 530 387 1 Hz sampling;
-#X connect 1 0 65 0;
+#X obj 62 584 int;
+#X obj 62 559 * 2.55;
+#X text 216 66 Note that the Arduino communication requires the moocow
+and comport libraries which are not by default included in vanilla
+Pd \, so Pd-extended is recommended.;
+#X msg 27 223 COM12;
+#X text 162 222 Typical serial port name under Windows.;
+#X msg 433 159 close;
+#X obj 432 187 s port-commands;
+#X msg 431 134 devices;
+#X text 486 159 Close the serial port.;
+#X text 37 136 Choose the appropriate serial port below to connect
+to the Arduino \, or edit a message to set the Arduino serial port
+defined on your particular machine. If you're not sure of the device
+name format \, the [devices( button to the right will print known device
+names to the console.;
+#X obj 245 771 r port-commands;
+#X text 486 129 Print a list of serial ports;
+#X text 485 140 on the console.;
+#X msg 221 423 dig 5 \$1;
+#X text 243 400 PIN5 digital output;
+#X text 242 344 Enable square wave on PIN5;
+#X obj 62 507 r pin3-pwm;
+#X obj 243 608 s pin3-pwm;
+#X msg 62 609 pwm 3 \$1;
+#X text 138 692 Enable showing output messages;
+#X text 197 801 This subpatch encapsulates the serial port protocol
+for sending and receiving messages to and from the Arduino.;
+#X text 264 512 Enable sin wave on PIN3;
+#X connect 1 0 55 0;
 #X connect 3 0 4 1;
 #X connect 4 0 14 0;
 #X connect 8 0 9 1;
 #X connect 9 0 6 0;
 #X connect 10 0 11 1;
 #X connect 11 0 15 0;
-#X connect 18 0 76 0;
-#X connect 20 0 25 0;
-#X connect 21 0 22 0;
-#X connect 22 0 67 0;
-#X connect 24 0 18 1;
-#X connect 26 0 18 0;
-#X connect 29 0 66 0;
-#X connect 36 0 37 1;
-#X connect 37 0 38 0;
-#X connect 39 0 37 0;
-#X connect 40 0 29 0;
-#X connect 41 0 40 0;
-#X connect 44 0 45 0;
-#X connect 44 0 50 0;
-#X connect 45 0 44 1;
-#X connect 46 0 21 0;
-#X connect 47 0 49 0;
+#X connect 18 0 61 0;
+#X connect 19 0 23 0;
+#X connect 20 0 69 0;
+#X connect 22 0 18 1;
+#X connect 24 0 18 0;
+#X connect 27 0 81 0;
+#X connect 33 0 34 1;
+#X connect 34 0 35 0;
+#X connect 36 0 34 0;
+#X connect 37 0 27 0;
+#X connect 38 0 37 0;
+#X connect 39 0 40 0;
+#X connect 39 0 43 0;
+#X connect 40 0 39 1;
+#X connect 41 0 42 0;
+#X connect 42 0 39 0;
+#X connect 43 0 85 0;
+#X connect 44 0 56 0;
+#X connect 46 0 44 0;
+#X connect 48 0 44 0;
 #X connect 49 0 44 0;
-#X connect 50 0 51 0;
-#X connect 52 0 68 0;
-#X connect 54 0 52 0;
-#X connect 56 0 52 0;
-#X connect 57 0 52 0;
-#X connect 58 0 52 0;
-#X connect 59 0 25 0;
-#X connect 60 0 25 0;
-#X connect 65 0 27 0;
-#X connect 66 0 30 0;
-#X connect 67 0 28 0;
-#X connect 68 0 53 0;
-#X connect 72 0 18 2;
-#X connect 74 0 4 0;
-#X connect 74 0 32 0;
-#X connect 74 1 13 0;
-#X connect 75 0 11 0;
-#X connect 75 0 34 0;
-#X connect 75 1 12 0;
-#X connect 76 0 74 0;
-#X connect 76 1 75 0;
-#X connect 76 2 5 0;
-#X connect 76 3 0 0;
-#X connect 76 4 9 0;
-#X connect 76 5 7 0;
-#X connect 77 0 81 0;
-#X connect 78 0 81 0;
+#X connect 50 0 44 0;
+#X connect 51 0 23 0;
+#X connect 55 0 25 0;
+#X connect 56 0 45 0;
+#X connect 59 0 4 0;
+#X connect 59 0 29 0;
+#X connect 59 1 13 0;
+#X connect 60 0 11 0;
+#X connect 60 0 31 0;
+#X connect 60 1 12 0;
+#X connect 61 0 59 0;
+#X connect 61 1 60 0;
+#X connect 61 2 5 0;
+#X connect 61 3 0 0;
+#X connect 61 4 9 0;
+#X connect 61 5 7 0;
+#X connect 62 0 66 0;
+#X connect 63 0 66 0;
+#X connect 68 0 86 0;
+#X connect 69 0 68 0;
+#X connect 71 0 23 0;
+#X connect 73 0 74 0;
+#X connect 75 0 74 0;
+#X connect 78 0 18 2;
+#X connect 81 0 28 0;
+#X connect 84 0 20 0;
+#X connect 86 0 26 0;
