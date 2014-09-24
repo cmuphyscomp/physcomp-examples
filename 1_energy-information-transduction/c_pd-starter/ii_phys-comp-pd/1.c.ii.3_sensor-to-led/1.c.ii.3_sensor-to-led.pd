@@ -1,0 +1,68 @@
+#N canvas 336 22 673 715 10;
+#X text 59 522 Analog values range from 0 - 1024;
+#X floatatom 18 524 5 0 0 0 - - -;
+#X obj 21 564 hsl 128 15 0 1024 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X obj 11 8 cnv 15 600 100 empty empty 1.c.ii.3_Sensor_to_LED 20 12
+0 14 -204800 -66577 0;
+#X text 48 72 Assumes the attached Arduino is running the OneInOneOutASCII
+sketch.;
+#X obj 18 412 Arduino-server;
+#X text 112 411 This abstraction encapsulates the serial port protocol
+for sending and receiving messages to and from the Arduino.;
+#X obj 58 368 r port-name;
+#X obj 18 346 r Arduino-commands;
+#X obj 18 500 route 0;
+#X text 77 499 Receive message messages from analog pin 0;
+#X obj 18 468 route ana clk;
+#X floatatom 241 561 12 0 0 0 - - -;
+#X text 241 543 Arduino time in microseconds;
+#X text 49 37 Receive analog data from an Arduino and display it as
+a physical LED output.;
+#X text 44 622 PWM outputs are between 0 and 255;
+#X obj 18 595 expr ($f1 / 4);
+#X obj 18 622 int;
+#X obj 18 702 s Arduino-commands;
+#X obj 36 682 print LED-PWM-output;
+#X msg 16 243 /dev/tty.usbmodem1411;
+#X obj 16 295 s port-name;
+#X msg 16 269 /dev/ttyACM0;
+#X text 153 243 Arduino Uno on MacBook Air right-side USB port;
+#X text 152 271 Arduino Uno on Raspberry Pi;
+#X obj 10 122 cnv 15 400 80 empty empty empty 20 12 0 14 -262130 -66577
+0;
+#X msg 15 215 COM12;
+#X text 150 214 Typical serial port name under Windows.;
+#X msg 421 151 close;
+#X obj 420 179 s port-commands;
+#X msg 419 126 devices;
+#X text 474 151 Close the serial port.;
+#X text 25 128 Choose the appropriate serial port below to connect
+to the Arduino \, or edit a message to set the Arduino serial port
+defined on your particular machine. If you're not sure of the device
+name format \, the [devices( button to the right will print known device
+names to the console.;
+#X text 474 121 Print a list of serial ports;
+#X text 473 132 on the console.;
+#X obj 99 389 r port-commands;
+#X msg 18 658 pwm 3 \$1;
+#X text 110 437 This abstraction requires libraries found in Pd-extended.
+;
+#X connect 1 0 2 0;
+#X connect 2 0 16 0;
+#X connect 5 0 11 0;
+#X connect 7 0 5 1;
+#X connect 8 0 5 0;
+#X connect 9 0 1 0;
+#X connect 11 0 9 0;
+#X connect 11 1 12 0;
+#X connect 16 0 17 0;
+#X connect 17 0 36 0;
+#X connect 20 0 21 0;
+#X connect 22 0 21 0;
+#X connect 26 0 21 0;
+#X connect 28 0 29 0;
+#X connect 30 0 29 0;
+#X connect 35 0 5 2;
+#X connect 36 0 18 0;
+#X connect 36 0 19 0;
