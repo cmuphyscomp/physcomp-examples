@@ -1,70 +1,58 @@
-#N canvas 655 48 637 450 10;
-#X msg 135 65 /dev/tty.usbmodemfd121;
-#N canvas 608 52 673 665 Arduino-server 0;
-#X obj 49 508 mrpeach/slipdec 65536;
-#X obj 49 197 mrpeach/slipenc 65536;
-#X obj 49 134 inlet;
-#X obj 49 589 outlet;
-#X obj 219 132 inlet;
-#X msg 215 318 devices;
-#X text 216 504 slipdec extracts an OSC data packet from a serial data
-stream encoded using the SLIP protocol.;
-#X text 211 196 slipenc encodes an OSC packet using the SLIP protocol
-to delineate packet boundaries in the serial data stream. The argument
-to slipenc sets a maximum packet size.;
-#X text 274 314 Under OSX the Udoo SAM3X on the CN6 connector enumerates
-as /dev/tty.SLAB_USBtoUART;
-#X msg 217 376 close;
-#X text 217 552 unpackOSC decodes the OSC data packet into a stream
-of Pd messages \; see routeOSC for examples;
-#X obj 49 439 comport 99 57600;
-#X text 217 438 comport opens the specified serial port at the specified
-baud rate when it the object is initialized \; using an invalid device
-prevents it from opening the port until requestd;
-#X msg 219 174 devicename \$1 \, baud 57600;
-#X text 213 295 Click to print out the list of available serial devices.
-;
-#X text 216 357 Click to manually close the serial port.;
-#X text 46 69 The left inlet receives Pd lists specifying OSC messages.
-;
-#X text 49 30 Subpatch to manage the OSC messaging to and from the
-Arduino over a serial port.;
-#X text 216 102 The right inlet receives a message with a symbol naming
-the serial port.;
-#X obj 219 153 list;
-#X obj 49 165 osc/packOSC;
-#X obj 49 550 osc/unpackOSC;
-#X connect 0 0 21 0;
-#X connect 1 0 11 0;
-#X connect 2 0 20 0;
-#X connect 4 0 19 0;
-#X connect 5 0 11 0;
-#X connect 9 0 11 0;
-#X connect 11 0 0 0;
-#X connect 13 0 11 0;
-#X connect 19 0 13 0;
+#N canvas 578 23 652 611 10;
+#X text 81 485 Analog values range from 0 - 1024;
+#X floatatom 40 487 5 0 0 0 - - -;
+#X obj 43 527 hsl 128 15 0 1024 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X obj 8 11 cnv 15 600 100 empty empty 1.c.ii.3_Sensor_to_LED 20 12
+0 14 -204800 -66577 0;
+#X text 45 75 Assumes the attached Arduino is running the OneInOneOutASCII
+sketch.;
+#X obj 40 375 Arduino-server;
+#X text 134 374 This abstraction encapsulates the serial port protocol
+for sending and receiving messages to and from the Arduino.;
+#X msg 42 224 /dev/tty.usbmodem1411;
+#X obj 42 276 s port-name;
+#X msg 42 250 /dev/ttyACM0;
+#X msg 41 198 /dev/tty.usbmodem1411;
+#X text 194 198 What serial port does your Arduino provide?;
+#X text 190 225 Arduino Uno on MacBook Air right-side USB port;
+#X text 189 250 Arduino Uno on Raspberry Pi;
+#X obj 8 123 cnv 15 400 60 empty empty empty 20 12 0 14 -262130 -66577
+0;
+#X text 23 129 Choose the appropriate serial port below to connect
+to the Arduino \, or edit a message to set the Arduino serial port
+defined on your particular machine.;
+#X obj 80 331 r port-name;
+#X msg 188 330 close;
+#X text 188 308 Click to manually close the serial port.;
+#X obj 40 309 r Arduino-commands;
+#X obj 40 463 route 0;
+#X text 99 462 Receive message messages from analog pin 0;
+#X obj 40 431 route ana clk;
+#X floatatom 263 524 12 0 0 0 - - -;
+#X text 263 506 Arduino time in microseconds;
+#X text 46 40 Receive analog data from an Arduino and display it as
+a physical LED output.;
+#X msg 40 621 pwm 2 \$1;
+#X text 66 585 PWM outputs are between 0 and 255;
+#X obj 40 558 expr ($f1 / 4);
+#X obj 40 585 int;
+#X obj 40 665 s Arduino-commands;
+#X obj 58 645 print LED-PWM-output;
+#X text 293 570;
+#X connect 1 0 2 0;
+#X connect 2 0 28 0;
+#X connect 5 0 22 0;
+#X connect 7 0 8 0;
+#X connect 9 0 8 0;
+#X connect 10 0 8 0;
+#X connect 16 0 5 1;
+#X connect 17 0 5 2;
+#X connect 19 0 5 0;
 #X connect 20 0 1 0;
-#X connect 21 0 3 0;
-#X restore 36 121 pd Arduino-server;
-#X text 153 115 This subpatch encapsulates the serial port protocol
-for sending and receiving OSC messages to and from the Arduino.;
-#X floatatom 36 195 5 0 0 0 - - -;
-#X text 285 57 Arduino Due serial port. Change this to match the serial
-port you choose in the Arduino IDE.;
-#X obj 36 161 osc/routeOSC /a/0;
-#X obj 39 226 hsl 100 15 0 1024 0 0 empty empty empty 70 -8 0 10 -262144
--1 -1 9523 1;
-#X obj 36 89 r osc-output;
-#X text 78 193 Analog values range from 0 - 1024;
-#X text 154 162 Receive OSC messages from analog pin 0;
-#X obj 36 256 expr ($f1 / 1024) * 1;
-#X msg 36 290 /a/2 \$1;
-#X obj 36 323 s osc-output;
-#X connect 0 0 1 1;
-#X connect 1 0 5 0;
-#X connect 3 0 6 0;
-#X connect 5 0 3 0;
-#X connect 6 0 10 0;
-#X connect 7 0 1 0;
-#X connect 10 0 11 0;
-#X connect 11 0 12 0;
+#X connect 22 0 20 0;
+#X connect 22 1 23 0;
+#X connect 26 0 30 0;
+#X connect 26 0 31 0;
+#X connect 28 0 29 0;
+#X connect 29 0 26 0;

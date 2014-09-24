@@ -1,0 +1,92 @@
+#N canvas 243 22 727 717 10;
+#N canvas 0 22 450 278 (subpatch) 0;
+#X array \$0-myMelody 24 float 3;
+#A 0 79 89 95 98 86 79 79 89 102 107 108 97 86 84 96 105 105 91 81
+95 100 93 86 118;
+#X coords 0 127 23 0 200 127 1 0 0;
+#X restore 79 85 graph;
+#X obj 62 357 tabread \$0-myMelody;
+#X floatatom 62 329 5 0 0 0 - - -;
+#X floatatom 62 390 5 0 0 0 - - -;
+#X text 332 66 the table's name is "\$0-myMelody" \; starting a name
+with "\$0" makes each instance unique;
+#X text 54 242 if you LOCK the patch (take it out of EDIT mode) \,
+you can draw values into the table;
+#X text 31 48 1;
+#X text 34 242 4;
+#X text 35 296 5;
+#X text 51 292 you can read values out of a table with "tabread" put
+in the index (an integer) \, get out the value (a float);
+#X text 60 47 this is a "table" (i.e. an array);
+#X text 333 151 select the table (gui) \, right click \, select properties
+\, modify away!;
+#X obj 61 656 tabread \$0-myMelody;
+#X floatatom 62 629 5 0 0 0 - - -;
+#X floatatom 61 692 5 0 0 0 - - -;
+#X obj 63 532 metro 100;
+#X obj 62 575 f;
+#X obj 110 575 + 1;
+#X obj 110 597 mod 24;
+#X text 148 69 <--------------------------2;
+#X text 282 153 <----3;
+#X text 59 421 add a counter \, add a metro \, an oscillator and BAM
+we have a sequencer!;
+#X obj 61 813 *~ 0.3;
+#X obj 61 780 osc~;
+#X obj 52 862 dac~;
+#X text 41 422 6;
+#X obj 509 -18 tgl 25 0 empty empty Enable_Audio 30 12 0 12 -4034 -1
+-1 0 1;
+#X text 139 474 <--- turn it on!;
+#X floatatom 122 501 5 0 0 0 - - -;
+#X text 159 500 <--- interval (ms);
+#X text 156 596 <--- don't go over 23!;
+#X text 102 722 <--- change from MIDI (linear) to Hertz (log);
+#X floatatom 61 752 5 0 0 0 - - -;
+#X obj 61 721 mtof;
+#X msg 509 13 \; pd dsp \$1;
+#X floatatom 148 560 5 0 0 0 - - -;
+#X text 185 559 <--- sequence length;
+#X text 104 327 <--- try it! put in the index;
+#X text 108 390 <--- read out the value;
+#X obj 23 -132 cnv 15 600 100 empty empty 1.c.iii.3_Music_and_Pitch
+20 12 0 14 -204800 -66577 0;
+#X obj 349 -14 cnv 15 150 20 empty empty empty 20 12 0 14 -4034 -66577
+0;
+#X text 353 -13 Enable audio output -->;
+#X obj 63 473 bng 25 250 50 0 empty start Start 30 12 0 14 -4034 -1
+-1;
+#X text 380 -49 must turn on DSP for audio to work in PD;
+#X text 103 753 frequency in Hz;
+#X text 102 693 MIDI note value;
+#X text 111 814 amplitude scaling;
+#X text 90 859 direct audio output;
+#X text 215 852 if nothing is audible even with DSP on \, check the
+default audio device in the preferences menu;
+#X text 58 -103 A demonstration of a table-driven synthesizer which
+plays a loop of specified pitches from a table with a constant rhythm.
+;
+#X obj 292 472 bng 25 250 50 0 empty start Stop 30 12 0 14 -257985
+-1 -1;
+#X msg 290 512 0;
+#X connect 1 0 3 0;
+#X connect 2 0 1 0;
+#X connect 12 0 14 0;
+#X connect 13 0 12 0;
+#X connect 14 0 33 0;
+#X connect 15 0 16 0;
+#X connect 16 0 17 0;
+#X connect 16 0 13 0;
+#X connect 17 0 18 0;
+#X connect 18 0 16 1;
+#X connect 22 0 24 1;
+#X connect 22 0 24 0;
+#X connect 23 0 22 0;
+#X connect 26 0 34 0;
+#X connect 28 0 15 1;
+#X connect 32 0 23 0;
+#X connect 33 0 32 0;
+#X connect 35 0 18 1;
+#X connect 42 0 15 0;
+#X connect 50 0 51 0;
+#X connect 51 0 15 0;
