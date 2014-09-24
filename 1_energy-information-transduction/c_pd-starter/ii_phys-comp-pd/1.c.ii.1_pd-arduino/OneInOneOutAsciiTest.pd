@@ -97,7 +97,7 @@ is received then parses it as a Pd list.;
 #X msg 28 251 /dev/tty.usbmodem1411;
 #X obj 65 533 hsl 128 15 0 100 0 0 empty empty empty -2 -8 0 10 -262144
 -1 -1 0 1;
-#X text 132 515 PWM on PIN2;
+#X text 132 515 PWM on PIN3;
 #X obj 169 771 r port-name;
 #X obj 28 303 s port-name;
 #X obj 84 771 r port-output;
