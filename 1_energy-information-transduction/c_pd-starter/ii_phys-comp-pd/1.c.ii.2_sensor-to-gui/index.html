@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="../../../../support/github-web/physcomp.css" />
+    <title>Exercise: Arduino Sensor to Pure Data GUI</title>
+  </head>
+  <body>
+    <h2>Exercise: Arduino Sensor to Pure Data GUI</h2>
+<h4>Objective</h4>
+ 
+    <p>Visualize physical state data in Pure Data, transmitted from an Arduino using the USB serial bus.</p>
+
+    <p>Please review the notes for 1.c.ii.1 as all of them apply to this
+      exercise as well.  This exercise assumes you have an Arduino programmed
+      with the OneInOneOutASCII sketch to communicate physical data to and from
+      an Arduino.</p>
+
+    <p>The Pd patch is available in the same materials folder as this file.
+      Note that there are two .pd patch files; the Arduino interface has been
+      moved into an <em>abstraction</em> named Arduino-server.pd.  This is a
+      reusable patch which hides the details of the Arduino interface; this is
+      the primary means in Pd for building modular systems with reusable
+      parts.</p>
+
+    <p>For now, the Arduino abstraction is included with the exercise, but in
+      general re-usable patches should be placed in a library folder included on
+      the Pd load path.</p>
+
+    <h4>Steps and observations</h4>
+
+    <ol>
+      <li>Open the 1.c.ii.2_SensorToGui.pd patch in Pd-extended.</li>
+      
+      <li>You should see a window named 'GEM' open up.  This is a graphical canvas which can be used to create 2D and 3D graphics.</li>
+
+      <li>Open the connection to the Arduino using one of the serial port name
+	message objects.</li>
+
+      <li>After it starts, you should see time and analog values appear in the patch.  The GEM window should show some change in intensity proportional to the input.</li>
+
+      <li>Attach an analog sensor to A0 as illustrated and see the change in display.</li>
+
+      <li>Review the GEM help and try modifying the graphical output in some way.</li>
+    </ol>
+
+    <h4>Comments</h4>
+    
+    <p>For a challenge, try creating a 3D display.</p>
+
+
+  <img class="alignnone" src="1.c.ii.2_sensorToGui_bb.png" />
+<img class="alignnone" src="1.c.ii.2_SensorToGui_schem.png" />
+    <h4>Other Files</h4>
+    <ol>
+      <li><a href="1.c.ii.2_SensorToGui.fzz">1.c.ii.2_SensorToGui.fzz</a></li>
+      <li><a href="1.c.ii.2_SensorToGui.pd">1.c.ii.2_SensorToGui.pd</a></li>
+      <li><a href="Arduino-server.pd">Arduino-server.pd</a></li>
+    </ol>
+  </body>
+</html>

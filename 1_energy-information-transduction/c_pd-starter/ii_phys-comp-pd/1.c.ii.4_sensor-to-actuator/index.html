@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="../../../../support/github-web/physcomp.css" />
+    <title>Exercise: Arduino Sensor to Actuator through Pure Data</title>
+  </head>
+  <body>
+    <h2>Exercise: Arduino Sensor to Actuator through Pure Data</h2>
+<h4>Objective</h4>
+ 
+    <p>Map a physical measurement through Pure Data from an Arduino input to output.</p>
+
+    <p>Please review the notes for 1.c.ii.1 as all of them apply to this
+      exercise as well.  This exercise assumes you have an Arduino programmed
+      with the OneInOneOutASCII sketch to communicate physical data to and from
+      an Arduino.  The Pd patches are available in the same materials folder as
+      this file.</p>
+
+    <p>This exercise is almost identical to the previous 1.c.ii.3 exercise, only
+      the mapping is from a sensor to an actuator position, which requires a
+      different numerical mapping.</p>
+
+    <h4>Steps and observations</h4>
+
+    <ol>
+      <li>Open the 1.c.ii.4_sensor-to-actuator.pd patch in Pd-extended.</li>
+      
+      <li>Open the connection to the Arduino using one of the serial port name
+	message objects.</li>
+
+      <li>After it starts, you should see time and analog values appear in the patch.</li>
+
+      <li>The console should show the outgoing servo commands.</li>
+
+      <li>Attach an analog sensor to A0 and hobby servo to Pin 4 as illustrated and see the change in display.</li>
+
+    </ol>
+
+    <h4>Comments</h4>
+    
+    <p>A actuator output is more annoying than an LED when driven by noisy data.  Can you add filtering to the Pd patch to smooth the output signal?</p>
+
+  <img class="alignnone" src="1.c.ii.4_sensor-to-actuator_bb.png" />
+<img class="alignnone" src="1.c.ii.4_sensor-to-actuator_img.png" />
+<img class="alignnone" src="1.c.ii.4_sensor-to-actuator_schem.png" />
+    <h4>Other Files</h4>
+    <ol>
+      <li><a href="1.c.ii.4_sensor-to-actuator.fzz">1.c.ii.4_sensor-to-actuator.fzz</a></li>
+      <li><a href="1.c.ii.4_sensor-to-actuator.pd">1.c.ii.4_sensor-to-actuator.pd</a></li>
+      <li><a href="Arduino-server.pd">Arduino-server.pd</a></li>
+    </ol>
+  </body>
+</html>

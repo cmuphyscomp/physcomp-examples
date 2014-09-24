@@ -1,0 +1,59 @@
+<h4>Objective</h4>
+ 
+    <p>Demonstrate FM and AM synthesis methods using a qlist sequencer with Python support.</p>
+
+    <p><a href="http://en.wikipedia.org/wiki/Frequency_modulation_synthesis">Frequency
+      Modulation Synthesis</a> is a classic technique in computer music for
+      producing complex sounds using a network in which oscillators influence
+      the frequency of other oscillators.  The sound generation is controlled by
+      a relatively small number of parameters, but searching the space of these
+      parameters for pleasing sounds can be difficult.  This was an especially
+      popular technique when computer memory sizes and storage were small making
+      sample-based methods expensive.</p>
+
+    <p>The second feature of the exercise is the use of a Pd qlist object as a
+      sequencer to generate messages over time.  This object can be complex to
+      use since each output event needs to be programmed in as a separate
+      message.  This is aided by a small Python program, imported using the
+      pdpython external.  This Python program translates a string of characters
+      specifying a rhythm into the qlist configuration messages.</p>
+
+    <p>The pdpython external is available precompiled for OS X and can be easily
+      compiled for Linux and the Raspberry Pi (sorry, Windows).  The OS X
+      version is in the course distribution
+      at <code>physcomp-examples/support/Pd-library/pdpython-OSX</code>; this
+      path should be added to your Pd search path.  The full 
+      <a href="https://github.com/garthz/pdpython">pdpython package is available
+      on github</a>.</p>
+
+    <h4>Steps and observations</h4>
+
+    <ol>
+      <li>Open fmsequencer.pd in Pd-extended or vanilla Pd.</li>
+      
+      <li>Turn on the DSP output and click Start.</li>
+
+      <li>Look at fmsynth.pd for more details on the synthesis.</li>
+
+      <li>Take a look at utility.py for the transformation function.</li>
+
+      <li>Add more transformation rules and create a more complex rhythm.  Pd
+	will need to be restarted after the Python changes.  You'll need to use
+	a Python program editor to edit the Python code.</li>
+
+    </ol>
+
+    <h4>Comments</h4>
+    
+    <p>Python is not a real-time language like Pd; if any given function call
+      takes too long, the audio buffers will drain and there will be a glitch in
+      the audio output.  But this shouldn't be a problems for small calculations;
+      it's more of an issue for large file I/O.</p>
+
+      <h4>Other Files</h4>
+    <ol>
+      <li><a href="http://cmuphyscomp.github.io/physcomp-examples/1_energy-information-transduction/c_pd-starter/iii_advanced-pd/1.c.iii.8_music-synth-am-fm/fmsequencer.pd">fmsequencer.pd</a></li>
+      <li><a href="http://cmuphyscomp.github.io/physcomp-examples/1_energy-information-transduction/c_pd-starter/iii_advanced-pd/1.c.iii.8_music-synth-am-fm/fmsynth.pd">fmsynth.pd</a></li>
+      <li><a href="http://cmuphyscomp.github.io/physcomp-examples/1_energy-information-transduction/c_pd-starter/iii_advanced-pd/1.c.iii.8_music-synth-am-fm/utility.py">utility.py</a></li>
+      <li><a href="http://cmuphyscomp.github.io/physcomp-examples/1_energy-information-transduction/c_pd-starter/iii_advanced-pd/1.c.iii.8_music-synth-am-fm/utility.pyc">utility.pyc</a></li>
+    </ol>
