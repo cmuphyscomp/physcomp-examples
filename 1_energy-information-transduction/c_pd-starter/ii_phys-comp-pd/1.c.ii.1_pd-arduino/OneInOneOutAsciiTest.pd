@@ -1,6 +1,6 @@
-#N canvas 679 -922 679 719 10;
+#N canvas 675 23 679 719 10;
 #X floatatom 345 961 5 0 0 0 - - -;
-#X obj 59 358 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 59 358 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X text 57 340 LED;
 #X obj 114 1127 tgl 15 1 empty empty empty 17 7 0 10 -262144 -1 -1
@@ -21,7 +21,7 @@
 #X obj 309 1172 print PIN8-value;
 #X text 273 942 Time;
 #X text 353 943 LED;
-#N canvas 872 22 692 693 Arduino-server 1;
+#N canvas 872 22 692 693 Arduino-server 0;
 #X obj 49 186 inlet;
 #X obj 121 963 outlet;
 #X obj 137 216 inlet;
@@ -96,7 +96,7 @@ is received then parses it as a Pd list.;
 #X restore 84 804 pd Arduino-server;
 #X msg 28 251 /dev/tty.usbmodem1411;
 #X obj 65 533 hsl 128 15 0 100 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 0 1;
+-1 -1 6900 1;
 #X text 132 515 PWM on PIN3;
 #X obj 169 771 r port-name;
 #X obj 28 303 s port-name;
@@ -107,7 +107,7 @@ is received then parses it as a Pd list.;
 1;
 #X obj 221 449 s port-output;
 #X obj 83 1221 hsl 128 15 0 1024 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 4601 1;
+-1 -1 4477 1;
 #X text 87 1201 A0 input;
 #X floatatom 309 1219 5 0 0 0 - - -;
 #X text 317 1197 PIN8 input;
