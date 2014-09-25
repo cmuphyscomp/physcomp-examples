@@ -1,0 +1,101 @@
+#N canvas 572 92 645 600 10;
+#X obj 21 18 cnv 15 600 100 empty empty Conductor_Station 20 12 0 14
+-204800 -66577 0;
+#X text 87 43 Provide beat \, tempo \, and parametric settings across
+the network to an array of semi-autonomous instruments.;
+#X text 87 83 This patch uses libraries found in pd-extended.;
+#N canvas 822 270 751 678 receiver 0;
+#X obj 66 147 mrpeach/unpackOSC;
+#X obj 36 186 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 66 79 mrpeach/udpreceive 20001;
+#X text 216 79 Listen for packets from the clients.;
+#X msg 92 211 status;
+#X obj 92 237 s receiver-command;
+#X obj 66 49 r receiver-command;
+#X obj 65 184 t a b;
+#X obj 211 253 route from;
+#X obj 118 466 list append;
+#X msg 132 428 goodbye;
+#X obj 118 494 list trim;
+#X obj 211 308 python clients ClientTable;
+#X obj 67 389 mrpeach/routeOSC /hello /goodbye /vote;
+#X obj 170 593 python clients ClientTable;
+#X text 139 210 poll for the sender address for every message received
+;
+#X text 62 16 Subpatch to handle client (instrument) connection protocol.
+;
+#X msg 202 429 vote \$1;
+#X obj 204 559 r channel-status;
+#X obj 171 644 s channel-commands;
+#X msg 211 280 pack_address \$1 \$2 \$3 \$4;
+#X msg 71 427 hello \$1;
+#X obj 22 419 symbol;
+#X connect 0 0 7 0;
+#X connect 0 0 1 0;
+#X connect 2 0 0 0;
+#X connect 2 1 8 0;
+#X connect 4 0 5 0;
+#X connect 6 0 2 0;
+#X connect 7 0 13 0;
+#X connect 7 1 4 0;
+#X connect 8 0 20 0;
+#X connect 9 0 11 0;
+#X connect 10 0 9 0;
+#X connect 11 0 14 0;
+#X connect 12 0 9 1;
+#X connect 13 0 22 0;
+#X connect 13 1 10 0;
+#X connect 13 2 17 0;
+#X connect 14 0 19 0;
+#X connect 17 0 9 0;
+#X connect 18 0 14 0;
+#X connect 20 0 12 0;
+#X connect 21 0 9 0;
+#X connect 22 0 21 0;
+#X restore 475 139 pd receiver;
+#X obj 25 171 channel 0;
+#X obj 25 131 cnv 15 320 30 empty empty empty 20 12 0 14 -262130 -66577
+0;
+#X text 36 136 Click to open performance controls -->;
+#X obj 271 137 controls;
+#N canvas 1011 37 654 821 plumbing 0;
+#X obj 49 449 mrpeach/packOSC;
+#X obj 47 74 r osc-controls;
+#X obj 47 131 spigot;
+#X obj 47 156 print osc-controls;
+#X obj 79 101 tgl 15 1 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 49 422 r osc-controls;
+#X obj 51 239 r channel-status;
+#X obj 51 314 print channel-report;
+#X obj 51 285 spigot;
+#X obj 84 264 tgl 15 1 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 49 477 s osc-broadcast;
+#X text 46 392 Receive messages from the controls and pack for transmission
+to all connected instruments via the channels.;
+#X text 48 11 Subpatch to hide miscellaneous data plumbing.;
+#X text 100 102 Enable printing of all control panel messages.;
+#X text 102 262 Enable printing of all channel status messages.;
+#X obj 54 678 s channel-commands;
+#X msg 53 611 channel-0 name garthz2 \, channel-0 ip blah \, channel-0
+vote 42;
+#X msg 75 641 channel-0 port connect 192.168.45.13 20000;
+#X text 50 574 Debugging messages for internal testing.;
+#X connect 0 0 10 0;
+#X connect 1 0 2 0;
+#X connect 2 0 3 0;
+#X connect 4 0 2 1;
+#X connect 5 0 0 0;
+#X connect 6 0 8 0;
+#X connect 8 0 7 0;
+#X connect 9 0 8 1;
+#X connect 16 0 15 0;
+#X connect 17 0 15 0;
+#X restore 550 138 pd plumbing;
+#X obj 25 235 channel 1;
+#X obj 25 299 channel 2;
+#X obj 25 363 channel 3;
+#X obj 25 427 channel 4;
+#X obj 25 491 channel 5;

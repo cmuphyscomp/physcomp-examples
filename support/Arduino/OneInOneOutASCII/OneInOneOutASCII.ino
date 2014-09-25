@@ -73,6 +73,12 @@ static const int servo_output_pin = 4;
 // The maximum number of tokens in a single message.
 #define MAX_TOKENS 10
 
+// Some version of the Arduino IDE don't correctly define this symbol for an
+// Arduino Uno.
+#ifndef LED_BUILTIN
+#define LED_BUILTIN 13
+#endif
+
 /****************************************************************/
 /**** Utility functions *****************************************/
 /****************************************************************/
