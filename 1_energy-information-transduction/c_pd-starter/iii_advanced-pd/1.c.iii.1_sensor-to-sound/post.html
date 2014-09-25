@@ -1,26 +1,49 @@
-<h3>Exercise: Title</h3>
+<h4>Objective</h4>
+ 
+    <p>Map a physical measurement to a synthesized sound using Arduino input into Pd.</p>
 
-    <p>Objective: ...</p>
+    <p>Please review the notes for 1.c.ii.1 as all of them apply to this
+      exercise as well.  This exercise assumes you have an Arduino programmed
+      with the OneInOneOutASCII sketch to communicate physical data to and from
+      an Arduino.  The Pd patches are available in the same materials folder as
+      this file.</p>
 
-    <p>Brief introductory comments.</p>
+    <p>This exercise is almost identical to the previous 1.c.ii.32 Sensor to GUI
+      exercise, only the mapping is from a sensor to a synthesized sound.  This
+      is a transition into more advanced audio processing in Pd.
+    </p>
+    
 
     <h4>Steps and observations</h4>
-    <ol>
 
-      <li>Specific actions...</li>
-      <li>Specific observations...</li>
+    <ol>
+      <li>Open the 1.c.iii.1_sensor-to-sound.pd patch in Pd-extended.</li>
+      
+      <li>Open the connection to the Arduino using one of the serial port name
+	message objects.</li>
+
+      <li>Enable audio processing by clicking the green Enable_Audio button.</li>
+ 
+      <li>Touch the A0 pin with your finger; just the electrical noise from your finger should be enough signal to trigger the synthesizer.</li>
+
+      <li>Attach an analog sensor to A0 and see if it makes a playable instrument.</li>
+      
+      <li>Try varying the sliders in the Oscillator Bank section of the patch to
+	change the sound properties.</li>
+
     </ol>
 
     <h4>Comments</h4>
+    
+    <p>There is a lot going on in the synthesizer; in the following exercises we
+      will isolate more components of Pd signal processing and work back towads
+      this kind of complexity.</p>
 
-    <p>Brief review comments.  Links to other information.</p>
-
-  <img id="assignment-image" class="alignnone" src="http://cmuphyscomp.github.io/physcomp-examples/1_energy-information-transduction/c_pd-starter/iii_advanced-pd/1.c.iii.1_sensor-to-sound/1.c.iii.1__bb.png" width="960" height="%100" />
-<img id="assignment-image" class="alignnone" src="http://cmuphyscomp.github.io/physcomp-examples/1_energy-information-transduction/c_pd-starter/iii_advanced-pd/1.c.iii.1_sensor-to-sound/1.c.iii.1__schem.png" width="960" height="%100" />
-<img id="assignment-image" class="alignnone" src="http://cmuphyscomp.github.io/physcomp-examples/1_energy-information-transduction/c_pd-starter/iii_advanced-pd/1.c.iii.1_sensor-to-sound/1.c.iii.1_SensorToSound_patch.png" width="960" height="%100" />
+  <img id="assignment-image" class="alignnone" src="http://cmuphyscomp.github.io/physcomp-examples/1_energy-information-transduction/c_pd-starter/iii_advanced-pd/1.c.iii.1_sensor-to-sound/1.c.iii.1_sensor-to-sound_bb.png" width="960" height="%100" />
+<img id="assignment-image" class="alignnone" src="http://cmuphyscomp.github.io/physcomp-examples/1_energy-information-transduction/c_pd-starter/iii_advanced-pd/1.c.iii.1_sensor-to-sound/1.c.iii.1_sensor-to-sound_schem.png" width="960" height="%100" />
     <h4>Other Files</h4>
     <ol>
-      <li><a href="http://cmuphyscomp.github.io/physcomp-examples/1_energy-information-transduction/c_pd-starter/iii_advanced-pd/1.c.iii.1_sensor-to-sound/1.c.iii.1__SensorToGui.fzz">1.c.iii.1__SensorToGui.fzz</a></li>
-      <li><a href="http://cmuphyscomp.github.io/physcomp-examples/1_energy-information-transduction/c_pd-starter/iii_advanced-pd/1.c.iii.1_sensor-to-sound/1.c.iii.1_SensorToSound.pd">1.c.iii.1_SensorToSound.pd</a></li>
-      <li><a href="http://cmuphyscomp.github.io/physcomp-examples/1_energy-information-transduction/c_pd-starter/iii_advanced-pd/1.c.iii.1_sensor-to-sound/hello.txt">hello.txt</a></li>
+      <li><a href="http://cmuphyscomp.github.io/physcomp-examples/1_energy-information-transduction/c_pd-starter/iii_advanced-pd/1.c.iii.1_sensor-to-sound/1.c.iii.1_sensor-to-sound.fzz">1.c.iii.1_sensor-to-sound.fzz</a></li>
+      <li><a href="http://cmuphyscomp.github.io/physcomp-examples/1_energy-information-transduction/c_pd-starter/iii_advanced-pd/1.c.iii.1_sensor-to-sound/1.c.iii.1_sensor-to-sound.pd">1.c.iii.1_sensor-to-sound.pd</a></li>
+      <li><a href="http://cmuphyscomp.github.io/physcomp-examples/1_energy-information-transduction/c_pd-starter/iii_advanced-pd/1.c.iii.1_sensor-to-sound/Arduino-server.pd">Arduino-server.pd</a></li>
     </ol>

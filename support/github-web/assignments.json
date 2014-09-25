@@ -309,7 +309,7 @@
 "post": "http://cmuphyscomp.github.io/physcomp-examples/1_energy-information-transduction/c_pd-starter/iii_advanced-pd/1.c.iii.1_sensor-to-sound/post.html", 
 "permalink": "assignments/1-energy-information-transduction/c-pd-starter/iii-advanced-pd/1.c.iii.1-sensor-to-sound", 
 "parent": "1-energy-information-transduction/c-pd-starter/iii-advanced-pd", 
-"title": "1.c.iii.1 Unit 1A: Basic Circuits"
+"title": "1.c.iii.1 Exercise: Arduino Sensor to Synthesized Sound via Pure Data"
 }, 
 {
 "post": "http://cmuphyscomp.github.io/physcomp-examples/1_energy-information-transduction/c_pd-starter/iii_advanced-pd/1.c.iii.2_complex-timing/post.html", 
