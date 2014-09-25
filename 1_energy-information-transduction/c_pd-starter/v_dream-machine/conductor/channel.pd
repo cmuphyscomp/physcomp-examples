@@ -1,0 +1,69 @@
+#N canvas 936 106 804 705 10;
+#X obj 181 281 bng 25 250 50 0 empty empty Disconnect 30 12 0 12 -258113
+-1 -1;
+#X obj 259 261 tgl 15 0 empty empty Connected 20 7 0 10 -262130 -1
+-1 0 1;
+#X obj 21 18 cnv 15 600 80 empty empty Instrument_Channel 20 12 0 14
+-204800 -66577 0;
+#X text 87 43 This is meant to be included in a parent patch to represent
+a single communication channel to an instrument.;
+#X text 135 89 comment;
+#X symbolatom 341 260 10 0 0 1 User_Name - -;
+#X symbolatom 468 259 20 0 0 1 IP_Address - -;
+#X obj 104 280 tgl 25 0 empty empty Solo 30 12 0 12 -4034 -1 -1 0 1
+;
+#X floatatom 468 286 5 0 0 1 Vote - -;
+#X text 86 78 Creation arguments: channel_index_number;
+#X obj 406 139 r channel-commands;
+#X obj 174 443 r osc-broadcast;
+#X text 271 437 Data bus for encoded OSC messages to transmit to all
+channels.;
+#X obj 313 602 mrpeach/udpsend;
+#X obj 175 544 spigot;
+#X obj 258 187 r \$0-connected;
+#X obj 339 634 s \$0-connected;
+#X obj 208 508 r \$0-connected;
+#X msg 104 332 send /solo \$1;
+#X obj 104 387 s \$0-send;
+#X obj 104 359 mrpeach/packOSC;
+#X obj 175 476 r \$0-send;
+#X text 411 602 The network output socket.;
+#X text 232 475 Internal bus for channel-specific messages.;
+#X obj 406 196 route port name ip vote;
+#X text 403 118 Control bus to receive commands to control this object.
+;
+#X obj 341 225 symbol;
+#X obj 467 229 symbol;
+#X obj 69 412 print channel-\$1;
+#X obj 310 770 s channel-status;
+#X text 417 772 Output bus to carry channel status reports.;
+#X msg 309 686 \$1;
+#X obj 310 743 list trim;
+#X msg 236 373 disconnect;
+#X obj 309 716 list prepend connect_status \$1;
+#X obj 406 166 route channel-\$1;
+#X connect 0 0 33 0;
+#X connect 7 0 18 0;
+#X connect 10 0 35 0;
+#X connect 11 0 14 0;
+#X connect 13 0 16 0;
+#X connect 13 0 31 0;
+#X connect 14 0 13 0;
+#X connect 15 0 1 0;
+#X connect 17 0 14 1;
+#X connect 18 0 20 0;
+#X connect 18 0 28 0;
+#X connect 20 0 19 0;
+#X connect 21 0 14 0;
+#X connect 24 0 13 0;
+#X connect 24 1 26 0;
+#X connect 24 2 27 0;
+#X connect 24 3 8 0;
+#X connect 26 0 5 0;
+#X connect 27 0 6 0;
+#X connect 31 0 34 0;
+#X connect 32 0 29 0;
+#X connect 33 0 13 0;
+#X connect 34 0 32 0;
+#X connect 35 0 24 0;
+#X coords 0 -1 1 1 600 60 1 100 250;
