@@ -1,16 +1,59 @@
-<h2>PureData Starter: Overview</h2>
+<p>This section is an introduction to physical computing using
+      <a href="http://en.wikipedia.org/wiki/Dataflow_programming">dataflow
+	programming</a>.  This style expresses computation as a graph in which
+	data messages flow over connections between objects which act on the
+	data.  We will be using the open-source
+	real-time <a href="http://puredata.info">Pure Data (Pd)</a> visual
+	programming language, which stems from the same work as the
+	commercial <a href="http://cycling74.com/">Max/MSP</a> system.</p>
 
-    <p>This section is an introduction to physical computing with the real-time data-flow programing language PureData. Such environments take their name ("data-flow") after their visual analogy of graphical modules that intake and process data and pass it along to other modules. </p>
+    <p>Dataflow languages lend themselves well to expressing parallelism,
+      event-driven actions, interactive and incremental programming, and
+      real-time operation.  Pd presents the program as a visual graph which
+      follows a visual analogy of graphical modules that intake and process data
+      and pass it along to other modules. Pd programs can be edited as they are
+      running by making and breaking connections, editing parameters, and adding
+      new operators.  Pd includes many GUI objects so that controls can be
+      embedded directly in the program.</p>
 
-    <hr/>
+
     <h3>Takeaway Lessons</h3>
 
-    <ul>
-      <li>PureData offers tremendous flexibility: one one environment you can work with physical computing, audio analysis and syntehsis, video analysis and synthesis and more. PureData is free and open source, and it works on personal computers (Windows, OS X, Linux), smart phones (iOS, Android), embedded platforms (Raspberry Pi, Udoo, BeagleBone)</li>
-      <li>PureData is good at: rapid prototyping of interactive audio/visual systems, controlling multiple parallel processes with complex timing; audio analysis and synthesis, </li>
-      <li>PureData is bad at: recurssive programming, graphical user interfaces, intergration of documentation, following computer science conventions for naming</li>
-      <li>PureData is very extensible: you can extend PureData's functionality with C/C++, Python or a range of other text-based programming languages</li>
-    </ul>
+    <p>Pure Data offers tremendous flexibility: in one environment you can
+      work with physical computing, audio analysis and synthesis, video
+      analysis and synthesis, and more. Pure Data is free and open source, and
+      it works on personal computers (Windows, OS X, Linux), smart phones
+      (iOS, Android), embedded platforms (Raspberry Pi, Udoo,
+      BeagleBone).</p>
+
+    <p>Pure Data is good at: rapid prototyping of interactive audio/visual
+      systems, controlling multiple parallel processes with complex timing;
+      audio analysis and synthesi. </p>
+
+    <p>Pure Data is bad at: recursive programming, general graphical user
+      interfaces, integration of documentation, adhering to computer science
+      conventions for naming.  The Pd third-party libraries in particular are
+      quirky and poorly documented, but many, many features are
+      available.</p>
+
+    <p>Pure Data is very extensible: you can extend Pure Data's functionality
+      with C/C++, Python or a range of other text-based programming languages.
+      Pd has a simple API for compiling binary <em>extensions</em> which can
+      be dynamically loaded into a Pd program and operate like native Pd
+      objects.</p>
+
+    <p>Pd programs are called <em>patches</em>.  Pd patches can instantiate
+      multiple copies of other patches and treat them as a single object; these
+      other patches are then called <em>abstractions</em>.  This is the primary
+      means for creating re-usable modules and subroutines.  Patches can also
+      incorporate internal subgraphs called <em>subpatches</em> which exist in
+      only one copy, but allow for organizing a hierarchy of code within a
+      single file.</p>
+
+    <p>Pd abstractions implementing GUIs often use a <em>graph-on-parent</em>
+      mode which allows a region of the abstraction patch to be visible in the
+      parent patch.  This is typically used to provide GUI control objects
+      within a panel.</p>
 
     <h3>Reference Links</h3>
     <ol>
@@ -22,14 +65,34 @@
     <hr/><!-- --------------------------------------------------------------- -->
     <h3>Lab Exercises</h3>
 
-    <p>The lab exercises are intended to be performed by pairs of students.
-      These will familiarize you with processes you have already explored with micro-controllers, but now with a personal computer or Raspberry Pi. They will also familiarize you with the work flow for using PureData on a laptop to communicate with a micro-controller, as well as PureData on an Raspberry Pi</p>
+    <p>The lab exercises are intended to be performed by pairs of students or
+      small groups.  These will familiarize you with processes you have already
+      explored with micro-controllers, but now with a personal computer or
+      Raspberry Pi. They will also familiarize you with the work flow for using
+      Pure Data on a laptop to communicate with a micro-controller, as well as
+      Pure Data on an Raspberry Pi</p>
 
     <hr/><!-- --------------------------------------------------------------- -->
     <h3>Graded Project: Dream Machine</h3>
 
 
-    <p>The graded project is inspired by the Dreammachine, "a&#160;<a href="http://en.wikipedia.org/wiki/Stroboscopic" title="Stroboscopic">stroboscopic</a>&#160;flicker device that produces visual stimuli. Artist&#160;<a href="http://en.wikipedia.org/wiki/Brion_Gysin" title="Brion Gysin">Brion Gysin</a>&#160;and&#160;<a href="http://en.wikipedia.org/wiki/William_S._Burroughs" title="William S. Burroughs">William S. Burroughs</a>'s "systems adviser"&#160;<a href="http://en.wikipedia.org/wiki/Ian_Sommerville_(technician)" title="Ian Sommerville (technician)">Ian Sommerville</a>&#160;created the dreamachine after reading&#160;<a href="http://en.wikipedia.org/wiki/William_Grey_Walter" title="William Grey Walter">William Grey Walter</a>'s book,&#160;<em>The Living Brain</em>."  The goal is to make an enchanted object that uses sound, light and movement to create a dream-like state for the viewer. </p>
+    <p>The graded project is inspired by
+      the <a href="http://en.wikipedia.org/wiki/Dreamachine">Dreammachine</a>,
+      &#8220;a&#160;<a href="http://en.wikipedia.org/wiki/Stroboscopic" title="Stroboscopic">stroboscopic</a>&#160;flicker device that produces visual
+      stimuli. Artist&#160;<a href="http://en.wikipedia.org/wiki/Brion_Gysin" title="Brion Gysin">Brion
+      Gysin</a>&#160;and&#160;<a href="http://en.wikipedia.org/wiki/William_S._Burroughs" title="William S. Burroughs">William S. Burroughs</a>'s "systems
+      adviser"&#160;<a href="http://en.wikipedia.org/wiki/Ian_Sommerville_(technician)" title="Ian Sommerville (technician)">Ian Sommerville</a>&#160;created the
+      dreamachine after
+      reading&#160;<a href="http://en.wikipedia.org/wiki/William_Grey_Walter" title="William Grey Walter">William Grey Walter</a>'s book,&#160;<em>The Living
+      Brain</em>.&#8221;</p>
+
+    <p>The goal is to make an enchanted object that uses sound, light and
+      movement to create a dream-like state for the viewer. We will perform
+      these machines simultaneously for a coordinated, collaborative, dream
+      experience.  This is a very open-ended assignment: results may include
+      pure-software sound synthesis, physical artifacts which create sound or
+      light, physical interfaces for allowing performers to interact with the
+      system.</p>
 
     <hr/><!-- --------------------------------------------------------------- -->
     <h3>Challenge Yourself</h3>
@@ -38,14 +101,18 @@
        some of the optional challenge exercises.</p>
 
     <ol>
-      <li>Create a automaton percussive instrument that performs changing rhythmic patterns</li>
+      <li>Create a automaton percussive instrument that performs changing
+	rhythmic patterns</li>
 
-      <li>Create a PureData based client-server system where a central server running PureData sends messages to numerous client computers running PureData, which in turn generate sound or actuate kinetic elements</li>
+      <li>Create a Pure Data based client-server system where a central server
+	running PureData sends messages to numerous client computers running
+	PureData, which in turn generate sound or actuates kinetic
+	elements.</li>
     </ol>
 
     <!-- --------------------------------------------------------------- -->
   <h3>Examples</h3>
     <p>Inspiration for project ideas can be found on
-    the <a href="http://physcomp.org/wow/">course website</a>.</p>
+      the <a href="http://physcomp.org/wow/">course website</a>.</p>
 
   

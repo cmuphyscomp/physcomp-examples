@@ -237,7 +237,7 @@
 "post": "http://cmuphyscomp.github.io/physcomp-examples/1_energy-information-transduction/c_pd-starter/post.html", 
 "permalink": "assignments/1-energy-information-transduction/c-pd-starter", 
 "parent": "1-energy-information-transduction", 
-"title": "Section C: PureData Starter: Overview"
+"title": "Section C: Pure Data Starter: Overview"
 }, 
 {
 "post": "http://cmuphyscomp.github.io/physcomp-examples/1_energy-information-transduction/c_pd-starter/i_data-flow/post.html", 
@@ -381,6 +381,6 @@
 "post": "http://cmuphyscomp.github.io/physcomp-examples/1_energy-information-transduction/c_pd-starter/v_dream-machine/post.html", 
 "permalink": "assignments/1-energy-information-transduction/c-pd-starter/v-dream-machine", 
 "parent": "1-energy-information-transduction/c-pd-starter", 
-"title": "Part v: Unit 1A: Basic Circuits"
+"title": "Part v: Assignment: Dream Machine"
 }
 ]
