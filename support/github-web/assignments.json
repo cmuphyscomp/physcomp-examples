@@ -300,64 +300,58 @@
 "title": "1.c.ii.4 Exercise: Arduino Sensor to Actuator through Pure Data"
 }, 
 {
-"post": "http://cmuphyscomp.github.io/physcomp-examples/1_energy-information-transduction/c_pd-starter/iii_advanced-pd/1.c.iii.10_music-synth-advanced/post.html", 
-"permalink": "assignments/1-energy-information-transduction/c-pd-starter/iii-advanced-pd/1.c.iii.10-music-synth-advanced", 
-"parent": "1-energy-information-transduction/c-pd-starter/iii-advanced-pd", 
-"title": "1.c.iii.10 Unit 1A: Basic Circuits"
+"post": "http://cmuphyscomp.github.io/physcomp-examples/1_energy-information-transduction/c_pd-starter/ii_phys-comp-pd/1.c.ii.5_sensor-to-sound/post.html", 
+"permalink": "assignments/1-energy-information-transduction/c-pd-starter/ii-phys-comp-pd/1.c.ii.5-sensor-to-sound", 
+"parent": "1-energy-information-transduction/c-pd-starter/ii-phys-comp-pd", 
+"title": "1.c.ii.5 Exercise: Arduino Sensor to Synthesized Sound via Pure Data"
 }, 
 {
-"post": "http://cmuphyscomp.github.io/physcomp-examples/1_energy-information-transduction/c_pd-starter/iii_advanced-pd/1.c.iii.1_sensor-to-sound/post.html", 
-"permalink": "assignments/1-energy-information-transduction/c-pd-starter/iii-advanced-pd/1.c.iii.1-sensor-to-sound", 
-"parent": "1-energy-information-transduction/c-pd-starter/iii-advanced-pd", 
-"title": "1.c.iii.1 Exercise: Arduino Sensor to Synthesized Sound via Pure Data"
+"post": "http://cmuphyscomp.github.io/physcomp-examples/1_energy-information-transduction/c_pd-starter/iii_advanced-pd-music/1.c.iii.1_music-pitch/post.html", 
+"permalink": "assignments/1-energy-information-transduction/c-pd-starter/iii-advanced-pd-music/1.c.iii.1-music-pitch", 
+"parent": "1-energy-information-transduction/c-pd-starter/iii-advanced-pd-music", 
+"title": "1.c.iii.1 Unit 1A: Basic Circuits"
 }, 
 {
-"post": "http://cmuphyscomp.github.io/physcomp-examples/1_energy-information-transduction/c_pd-starter/iii_advanced-pd/1.c.iii.2_complex-timing/post.html", 
-"permalink": "assignments/1-energy-information-transduction/c-pd-starter/iii-advanced-pd/1.c.iii.2-complex-timing", 
-"parent": "1-energy-information-transduction/c-pd-starter/iii-advanced-pd", 
+"post": "http://cmuphyscomp.github.io/physcomp-examples/1_energy-information-transduction/c_pd-starter/iii_advanced-pd-music/1.c.iii.2_music-rhythm/post.html", 
+"permalink": "assignments/1-energy-information-transduction/c-pd-starter/iii-advanced-pd-music/1.c.iii.2-music-rhythm", 
+"parent": "1-energy-information-transduction/c-pd-starter/iii-advanced-pd-music", 
 "title": "1.c.iii.2 Unit 1A: Basic Circuits"
 }, 
 {
-"post": "http://cmuphyscomp.github.io/physcomp-examples/1_energy-information-transduction/c_pd-starter/iii_advanced-pd/1.c.iii.3_music-pitch/post.html", 
-"permalink": "assignments/1-energy-information-transduction/c-pd-starter/iii-advanced-pd/1.c.iii.3-music-pitch", 
-"parent": "1-energy-information-transduction/c-pd-starter/iii-advanced-pd", 
+"post": "http://cmuphyscomp.github.io/physcomp-examples/1_energy-information-transduction/c_pd-starter/iii_advanced-pd-music/1.c.iii.3_music-timbre-noise/post.html", 
+"permalink": "assignments/1-energy-information-transduction/c-pd-starter/iii-advanced-pd-music/1.c.iii.3-music-timbre-noise", 
+"parent": "1-energy-information-transduction/c-pd-starter/iii-advanced-pd-music", 
 "title": "1.c.iii.3 Unit 1A: Basic Circuits"
 }, 
 {
-"post": "http://cmuphyscomp.github.io/physcomp-examples/1_energy-information-transduction/c_pd-starter/iii_advanced-pd/1.c.iii.4_music-rhythm/post.html", 
-"permalink": "assignments/1-energy-information-transduction/c-pd-starter/iii-advanced-pd/1.c.iii.4-music-rhythm", 
-"parent": "1-energy-information-transduction/c-pd-starter/iii-advanced-pd", 
+"post": "http://cmuphyscomp.github.io/physcomp-examples/1_energy-information-transduction/c_pd-starter/iii_advanced-pd-music/1.c.iii.4_music-dynamics/post.html", 
+"permalink": "assignments/1-energy-information-transduction/c-pd-starter/iii-advanced-pd-music/1.c.iii.4-music-dynamics", 
+"parent": "1-energy-information-transduction/c-pd-starter/iii-advanced-pd-music", 
 "title": "1.c.iii.4 Unit 1A: Basic Circuits"
 }, 
 {
-"post": "http://cmuphyscomp.github.io/physcomp-examples/1_energy-information-transduction/c_pd-starter/iii_advanced-pd/1.c.iii.5_music-timbre-noise/post.html", 
-"permalink": "assignments/1-energy-information-transduction/c-pd-starter/iii-advanced-pd/1.c.iii.5-music-timbre-noise", 
-"parent": "1-energy-information-transduction/c-pd-starter/iii-advanced-pd", 
+"post": "http://cmuphyscomp.github.io/physcomp-examples/1_energy-information-transduction/c_pd-starter/iii_advanced-pd-music/1.c.iii.5_music-synth-additive/post.html", 
+"permalink": "assignments/1-energy-information-transduction/c-pd-starter/iii-advanced-pd-music/1.c.iii.5-music-synth-additive", 
+"parent": "1-energy-information-transduction/c-pd-starter/iii-advanced-pd-music", 
 "title": "1.c.iii.5 Unit 1A: Basic Circuits"
 }, 
 {
-"post": "http://cmuphyscomp.github.io/physcomp-examples/1_energy-information-transduction/c_pd-starter/iii_advanced-pd/1.c.iii.6_music-dynamics/post.html", 
-"permalink": "assignments/1-energy-information-transduction/c-pd-starter/iii-advanced-pd/1.c.iii.6-music-dynamics", 
-"parent": "1-energy-information-transduction/c-pd-starter/iii-advanced-pd", 
-"title": "1.c.iii.6 Unit 1A: Basic Circuits"
+"post": "http://cmuphyscomp.github.io/physcomp-examples/1_energy-information-transduction/c_pd-starter/iii_advanced-pd-music/1.c.iii.6_music-synth-am-fm/post.html", 
+"permalink": "assignments/1-energy-information-transduction/c-pd-starter/iii-advanced-pd-music/1.c.iii.6-music-synth-am-fm", 
+"parent": "1-energy-information-transduction/c-pd-starter/iii-advanced-pd-music", 
+"title": "1.c.iii.6 Exercise: Music Synth AM/FM"
 }, 
 {
-"post": "http://cmuphyscomp.github.io/physcomp-examples/1_energy-information-transduction/c_pd-starter/iii_advanced-pd/1.c.iii.7_music-synth-additive/post.html", 
-"permalink": "assignments/1-energy-information-transduction/c-pd-starter/iii-advanced-pd/1.c.iii.7-music-synth-additive", 
-"parent": "1-energy-information-transduction/c-pd-starter/iii-advanced-pd", 
+"post": "http://cmuphyscomp.github.io/physcomp-examples/1_energy-information-transduction/c_pd-starter/iii_advanced-pd-music/1.c.iii.7_music-synth-sampling/post.html", 
+"permalink": "assignments/1-energy-information-transduction/c-pd-starter/iii-advanced-pd-music/1.c.iii.7-music-synth-sampling", 
+"parent": "1-energy-information-transduction/c-pd-starter/iii-advanced-pd-music", 
 "title": "1.c.iii.7 Unit 1A: Basic Circuits"
 }, 
 {
-"post": "http://cmuphyscomp.github.io/physcomp-examples/1_energy-information-transduction/c_pd-starter/iii_advanced-pd/1.c.iii.8_music-synth-am-fm/post.html", 
-"permalink": "assignments/1-energy-information-transduction/c-pd-starter/iii-advanced-pd/1.c.iii.8-music-synth-am-fm", 
-"parent": "1-energy-information-transduction/c-pd-starter/iii-advanced-pd", 
-"title": "1.c.iii.8 Exercise: Music Synth AM/FM"
-}, 
-{
-"post": "http://cmuphyscomp.github.io/physcomp-examples/1_energy-information-transduction/c_pd-starter/iii_advanced-pd/1.c.iii.9_music-synth-sampling/post.html", 
-"permalink": "assignments/1-energy-information-transduction/c-pd-starter/iii-advanced-pd/1.c.iii.9-music-synth-sampling", 
-"parent": "1-energy-information-transduction/c-pd-starter/iii-advanced-pd", 
-"title": "1.c.iii.9 Unit 1A: Basic Circuits"
+"post": "http://cmuphyscomp.github.io/physcomp-examples/1_energy-information-transduction/c_pd-starter/iii_advanced-pd-music/1.c.iii.8_music-synth-advanced/post.html", 
+"permalink": "assignments/1-energy-information-transduction/c-pd-starter/iii-advanced-pd-music/1.c.iii.8-music-synth-advanced", 
+"parent": "1-energy-information-transduction/c-pd-starter/iii-advanced-pd-music", 
+"title": "1.c.iii.8 Unit 1A: Basic Circuits"
 }, 
 {
 "post": "http://cmuphyscomp.github.io/physcomp-examples/1_energy-information-transduction/c_pd-starter/iv_pd-rpi/1.c.iv.1_rpi-remote-access/post.html", 
