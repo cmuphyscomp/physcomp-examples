@@ -6,8 +6,8 @@
 #X coords 0 127 23 0 200 127 1 0 0;
 #X restore 79 85 graph;
 #X obj 62 357 tabread \$0-myMelody;
-#X floatatom 62 329 5 0 0 0 - - -;
-#X floatatom 62 390 5 0 0 0 - - -;
+#X floatatom 62 329 5 0 0 0 - - -, f 5;
+#X floatatom 62 390 5 0 0 0 - - -, f 5;
 #X text 332 66 the table's name is "\$0-myMelody" \; starting a name
 with "\$0" makes each instance unique;
 #X text 54 242 if you LOCK the patch (take it out of EDIT mode) \,
@@ -21,8 +21,8 @@ in the index (an integer) \, get out the value (a float);
 #X text 333 151 select the table (gui) \, right click \, select properties
 \, modify away!;
 #X obj 61 656 tabread \$0-myMelody;
-#X floatatom 62 629 5 0 0 0 - - -;
-#X floatatom 61 692 5 0 0 0 - - -;
+#X floatatom 62 629 5 0 0 0 - - -, f 5;
+#X floatatom 61 692 5 0 0 0 - - -, f 5;
 #X obj 63 532 metro 100;
 #X obj 62 575 f;
 #X obj 110 575 + 1;
@@ -38,15 +38,14 @@ we have a sequencer!;
 #X obj 509 -18 tgl 25 0 empty empty Enable_Audio 30 12 0 12 -4034 -1
 -1 0 1;
 #X text 139 474 <--- turn it on!;
-#X floatatom 122 501 5 0 0 0 - - -;
+#X floatatom 122 501 5 0 0 0 - - -, f 5;
 #X text 159 500 <--- interval (ms);
 #X text 156 596 <--- don't go over 23!;
 #X text 102 722 <--- change from MIDI (linear) to Hertz (log);
-#X floatatom 61 752 5 0 0 0 - - -;
+#X floatatom 61 752 5 0 0 0 - - -, f 5;
 #X obj 61 721 mtof;
 #X msg 509 13 \; pd dsp \$1;
-#X floatatom 148 560 5 0 0 0 - - -;
-#X text 185 559 <--- sequence length;
+#X floatatom 148 560 5 0 0 0 - - -, f 5;
 #X text 104 327 <--- try it! put in the index;
 #X text 108 390 <--- read out the value;
 #X obj 23 -132 cnv 15 600 100 empty empty 1.c.iii.3_Music_and_Pitch
@@ -69,6 +68,10 @@ plays a loop of specified pitches from a table with a constant rhythm.
 #X obj 292 472 bng 25 250 50 0 empty start Stop 30 12 0 14 -257985
 -1 -1;
 #X msg 290 512 0;
+#X obj 408 630 intro-to-counters;
+#X text 185 559 <--- sequence length;
+#X text 103 629 <--- this is a counter \; check these counters --->
+;
 #X connect 1 0 3 0;
 #X connect 2 0 1 0;
 #X connect 12 0 14 0;
@@ -87,6 +90,6 @@ plays a loop of specified pitches from a table with a constant rhythm.
 #X connect 32 0 23 0;
 #X connect 33 0 32 0;
 #X connect 35 0 18 1;
-#X connect 42 0 15 0;
-#X connect 50 0 51 0;
-#X connect 51 0 15 0;
+#X connect 41 0 15 0;
+#X connect 49 0 50 0;
+#X connect 50 0 15 0;
