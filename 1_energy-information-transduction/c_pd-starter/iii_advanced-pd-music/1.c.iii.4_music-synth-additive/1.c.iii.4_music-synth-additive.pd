@@ -1,0 +1,167 @@
+#N canvas 5 22 872 1050 10;
+#X text -655 -180 1;
+#X obj -186 -237 tgl 25 0 empty empty Enable_Audio 30 12 0 12 -4034
+-1 -1 1 1;
+#X msg -186 -206 \; pd dsp \$1;
+#X obj -672 -351 cnv 15 600 100 empty empty 1.c.iii.4_Music_Synth_Additive
+20 12 0 14 -204800 -66577 0;
+#X obj -346 -233 cnv 15 150 20 empty empty empty 20 12 0 14 -4034 -66577
+0;
+#X text -342 -232 Enable audio output -->;
+#X text -315 -268 must turn on DSP for audio to work in PD;
+#X text -637 -322 Useing Pd to explore noise \, filtering and fourier
+spectral analysis;
+#N canvas 0 22 450 278 (subpatch) 0;
+#X array Freqs 10 float 3;
+#A 0 35.3786 52.6139 59.8711 70.7569 78.9213 85.2713 91.6214 99.7857
+105.229 107.95;
+#X coords 0 127 10 0 200 140 1 0 0;
+#X restore -635 47 graph;
+#N canvas 0 22 450 278 (subpatch) 0;
+#X array Amps 10 float 3;
+#A 0 0.107143 0.185716 0.300004 0.378578 0.400007 0.400007 0.350006
+0.278575 0.200002 0.107143;
+#X coords 0 1 10 0 200 140 1 0 0;
+#X restore -636 265 graph;
+#N canvas 0 415 450 300 init 0;
+#X obj 91 48 loadbang;
+#X msg 79 181 \; freq1 52 \; amp1 0.3 \; dur1 500 \;;
+#X msg 165 190 \; Amps xlabel 0 0 1 2 3 4 5 6 7 8 9 \; Freqs xlabel
+0 0 1 2 3 4 5 6 7 8 9 \;;
+#X connect 0 0 1 0;
+#X connect 0 0 2 0;
+#X restore -185 -163 pd init;
+#X text -637 -178 this synth plays a single note with set frequency
+\, amplitude \, duration;
+#X obj -215 214 route 0 1 2 3 4 5 6 7 8 9;
+#X obj -470 585 hsl 128 15 0 0.5 0 0 empty empty gain -2 -8 0 10 -258113
+-1 -1 1000 1;
+#X obj -473 631 line~;
+#X msg -473 608 \$1 20;
+#X obj -552 646 dac~;
+#X text -657 -70 2;
+#X text -402 346 set all values;
+#X msg -424 416 \; Amps const \$1;
+#X obj -554 527 catch~ sumSound;
+#N canvas 42 167 564 439 one-synth 1;
+#X obj -432 212 hsl 128 15 0 0.5 0 0 empty empty gain -2 -8 0 10 -258113
+-1 -1 0 1;
+#X obj -435 258 line~;
+#X msg -435 235 \$1 20;
+#X obj -450 281 *~;
+#N canvas 139 242 569 467 one-osc 0;
+#X obj 214 36 inlet;
+#X obj 235 402 outlet~;
+#X obj 254 242 osc~;
+#X obj 296 294 *~;
+#X obj 253 201 line~;
+#X obj 352 204 line~;
+#X msg 253 172 \$1 10;
+#X msg 351 173 \$1 10;
+#X obj 237 142 mtof;
+#X obj 225 111 unpack 1 1;
+#X connect 0 0 9 0;
+#X connect 2 0 3 0;
+#X connect 3 0 1 0;
+#X connect 4 0 2 0;
+#X connect 5 0 3 1;
+#X connect 6 0 4 0;
+#X connect 7 0 5 0;
+#X connect 8 0 6 0;
+#X connect 9 0 8 0;
+#X connect 9 1 7 0;
+#X restore -449 167 pd one-osc;
+#X floatatom -388 -27 5 0 127 1 Frequency_(0-127) freq1 -, f 5;
+#X floatatom -342 4 5 0 1 1 Amplitude_(0.-1.) amp1 -, f 5;
+#X obj -447 342 dac~;
+#X obj -485 1 bng 15 250 50 0 empty empty play~ 17 7 0 10 -4034 -1
+-1;
+#X obj -447 103 list;
+#X obj -388 60 pack 1 1;
+#X obj -370 30 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X connect 0 0 2 0;
+#X connect 1 0 3 1;
+#X connect 2 0 1 0;
+#X connect 3 0 7 0;
+#X connect 3 0 7 1;
+#X connect 4 0 3 0;
+#X connect 5 0 10 0;
+#X connect 6 0 10 1;
+#X connect 6 0 11 0;
+#X connect 8 0 9 0;
+#X connect 9 0 4 0;
+#X connect 10 0 9 1;
+#X restore -612 -111 pd one-synth;
+#X obj -215 134 array get Freqs;
+#X obj -215 83 bng 15 250 50 0 empty empty manual_update 17 7 0 10
+-4034 -1 -1;
+#X obj -215 169 list-enumerate;
+#X obj -54 170 list-enumerate;
+#X obj -54 213 route 0 1 2 3 4 5 6 7 8 9;
+#X obj -54 135 array get Amps;
+#X obj -215 253 one-osc;
+#X obj -195 275 one-osc;
+#X obj -171 297 one-osc;
+#X obj -148 318 one-osc;
+#X obj -127 340 one-osc;
+#X obj -99 361 one-osc;
+#X obj -79 383 one-osc;
+#X obj -55 405 one-osc;
+#X obj -32 426 one-osc;
+#X obj -11 448 one-osc;
+#X obj -555 585 *~;
+#X obj -215 55 metro 50;
+#X obj -215 20 tgl 15 0 empty empty auto_update 17 7 0 10 -4034 -1
+-1 1 1;
+#X text 42 169 <---from "list-abs";
+#X text -638 -72 now we use 10 copies of this simple sinusoidal synth
+to create more complext sounds with "additive synthesis";
+#X obj -424 275 vsl 15 128 0 1 0 0 empty empty Amplitude_(0.-1.) 0
+-9 0 10 -262144 -1 -1 2200 1;
+#X text -395 118 set all values;
+#X msg -417 188 \; Amps const \$1;
+#X obj -417 47 vsl 15 128 0 127 0 0 empty empty Frequency_(0-127) 0
+-9 0 10 -262144 -1 -1 0 1;
+#X text -640 -20 change the frequencies and amplitudes for 10 oscilators
+below;
+#X text -643 504 each "instance" of "one-osc" sends its soudn to the
+variable "sumSound";
+#X text -193 649 Also: Check the Pd example D06.additive.pd;
+#X connect 1 0 2 0;
+#X connect 12 0 28 0;
+#X connect 12 1 29 0;
+#X connect 12 2 30 0;
+#X connect 12 3 31 0;
+#X connect 12 4 32 0;
+#X connect 12 5 33 0;
+#X connect 12 6 34 0;
+#X connect 12 7 35 0;
+#X connect 12 8 36 0;
+#X connect 12 9 37 0;
+#X connect 13 0 15 0;
+#X connect 14 0 38 1;
+#X connect 15 0 14 0;
+#X connect 20 0 38 0;
+#X connect 22 0 24 0;
+#X connect 23 0 22 0;
+#X connect 23 0 27 0;
+#X connect 24 0 12 0;
+#X connect 25 0 26 0;
+#X connect 26 0 28 1;
+#X connect 26 1 29 1;
+#X connect 26 2 30 1;
+#X connect 26 3 31 1;
+#X connect 26 4 32 1;
+#X connect 26 5 33 1;
+#X connect 26 6 34 1;
+#X connect 26 7 35 1;
+#X connect 26 8 36 1;
+#X connect 26 9 37 1;
+#X connect 27 0 25 0;
+#X connect 38 0 16 0;
+#X connect 38 0 16 1;
+#X connect 39 0 23 0;
+#X connect 40 0 39 0;
+#X connect 43 0 19 0;
+#X connect 46 0 45 0;

@@ -1,74 +1,78 @@
-#N canvas 175 203 875 907 10;
+#N canvas 1 22 876 1113 10;
 #N canvas 0 22 450 278 (subpatch) 0;
-#X array \$0-myNotes 16 float 3;
-#A 0 66 82 66 52 66 78 66 55 0 0 0 0 0 0 0 0;
+#X array \$0-myFreqs 16 float 3;
+#A 0 84 52 66 42 64 49 59 42 50 43 60 49 59 40 43 37;
 #X coords 0 127 16 0 200 127 1 0 0;
-#X restore 97 93 graph;
+#X restore 97 97 graph;
 #X text 49 56 1;
-#X obj 200 765 *~ 0.3;
-#X obj 190 824 dac~;
+#X obj 200 843 *~ 0.3;
+#X obj 190 902 dac~;
 #X text 78 57 here's our melody array:;
-#X text 58 394 3;
-#X text 77 394 now let's play it with some more exciting timing;
+#X text 58 472 3;
+#X text 77 472 now let's play it with some more exciting timing;
 #X obj 519 -8 tgl 25 0 empty empty Enable_Audio 30 12 0 12 -4034 -1
 -1 1 1;
 #X msg 519 23 \; pd dsp \$1;
-#X obj 33 -122 cnv 15 600 100 empty empty 1.c.iii.4_Music_Rhythm 20
+#X obj 33 -122 cnv 15 600 100 empty empty 1.c.iii.2_Music_Rhythm 20
 12 0 14 -204800 -66577 0;
 #X obj 359 -4 cnv 15 150 20 empty empty empty 20 12 0 14 -4034 -66577
 0;
 #X text 363 -3 Enable audio output -->;
 #X text 390 -39 must turn on DSP for audio to work in PD;
-#X text 247 765 amplitude scaling;
+#X text 247 843 amplitude scaling;
 #X text 68 -93 A demonstration of a table-driven sequencer which plays
 a series of specified pitches in sequence \, each note with an specific
 rhythmic duration.;
 #N canvas 112 65 450 278 (subpatch) 0;
 #X array \$0-myDurations 16 float 3;
-#A 0 36 36 38 44 51 62 74 102 0 0 0 0 0 0 0 0;
-#X coords 0 127 16 0 200 127 1 0 0;
+#A 0 574.803 62.9918 70.8658 78.7399 86.6139 94.4879 102.362 110.236
+125.984 165.354 212.598 267.716 354.331 440.945 543.307 755.906;
+#X coords 0 1000 16 0 200 127 1 0 0;
 #X restore 97 242 graph;
-#X floatatom 175 515 5 0 0 0 - - -, f 5;
-#X floatatom 174 578 5 0 0 0 - - -, f 5;
-#X obj 175 461 f;
-#X obj 223 461 + 1;
-#X obj 200 728 osc~;
-#X text 269 482 <--- don't go over 23!;
-#X floatatom 201 700 5 0 0 0 - - -, f 5;
-#X obj 174 549 tabread \$0-myNotes;
-#X obj 293 544 tabread \$0-myDurations;
-#X obj 174 607 mtof;
-#X obj 293 598 * 5;
-#X obj 162 702 del;
-#X text 221 616;
-#X obj 174 639 t b f;
-#X msg 64 660 stop;
-#X obj 132 742 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+#X floatatom 175 572 5 0 0 0 - - -;
+#X floatatom 197 640 5 0 0 0 - - -;
+#X obj 175 539 f;
+#X obj 223 539 + 1;
+#X obj 200 806 osc~;
+#X text 269 560 <--- don't go over 23!;
+#X floatatom 201 778 5 0 0 0 - - -;
+#X obj 293 602 tabread \$0-myDurations;
+#X obj 174 685 mtof;
+#X obj 174 749 del;
+#X text 221 694 comment;
+#X obj 174 717 t b f;
+#X msg 226 494 stop;
+#X obj 132 820 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X obj 223 483 mod 8;
-#X obj 170 416 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
--1 -1;
-#X floatatom 304 645 5 0 0 0 - - -, f 5;
+#X obj 170 494 bng 15 250 50 0 empty empty start 17 7 0 10 -4034 -1
+-1;
+#X floatatom 307 636 5 0 0 0 - - -;
+#X text 303 360 0 ms;
+#X text 302 237 1000 ms (1 second);
+#X obj 223 561 mod 16;
+#X obj 174 602 tabread \$0-myFreqs;
+#X obj 100 384 hsl 194 15 0 15 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 1287 1;
 #X connect 2 0 3 1;
 #X connect 2 0 3 0;
 #X connect 7 0 8 0;
 #X connect 16 0 23 0;
-#X connect 16 0 24 0;
-#X connect 17 0 25 0;
+#X connect 16 0 35 0;
+#X connect 16 0 36 0;
 #X connect 18 0 19 0;
 #X connect 18 0 16 0;
-#X connect 19 0 32 0;
+#X connect 19 0 34 0;
 #X connect 20 0 2 0;
 #X connect 22 0 20 0;
-#X connect 23 0 17 0;
-#X connect 24 0 26 0;
+#X connect 23 0 25 1;
+#X connect 23 0 31 0;
+#X connect 24 0 27 0;
 #X connect 25 0 29 0;
-#X connect 26 0 27 1;
-#X connect 26 0 34 0;
-#X connect 27 0 31 0;
-#X connect 29 0 27 0;
-#X connect 29 1 22 0;
-#X connect 30 0 27 0;
-#X connect 31 0 18 0;
-#X connect 32 0 18 1;
-#X connect 33 0 18 0;
+#X connect 27 0 25 0;
+#X connect 27 1 22 0;
+#X connect 28 0 25 0;
+#X connect 29 0 18 0;
+#X connect 30 0 18 0;
+#X connect 34 0 18 1;
+#X connect 35 0 17 0;
+#X connect 35 0 24 0;
