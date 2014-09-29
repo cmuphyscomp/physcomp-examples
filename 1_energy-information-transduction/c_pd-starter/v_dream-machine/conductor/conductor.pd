@@ -4,7 +4,7 @@
 #X text 87 43 Provide beat \, tempo \, and parametric settings across
 the network to an array of semi-autonomous instruments.;
 #X text 87 83 This patch uses libraries found in pd-extended.;
-#N canvas 822 270 751 678 receiver 0;
+#N canvas 608 22 751 678 receiver 0;
 #X obj 66 147 mrpeach/unpackOSC;
 #X obj 36 186 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
@@ -59,7 +59,7 @@ the network to an array of semi-autonomous instruments.;
 0;
 #X text 36 136 Click to open performance controls -->;
 #X obj 271 137 controls;
-#N canvas 1011 37 654 821 plumbing 0;
+#N canvas 634 22 654 668 plumbing 1;
 #X obj 49 449 mrpeach/packOSC;
 #X obj 47 74 r osc-controls;
 #X obj 47 131 spigot;

@@ -1,23 +1,18 @@
-#N canvas 1005 66 635 527 10;
+#N canvas 259 66 635 527 10;
 #X obj 21 19 cnv 15 600 80 empty empty Performance_Controls 20 12 0
 14 -204800 -66577 0;
-#X obj 56 147 vsl 15 100 0 100 0 0 density set-density Density -20
--9 0 12 -260097 -1 -1 5500 0;
-#X obj 133 147 vsl 15 100 0 100 0 0 symmetry set-symmetry Symmetry
--25 -9 0 12 -204800 -1 -1 3800 0;
-#X obj 44 275 hradio 15 1 0 12 tonality set-tonality Tonality 0 -8
-0 12 -262130 -1 -1 0;
+#X obj 56 147 vsl 15 100 0 100 0 0 loudness set-loudness Loudness -20
+-9 0 12 -260097 -1 -1 0 0;
+#X obj 44 275 hradio 15 1 0 12 tonic set-tonic Tonic 0 -8 0 12 -262130
+-1 -1 0;
 #X text 89 47 This can be also used by an instrument during testing
 to simulate messages from the conductor.;
 #X text 224 23 Conductor performance control interface.;
-#X msg 297 157 \; set-density 0 \; set-symmetry 100;
-#X msg 298 212 \; set-density 50 \; set-symmetry 50;
-#X msg 429 212 \; set-density 100 \; set-symmetry 0;
 #X text 90 79 OSC messages are emitted to [receive osc-controls];
 #N canvas 829 247 517 514 tempo_controls 0;
 #X obj 296 330 metro 1000;
 #X obj 110 122 hsl 128 15 30 280 0 1 tempo set-tempo Tempo_in_BPM -2
--8 0 12 -203904 -1 -1 4000 0;
+-8 0 12 -203904 -1 -1 1524 0;
 #X obj 105 175 tgl 30 0 empty empty Play/Stop 35 15 0 12 -4034 -1 -1
 0 1;
 #X obj 353 293 expr 60000 / $f1;
@@ -57,15 +52,15 @@ to simulate messages from the conductor.;
 #X obj 86 85 r symmetry;
 #X msg 86 114 send /symmetry \$1;
 #X text 85 42 message plumbing;
-#X obj 91 329 r tonality;
+#X obj 91 329 r tonic;
 #X obj 91 358 + 64;
 #X floatatom 91 387 5 0 0 0 - - -;
-#X msg 91 415 send /tonality \$1;
+#X msg 91 415 send /tonic \$1;
 #X text 91 302 a MIDI note number;
 #X obj 91 444 s osc-controls;
 #X obj 88 253 s osc-controls;
-#X obj 88 195 r density;
-#X msg 88 224 send /density \$1;
+#X obj 88 195 r loudness;
+#X msg 88 224 send /loudness \$1;
 #X obj 86 143 s osc-controls;
 #X connect 0 0 1 0;
 #X connect 1 0 12 0;
@@ -78,6 +73,9 @@ to simulate messages from the conductor.;
 #X restore 38 476 pd messaging;
 #X obj 261 108 cnv 15 5 400 empty empty Presets 20 12 0 14 -204800
 -66577 0;
-#X msg 293 433 \; set-density bang \; set-symmetry bang \; set-tonality
-bang \; set-tempo bang \;;
 #X text 290 414 Resend all parameters;
+#X msg 297 157 \; set-loudness 0 \; set-tonic 64;
+#X msg 429 212 \; set-loudness 100 \; set-tonic 76;
+#X msg 298 212 \; set-loudness 50 \; set-tonic 71;
+#X msg 293 433 \; set-loudness bang \; set-tonic bang \; set-tempo
+bang \;;

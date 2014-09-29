@@ -10,7 +10,7 @@ a single communication channel to an instrument.;
 #X text 135 89 comment;
 #X symbolatom 341 260 10 0 0 1 User_Name - -;
 #X symbolatom 468 259 20 0 0 1 IP_Address - -;
-#X obj 104 280 tgl 25 0 empty empty Solo 30 12 0 12 -4034 -1 -1 0 1
+#X obj 104 280 tgl 25 0 empty empty OnOff 30 12 0 12 -4034 -1 -1 0 1
 ;
 #X floatatom 468 286 5 0 0 1 Vote - -;
 #X text 86 78 Creation arguments: channel_index_number;
@@ -23,7 +23,7 @@ channels.;
 #X obj 258 187 r \$0-connected;
 #X obj 339 634 s \$0-connected;
 #X obj 208 508 r \$0-connected;
-#X msg 104 332 send /solo \$1;
+#X msg 104 332 send /onoff \$1;
 #X obj 104 387 s \$0-send;
 #X obj 104 359 mrpeach/packOSC;
 #X obj 175 476 r \$0-send;
