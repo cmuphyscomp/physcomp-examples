@@ -1,0 +1,65 @@
+#N canvas 630 33 626 684 10;
+#X obj 37 439 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X obj 183 439 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X obj 497 -13 pddp/dsp;
+#X obj 180 465 fmsynth 3 0.7;
+#X obj 34 466 fmsynth 2 0.5;
+#X obj 48 198 qlist;
+#X obj 30 -22 bng 25 250 50 0 empty start Start 30 12 0 14 -4034 -1
+-1;
+#X obj 75 227 print sequence-done;
+#X obj 34 383 r i1;
+#X obj 180 381 r i2;
+#X obj 50 123 python utility Utility;
+#X msg 50 95 qlist_beats aBaBaaBB;
+#X obj 50 154 print qlist-configuration-message;
+#X obj 30 34 t b b b;
+#X msg 69 62 clear;
+#X obj 47 415 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 195 413 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 75 252 delay 500;
+#X obj 75 316 spigot;
+#X obj 108 279 tgl 25 0 empty empty Loop_Enable 30 12 0 12 -257985
+-1 -1 0 1;
+#X obj 13 -142 cnv 15 600 100 empty empty 1.c.iii.6_Music_Synth_AM-FM
+20 12 0 14 -204800 -66577 0;
+#X text 113 65 reset the qlist;
+#X text 186 92 rhythm message to pass to Python function;
+#X text 87 197 sequencer object provided in Pd;
+#X obj 75 341 s start;
+#X text 27 486 The two instruments are both fmsynth objects with different
+synthesis parameters provided as creation arguments;
+#X text 214 376 This receive identifier is directly specified in the
+corresponding qlist messages.;
+#X text 71 -116 This patch demonstrates the use of the qlist object
+as a sequencer \, using an auxiliary Python function to help with translating
+a string representation of a rhythm into the messages required to configure
+the qlist object.;
+#X obj 340 -14 cnv 15 150 20 empty empty empty 20 12 0 14 -4034 -66577
+0;
+#X text 344 -13 Enable audio output -->;
+#X text 193 116 Python utility function object \; code is in utility.py
+;
+#X connect 0 0 4 0;
+#X connect 1 0 3 0;
+#X connect 5 1 7 0;
+#X connect 5 1 17 0;
+#X connect 6 0 13 0;
+#X connect 8 0 0 0;
+#X connect 8 0 15 0;
+#X connect 9 0 1 0;
+#X connect 9 0 16 0;
+#X connect 10 0 12 0;
+#X connect 10 0 5 0;
+#X connect 11 0 10 0;
+#X connect 13 0 5 0;
+#X connect 13 1 11 0;
+#X connect 13 2 14 0;
+#X connect 14 0 5 0;
+#X connect 17 0 18 0;
+#X connect 18 0 24 0;
+#X connect 19 0 18 1;
