@@ -1,21 +1,31 @@
-<h3>Exercise: Title</h3>
+<h4>Objective</h4>
+ 
+    <p>Use Pure Data to play a sequence with frequences (pitches) and durations (rhythm). </p>
 
-    <p>Objective: ...</p>
-
-    <p>Brief introductory comments.</p>
-
-    <h4>Steps and observations</h4>
+    <p>The melody is represented as a sequence of frequencies, stored in a table as floats between 0-127.<br/>
+      Each note in the melody has 
+    a specific duration, stored in another table as floats between 0-1000 (ms).</p>
+    <p>Follow the steps; get the patch working; and begin making changes, variations, additions.</p>
+  <p>Consider the following important concepts, implications and questions of this example:</p>
     <ol>
+      <li>We have added duration to each note in addition to its frequency. What other parameters can make the melody more expressive?</li>
+      <li>Imagine each note in the melody as a symbol for some physical event in the real world; this <em>melodic sequencer</em> can easily by employed to sequence actuation of motors, lights, servos, etc.</li>
+    </ol>
 
-      <li>Specific actions...</li>
-      <li>Specific observations...</li>
+  <h4>Steps and observations</h4>
+
+  <ol>
+      <li>Open the 1.c.iii.2_music-rhythm.pd patch in Pd-extended.</li>
+      
+    <li>Follow the institutions in the patch.</li>
     </ol>
 
     <h4>Comments</h4>
+    
+    <p>For a challenge, try creating a series of more exciting melodies and a way to switch back and forth among them with the press of a key on the keyboard (check out the <em>key</em> and <em>keyup</em> objects)</p>
 
-    <p>Brief review comments.  Links to other information.</p>
 
-      <h4>Other Files</h4>
+    <h4>Other Files</h4>
     <ol>
       <li><a href="http://cmuphyscomp.github.io/physcomp-examples/1_energy-information-transduction/c_pd-starter/iii_advanced-pd-music/1.c.iii.2_music-rhythm/1.c.iii.2_music-rhythm.pd">1.c.iii.2_music-rhythm.pd</a></li>
     </ol>

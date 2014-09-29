@@ -309,31 +309,31 @@
 "post": "http://cmuphyscomp.github.io/physcomp-examples/1_energy-information-transduction/c_pd-starter/iii_advanced-pd-music/1.c.iii.1_music-pitch/post.html", 
 "permalink": "assignments/1-energy-information-transduction/c-pd-starter/iii-advanced-pd-music/1.c.iii.1-music-pitch", 
 "parent": "1-energy-information-transduction/c-pd-starter/iii-advanced-pd-music", 
-"title": "1.c.iii.1 Unit 1A: Basic Circuits"
+"title": "1.c.iii.1 Exercise: Pure Data Melody"
 }, 
 {
 "post": "http://cmuphyscomp.github.io/physcomp-examples/1_energy-information-transduction/c_pd-starter/iii_advanced-pd-music/1.c.iii.2_music-rhythm/post.html", 
 "permalink": "assignments/1-energy-information-transduction/c-pd-starter/iii-advanced-pd-music/1.c.iii.2-music-rhythm", 
 "parent": "1-energy-information-transduction/c-pd-starter/iii-advanced-pd-music", 
-"title": "1.c.iii.2 Unit 1A: Basic Circuits"
+"title": "1.c.iii.2 Exercise: Pure Data Rhythm"
 }, 
 {
-"post": "http://cmuphyscomp.github.io/physcomp-examples/1_energy-information-transduction/c_pd-starter/iii_advanced-pd-music/1.c.iii.3_music-timbre-noise/post.html", 
-"permalink": "assignments/1-energy-information-transduction/c-pd-starter/iii-advanced-pd-music/1.c.iii.3-music-timbre-noise", 
+"post": "http://cmuphyscomp.github.io/physcomp-examples/1_energy-information-transduction/c_pd-starter/iii_advanced-pd-music/1.c.iii.3_music-dynamics/post.html", 
+"permalink": "assignments/1-energy-information-transduction/c-pd-starter/iii-advanced-pd-music/1.c.iii.3-music-dynamics", 
 "parent": "1-energy-information-transduction/c-pd-starter/iii-advanced-pd-music", 
-"title": "1.c.iii.3 Unit 1A: Basic Circuits"
+"title": "1.c.iii.3 Exercise: Arduino Sensor to Pure Data GUI"
 }, 
 {
-"post": "http://cmuphyscomp.github.io/physcomp-examples/1_energy-information-transduction/c_pd-starter/iii_advanced-pd-music/1.c.iii.4_music-dynamics/post.html", 
-"permalink": "assignments/1-energy-information-transduction/c-pd-starter/iii-advanced-pd-music/1.c.iii.4-music-dynamics", 
+"post": "http://cmuphyscomp.github.io/physcomp-examples/1_energy-information-transduction/c_pd-starter/iii_advanced-pd-music/1.c.iii.4_music-synth-additive/post.html", 
+"permalink": "assignments/1-energy-information-transduction/c-pd-starter/iii-advanced-pd-music/1.c.iii.4-music-synth-additive", 
 "parent": "1-energy-information-transduction/c-pd-starter/iii-advanced-pd-music", 
-"title": "1.c.iii.4 Unit 1A: Basic Circuits"
+"title": "1.c.iii.4 Exercise: Arduino Sensor to Pure Data GUI"
 }, 
 {
-"post": "http://cmuphyscomp.github.io/physcomp-examples/1_energy-information-transduction/c_pd-starter/iii_advanced-pd-music/1.c.iii.5_music-synth-additive/post.html", 
-"permalink": "assignments/1-energy-information-transduction/c-pd-starter/iii-advanced-pd-music/1.c.iii.5-music-synth-additive", 
+"post": "http://cmuphyscomp.github.io/physcomp-examples/1_energy-information-transduction/c_pd-starter/iii_advanced-pd-music/1.c.iii.5_music-synth-analysis/post.html", 
+"permalink": "assignments/1-energy-information-transduction/c-pd-starter/iii-advanced-pd-music/1.c.iii.5-music-synth-analysis", 
 "parent": "1-energy-information-transduction/c-pd-starter/iii-advanced-pd-music", 
-"title": "1.c.iii.5 Unit 1A: Basic Circuits"
+"title": "1.c.iii.5 Exercise: Arduino Sensor to Pure Data GUI"
 }, 
 {
 "post": "http://cmuphyscomp.github.io/physcomp-examples/1_energy-information-transduction/c_pd-starter/iii_advanced-pd-music/1.c.iii.6_music-synth-am-fm/post.html", 
@@ -345,13 +345,7 @@
 "post": "http://cmuphyscomp.github.io/physcomp-examples/1_energy-information-transduction/c_pd-starter/iii_advanced-pd-music/1.c.iii.7_music-synth-sampling/post.html", 
 "permalink": "assignments/1-energy-information-transduction/c-pd-starter/iii-advanced-pd-music/1.c.iii.7-music-synth-sampling", 
 "parent": "1-energy-information-transduction/c-pd-starter/iii-advanced-pd-music", 
-"title": "1.c.iii.7 Unit 1A: Basic Circuits"
-}, 
-{
-"post": "http://cmuphyscomp.github.io/physcomp-examples/1_energy-information-transduction/c_pd-starter/iii_advanced-pd-music/1.c.iii.8_music-synth-advanced/post.html", 
-"permalink": "assignments/1-energy-information-transduction/c-pd-starter/iii-advanced-pd-music/1.c.iii.8-music-synth-advanced", 
-"parent": "1-energy-information-transduction/c-pd-starter/iii-advanced-pd-music", 
-"title": "1.c.iii.8 Unit 1A: Basic Circuits"
+"title": "1.c.iii.7 Exercise: Arduino Sensor to Pure Data GUI"
 }, 
 {
 "post": "http://cmuphyscomp.github.io/physcomp-examples/1_energy-information-transduction/c_pd-starter/iv_pd-rpi/1.c.iv.1_rpi-remote-access/post.html", 

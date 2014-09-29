@@ -1,21 +1,31 @@
-<h3>Exercise: Title</h3>
-
-    <p>Objective: ...</p>
-
-    <p>Brief introductory comments.</p>
-
-    <h4>Steps and observations</h4>
+<h4>Objective</h4>
+ 
+    <p>Using PureData for reading, playing, recording, and scratching audio files</p>
+    <p>Digital audio recordings are made up of a series of sample values; the audio sample rate for the recording establishes how many sample values are recording in teach second of town. For example, 44.1KHz, 44,100 samples are recorded every second.</p>
+    <p>Puredata uses tables (like those uses to store pitches and amplitudes for a melody) to store audio samples. The <em>tabread4~ </em>and <em>tabwrite~</em> objects allow reading and writing of values into tables at audio rates.</p>
+  <p>Consider the follwoing important concepts, implications and questionsof this example:</p>
     <ol>
+      <li>You can use tables and arrays in Puredata to work with audio samples</li>
+      <li>The speed at which you play an audio file affects its perceived pitch </li>
+    </ol>
 
-      <li>Specific actions...</li>
-      <li>Specific observations...</li>
+  <h4>Steps and observations</h4>
+
+  <ol>
+      <li>Open the 1.c.iii.7_music-synth-sampling.pd patch in Pd-extended.</li>
+      
+    <li>Follow the institutions in the patch.</li>
     </ol>
 
     <h4>Comments</h4>
-
-    <p>Brief review comments.  Links to other information.</p>
-
+    
+    <p>For a challenge,</p>
+    <ul>
+      <li>record and audio sample and play it back at 1/2 the origianl speed</li>
+      <li>create a patch that <em>scratches</em> a sound back and forth with an oscillator</li>
+    </ul>
       <h4>Other Files</h4>
     <ol>
-      <li><a href="http://cmuphyscomp.github.io/physcomp-examples/1_energy-information-transduction/c_pd-starter/iii_advanced-pd-music/1.c.iii.7_music-synth-sampling/hello.txt">hello.txt</a></li>
+      <li><a href="http://cmuphyscomp.github.io/physcomp-examples/1_energy-information-transduction/c_pd-starter/iii_advanced-pd-music/1.c.iii.7_music-synth-sampling/1.c.iii.7_music-synth-sampling.pd">1.c.iii.7_music-synth-sampling.pd</a></li>
+      <li><a href="http://cmuphyscomp.github.io/physcomp-examples/1_energy-information-transduction/c_pd-starter/iii_advanced-pd-music/1.c.iii.7_music-synth-sampling/voice.wav">voice.wav</a></li>
     </ol>

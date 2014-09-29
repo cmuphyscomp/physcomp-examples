@@ -1,19 +1,36 @@
-<h3>Exercise: Title</h3>
+<h4>Objective</h4>
+ 
+    <p>Use Pure Data to play a simple melody. </p>
+    <p>The melody is represented as a sequence of notes, stored in a table as integers between 0-127 (this range happens to be the standard representation of "pitch" in the <a href="http://en.wikipedia.org/wiki/MIDI">MIDI protocol</a>.</p>
 
-    <p>Objective: ...</p>
-
-    <p>Brief introductory comments.</p>
-
-    <h4>Steps and observations</h4>
+    <p>The procedure for exploring this exercise applies to all exercises in 1.c.iii. Each exercise has an associated Pure Data patch, in which you will find step by step instructions. Follow the steps; get the patch working; and begin making changes, variations, additions.</p>
+    <p>Consider the following important concepts, implications and questions of this example:</p>
     <ol>
+      <li>A very simplistic representation of a "melody" is a series of notes played in a particular order. What sonic and/or musical considerations are left out if we only consider pitches in a melody?</li>
 
-      <li>Specific actions...</li>
-      <li>Specific observations...</li>
+      <li>A <em>metro </em>object is a fundamental timing object in Pure Data. It
+	can generate a regular beat which can in turn trigger
+	other <em>events</em>; in this patch, the triggered event are changes in
+	the frequency of an oscillator
+	(the <em>osc~ </em>object). The <em>metro</em> object can also be used
+	to trigger events in the real world (motors, servos, lights, etc.) when
+	a microcontroller is connected to Pure Data.</li>
+
+      <li>Building simple counters in Pure Data is easy and extremely useful. Look in the <em>intro-to-counters</em> abstraction to see more examples.</li>
+    </ol>
+
+  <h4>Steps and observations</h4>
+
+    <ol>
+      <li>Open the 1.c.iii.1_music-pitch.pd patch in Pd-extended.</li>
+      
+      <li>Follow the instructions in the patch.</li>
     </ol>
 
     <h4>Comments</h4>
+    
+    <p>For a challenge, try creating a more exciting rhythmic pattern.</p>
 
-    <p>Brief review comments.  Links to other information.</p>
 
       <h4>Other Files</h4>
     <ol>
