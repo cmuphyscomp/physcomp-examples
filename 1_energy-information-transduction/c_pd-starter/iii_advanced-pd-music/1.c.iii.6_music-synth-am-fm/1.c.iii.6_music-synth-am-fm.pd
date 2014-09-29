@@ -25,7 +25,7 @@
 #X obj 75 316 spigot;
 #X obj 108 279 tgl 25 0 empty empty Loop_Enable 30 12 0 12 -257985
 -1 -1 0 1;
-#X obj 13 -142 cnv 15 600 100 empty empty 1.c.iii.6_FM_Synth_Sequencer
+#X obj 13 -142 cnv 15 600 100 empty empty 1.c.iii.6_Music_Synth_AM-FM
 20 12 0 14 -204800 -66577 0;
 #X text 113 65 reset the qlist;
 #X text 186 92 rhythm message to pass to Python function;
