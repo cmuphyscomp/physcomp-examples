@@ -1,0 +1,394 @@
+#N canvas 1 22 771 781 10;
+#X text -641 5 1;
+#X obj -575 161 dac~;
+#X obj -171 -59 tgl 25 0 empty empty Enable_Audio 30 12 0 12 -4034
+-1 -1 1 1;
+#X msg -171 -28 \; pd dsp \$1;
+#X obj -657 -173 cnv 15 600 100 empty empty 1.c.iii.4_Music_Synth_Analysis
+20 12 0 14 -204800 -66577 0;
+#X obj -331 -55 cnv 15 150 20 empty empty empty 20 12 0 14 -4034 -66577
+0;
+#X text -327 -54 Enable audio output -->;
+#X text -300 -90 must turn on DSP for audio to work in PD;
+#X obj -606 44 noise~;
+#X obj -605 229 noise~;
+#X obj -613 367 bp~;
+#X text -564 367 band-pass filter;
+#N canvas 834 251 450 300 startup 0;
+#X obj 85 16 loadbang;
+#X obj 85 40 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 85 59 f \$0;
+#X text 9 257 boxes.;
+#X text 18 209 This subpatch loads initial values in number;
+#X msg 85 83 \; \$1-freq 400 \; \$1-pitch 48 \; \$1-speed -2 \; \$1-depth
+27 \; \$1-offset 56 \; \$1-q 25 \; \$1-q2 2 \;;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X connect 2 0 5 0;
+#X restore -650 996 pd startup;
+#N canvas 0 22 612 404 conversion-tables 0;
+#N canvas 0 22 450 300 (subpatch) 0;
+#X array mtof 130 float 1;
+#A 0 8.1758 8.66196 9.17702 9.72272 10.3009 10.9134 11.5623 12.2499
+12.9783 13.75 14.5676 15.4339 16.3516 17.3239 18.354 19.4454 20.6017
+21.8268 23.1247 24.4997 25.9565 27.5 29.1352 30.8677 32.7032 34.6478
+36.7081 38.8909 41.2034 43.6535 46.2493 48.9994 51.9131 55 58.2705
+61.7354 65.4064 69.2957 73.4162 77.7817 82.4069 87.3071 92.4986 97.9989
+103.826 110 116.541 123.471 130.813 138.591 146.832 155.563 164.814
+174.614 184.997 195.998 207.652 220 233.082 246.942 261.626 277.183
+293.665 311.127 329.628 349.228 369.994 391.995 415.305 440 466.164
+493.883 523.251 554.365 587.33 622.254 659.255 698.456 739.989 783.991
+830.609 880 932.328 987.767 1046.5 1108.73 1174.66 1244.51 1318.51
+1396.91 1479.98 1567.98 1661.22 1760 1864.66 1975.53 2093 2217.46 2349.32
+2489.02 2637.02 2793.83 2959.96 3135.96 3322.44 3520 3729.31 3951.07
+4186.01 4434.92 4698.64 4978.03 5274.04 5587.65 5919.91 6271.93 6644.88
+7040 7458.62 7902.13 8372.02 8869.84 9397.27 9956.06 10548.1 11175.3
+11839.8 12543.9 13289.8 14080;
+#X coords 0 12000 130 0 200 100 1;
+#X restore 309 225 graph;
+#X text 319 333 ------ 130 samples ------;
+#X text 518 318 0;
+#X text 520 218 12000;
+#X restore -650 969 pd conversion-tables;
+#X obj -551 45 hsl 128 15 0 0.5 0 0 empty empty empty -2 -8 0 10 -258113
+-1 -1 0 1;
+#X obj -554 91 line~;
+#X msg -554 68 \$1 20;
+#X obj -569 114 *~;
+#X text -612 6 this is what white noise sounds like;
+#X text -635 191;
+#X text -648 193 2;
+#X text -619 194 this is what filtered white noise sounds like;
+#X obj -591 535 dac~;
+#X obj -567 419 hsl 128 15 0 0.5 0 0 empty empty empty -2 -8 0 10 -258113
+-1 -1 0 1;
+#X obj -570 465 line~;
+#X msg -570 442 \$1 20;
+#X obj -585 488 *~;
+#N canvas 32 32 963 839 spectrum 0;
+#N canvas 0 22 450 300 (subpatch) 0;
+#X array E01-signal 882 float 0;
+#X coords 0 5 882 -5 200 130 1;
+#X restore 169 464 graph;
+#X obj 99 387 hip~ 5;
+#N canvas 0 22 450 300 (subpatch) 0;
+#X array E01-spectrum 128 float 0;
+#X coords 0 4300 127 -40 257 130 1;
+#X restore 171 643 graph;
+#N canvas 745 114 558 569 fft 0;
+#X obj 19 62 inlet~;
+#X obj 85 214 inlet;
+#X obj 19 92 rfft~;
+#X obj 19 125 *~;
+#X obj 50 125 *~;
+#X obj 19 155 sqrt~;
+#X obj 85 248 tabwrite~ E01-spectrum;
+#X obj 332 109 block~ 4096 1;
+#X obj 62 182 biquad~ 0 0 0 0 1;
+#X text 83 93 Fourier series;
+#X text 88 146 magnitude;
+#X text 86 131 calculate;
+#X text 21 3 This subpatch computes the spectrum of the incoming signal
+with a (rectangular windowed) FFT. FFTs aren't properly introduced
+until much later.;
+#X text 83 62 signal to analyze;
+#X text 182 166 delay two samples;
+#X text 181 182 for better graphing;
+#X obj 90 425 samplerate~;
+#X obj 90 402 bng 18 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X floatatom 90 472 5 0 0 0 - - -;
+#X obj 90 448 / 256;
+#X obj 90 378 loadbang;
+#X floatatom 90 541 5 0 0 0 - - -;
+#X obj 98 494 s fundamental;
+#X obj 90 517 ftom;
+#X text 146 540 <-just out of curiosity \, here's the pitch;
+#X text 14 319 At load time \, calculate a good choice of fundamental
+frequency for showing spectra: the 16th bin in a 4096-point spectrum
+\, so SR*16/4096 or SR/256.;
+#X text 135 216 "bang" into this inlet to graph it;
+#X connect 0 0 2 0;
+#X connect 1 0 6 0;
+#X connect 2 0 3 0;
+#X connect 2 0 3 1;
+#X connect 2 1 4 0;
+#X connect 2 1 4 1;
+#X connect 3 0 5 0;
+#X connect 4 0 5 0;
+#X connect 5 0 6 0;
+#X connect 8 0 6 0;
+#X connect 16 0 19 0;
+#X connect 17 0 16 0;
+#X connect 18 0 22 0;
+#X connect 18 0 23 0;
+#X connect 19 0 18 0;
+#X connect 20 0 17 0;
+#X connect 23 0 21 0;
+#X restore 11 362 pd fft;
+#X text 169 596 ---- 0.02 seconds ----;
+#X obj 44 311 bng 18 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 126 362 tabwrite~ E01-signal;
+#X text 582 810 updated for Pd version 0.37;
+#X text 202 776 1;
+#X text 236 776 2;
+#X text 268 776 3;
+#X text 300 776 4;
+#X text 333 776 5;
+#X text 363 776 6;
+#X text 394 776 7;
+#X text 240 775 0;
+#X text 206 795 -- partial number --;
+#X text 371 520 0;
+#X obj 101 194 osc~;
+#X obj 122 219 tgl 18 0 empty empty empty 0 -6 0 8 -4034 -1 -1 0 1
+;
+#X obj 100 244 *~;
+#X obj 144 194 osc~;
+#X obj 165 219 tgl 18 0 empty empty empty 0 -6 0 8 -4034 -1 -1 0 1
+;
+#X obj 143 244 *~;
+#X obj 187 194 osc~;
+#X obj 208 219 tgl 18 0 empty empty empty 0 -6 0 8 -4034 -1 -1 0 1
+;
+#X obj 186 244 *~;
+#X obj 230 194 osc~;
+#X obj 251 219 tgl 18 0 empty empty empty 0 -6 0 8 -4034 -1 -1 0 1
+;
+#X obj 229 244 *~;
+#X obj 273 194 osc~;
+#X obj 294 219 tgl 18 0 empty empty empty 0 -6 0 8 -4034 -1 -1 0 1
+;
+#X obj 272 244 *~;
+#X obj 316 194 osc~;
+#X obj 337 219 tgl 18 0 empty empty empty 0 -6 0 8 -4034 -1 -1 0 1
+;
+#X obj 315 244 *~;
+#X text 362 219 <-- On/Off;
+#X text 233 434 WAVEFORM;
+#X text 264 621 SPECTRUM;
+#X text 472 413 The next series of patches demonstrates various kinds
+of modulation: AM \, waveshaping \, and FM. We will need a tool for
+graphing spectra which is introduced here. In this patch the signal
+to be analyzed is a simple sum of up to six partials of a fundamental
+frequency (which is 172 Hz \, close to F below middle C \, if your
+sample rate happens to be 44100 Hz. The fundamental is chosen to agree
+with the analysis patch ("pd FFT") and is computed within it).;
+#X text 472 544 The partials are numbered 0 through 5 \, where 0 means
+DC \, or zero frequency \, 1 is the fundamental \, and so on. The toggle
+switches allow you to turn them on and off separately. You have to
+press the "click to graph" button to update the two graphs.;
+#X text 431 761 0;
+#X text 429 640 1;
+#X text 430 699 0.5;
+#X text 473 629 The upper graph is just the (time domain) waveform
+\, about four periods long. The lower graph is the magnitude spectrum.
+Its peaks are the magnitudes of the partials. Note that a DC signal
+of amplitude one is considered a partial of magnitude 1 \, but the
+other partials \, which have peak amplitudes of 1 (and RMS 0.707) \,
+have peak magnitudes of only 0.5 in the spectrum.;
+#X obj 100 305 *~ 1;
+#X text 371 460 5;
+#X text 372 580 -5;
+#X text 140 304 sum;
+#X text 471 362 GRAPHING SPECTRA OF AUDIO SIGNALS;
+#X text 471 740 Here we're introducing a new feature: multiple signals
+connected to a signal inlet (as in the "*~ 1") are added. This is the
+most convenient way to sum the six partials.;
+#X floatatom 101 131 5 0 0 1 Fundamental_Frequency_(Hz) - -;
+#X msg 101 105 100;
+#X obj 101 81 loadbang;
+#X text 469 381 take from Pd manual Audio Example E01;
+#X obj 101 171 * 1;
+#X obj 144 171 * 2;
+#X obj 187 171 * 3;
+#X obj 230 171 * 4;
+#X obj 273 171 * 5;
+#X obj 316 171 * 6;
+#X obj 31 245 metro 200;
+#X obj 31 216 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X msg 66 106 1;
+#X obj 91 476 dac~;
+#X obj 317 312 hsl 128 15 0 0.5 0 0 empty empty empty -2 -8 0 10 -258113
+-1 -1 2500 1;
+#X obj 314 358 line~;
+#X msg 314 335 \$1 20;
+#X obj 97 429 *~;
+#X obj 578 91 adc~;
+#X obj 598 170 tgl 18 0 empty empty empty 0 -6 0 8 -4032 -1 -1 0 1
+;
+#X obj 576 195 *~;
+#X text 623 170 <-- On/Off;
+#X text 619 86 <-- Set your Audio Input to the Built-In Mic to;
+#X text 553 44 Compute spectru of incoming sound from mic;
+#X text -13 41 Compute frequency spectrum of synthesized audio (the
+sum of a few difference oscillators);
+#X floatatom 610 226 5 0 0 0 - - -;
+#X obj 576 251 *~ 100;
+#X text 647 226 <-- increase amplitude if mic signal is week;
+#X connect 1 0 68 0;
+#X connect 5 0 3 1;
+#X connect 5 0 6 0;
+#X connect 18 0 20 0;
+#X connect 19 0 20 1;
+#X connect 20 0 45 0;
+#X connect 21 0 23 0;
+#X connect 22 0 23 1;
+#X connect 23 0 45 0;
+#X connect 24 0 26 0;
+#X connect 25 0 26 1;
+#X connect 26 0 45 0;
+#X connect 27 0 29 0;
+#X connect 28 0 29 1;
+#X connect 29 0 45 0;
+#X connect 30 0 32 0;
+#X connect 31 0 32 1;
+#X connect 32 0 45 0;
+#X connect 33 0 35 0;
+#X connect 34 0 35 1;
+#X connect 35 0 45 0;
+#X connect 45 0 3 0;
+#X connect 45 0 1 0;
+#X connect 45 0 6 0;
+#X connect 51 0 55 0;
+#X connect 51 0 56 0;
+#X connect 51 0 57 0;
+#X connect 51 0 58 0;
+#X connect 51 0 59 0;
+#X connect 51 0 60 0;
+#X connect 52 0 51 0;
+#X connect 53 0 52 0;
+#X connect 53 0 63 0;
+#X connect 55 0 18 0;
+#X connect 56 0 21 0;
+#X connect 57 0 24 0;
+#X connect 58 0 27 0;
+#X connect 59 0 30 0;
+#X connect 60 0 33 0;
+#X connect 61 0 5 0;
+#X connect 62 0 61 0;
+#X connect 63 0 62 0;
+#X connect 65 0 67 0;
+#X connect 66 0 68 1;
+#X connect 67 0 66 0;
+#X connect 68 0 64 0;
+#X connect 68 0 64 1;
+#X connect 69 0 71 0;
+#X connect 69 1 71 0;
+#X connect 70 0 71 1;
+#X connect 71 0 77 0;
+#X connect 76 0 77 1;
+#X connect 77 0 6 0;
+#X connect 77 0 3 0;
+#X restore -594 812 pd spectrum;
+#X text -600 288;
+#X obj -582 256 hsl 128 15 0 1000 0 0 empty empty empty -2 -8 0 10
+-262144 -1 -1 12700 1;
+#X floatatom -585 282 5 0 0 1 Center_Frequency_(Hz) - -;
+#X obj -560 311 hsl 128 15 0.0001 30 0 0 empty empty empty -2 -8 0
+10 -262144 -1 -1 8800 1;
+#X floatatom -564 334 5 0 0 1 Q - -;
+#X text -622 760 you can also analyze an audio signal to compute its
+frequency contents;
+#N canvas 45 80 379 613 synth 0;
+#X floatatom 65 57 5 0 150 0 - #0-pitch -;
+#X obj 65 104 phasor~;
+#X obj 80 262 +~;
+#X floatatom 102 237 5 0 100 0 - #0-offset -;
+#X floatatom 81 133 5 0 0 0 - #0-speed -;
+#X floatatom 103 184 5 0 100 0 - #0-depth -;
+#X floatatom 96 315 5 0 1000 0 - #0-q2 -;
+#X obj 65 337 vcf~;
+#X obj 80 286 tabread4~ mtof;
+#X text 148 314 <-- Q (selectivity);
+#X text 136 93 sawtooth;
+#X text 137 109 oscillator;
+#X text 133 132 <-- sweep speed;
+#X text 158 156 LFO for sweep;
+#X text 155 185 <-- sweep depth;
+#X text 152 237 <-- base center frequency;
+#X text 124 261 add base to sweep;
+#X text 213 286 convert to Hz.;
+#X text 118 55 <-- pitch;
+#X obj 65 80 mtof;
+#X obj 81 155 phasor~;
+#X obj 81 209 *~;
+#X text 99 338 <-- this is a band pass filter;
+#X obj 81 496 dac~;
+#X obj 105 380 hsl 128 15 0 0.5 0 0 empty empty empty -2 -8 0 10 -258113
+-1 -1 0 1;
+#X obj 102 426 line~;
+#X msg 102 403 \$1 20;
+#X obj 87 449 *~;
+#X text 55 545 take from Pd manual Audio Example H04;
+#X connect 0 0 19 0;
+#X connect 1 0 7 0;
+#X connect 2 0 8 0;
+#X connect 3 0 2 1;
+#X connect 4 0 20 0;
+#X connect 5 0 21 1;
+#X connect 6 0 7 2;
+#X connect 7 0 27 0;
+#X connect 8 0 7 1;
+#X connect 19 0 1 0;
+#X connect 20 0 21 0;
+#X connect 21 0 2 0;
+#X connect 24 0 26 0;
+#X connect 25 0 27 1;
+#X connect 26 0 25 0;
+#X connect 27 0 23 0;
+#X connect 27 0 23 1;
+#X restore -591 908 pd synth;
+#X text -622 -144 Useing Pd to explore noise \, filtering and fourier
+spectral analysis;
+#X obj -366 272 line;
+#X msg -366 243 100 \, 1000 4000;
+#X text -326 272 <--- the line object generates ramping streams of
+numbers;
+#X obj -366 216 bng 15 250 50 0 empty empty empty 17 7 0 10 -4034 -1
+-1;
+#X text -345 214 start at 100Hz \, go to 1000Hz in 4000ms (a "filter
+sweep");
+#X text -643 579 3;
+#X obj -584 620 adc~;
+#X floatatom -575 671 0 0 0 1 dB - -;
+#X obj -575 647 env~ 16384 8192;
+#X text -614 580 you can also analyze an audio signal to compute its
+amplitude;
+#X obj -576 724 tgl 15 0 empty empty LOUD! 17 7 0 10 -262144 -1 -1
+0 1;
+#X obj -575 696 > 80;
+#X text -540 698 <---test to see if it's louder than 80dB;
+#X text -651 759 4;
+#X text -649 851 5 Here is a simple and powerful synthsizer made of
+a few sawtooth oscillators and a filter;
+#X connect 2 0 3 0;
+#X connect 8 0 17 0;
+#X connect 9 0 10 0;
+#X connect 10 0 26 0;
+#X connect 14 0 16 0;
+#X connect 15 0 17 1;
+#X connect 16 0 15 0;
+#X connect 17 0 1 0;
+#X connect 17 0 1 1;
+#X connect 23 0 25 0;
+#X connect 24 0 26 1;
+#X connect 25 0 24 0;
+#X connect 26 0 22 0;
+#X connect 26 0 22 1;
+#X connect 29 0 30 0;
+#X connect 30 0 10 1;
+#X connect 31 0 32 0;
+#X connect 32 0 10 2;
+#X connect 36 0 29 0;
+#X connect 37 0 36 0;
+#X connect 39 0 37 0;
+#X connect 42 0 44 0;
+#X connect 42 1 44 0;
+#X connect 43 0 47 0;
+#X connect 44 0 43 0;
+#X connect 44 0 43 0;
+#X connect 47 0 46 0;

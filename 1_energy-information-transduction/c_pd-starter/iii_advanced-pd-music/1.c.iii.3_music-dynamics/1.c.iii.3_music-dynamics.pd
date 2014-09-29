@@ -1,0 +1,157 @@
+#N canvas 1 22 1008 904 10;
+#X text -1807 46 1;
+#X obj -1327 -59 tgl 25 0 empty empty Enable_Audio 30 12 0 12 -4034
+-1 -1 0 1;
+#X msg -1327 -28 \; pd dsp \$1;
+#X obj -1813 -173 cnv 15 600 100 empty empty 1.c.iii.3_Music_Dynamics
+20 12 0 14 -204800 -66577 0;
+#X obj -1487 -55 cnv 15 150 20 empty empty empty 20 12 0 14 -4034 -66577
+0;
+#X text -1483 -54 Enable audio output -->;
+#X text -1456 -90 must turn on DSP for audio to work in PD;
+#X text -1778 47 here's a groovy synth from the PureData manual;
+#N canvas 0 22 450 278 (subpatch) 0;
+#X array \$0-myFreqs 16 float 3;
+#A 0 68 64 73 71 64 66 67 60 63 64 63 65 67 66 65 66;
+#X coords 0 127 16 0 200 127 1 0 0;
+#X restore -1803 244 graph;
+#N canvas 112 65 450 278 (subpatch) 0;
+#X array \$0-myDurations 16 float 3;
+#A 0 160.629 160.629 160.629 160.629 160.629 160.629 160.629 286.613
+160.629 160.629 286.613 160.629 160.629 160.629 310.235 475.59;
+#X coords 0 1000 16 0 200 127 1 0 0;
+#X restore -1803 389 graph;
+#X obj -1801 209 hsl 194 15 0 15 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#N canvas 105 95 789 495 sequencer 0;
+#X floatatom 109 109 5 0 0 0 - - -;
+#X floatatom 131 177 5 0 0 0 - - -;
+#X obj 109 76 f;
+#X obj 157 76 + 1;
+#X obj 134 343 osc~;
+#X floatatom 135 315 5 0 0 0 - - -;
+#X obj 227 139 tabread \$0-myDurations;
+#X obj 108 222 mtof;
+#X obj 108 286 del;
+#X text 155 231 comment;
+#X obj 108 254 t b f;
+#X obj 39 264 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X floatatom 241 173 5 0 0 0 - - -;
+#X obj 157 98 mod 16;
+#X obj 108 139 tabread \$0-myFreqs;
+#X obj 15 5 inlet;
+#X obj 15 34 sel 0 1;
+#X msg 15 81 stop;
+#X obj 133 431 outlet~;
+#X obj 33 432 outlet;
+#X floatatom 392 173 5 0 0 0 - - -;
+#X obj 378 139 tabread \$0-myLoudness;
+#X obj 254 280 line~;
+#X msg 255 245 \$1 10;
+#X obj 133 386 *~;
+#X text 300 242 this avoids "clicks" in the sound by ramping the amplitude
+changes over 10 ms;
+#X text 203 96 <--- don't go over 16;
+#X connect 0 0 6 0;
+#X connect 0 0 14 0;
+#X connect 0 0 19 0;
+#X connect 0 0 21 0;
+#X connect 2 0 3 0;
+#X connect 2 0 0 0;
+#X connect 3 0 13 0;
+#X connect 4 0 24 0;
+#X connect 5 0 4 0;
+#X connect 6 0 8 1;
+#X connect 6 0 12 0;
+#X connect 7 0 10 0;
+#X connect 8 0 11 0;
+#X connect 10 0 8 0;
+#X connect 10 1 5 0;
+#X connect 11 0 2 0;
+#X connect 13 0 2 1;
+#X connect 14 0 1 0;
+#X connect 14 0 7 0;
+#X connect 15 0 16 0;
+#X connect 16 0 17 0;
+#X connect 16 1 2 0;
+#X connect 17 0 8 0;
+#X connect 21 0 20 0;
+#X connect 21 0 23 0;
+#X connect 22 0 24 1;
+#X connect 23 0 22 0;
+#X connect 24 0 18 0;
+#X restore -1575 168 pd sequencer;
+#X obj -1575 123 tgl 15 0 empty empty Turn_On_the_Sequencer 17 7 0
+10 -262144 -1 -1 0 1;
+#X obj -1464 399 line~;
+#X obj -1513 641 dac~;
+#X obj -1457 489 hsl 128 15 0 0.5 0 0 empty empty empty -2 -8 0 10
+-258113 -1 -1 0 1;
+#X obj -1460 535 line~;
+#X msg -1460 512 \$1 20;
+#X obj -1507 594 *~;
+#X text -1348 536 comment;
+#X obj -1507 448 *~;
+#X msg -1464 344 0 \, 1 2000;
+#X msg -1359 343 1 \, 0 4000;
+#X text -1447 319 fade in;
+#X text -1351 317 fade out;
+#N canvas 112 65 450 278 (subpatch) 0;
+#X array \$0-myLoudness 16 float 3;
+#A 0 0.0614185 0.0456705 0.0614185 0.100789 0.163781 0.258269 0.376379
+0.541733 0.573229 0.455119 0.187403 0.124411 0.100789 0.0929146 0.0850406
+0.0692925;
+#X coords 0 1 16 0 200 127 1 0 0;
+#X restore -1802 557 graph;
+#X text -1598 384 1000 ms;
+#X text -1599 505 0 ms;
+#X text -1600 354 0;
+#X text -1600 237 127;
+#X text -1602 313 "middle C";
+#N canvas 232 490 609 440 line-object 0;
+#X obj 92 110 line;
+#X msg 91 65 12 \, 98 3000;
+#X floatatom 95 180 5 0 0 0 - - -;
+#X text 113 19 start at 12 \, ramp up to 98 in 3000 ms (3 seconds)
+;
+#X obj 90 21 bng 15 250 50 0 empty empty empty 17 7 0 10 -4034 -1 -1
+;
+#X obj 193 71 bng 15 250 50 0 empty empty empty 17 7 0 10 -4034 -1
+-1;
+#X msg 194 115 0 \, 1 2000;
+#X obj 195 160 line~;
+#X text 240 159 use "line~" for signals/audio;
+#X text 216 69 start at 0 \, ramp up to 1 in 2000 ms (2 seconds);
+#X obj 198 234 scope~ 130 130 256 3 128 -1 1 0 0 0 0 102 255 51 135
+135 135 0;
+#X connect 0 0 2 0;
+#X connect 1 0 0 0;
+#X connect 4 0 1 0;
+#X connect 5 0 6 0;
+#X connect 6 0 7 0;
+#X connect 7 0 10 0;
+#X restore -1407 398 pd line-object;
+#X text -1486 167 <--- here is our sequencer form the last exercise
+;
+#X text -1479 202 now we have added a third table for the loudness
+of each note;
+#X text -1476 279 we have also added a way to fade-in and fade-out
+the sound;
+#X text -1772 -145 A demonstration of a table-driven sequencer which
+plays a series of specified pitches in sequence \, each note with an
+specific rhythmic duration and specific loudness. The patch adds overall
+dynamics control with a gain slider and a fade-in/fade-out.;
+#X connect 1 0 2 0;
+#X connect 11 0 10 0;
+#X connect 11 1 20 0;
+#X connect 12 0 11 0;
+#X connect 13 0 20 1;
+#X connect 15 0 17 0;
+#X connect 16 0 18 1;
+#X connect 17 0 16 0;
+#X connect 18 0 14 0;
+#X connect 18 0 14 1;
+#X connect 20 0 18 0;
+#X connect 21 0 13 0;
+#X connect 22 0 13 0;

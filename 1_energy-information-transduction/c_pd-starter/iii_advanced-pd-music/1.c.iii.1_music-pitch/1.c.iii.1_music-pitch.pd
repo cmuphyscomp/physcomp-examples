@@ -46,10 +46,9 @@ we have a sequencer!;
 #X obj 61 721 mtof;
 #X msg 509 13 \; pd dsp \$1;
 #X floatatom 148 560 5 0 0 0 - - -;
-#X text 185 559 <--- sequence length;
 #X text 104 327 <--- try it! put in the index;
 #X text 108 390 <--- read out the value;
-#X obj 23 -132 cnv 15 600 100 empty empty 1.c.iii.3_Music_and_Pitch
+#X obj 23 -132 cnv 15 600 100 empty empty 1.c.iii.1_Music_and_Pitch
 20 12 0 14 -204800 -66577 0;
 #X obj 349 -14 cnv 15 150 20 empty empty empty 20 12 0 14 -4034 -66577
 0;
@@ -69,6 +68,10 @@ plays a loop of specified pitches from a table with a constant rhythm.
 #X obj 292 472 bng 25 250 50 0 empty start Stop 30 12 0 14 -257985
 -1 -1;
 #X msg 290 512 0;
+#X obj 408 630 intro-to-counters;
+#X text 185 559 <--- sequence length;
+#X text 103 629 <--- this is a counter \; check these counters --->
+;
 #X connect 1 0 3 0;
 #X connect 2 0 1 0;
 #X connect 12 0 14 0;
@@ -87,6 +90,6 @@ plays a loop of specified pitches from a table with a constant rhythm.
 #X connect 32 0 23 0;
 #X connect 33 0 32 0;
 #X connect 35 0 18 1;
-#X connect 42 0 15 0;
-#X connect 50 0 51 0;
-#X connect 51 0 15 0;
+#X connect 41 0 15 0;
+#X connect 49 0 50 0;
+#X connect 50 0 15 0;

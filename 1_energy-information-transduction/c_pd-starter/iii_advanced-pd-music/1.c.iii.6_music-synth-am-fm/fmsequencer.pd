@@ -1,8 +1,8 @@
 #N canvas 630 33 626 684 10;
 #X obj 37 439 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 6400 1;
+-1 -1 0 1;
 #X obj 183 439 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 6900 1;
+-1 -1 0 1;
 #X obj 497 -13 pddp/dsp;
 #X obj 180 465 fmsynth 3 0.7;
 #X obj 34 466 fmsynth 2 0.5;
@@ -24,9 +24,9 @@
 #X obj 75 252 delay 500;
 #X obj 75 316 spigot;
 #X obj 108 279 tgl 25 0 empty empty Loop_Enable 30 12 0 12 -257985
--1 -1 1 1;
-#X obj 13 -142 cnv 15 600 100 empty empty FM_Synth_Sequencer 20 12
-0 14 -204800 -66577 0;
+-1 -1 0 1;
+#X obj 13 -142 cnv 15 600 100 empty empty 1.c.iii.6_Music_Synth_AM-FM
+20 12 0 14 -204800 -66577 0;
 #X text 113 65 reset the qlist;
 #X text 186 92 rhythm message to pass to Python function;
 #X text 87 197 sequencer object provided in Pd;

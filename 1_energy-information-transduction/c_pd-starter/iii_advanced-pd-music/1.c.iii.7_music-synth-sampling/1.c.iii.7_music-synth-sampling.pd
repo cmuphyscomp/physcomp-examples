@@ -1,0 +1,145 @@
+#N canvas 9 22 926 1074 10;
+#X text -3431 177 1;
+#X obj -2961 113 tgl 25 0 empty empty Enable_Audio 30 12 0 12 -4034
+-1 -1 0 1;
+#X msg -2961 144 \; pd dsp \$1;
+#X obj -3447 -1 cnv 15 600 100 empty empty 1.c.iii.7_Music_Synth_Sampling
+20 12 0 14 -204800 -66577 0;
+#X obj -3121 117 cnv 15 150 20 empty empty empty 20 12 0 14 -4034 -66577
+0;
+#X text -3117 118 Enable audio output -->;
+#X text -3098 82 must turn on DSP for audio to work in PD;
+#X text -3402 178 read a soundfile into a table;
+#X obj -3401 265 soundfiler;
+#N canvas 0 22 450 300 (subpatch) 0;
+#X array sample-table 100000 float 0;
+#X coords 0 1.02 99999 -1.02 200 130 1;
+#X restore -3206 219 graph;
+#X msg -3401 240 read voice.wav sample-table;
+#X obj -3012 634 hip~ 5;
+#X text -2953 636 high pass filter to cut DC;
+#X obj -3012 602 tabread4~ sample-table;
+#X obj -3012 567 line~;
+#X obj -3012 542 pack 0 100;
+#X text -2803 591 read from the table;
+#X text -2812 609 (the input is the index in samples);
+#X obj -3034 440 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -4034
+-1 -1 0 1;
+#X floatatom -3401 310 8 0 0 1 length_in_samples - -, f 8;
+#X obj -3012 507 * 1;
+#X text -2888 441 this slider goes from 0 to 1;
+#X floatatom -3037 474 5 0 0 0 - - -, f 5;
+#X text -2983 504 convert to sample number;
+#X obj -2950 676 hsl 128 15 0 0.5 0 0 empty empty gain -2 -8 0 10 -258113
+-1 -1 0 1;
+#X obj -2953 722 line~;
+#X msg -2953 699 \$1 20;
+#X obj -3012 737 dac~;
+#X obj -3015 676 *~;
+#X text -3432 396 2;
+#X obj -3402 211 bng 15 250 50 0 empty empty empty 17 7 0 10 -4034
+-1 -1;
+#X obj -3212 1088 adc~ 1;
+#X obj -3212 1118 hip~ 5;
+#X msg -3241 1039 bang;
+#X text -3203 1038 <-- record;
+#X obj -3177 1148 line~;
+#X obj -3212 1182 *~;
+#X msg -3144 1113 0 10;
+#X msg -3296 1119 0 \, 1 5;
+#X obj -3241 1212 tabwrite~ sample-table;
+#X obj -3273 882 array size sample-table;
+#X obj -3311 861 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj -3401 340 send sample-length;
+#X obj -2995 473 r sample-length;
+#X text -3422 790 3;
+#X text -3391 791 resize your recording table;
+#X msg -3273 841 100000;
+#X text -3215 841 100 \, 0 samples at sampling rate of 44.1KHz is just
+over 2 seconds;
+#X text -3422 979 4;
+#X text -3394 978 recording something from the microphone;
+#X obj -3240 1004 bng 15 250 50 0 empty empty record 17 7 0 10 -4034
+-1 -1;
+#X obj -3129 1003 bng 15 250 50 0 empty empty stop 17 7 0 10 -4034
+-1 -1;
+#X text -3356 1119 fade-in;
+#X text -3107 1112 fade-out;
+#X floatatom -3274 922 8 0 0 0 - - -, f 8;
+#X text -2942 543 ramp to sound smoother;
+#X obj -3387 613 line~;
+#X obj -3386 648 tabread4~ sample-table;
+#X obj -3391 547 pack 0 1 1;
+#X obj -3363 440 r sample-length;
+#X obj -3328 480 / 44.1;
+#X floatatom -3328 512 5 0 0 0 - - -, f 5;
+#X text -3412 28 Useing Pd to read \, playback \, record and sratch
+audio samples;
+#X text -3443 56 make sure the audio sample rate (Preferences > Audio
+Settings) is 44.1KHz;
+#X msg -3391 581 \$1 \, \$2 \$3;
+#X obj -3322 689 hsl 128 15 0 0.5 0 0 empty empty gain -2 -8 0 10 -258113
+-1 -1 0 1;
+#X obj -3325 735 line~;
+#X msg -3325 712 \$1 20;
+#X obj -3384 750 dac~;
+#X obj -3387 689 *~;
+#X msg -3425 474 0;
+#X text -3283 478 convert from samples to ms;
+#X obj -3425 438 bng 15 250 50 0 empty empty empty 17 7 0 10 -4034
+-1 -1;
+#X obj -3273 945 send sample-length;
+#X obj -3275 814 bng 15 250 50 0 empty empty empty 17 7 0 10 -4034
+-1 -1;
+#X text -3408 396 scratch a sound file;
+#X text -3040 398 scratch a sound file (from Pd exmaples B07);
+#X connect 1 0 2 0;
+#X connect 8 0 19 0;
+#X connect 10 0 8 0;
+#X connect 11 0 28 0;
+#X connect 13 0 11 0;
+#X connect 14 0 13 0;
+#X connect 15 0 14 0;
+#X connect 18 0 22 0;
+#X connect 19 0 42 0;
+#X connect 20 0 15 0;
+#X connect 22 0 20 0;
+#X connect 24 0 26 0;
+#X connect 25 0 28 1;
+#X connect 26 0 25 0;
+#X connect 28 0 27 0;
+#X connect 28 0 27 1;
+#X connect 30 0 10 0;
+#X connect 31 0 32 0;
+#X connect 32 0 36 0;
+#X connect 33 0 38 0;
+#X connect 33 0 39 0;
+#X connect 35 0 36 1;
+#X connect 36 0 39 0;
+#X connect 37 0 35 0;
+#X connect 38 0 35 0;
+#X connect 40 0 54 0;
+#X connect 41 0 40 0;
+#X connect 43 0 20 1;
+#X connect 46 0 40 0;
+#X connect 46 0 41 0;
+#X connect 50 0 33 0;
+#X connect 51 0 37 0;
+#X connect 54 0 73 0;
+#X connect 56 0 57 0;
+#X connect 57 0 69 0;
+#X connect 58 0 64 0;
+#X connect 59 0 60 0;
+#X connect 59 0 58 1;
+#X connect 60 0 61 0;
+#X connect 61 0 58 2;
+#X connect 64 0 56 0;
+#X connect 65 0 67 0;
+#X connect 66 0 69 1;
+#X connect 67 0 66 0;
+#X connect 69 0 68 0;
+#X connect 69 0 68 1;
+#X connect 70 0 58 0;
+#X connect 72 0 70 0;
+#X connect 74 0 46 0;
