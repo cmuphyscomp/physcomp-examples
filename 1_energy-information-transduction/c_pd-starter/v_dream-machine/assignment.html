@@ -15,17 +15,36 @@
       a dream-like state for the audience.</p>
 
     <p>We will perform these machines simultaneously for a coordinated,
-      collaborative, dream experience.  This is a very open-ended assignment:
-      results may include pure-software sound synthesis, physical artifacts
-      which create sound or light, physical interfaces for allowing performers
-      to interact with the system.</p>
+      collaborative, dream experience.  The performance will be coordinated over
+      the network from a conductor who provides simple musical cues including
+      tempo and loudness. The machines must include some kind of physical
+      output, e.g. light, sound, or movements.  They may be entirely autonomous,
+      responding only to the conductor, or may include some kind of physical
+      input to allow a performer to modulate the output in order collaborate
+      with the ensemble.</p>
+    
+    <p>As a challenge, the Pd digital synthesis techniques may be employed to
+      also provide a synthesized sound and/or image from a laptop which
+      harmonizes with the physical performance of your object and others.</p>
 
+    <p>We will set up the performance during class time in the Media Lab
+      adjacent to the Physical Computing Lab; please make sure your device can
+      be easily moved.  We will carry over power supplies as needed.</p>
+
+    <p>Creating sound with physical means is older than recorded history.  The 
+      <a href="http://en.wikipedia.org/wiki/Hornbostel%E2%80%93Sachs">Hornbostel–Sachs
+	system is a classic taxonomy of instruments</a> which may inspire you.
+	Virtually any object can create sound if mechanical energy is supplied
+	to it in an appropriate way.
+    
     <h4>Template</h4>
 
-    <p>The instrument/ folder contains a template for a Pd patch for
-      controlling the assignment.  The template contains the code which handles
-      the network communication with the conductor.  It also has a copy of the
-      conductors control interface which can be used for offline testing.</p>
+    <p>The instrument/ folder contains a template for a Pd patch for controlling
+      the assignment.  The template contains the code which handles the network
+      communication with the conductor.  It also has a copy of the conductor
+      control interface which can be used for offline testing.  You should copy
+      this template and replace the sample instrument with your own Arduino
+      communication and synthesis patch.</p>
 
     <p>The conductor/ folder contains the Pd patch for the conductor's control
       station. It includes the network code for listening for instruments
