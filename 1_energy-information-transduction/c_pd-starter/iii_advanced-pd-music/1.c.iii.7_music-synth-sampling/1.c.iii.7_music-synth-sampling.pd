@@ -1,9 +1,9 @@
 #N canvas 9 22 926 1074 10;
 #X text -3431 177 1;
 #X obj -2961 113 tgl 25 0 empty empty Enable_Audio 30 12 0 12 -4034
--1 -1 1 1;
+-1 -1 0 1;
 #X msg -2961 144 \; pd dsp \$1;
-#X obj -3447 -1 cnv 15 600 100 empty empty 1.c.iii.4_Music_Synth_Sampling
+#X obj -3447 -1 cnv 15 600 100 empty empty 1.c.iii.7_Music_Synth_Sampling
 20 12 0 14 -204800 -66577 0;
 #X obj -3121 117 cnv 15 150 20 empty empty empty 20 12 0 14 -4034 -66577
 0;
@@ -24,14 +24,14 @@
 #X text -2803 591 read from the table;
 #X text -2812 609 (the input is the index in samples);
 #X obj -3034 440 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -4034
--1 -1 4000 1;
+-1 -1 0 1;
 #X floatatom -3401 310 8 0 0 1 length_in_samples - -, f 8;
 #X obj -3012 507 * 1;
 #X text -2888 441 this slider goes from 0 to 1;
 #X floatatom -3037 474 5 0 0 0 - - -, f 5;
 #X text -2983 504 convert to sample number;
 #X obj -2950 676 hsl 128 15 0 0.5 0 0 empty empty gain -2 -8 0 10 -258113
--1 -1 3100 1;
+-1 -1 0 1;
 #X obj -2953 722 line~;
 #X msg -2953 699 \$1 20;
 #X obj -3012 737 dac~;
@@ -80,7 +80,7 @@ audio samples;
 Settings) is 44.1KHz;
 #X msg -3391 581 \$1 \, \$2 \$3;
 #X obj -3322 689 hsl 128 15 0 0.5 0 0 empty empty gain -2 -8 0 10 -258113
--1 -1 4000 1;
+-1 -1 0 1;
 #X obj -3325 735 line~;
 #X msg -3325 712 \$1 20;
 #X obj -3384 750 dac~;
