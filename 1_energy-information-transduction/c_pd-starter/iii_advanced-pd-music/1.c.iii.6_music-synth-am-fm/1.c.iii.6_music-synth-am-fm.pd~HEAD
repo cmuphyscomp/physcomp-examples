@@ -1,0 +1,164 @@
+#N canvas 1 22 904 1098 10;
+#X text -641 19 1;
+#X obj -171 -59 tgl 25 0 empty empty Enable_Audio 30 12 0 12 -4034
+-1 -1 0 1;
+#X msg -171 -28 \; pd dsp \$1;
+#X obj -657 -173 cnv 15 600 100 empty empty 1.c.iii.4_Music_Synth_Analysis
+20 12 0 14 -204800 -66577 0;
+#X obj -331 -55 cnv 15 150 20 empty empty empty 20 12 0 14 -4034 -66577
+0;
+#X text -327 -54 Enable audio output -->;
+#X text -300 -90 must turn on DSP for audio to work in PD;
+#N canvas 834 251 450 300 startup 0;
+#X obj 85 16 loadbang;
+#X obj 85 40 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 85 59 f \$0;
+#X text 9 257 boxes.;
+#X text 18 209 This subpatch loads initial values in number;
+#X msg 85 83 \; \$1-freq 400 \; \$1-pitch 48 \; \$1-speed -2 \; \$1-depth
+27 \; \$1-offset 56 \; \$1-q 25 \; \$1-q2 2 \;;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X connect 2 0 5 0;
+#X restore -650 996 pd startup;
+#N canvas 0 22 612 404 conversion-tables 0;
+#N canvas 0 22 450 300 (subpatch) 0;
+#X array mtof 130 float 1;
+#A 0 8.1758 8.66196 9.17702 9.72272 10.3009 10.9134 11.5623 12.2499
+12.9783 13.75 14.5676 15.4339 16.3516 17.3239 18.354 19.4454 20.6017
+21.8268 23.1247 24.4997 25.9565 27.5 29.1352 30.8677 32.7032 34.6478
+36.7081 38.8909 41.2034 43.6535 46.2493 48.9994 51.9131 55 58.2705
+61.7354 65.4064 69.2957 73.4162 77.7817 82.4069 87.3071 92.4986 97.9989
+103.826 110 116.541 123.471 130.813 138.591 146.832 155.563 164.814
+174.614 184.997 195.998 207.652 220 233.082 246.942 261.626 277.183
+293.665 311.127 329.628 349.228 369.994 391.995 415.305 440 466.164
+493.883 523.251 554.365 587.33 622.254 659.255 698.456 739.989 783.991
+830.609 880 932.328 987.767 1046.5 1108.73 1174.66 1244.51 1318.51
+1396.91 1479.98 1567.98 1661.22 1760 1864.66 1975.53 2093 2217.46 2349.32
+2489.02 2637.02 2793.83 2959.96 3135.96 3322.44 3520 3729.31 3951.07
+4186.01 4434.92 4698.64 4978.03 5274.04 5587.65 5919.91 6271.93 6644.88
+7040 7458.62 7902.13 8372.02 8869.84 9397.27 9956.06 10548.1 11175.3
+11839.8 12543.9 13289.8 14080;
+#X coords 0 12000 130 0 200 100 1;
+#X restore 309 225 graph;
+#X text 319 333 ------ 130 samples ------;
+#X text 518 318 0;
+#X text 520 218 12000;
+#X restore -650 969 pd conversion-tables;
+#X text -622 -144 Useing Pd to explore noise \, filtering and fourier
+spectral analysis;
+#X obj -623 50 osc~ 400;
+#X obj -633 214 dac~;
+#X obj -623 146 *~;
+#X obj -323 74 osc~ 400;
+#X obj -143 90 osc~ 1;
+#X obj -143 117 +~ 1;
+#X obj -143 140 *~ 0.5;
+#X obj -278 221 *~;
+#X obj -143 209 *~ 0.5;
+#X obj -92 177 hsl 300 15 0 5 0 0 empty amDepth modulation_depth -2
+-8 0 10 -4034 -1 -1 2990 1;
+#X obj -623 181 *~ 0.3;
+#X obj -608 117 tgl 15 0 empty empty empty 17 7 0 10 -4034 -1 -1 0
+1;
+#X obj -288 360 dac~;
+#X obj -279 316 *~ 0.3;
+#X obj -279 281 *~;
+#X obj -264 252 tgl 15 0 empty empty empty 17 7 0 10 -4034 -1 -1 0
+1;
+#X text -90 119 change range of function from -1 to 1 to 0 to 1;
+#X text -612 20 here is a single oscillator at 400Hz;
+#X text -327 19 here we use a second oscillator to modulate the amplitude
+of the first oscillator;
+#X text -583 114 <--- hear it;
+#X text -245 250 <--- hear it;
+#X text -264 72 <---source;
+#X text -96 88 <---modulator;
+#X obj -140 62 hsl 300 15 0 300 0 0 empty amFreq modulation_frequency_(Hz)
+-2 -8 0 10 -4034 -1 -1 100 1;
+#N canvas 15 370 450 300 init 0;
+#X obj 174 72 loadbang;
+#X msg 174 118 \; amDepth 0.5 \; amFreq 1 \; fmBase 400 \; fmDepth
+10 \; fmBase 300 \;;
+#X connect 0 0 1 0;
+#X restore -87 -15 pd init;
+#X floatatom -76 209 5 0 0 0 - - -;
+#X floatatom -181 90 5 0 0 0 - - -;
+#X text -637 397 1;
+#X obj -629 592 dac~;
+#X obj -619 524 *~;
+#X obj -320 742 osc~ 400;
+#X obj -319 498 osc~ 1;
+#X obj -319 525 +~ 1;
+#X obj -319 548 *~ 0.5;
+#X obj -319 609 *~ 0.5;
+#X obj -257 576 hsl 300 15 0 500 0 0 empty fmDepth modulation_depth
+-2 -8 0 10 -4034 -1 -1 5498 1;
+#X obj -619 559 *~ 0.3;
+#X obj -604 495 tgl 15 0 empty empty empty 17 7 0 10 -4034 -1 -1 0
+1;
+#X obj -329 873 dac~;
+#X obj -320 829 *~ 0.3;
+#X obj -320 794 *~;
+#X obj -305 765 tgl 15 0 empty empty empty 17 7 0 10 -4034 -1 -1 1
+1;
+#X text -266 527 change range of function from -1 to 1 to 0 to 1;
+#X text -608 398 here is a single oscillator at 400Hz;
+#X text -323 397 here we use a second oscillator to modulate the amplitude
+of the first oscillator;
+#X text -579 492 <--- hear it;
+#X text -286 763 <--- hear it;
+#X text -261 740 <---source;
+#X obj -316 470 hsl 300 15 0 300 0 0 empty fmFreq modulation_frequency_(Hz)
+-2 -8 0 10 -4034 -1 -1 5100 1;
+#X floatatom -241 608 5 0 0 0 - - -;
+#X floatatom -357 498 5 0 0 0 - - -;
+#X text -153 249 < THIS IS AMPLITUDE MODULATION >;
+#X text -205 765 < THIS IS FREQUENCY MODULATION >;
+#X obj -320 713 +~ 400;
+#X text -271 496 <---modulator;
+#X text -273 713 <---bass frequency;
+#X obj -256 643 hsl 300 15 0 2000 0 0 empty fmBase base_frequency -2
+-8 0 10 -4034 -1 -1 4485 1;
+#X obj -619 428 osc~ 300;
+#X connect 1 0 2 0;
+#X connect 10 0 12 0;
+#X connect 12 0 20 0;
+#X connect 13 0 17 0;
+#X connect 14 0 15 0;
+#X connect 15 0 16 0;
+#X connect 16 0 18 0;
+#X connect 17 0 24 0;
+#X connect 18 0 17 1;
+#X connect 19 0 18 1;
+#X connect 19 0 35 0;
+#X connect 20 0 11 0;
+#X connect 20 0 11 1;
+#X connect 21 0 12 1;
+#X connect 23 0 22 0;
+#X connect 23 0 22 1;
+#X connect 24 0 23 0;
+#X connect 25 0 24 1;
+#X connect 33 0 14 0;
+#X connect 33 0 36 0;
+#X connect 39 0 46 0;
+#X connect 40 0 50 0;
+#X connect 41 0 42 0;
+#X connect 42 0 43 0;
+#X connect 43 0 44 0;
+#X connect 44 0 63 0;
+#X connect 45 0 44 1;
+#X connect 45 0 59 0;
+#X connect 46 0 38 0;
+#X connect 46 0 38 1;
+#X connect 47 0 39 1;
+#X connect 49 0 48 0;
+#X connect 49 0 48 1;
+#X connect 50 0 49 0;
+#X connect 51 0 50 1;
+#X connect 58 0 41 0;
+#X connect 58 0 60 0;
+#X connect 63 0 40 0;
+#X connect 66 0 63 1;
+#X connect 67 0 39 0;
