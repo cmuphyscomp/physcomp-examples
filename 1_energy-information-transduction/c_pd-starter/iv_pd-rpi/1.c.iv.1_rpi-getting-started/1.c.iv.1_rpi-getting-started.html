@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <title>Exercise: Getting Started on the Raspberry Pi</title>
+    <style type="text/css">span.eqn { white-space: nowrap; }</style>
+    <meta name="description" content="exercise notes">
+    <meta name="author" content="garthz">
+  </head>
+  <body>
+
+    <h4>Objective</h4>
+ 
+    <p>Learn basic usage of a Raspberry Pi: connecting to a laptop or monitor,
+      running programs, updating.</p>
+
+    <p>The Raspberry Pi exercises assume you have the following baseline
+      materials:</p>
+
+    <ol>
+      <li>Raspberry Pi B+</li>
+      <li>wall-wart power supply for Raspberry Pi (5.0V to 5.25V, min 1 Amp)</li>
+      <li>power supply cable (USB micro)</li>
+      <li>microSD card containing course Raspbian image</li>
+      <li>Pi Cobbler or T-Cobbler breakout board w/ribbon cable</li>
+      <li>breadboard</li>
+    </ol>
+
+    <p>If using from a cluster laptop:</p>
+    <ol>
+      <li>short Ethernet cable</li>
+      <li>Thunderbolt to Ethernet adapter</li>
+    </ol>
+
+    <p>If using with a monitor:</p>
+    <ol>
+      <li>HDMI monitor and HDMI cable</li>
+      <li>USB keyboard and mouse</li>
+      <li>USB WiFi adapter</li>
+    </ol>
+
+    <h4>Overview</h4>
+
+    <p>The <a href="http://www.raspberrypi.org/">Raspberry Pi</a> is a powerful
+      microcontroller which runs the Linux operating system.  We are using the
+      B+ version, which has 512&nbsp;Mb RAM and a 40-pin connector for hardware
+      I/O.  It boots from a microSD card which acts as its hard drive.  It is
+      about as powerful as a low-end cell phone, which puts it orders of
+      magnitude more complex than an Arduino, but much less capable than a
+      current laptop.</p>
+
+    <p>The Raspberry Pi is a vastly more powerful computer than the Arduino and
+      has access to a vast array of Linux software, much of which is easily
+      available in packaged form.  It makes it possible to easily embed computer
+      vision, audio processing, networking, data logging, 3D graphics, web
+      services, etc. in a small device.</p>
+
+    <p>The downside of this is increased complexity.  Unlike the Arduino, it
+      takes a few tens of seconds to boot up.  Programs can be written using
+      many languages but the programming environment generally lacks the
+      simplicity of the Arduino IDE.</p>
+
+    <p>We have tried to bundle a rich set of tools in a standard system to make
+      it as easy as we can to get started.  We have the [wiringPi] object for Pd
+      which can directly control hardware I/O pins.  For those so inclined, the
+      wiringPi-Python library allows easy programming in Python.  If you want to
+      blend the two, the [pdpython] object enables building mixed systems.  And
+      it is also possible to program in C, C++, Javascript, Perl, e.g., any
+      major language available for Linux.</p>
+
+    <h4>Interaction with the Pi</h4>
+
+    <p>This exercise is about becoming familiar with the infrastructure and
+      getting to the point of basic usability.  There are a couple of different
+      ways in which people use the Pi:</p>
+
+    <p><b>As a standalone computer.</b>  It is possible to plug a monitor,
+      keyboard, mouse, and network port directly into a Pi and just treat it
+      like a desktop computer.  The upside is the relative simplicity of getting
+      started and the possibility of generating 3D graphics directly on a
+      monitor.  The downside is that the Pi is a slow computer, and burdening it
+      with generating a desktop display makes it feel slow.  Plus needing all
+      the accessories defeats some of the point of using a tiny computer.  We
+      only recommend this mode as a startup step or for a disconnected system
+      off the network.</p>
+
+    <p><b>As a X11 client.</b> The X11 system dates back to the 1980s but is
+      still a viable means for running graphical user interfaces across the
+      network.  The laptop runs an X11 server (e.g. XQuartz.app) which handles
+      drawing on the screen on behalf of a program running on the Pi,
+      communicating over the network via SSH. This method works well for running
+      Pure Data on the Pi from a laptop.  This method can work over WiFi, but is
+      much more reliable on a direct Ethernet connection.</p>
+
+    <p><b>As a SSH server.</b> Much of the Pi can be operated from the command
+      line.  An ssh client on a laptop can connect to the Pi for an interactive
+      console session.  This works over even a slow network connection, and
+      works fine for text editors with console modes (e.g. emacs).</p>
+
+    <p><b>As a remote desktop.</b>  It is possible to use a standard remote
+      desktop interface on a laptop to open the Raspberry Pi desktop as a
+      window.  This can be familiar, but also can feel slow since the Pi is
+      still generating a full display.  The advantage is the minimal amount of
+      hardware, since the only accessory needed is a network connection.  This
+      is really only a usable method across a direct Ethernet connection; the
+      WiFi will be unusably slow.</p>
+
+    <p><b>As a Web server.</b> We have installed Node-RED, which can be launched
+      to provide a web-based programming interface.  This is not used in the
+      course exercises, but might be viable for advanced students seeking to
+      integrate the Pi hardware with web services.</p>
+
+    <h4>Data Storage on the Pi</h4>
+
+    <p>We have installed an updatable image of the course materials on the Pi
+      microSD, so it should be possible to work through the exercises as-is.
+      But once you begin copying the templates and generating your own project
+      code and data, you'll want ways to get your personal files on and off the
+      Pi.</p>
+
+    <p><b>Using shared folders.</b>  We have set up a Samba server on the Pi
+      which allows drag and drop file access from a laptop.</p>
+
+    <p><b>Using a USB drive.</b>  The Pi can mount filesystems from USB sticks
+      and external hard drives.</p>
+
+    <p><b>Using a SFTP client.</b>  Desktop and command-line SFTP clients
+      (e.g. Fugu.app or sftp) can remotely access the Pi filesystem.  In many
+      ways, this is more reliable than the Samba system, since there is no
+      persistent connection.  Sftp is better for transferring individual files
+      rather than nested folders.</p>
+    
+    <p><b>Using rsync or unison.</b> These are programs which perform single- or
+      bi-directional file synchronization between a laptop and the Pi, but which
+      require some careful configuration.  These are suitable for nested folders
+      and large sets of files.</p>
+
+    <h4>Maintenance of the Pi</h4>
+    
+    <p>The Linux system on the Pi is a complex infrastructure involving many
+      parts which can be individually updated.  Your program is always one of
+      many.</p>
+
+    <p>We have provided an update system (the 'puppet' system) which can help
+      with keeping your Pi up to date as the course evolves.</p>
+
+
+    <h4>Steps and observations</h4>
+
+    <p>We will walk through these steps as a class demonstration, since there
+    are many steps which are hard to document.</p>
+
+    <p><b>Preparation.</b> Gather the materials listed above.  Install your
+      microSD card.</p>
+
+    <p><b>Getting connected.</b> If using a cluster laptop, install the Ethernet
+      adapter and attach an Ethernet cable from it to the Pi. </p>
+
+    <p><b>First contact using ssh.</b> If using a cluster laptop, open System
+      Preferences/Sharing and enable Internet Sharing so the laptop can bridge
+      the Pi to the internet.  Attach power to the Pi and watch the lights
+      flicker as it boots.  Try a command-line ssh connection from a Terminal
+      window.  The Pi is preconfigured to use address 192.168.2.3, so from
+      a Terminal window try the following: <code>ssh pi@192.168.2.3</code>.  If
+      successful, you'll see a password prompt: the default password
+      is <code>raspberry</code>.  If successful, you'll see a Linux command
+      prompt.  Try <code>ls -l</code> to get a listing of files.</p>
+
+    <p><b>First contact using monitor.</b> If using a monitor, connect the HDMI
+      monitor, USB keyboard and mouse, and then attach power to the Pi.  You
+      should see a stream of boot messages on the screen culminating in a login
+      prompt.  The default username is <code>pi</code> and password
+      is <code>raspberry</code>.  If successful, you should see a Linux
+      desktop.</p>
+
+    <p><b>Graphical operation using X11 over ssh.</b> If using a cluster laptop,
+      log out of the console connection, and the log back in with the -X
+      flag: <code>ssh -X pi@192.168.2.3</code>.  You'll again see a Linux
+      command prompt.  Try the <code>xterm</code> command; the laptop should
+      launch XQuartz and open a window with a terminal emulator.  If that works,
+      try the <code>pd</code> command; it should launch Pure Data with windows
+      appearing on the laptop.</p>
+
+    <p><b>Updating using the puppet system.</b> If using a cluster laptop, try
+      the following command to check your network connectivity: <code>ping
+      www.cmu.edu</code>.  If that fails, you'll need to debug the network
+      connection.  The <code>ifconfig</code> command will show you the current
+      network configuration on the Pi.  Other useful network
+      commands: <code>hostname -I</code> to check the current IP
+      address, <code>host www.cmu.edu</code> to test name service, and <code>dig
+      www.cmu.edu</code> to test name service in detail. (For details: <code>man
+      dig</code> to read the manual page).</p>
+
+    <p>If your Pi is able to connect to the internet, try running an update
+	with <code>sudo pi_update --course</code>.  That will update the
+	contents of the <code>/opt/cmuphyscomp/physcomp-examples/</code> folder
+	to the current course materials.  To run all available updates, you may
+	use <code>sudo pi_update</code>, but that can take a few minutes.</p>
+
+    <p><b>Getting files on and off the Pi.</b> TBD.</p>
+
+
+  </body>
+</html>
