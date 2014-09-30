@@ -348,16 +348,10 @@
 "title": "1.c.iii.7 Exercise: Arduino Sensor to Pure Data GUI"
 }, 
 {
-"post": "http://cmuphyscomp.github.io/physcomp-examples/1_energy-information-transduction/c_pd-starter/iv_pd-rpi/1.c.iv.1_rpi-remote-access/post.html", 
-"permalink": "assignments/1-energy-information-transduction/c-pd-starter/iv-pd-rpi/1.c.iv.1-rpi-remote-access", 
+"post": "http://cmuphyscomp.github.io/physcomp-examples/1_energy-information-transduction/c_pd-starter/iv_pd-rpi/1.c.iv.1_rpi-getting-started/post.html", 
+"permalink": "assignments/1-energy-information-transduction/c-pd-starter/iv-pd-rpi/1.c.iv.1-rpi-getting-started", 
 "parent": "1-energy-information-transduction/c-pd-starter/iv-pd-rpi", 
-"title": "1.c.iv.1 Unit 1A: Basic Circuits"
-}, 
-{
-"post": "http://cmuphyscomp.github.io/physcomp-examples/1_energy-information-transduction/c_pd-starter/iv_pd-rpi/1.c.iv.2_rpi-puppet/post.html", 
-"permalink": "assignments/1-energy-information-transduction/c-pd-starter/iv-pd-rpi/1.c.iv.2-rpi-puppet", 
-"parent": "1-energy-information-transduction/c-pd-starter/iv-pd-rpi", 
-"title": "1.c.iv.2 Unit 1A: Basic Circuits"
+"title": "1.c.iv.1 Exercise: Getting Started on the Raspberry Pi"
 }, 
 {
 "post": "http://cmuphyscomp.github.io/physcomp-examples/1_energy-information-transduction/c_pd-starter/iv_pd-rpi/1.c.iv.3_rpi-arduino/post.html", 
@@ -366,10 +360,10 @@
 "title": "1.c.iv.3 Unit 1A: Basic Circuits"
 }, 
 {
-"post": "http://cmuphyscomp.github.io/physcomp-examples/1_energy-information-transduction/c_pd-starter/iv_pd-rpi/1.c.iv.5_rpi-pd/post.html", 
-"permalink": "assignments/1-energy-information-transduction/c-pd-starter/iv-pd-rpi/1.c.iv.5-rpi-pd", 
+"post": "http://cmuphyscomp.github.io/physcomp-examples/1_energy-information-transduction/c_pd-starter/iv_pd-rpi/1.c.iv.4_rpi-pdpython/post.html", 
+"permalink": "assignments/1-energy-information-transduction/c-pd-starter/iv-pd-rpi/1.c.iv.4-rpi-pdpython", 
 "parent": "1-energy-information-transduction/c-pd-starter/iv-pd-rpi", 
-"title": "1.c.iv.5 Unit 1A: Basic Circuits"
+"title": "1.c.iv.4 Unit 1A: Basic Circuits"
 }, 
 {
 "post": "http://cmuphyscomp.github.io/physcomp-examples/1_energy-information-transduction/c_pd-starter/v_dream-machine/post.html", 
