@@ -12,18 +12,21 @@
     <h4>Objective</h4>
  
     <p>Learn basic usage of a Raspberry Pi: connecting to a laptop or monitor,
-      running programs, updating.</p>
+      running programs, updating the system.</p>
 
     <p>The Raspberry Pi exercises assume you have the following baseline
       materials:</p>
 
     <ol>
       <li>Raspberry Pi B+</li>
-      <li>wall-wart power supply for Raspberry Pi (5.0V to 5.25V, min 1 Amp)</li>
       <li>power supply cable (USB micro)</li>
       <li>microSD card containing course Raspbian image</li>
       <li>Pi Cobbler or T-Cobbler breakout board w/ribbon cable</li>
       <li>breadboard</li>
+      <li>ideally: wall-wart power supply for Raspberry Pi (5.0V to 5.25V, min 1
+	Amp).  If not available a laptop can power the Pi, but this is not an
+	ideal solution.</li>
+      <li>occasional use: powered speakers or earphones</li>
     </ol>
 
     <p>If using from a cluster laptop:</p>
@@ -156,15 +159,25 @@
     <p><b>Getting connected.</b> If using a cluster laptop, install the Ethernet
       adapter and attach an Ethernet cable from it to the Pi. </p>
 
-    <p><b>First contact using ssh.</b> If using a cluster laptop, open System
-      Preferences/Sharing and enable Internet Sharing so the laptop can bridge
-      the Pi to the internet.  Attach power to the Pi and watch the lights
-      flicker as it boots.  Try a command-line ssh connection from a Terminal
-      window.  The Pi is preconfigured to use address 192.168.2.3, so from
-      a Terminal window try the following: <code>ssh pi@192.168.2.3</code>.  If
-      successful, you'll see a password prompt: the default password
-      is <code>raspberry</code>.  If successful, you'll see a Linux command
-      prompt.  Try <code>ls -l</code> to get a listing of files.</p>
+    <p><b>First contact using ssh.</b> If using a cluster laptop, configure as follows:</p>
+    <ol>
+      <li>Open System Preferences/Network and configure the Thunderbolt Ethernet
+	as follows: Configure IPv4 Manually, IP Address 192.168.2.1, Subnet mask
+	255.255.255.0.</li>
+
+    <li>Open System Preferences/Sharing and enable Internet Sharing so the
+      laptop can bridge the Pi to the internet.  Enable the "Internet Sharing"
+      setting and set it to share from Wi-Fi to Thunderbolt Ethernet.  </li>
+
+    </ol>
+
+    <p>Attach power to the Pi and watch the lights flicker as it boots.  Try a
+      command-line ssh connection from a Terminal window.  The Pi is
+      preconfigured to use address 192.168.2.3, so from a Terminal window try
+      the following: <code>ssh pi@192.168.2.3</code>.  If successful, you'll see
+      a password prompt: the default password is <code>raspberry</code>.  If
+      successful, you'll see a Linux command prompt.  Try <code>ls -l</code> to
+      get a listing of files.</p>
 
     <p><b>First contact using monitor.</b> If using a monitor, connect the HDMI
       monitor, USB keyboard and mouse, and then attach power to the Pi.  You
@@ -177,9 +190,9 @@
       log out of the console connection, and the log back in with the -X
       flag: <code>ssh -X pi@192.168.2.3</code>.  You'll again see a Linux
       command prompt.  Try the <code>xterm</code> command; the laptop should
-      launch XQuartz and open a window with a terminal emulator.  If that works,
-      try the <code>pd</code> command; it should launch Pure Data with windows
-      appearing on the laptop.</p>
+      automatically launch XQuartz and open a window with a terminal emulator.
+      If that works, try the <code>pd</code> command; it should launch Pure Data
+      with windows appearing on the laptop.</p>
 
     <p><b>Updating using the puppet system.</b> If using a cluster laptop, try
       the following command to check your network connectivity: <code>ping
@@ -197,8 +210,24 @@
 	to the current course materials.  To run all available updates, you may
 	use <code>sudo pi_update</code>, but that can take a few minutes.</p>
 
-    <p><b>Getting files on and off the Pi.</b> TBD.</p>
+    <p><b>Graphical operation using RDP.</b> If using a cluster laptop, launch
+      "Remote Desktop Connection.app" and enter 192.168.2.3 for Computer.  You
+      may need to confirm Connect at a security warning.  You should then see a
+      Login to xrdp window, enter pi and raspberry as username and password.  It
+      should then proceed to show a Linux LXDE desktop within the RDC window.
+      You can log out using the red button at lower right.  It is also possible
+      to use "Microsoft Remote Desktop.app": you'll need to create a new
+      connection but leave the Credentials section blank.</p>
 
+    <p><b>Getting files on and off the Pi using Samba.</b> If using a cluster
+      laptop, open a Finder window and look under the Shared list on the
+      sidebar.  Select raspberry and click Connect As.. and enter the
+      pi/raspberry username and login.  It should open a folder representing the
+      pi home folder on the Pi; you can drag and drop to copy files back and
+      forth.</p>
 
+    <p><b>Shutting down the Pi.</b> It is best to do a proper shutdown on the Pi
+      to avoid corrupting the memory card.  From a command line enter <code>sudo
+      shutdown -h now</code>.
   </body>
 </html>
