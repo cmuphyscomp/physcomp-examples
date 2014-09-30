@@ -1,0 +1,37 @@
+#N canvas 748 22 602 707 10;
+#X text 80 628 pdwiringPi;
+#X text 80 488 pdpython;
+#X text 80 127 mrpeach;
+#X obj 200 489 pdpython/python;
+#X obj 200 129 mrpeach/packOSC;
+#X obj 200 172 mrpeach/routeOSC;
+#X obj 200 193 mrpeach/udpsend;
+#X obj 200 626 pdwiringPi/wiringPi;
+#X obj 23 -132 cnv 15 600 100 empty empty externals_vocabulary 20 12
+0 14 -204800 -66577 0;
+#X obj 200 151 mrpeach/unpackOSC;
+#X text 80 275 list-abs;
+#X obj 200 276 list-abs/list-len;
+#X text 138 -62 If any of these objects fail to initialize \, there
+is problem with the search paths or the installation.;
+#X obj 200 296 list-abs/list-rev;
+#X text 80 75 moocow;
+#X obj 200 75 moocow/any2bytes;
+#X obj 200 97 moocow/bytes2any;
+#X obj 200 214 mrpeach/udpreceive;
+#X obj 200 346 zexy/a2l;
+#X obj 200 39 comport/comport;
+#X text 80 36 comport;
+#X text 80 345 zexy;
+#X obj 65 5 cnv 15 300 20 empty empty empty 20 12 0 14 -204786 -66577
+0;
+#X text 80 8 Library;
+#X text 200 7 Objects;
+#X text 138 -106 This patch lists most of the external objects expected
+by the Pd exercises for Intro to Physical Computing.;
+#X obj 65 594 cnv 15 300 20 empty empty empty 20 12 0 14 -204786 -66577
+0;
+#X obj 65 450 cnv 15 300 20 empty empty empty 20 12 0 14 -204786 -66577
+0;
+#X text 80 452 Other externals not in Pd-extended or Pd-vanilla;
+#X text 80 596 Externals only for the Raspberry Pi;
