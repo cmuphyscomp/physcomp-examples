@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <title>Exercise: Using WiringPi on the Raspberry Pi</title>
+    <style type="text/css">span.eqn { white-space: nowrap; }</style>
+    <meta name="description" content="exercise notes">
+    <meta name="author" content="garthz">
+  </head>
+  <body>
+
+    <h4>Objective</h4>
+    
+    <p>Use basic digital I/O on a Raspberry Pi from the command line and Pd.</p>
+
+    <p>This exercise assumes you have the basic Raspberry Pi materials as specified in 1.c.iv.1, as well as the following
+      materials:</p>
+
+    <ol>
+      <li>switch</li>
+      <li>10K resistor</li>
+      <li>incandescent bulb</li>
+      <li>2N3904 transistor</li>
+    </ol>
+
+    <h4>Overview</h4>
+
+    <p>The <a href="http://www.raspberrypi.org/products/model-b-plus/">Raspberry Pi B+</a> we have in stock include
+      <a href="http://www.raspberrypi.org/wp-content/uploads/2014/04/bplus-gpio.png">40-pin
+	header</a> with a number of digital I/O pins, including I<sup>2</sup>C and
+      SPI busses.  One pin (GPIO18, pin number 12) can generate high-frequency
+      PWM signals.  Analog to digital conversion can be performed by attaching
+      an external ADC via either SPI or I<sup>2</sup>C.</p>
+
+    <p>We are using the <a href="http://wiringpi.com/">wiringPi interface
+	library</a> for convenient access to this hardware interface.
+      The <code>gpio</code> command-line program is a quick way to inspect and
+      configure the state of the interface.  We also provide
+      a <a href="https://github.com/garthz/pdwiringPi">pdwiringPi</a> external
+      for Pure Data for basic access from Pd patches.  For more advanced
+      usage, we provide
+      the <a href="https://github.com/Gadgetoid/WiringPi2-Python">WiringPi2-Python</a>
+      module for hardware access from Python scripts.  It is also possible to
+      write C/C++ programs which directly use libwiringPi.</p>
+
+    <h4>Steps and observations</h4>
+
+    <p><b>The gpio command.</b> The simplest way way to see what
+      the <code>gpio</code> command can do is just run it; it will print out a
+      list of options.  The <code>gpio readall</code> command will show a table
+      with the current state of all the interface pins.</p>
+
+    <p><b>Pin numbering.</b> There are three different ways that the pins are
+      numbered, which can be confusing.  The physical pins numbers are defined
+      by
+      the <a href="http://www.raspberrypi.org/wp-content/uploads/2014/04/bplus-gpio.png">40-pin
+	header</a> in the conventional order.  The CPU defines a numbering based
+      on the internal GPIO device registers; these are referred to as the
+      <b>Broadcom</b> or <b>BCM</b> numbers by wiringPi, but are
+      shown as GPIO on the Raspberry Pi diagram.</p>
+
+    <p>Confusingly enough, the wiringPi library and gpio command define another
+      pin numbering scheme, show in the readall display as the <b>wPi</b>
+      columns, next to the <b>BCM</b> columns showing the Broadcom hardware
+      scheme, and the <b>Physical</b> columns at the center with the the
+      physical scheme.</p>
+
+    <p><b>Reading an input.</b>  Set up the circuit in the associated diagram with a switch and pullup resistor attached to physical pin 11.  Then try the following:</p>
+    <ol>
+      <li>Configure WiringPi pin 0 (BCM 17, physical pin 11) as an input:<br />
+	<code>gpio mode 0 input</code><br /></li>
+
+      <li>Read the state of pin 0 as follows, which should change with the state of the button:<br />
+	<code>gpio read 0</code></li>
+    </ol>
+
+    <p><b>Configuring a digital output.</b> The following steps will control a
+      lightbulb on physical pin 12/BCM 18/wPi 1.  The Pi doesn't provide enough
+      current or voltage for the lightbulb, so you will need to use an external
+      power source with a 2N3904 transistor. Connect the base pin of the
+      transistor to physical pin 12 from the Pi.  Then try the following:
+      <ol>
+	<li>Configure WiringPi pin 1 (BCM 18, physical pin 12) as an output:<br />
+	  <code>gpio mode 1 output</code></li>
+
+	<li>Write the state of wPi 1 as follows, which should turn the light on and off:<br />
+	  <code>gpio write 1 1</code><br />
+	  <code>gpio write 1 0</code></li>
+      </ol>
+      
+    <p><b>Configuring a PWM output.</b> Using the same circuit, this will configure the pin for PWM output for variable brightness:
+      <ol>
+	<li>Configure WiringPi pin 1 (BCM 18, physical pin 12) for PWM output:<br />
+	  <code>gpio mode 1 pwm</code></li>
+
+	<li>Set the lightbulb to half-brightness:<br />
+	  <code>gpio pwm 1 512</code></li>
+      </ol>
+
+
+
+    <p><b>Using wiringPi from Pd.</b>  Find the associated Pd patch and run it
+      as follows: <code>sudo pd 1.c.iv.2_rpi-pdwiringPi.pd</code>. Pure Data
+      needs to be launched with root privileges for fast hardware access.  The
+      text within the patch explains the next few steps, which replicate the
+      previous steps within Pd.</p>
+
+    </p>    
+  </body>
+</html>
