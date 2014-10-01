@@ -354,6 +354,12 @@
 "title": "1.c.iv.1 Exercise: Getting Started on the Raspberry Pi"
 }, 
 {
+"post": "http://cmuphyscomp.github.io/physcomp-examples/1_energy-information-transduction/c_pd-starter/iv_pd-rpi/1.c.iv.2_rpi-pdwiringPi/post.html", 
+"permalink": "assignments/1-energy-information-transduction/c-pd-starter/iv-pd-rpi/1.c.iv.2-rpi-pdwiringPi", 
+"parent": "1-energy-information-transduction/c-pd-starter/iv-pd-rpi", 
+"title": "1.c.iv.2 Exercise: Using WiringPi on the Raspberry Pi"
+}, 
+{
 "post": "http://cmuphyscomp.github.io/physcomp-examples/1_energy-information-transduction/c_pd-starter/iv_pd-rpi/1.c.iv.3_rpi-arduino/post.html", 
 "permalink": "assignments/1-energy-information-transduction/c-pd-starter/iv-pd-rpi/1.c.iv.3-rpi-arduino", 
 "parent": "1-energy-information-transduction/c-pd-starter/iv-pd-rpi", 
