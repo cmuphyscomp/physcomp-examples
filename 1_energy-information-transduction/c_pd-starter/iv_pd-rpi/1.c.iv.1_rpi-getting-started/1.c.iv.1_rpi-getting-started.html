@@ -226,8 +226,18 @@
       pi home folder on the Pi; you can drag and drop to copy files back and
       forth.</p>
 
+    <p><b>Resizing the filesystem.</b> The course system image is sized to fit
+      on a 4Gb card, but has likely been written to a card larger than 4Gb.  You
+      can check whether it has been properly expanded to make use of all
+      available space by running <code>df -h /</code> and seeing whether the
+      size column still says 3.6G or is a larger number commensurate with your actual
+      card.  If it needs to be resized, run <code>sudo raspi-config</code> and
+      select
+      <code>1 Expand Filesystem</code> at the menu, followed by interface
+      item <code>Finish</code>, followed by rebooting the Pi.</p>
+
     <p><b>Shutting down the Pi.</b> It is best to do a proper shutdown on the Pi
-      to avoid corrupting the memory card.  From a command line enter <code>sudo
-      shutdown -h now</code>.
+      rather than just unplugging it to avoid corrupting the memory card.  From
+      a command line enter <code>sudo shutdown -h now</code>.
   </body>
 </html>
