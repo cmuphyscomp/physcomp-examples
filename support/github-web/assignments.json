@@ -369,7 +369,7 @@
 "post": "http://cmuphyscomp.github.io/physcomp-examples/1_energy-information-transduction/c_pd-starter/iv_pd-rpi/1.c.iv.4_rpi-pdpython/post.html", 
 "permalink": "assignments/1-energy-information-transduction/c-pd-starter/iv-pd-rpi/1.c.iv.4-rpi-pdpython", 
 "parent": "1-energy-information-transduction/c-pd-starter/iv-pd-rpi", 
-"title": "1.c.iv.4 Unit 1A: Basic Circuits"
+"title": "1.c.iv.4 Exercise: Using Raspberry Pi from Python and Python from Pd"
 }, 
 {
 "post": "http://cmuphyscomp.github.io/physcomp-examples/1_energy-information-transduction/c_pd-starter/v_dream-machine/post.html", 
