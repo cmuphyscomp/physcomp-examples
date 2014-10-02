@@ -2745,12 +2745,10 @@ In this library the device names are the same as the pin names of the symbols, t
 <nets>
 <net name="N$1" class="0">
 <segment>
-<wire x1="-33.02" y1="43.18" x2="-33.02" y2="63.5" width="0.1524" layer="91"/>
-<wire x1="-33.02" y1="63.5" x2="30.48" y2="63.5" width="0.1524" layer="91"/>
-<wire x1="30.48" y1="63.5" x2="30.48" y2="53.34" width="0.1524" layer="91"/>
-<pinref part="U$1" gate="G$1" pin="2-+5V"/>
-<wire x1="30.48" y1="53.34" x2="27.94" y2="53.34" width="0.1524" layer="91"/>
+<wire x1="-33.02" y1="43.18" x2="-33.02" y2="53.34" width="0.1524" layer="91"/>
 <pinref part="R1" gate="G$1" pin="2"/>
+<pinref part="U$1" gate="G$1" pin="1-+3V3"/>
+<wire x1="-33.02" y1="53.34" x2="-20.32" y2="53.34" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$2" class="0">
