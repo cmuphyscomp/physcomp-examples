@@ -63,7 +63,12 @@
       scheme, and the <b>Physical</b> columns at the center with the the
       physical scheme.</p>
 
-    <p><b>Reading an input.</b>  Set up the circuit in the associated diagram with a switch and pullup resistor attached to physical pin 11.  Then try the following:</p>
+    <p><b>Reading an input.</b>  Set up the circuit in the associated diagram
+      with a switch and pullup resistor attached to physical pin 11 and 3.3V.
+      Note that the Raspberry Pi is a 3.3V device, so digital inputs should not
+      exceed the 3.3V supply voltage.</p>
+
+    <p>Then try the following:</p>
     <ol>
       <li>Configure WiringPi pin 0 (BCM 17, physical pin 11) as an input:<br/>
 	<code>gpio mode 0 input</code><br/></li>
@@ -110,6 +115,7 @@
     <ol>
       <li><a href="1.c.iv.2_rpi-pdwiringPi.pd">1.c.iv.2_rpi-pdwiringPi.pd</a></li>
       <li><a href="analog_input.sch">analog_input.sch</a></li>
+      <li><a href="digital_sensor.s#1">digital_sensor.s#1</a></li>
       <li><a href="digital_sensor.sch">digital_sensor.sch</a></li>
       <li><a href="lightbulb_with_pwm.sch">lightbulb_with_pwm.sch</a></li>
     </ol>

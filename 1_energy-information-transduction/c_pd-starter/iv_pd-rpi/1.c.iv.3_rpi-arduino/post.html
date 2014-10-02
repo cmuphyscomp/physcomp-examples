@@ -1,18 +1,87 @@
-<h3>Exercise: Title</h3>
+<h4>Objective</h4>
+    
+    <p>Use an Arduino Uno as an accessory to a Raspberry Pi.</p>
 
-    <p>Objective: ...</p>
+    <p>This exercise assumes you have the basic Raspberry Pi materials as
+      specified in 1.c.iv.1, as well as the following materials:</p>
 
-    <p>Brief introductory comments.</p>
+    <ol>
+      <li>Arduino Uno with USB cable.</li>
+    </ol>
+
+    <h4>Overview</h4>
+
+    <p>The Raspberry Pi GPIO interface is great for easy and fast interfacing to
+      individual digital I/O lines and SPI and I<sup>2</sup>C busses.  However,
+      there are still circumstances under which using an Arduino makes sense.
+      Even though the Raspberry Pi is much, much faster than an Arduino, Linux
+      is not a real time system and so other processes can interfere with the
+      precise timing of your program.  And many devices have exising libraries
+      for the Arduino, so the fastest way to test a part can be to use the
+      existing Arduino code but transmit the data to and from the Raspberry Pi
+      for display and further processing.</p>
+
+    <p>Some specific rationale for using the Arduino/Pi combination would be a
+      project requiring features compelling both an Arduino and a Pi:</p><p>
+
+    </p><p>Requirements motivating a Raspberry Pi: networking, graphics, audio
+      signal processing, machine learning, databases, data logging, machine
+      vision, extensive numerical computations, use of Python or Pure Data,
+      libraries available under Linux, transferring an existing Pure Data patch
+      into embedded form.</p>
+
+    <p>Requirements motivating an Arduino: simple analog input, rapid start-up
+      (e.g. no boot time), existing hardware device libraries, tight signal
+      timing requirements, fast digital pattern generation such as for driving a
+      stepper motor.</p>
+
+    <p>With enough work, many of these Arduino requirements can be satisfied
+      with just a Pi and additional hardware such as an external ADC, but may
+      require porting device libraries.  The timing can be improved by adjusting
+      Linux process priorities and disabling unneeded services.</p>
+    
+    <p>But a short startup time is the hardest requirement to overcome with the
+      Pi by itself.  So for example, a sophisticated project might ideally have
+      a failsafe mode in which the Arduino can still provide minimum behavior
+      while the Raspberry Pi is booting up or in case of program failure.</p>
 
     <h4>Steps and observations</h4>
-    <ol>
 
-      <li>Specific actions...</li>
-      <li>Specific observations...</li>
+    <ol>
+      <li>Using a laptop, program the OneInOneOutASCII Arduino sketch onto an
+	Arduino Uno.  (This is also possible from the Pi, but faster from a
+	laptop.)  This is available in the physcomp-examples/support/Arduino
+	folder.</li>
+
+      <li>Attach the Arduino to any of the Raspberry Pi USB ports.</li>
+
+      <li>Locate the <b>1.c.ii.1 Pure Data and Arduino</b> exercise material on
+	  the Raspberry Pi.  The course image for the Pi includes this at the
+	  following location:
+	  /opt/cmuphyscomp/physcomp-examples/1_energy-information-transduction/c_pd-starter/ii_phys-comp-pd/1.c.ii.1_pd-arduino/</li>
+
+      <li>As before, run the OneInOneOutAsciiTest.pd patch in pd.  This can be
+	done from the command line as <code>pd OneInOneOutAsciiTest.pd</code>.
+	Note that no special permissions are required; Pure Data will
+	communicate with the Arduino over USB and not access the Pi
+	hardware.</li>
+
+      <li>Click on the [/dev/ttyACM0] message near the top of the patch.  This
+	is the name given to the Arduino serial device under Linux.  (If it
+	doesn't work, click the [devices] message and examine the console
+	output.)</li>
+
+      <li>As before, examine the Time box for clock data from the Arduino, try
+	the LED toggle, examine the A0 input box with analog data.</li>
+
     </ol>
 
     <h4>Comments</h4>
+    
+    <p>A useful tool for debugging the Arduino connection from the Raspberry Pi
+      is the <code>minicom</code> text-mode terminal emulator which can be run
+      from the command line.  The minicom commands are prefixed with Control-A:
+      type <b>Control-A Z</b> to see a menu, or <b>Control-A Q</b> to quit.</p>
 
-    <p>Brief review comments.  Links to other information.</p>
-
+        
   
