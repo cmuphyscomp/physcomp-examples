@@ -1,0 +1,30 @@
+#N canvas 598 191 630 548 10;
+#X obj 12 12 cnv 15 600 80 empty empty 1.c.iv.4_Pd_and_Python 20 12
+0 14 -204800 -66577 0;
+#X text 75 34 A very simple demo of using the pdpython external to
+invoke a Python object from within Pd. This is a way to give Pd access
+to the much richer variety of data types and libraries in Python.;
+#X obj 45 288 pdpython/python pd_helper Helper;
+#X msg 45 200 lookup_host www.cmu.edu;
+#X obj 45 317 print result-from-Python;
+#X symbolatom 45 357 20 0 0 0 - - -, f 20;
+#X text 53 238 The required creation arguments are the module name
+(usually a Python file name) and a class name. The Pd object represents
+one instance of that class.;
+#X text 42 128 Message to send to the Python object. This will be translated
+into a call to the lookup_host() method when received by a pdpython/python
+object. The return value from that function (if any) will be emitted
+from the python object.;
+#X obj 47 484 pdpython/python pd_helper Helper;
+#X text 286 485 A different instance of the class.;
+#X msg 47 415 init_wiringPi \, enable_pwm_pin;
+#X floatatom 47 527 8 0 0 0 - - -, f 8;
+#X msg 60 451 pwm_fast_ramp;
+#X text 164 452 emit a fast ramp signal generated from Python;
+#X text 115 526 The function returns the elapsed time in seconds.;
+#X connect 2 0 4 0;
+#X connect 2 0 5 0;
+#X connect 3 0 2 0;
+#X connect 8 0 11 0;
+#X connect 10 0 8 0;
+#X connect 12 0 8 0;

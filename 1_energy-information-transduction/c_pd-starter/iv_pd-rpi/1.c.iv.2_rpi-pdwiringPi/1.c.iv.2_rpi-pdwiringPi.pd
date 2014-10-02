@@ -1,4 +1,4 @@
-#N canvas 664 213 674 720 10;
+#N canvas 741 125 674 720 10;
 #X obj 13 -172 cnv 15 600 120 empty empty 1.c.iv.2_RPi_PdWiringPi 20
 12 0 14 -204800 -66577 0;
 #X text 76 -145 Demonstrate basic hardware input and output on a Raspberry
@@ -34,6 +34,30 @@ set various brightness levels using a PWM signal.;
 #X text 24 133 Click the messages in sequence to configure a digital
 output and turn the light from the exercise circuit on and off.;
 #X text 357 224 Read back the output.;
+#X text 167 641 BCM 18 \, physical 12 \, wPi 1;
+#X msg 35 641 pinMode 18 output;
+#X obj 73 849 pdwiringPi/wiringPi;
+#X msg 82 817 digitalWrite 18 \$1;
+#X obj 82 667 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X text 98 667 Enable 'soft' PWM using digitalWrite();
+#X text 30 575 Click the output message to reconfigure the output as
+a normal digital output \, then enable the metro to turn the light
+from the exercise circuit on and off using timing from Pd.;
+#X obj 82 791 f 0;
+#X obj 112 791 == 0;
+#X text 149 791 toggle between 0 and 1;
+#X obj 82 764 metro 1;
+#X text 35 893 This tries to toggle the output as fast as possible
+\; if you observe it on an oscilloscope \, you'll notice it may be
+bursty since Pd is competing for CPU time and does not have exclusive
+control. Try reducing the metro rate until the waveform is consistent.
+;
+#X msg 141 703 1;
+#X msg 142 727 10;
+#X text 187 704 500 Hz;
+#X text 193 726 50 Hz;
+#X text 144 765 timing for each half-cycle;
 #X connect 2 0 21 0;
 #X connect 5 0 23 0;
 #X connect 13 0 22 0;
@@ -46,3 +70,12 @@ output and turn the light from the exercise circuit on and off.;
 #X connect 21 0 11 0;
 #X connect 22 0 25 0;
 #X connect 24 0 22 0;
+#X connect 29 0 30 0;
+#X connect 31 0 30 0;
+#X connect 32 0 38 0;
+#X connect 35 0 36 0;
+#X connect 35 0 31 0;
+#X connect 36 0 35 1;
+#X connect 38 0 35 0;
+#X connect 40 0 38 1;
+#X connect 41 0 38 1;
