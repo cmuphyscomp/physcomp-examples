@@ -30,6 +30,35 @@ def extract_html_elements( path ):
     return (body_string, title_string)
 
 ################################################################
+iframe_list = list()
+
+# Generate the text for an iframe-based post.  This is transitional until the
+# WordPress site can be automatically updated from the github sources.
+def gen_iframe_post( folder, depth, title, html_name, image_file_names, other_files ):
+
+    comment = "<!-- -------------------- %s  ------------------------------------- -->\n" % re.sub( "Exercise: ", "", title )
+
+    text_iframe = """<iframe id="assignment-html" onload="resizeIframe(this)" width="100%%" frameborder="0" src="http://cmuphyscomp.github.io/physcomp-examples/%s" width="960" height="800"></iframe>\n""" % (folder + '/' + html_name)
+
+    image_refs = list()
+    for img in image_file_names:
+        image_refs.append( """<img id="assignment-image" class="alignnone" src="http://cmuphyscomp.github.io/physcomp-examples/%s/%s" width="960" height="%%100" />\n""" % (folder, img ))
+    
+    other_refs = list()
+    for name in other_files:
+        other_refs.append("""      <li><a href="http://cmuphyscomp.github.io/physcomp-examples/%s/%s">%s</a></li>\n""" % ( folder, name, name ))
+
+    if len(other_refs) > 0:
+        other_parts = "<h4>Other Files</h4><ol>\n" + "\n".join(other_refs) + "</ol>\n"
+    else:
+        other_parts = ""
+
+    # now assemble into a string
+    record = comment + text_iframe + "\n".join(image_refs) + other_parts + "\n\n\n" 
+
+    return record
+
+################################################################
 # Keep track of all generated posts in order to emit a single description of the whole assignments tree.
 
 post_list = list()
@@ -213,6 +242,10 @@ def walk_unit_pages( base_input_path ):
                 parent = "/".join( path_parts[0:-1] )
                 add_post_to_list( relpath, depth, prefix+title, parent )
 
+                iframe_list.append (gen_iframe_post( folder=relpath, depth=depth, title = prefix+title, html_name = html_files[0], image_file_names = images, \
+                                          other_files = other_files ))
+
+
 ################################################################
 if __name__ == "__main__":
     parser = argparse.ArgumentParser( description = """Build a set of page fragments suitable for WordPress from a tree of html files.""")
@@ -235,3 +268,7 @@ if __name__ == "__main__":
     # walk_unit_pages( "../../1_energy-information-transduction/b_arduino-starter")
 
     write_post_list_file( "assignments.json" )
+
+    with open( "iframe_posts.html",  "w" ) as output:
+        for i in iframe_list:
+            output.write( i )
