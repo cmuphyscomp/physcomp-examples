@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <title>Exercise: Using Raspberry Pi from Python and Python from Pd</title>
+    <style type="text/css">span.eqn { white-space: nowrap; }</style>
+    <meta name="description" content="exercise notes">
+    <meta name="author" content="garthz">
+  </head>
+  <body>
+
+    <h4>Objective</h4>
+    
+    <p>Use Python to access hardware via wiringPi; use Python classes from within
+    Pd.</p>
+
+    <p>This exercise assumes you have the basic Raspberry Pi materials as
+      specified in 1.c.iv.1.</p>
+
+    <h4>Overview</h4>
+
+    <p>The strength of Pure Data is its intrinsic parallelism and ease of
+      incremental, interactive programming.  However, Python is a great language
+      for quick prototyping and is frequently taught as an introductory
+      text-based programming language.  The wiringpi2 module enables Python to
+      use the wiringPi library for direct hardware access on the Raspberry Pi.
+      </p>
+
+    <p>We are also providing the pdpython Pd external as a means of combining
+      the strength of Pd and Python.  It allows instances of Python classes to
+      be created as Pd objects.  Pd messages are mapped to function calls; with
+      some care, a system can be built which maintains the real-time character
+      of Pd.  One pragmatic application is that the Python wiringPi interface is
+      considerably more complete than the one offered by pdwiringPi.<p>
+
+    <h4>Steps and observations</h4>
+
+    <ol>
+
+      <li>Find the <code>pwm_soft_and_hard.py</code> script and examine the
+	text, e.g. using the <code>more</code> command.  It sets up the hardware
+	PWM output and then generates a second PWM signal in software.</li>
+
+      <li>Run the script using sudo: <code>sudo python pwm_soft_and_hard.py</code></li>
+      
+      <li>Using an oscilloscope, look at the hardware PWM signal on BCM
+	18/Physical 12 and the software PWM signal on BCM 23/Physical 16.  There
+	is usually a substantial difference in signal stability and
+	frequency.</li>
+
+      <li>Stop the Python script using Control-C.</li>
+
+      <li>Examine the contents of <code>pd_helper.py</code>.  This is a module
+      which can be loaded into Pd that contains a few miscellaneous test
+      functions.</li>
+
+      <li>Load the patch in Pd: <code>sudo pd 1.c.iv.4_rpi-pdpython.pd</code></li>
+
+      <li>Follow the text in the patch: it demonstrates how the Python functions
+	are called from Pd.</li>
+
+    </ol>
+
+    <h4>Comments</h4>
+    
+    <p>The actual pdpython code in this exercise is slightly contrived in the
+      interests of providing simplified examples.  A few more examples
+      highlighting different techniques can be found in the pdpython source at
+      <code>/opt/cmuphyscomp/src/pdpython/examples</code> or 
+      <a href="https://github.com/garthz/pdpython/tree/master/examples">online at github</a>.</p>
+
+    <p>A practical example from the course is the conductor patch for assignment
+      1.c.v, as it uses Python data structures to keep track of clients
+      connecting over the network.  This is a natural task for Python and
+      simpler than the equivalent in vanilla Pd.</p>
+
+  </body>
+</html>
