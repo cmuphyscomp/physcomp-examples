@@ -1,4 +1,4 @@
-#N canvas 572 92 645 600 10;
+#N canvas 344 22 645 600 10;
 #X obj 21 18 cnv 15 600 100 empty empty Conductor_Station 20 12 0 14
 -204800 -66577 0;
 #X text 87 43 Provide beat \, tempo \, and parametric settings across
@@ -59,7 +59,7 @@ the network to an array of semi-autonomous instruments.;
 0;
 #X text 36 136 Click to open performance controls -->;
 #X obj 271 137 controls;
-#N canvas 634 22 654 668 plumbing 1;
+#N canvas 629 22 654 668 plumbing 0;
 #X obj 49 449 mrpeach/packOSC;
 #X obj 47 74 r osc-controls;
 #X obj 47 131 spigot;
@@ -83,6 +83,14 @@ to all connected instruments via the channels.;
 vote 42;
 #X msg 75 641 channel-0 port connect 192.168.45.13 20000;
 #X text 50 574 Debugging messages for internal testing.;
+#X obj 433 129 python clients ClientTable;
+#X obj 433 73 loadbang;
+#X msg 433 101 this_host_ip;
+#X symbolatom 433 188 20 0 0 0 - - -;
+#X obj 433 243 s ip-display;
+#X msg 433 215 label \$1;
+#X obj 433 157 print IP-address;
+#X text 433 270 goes to canvas on main display;
 #X connect 0 0 10 0;
 #X connect 1 0 2 0;
 #X connect 2 0 3 0;
@@ -93,9 +101,18 @@ vote 42;
 #X connect 9 0 8 1;
 #X connect 16 0 15 0;
 #X connect 17 0 15 0;
+#X connect 19 0 22 0;
+#X connect 19 0 25 0;
+#X connect 20 0 21 0;
+#X connect 21 0 19 0;
+#X connect 22 0 24 0;
+#X connect 24 0 23 0;
 #X restore 550 138 pd plumbing;
 #X obj 25 235 channel 1;
 #X obj 25 299 channel 2;
 #X obj 25 363 channel 3;
 #X obj 25 427 channel 4;
 #X obj 25 491 channel 5;
+#X obj 414 82 cnv 15 200 30 empty ip-display 128.237.226.237 20 12
+0 14 -204786 -66577 0;
+#X text 444 64 Conductor IP Address;

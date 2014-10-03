@@ -12,6 +12,7 @@
 
 #================================================================
 import pdgui
+import socket
 
 # utility function to return the channel name token for a given channel number
 def token( index ):
@@ -77,6 +78,11 @@ class ClientTable:
     # utility function to pack a four-part IPv4 address back into a symbol
     def pack_address( self, i1, i2, i3, i4 ):
         return "%d.%d.%d.%d" % ( i1, i2, i3, i4 )
+
+    # utility function to return the IP address of this machine
+    def this_host_ip( self ):
+        # this won't work reliably with more than one network interface
+        return socket.gethostbyname( socket.gethostname () )
 
     # ----------------------------------------------------------------
     # Messages received from the receiver object.  Each of these may return a
