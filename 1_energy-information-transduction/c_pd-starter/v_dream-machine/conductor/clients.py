@@ -21,13 +21,16 @@ def token( index ):
 # UDP port number for the instruments; this is hard-coded in instrument.pd
 INSTRUMENT_PORT = 20000
 
+# number of channels shown in display; this is hard-coded in conductor.pd
+CHANNELS = 11
+
 #================================================================
 class ClientTable:
 
     # static class variables to manage the client connection state
 
     # table of channels available in the display
-    channels = [ { 'name': None, 'address': None } for n in range(6) ]
+    channels = [ { 'name': None, 'address': None } for n in range(CHANNELS) ]
 
     # mapping from address to channel number
     addresses = dict()  

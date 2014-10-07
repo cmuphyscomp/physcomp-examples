@@ -1,10 +1,10 @@
-#N canvas 344 22 645 600 10;
+#N canvas 297 22 738 697 10;
 #X obj 21 18 cnv 15 600 100 empty empty Conductor_Station 20 12 0 14
 -204800 -66577 0;
 #X text 87 43 Provide beat \, tempo \, and parametric settings across
 the network to an array of semi-autonomous instruments.;
 #X text 87 83 This patch uses libraries found in pd-extended.;
-#N canvas 608 22 751 678 receiver 0;
+#N canvas 608 22 751 678 receiver 1;
 #X obj 66 147 mrpeach/unpackOSC;
 #X obj 36 186 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
@@ -31,6 +31,9 @@ the network to an array of semi-autonomous instruments.;
 #X msg 211 280 pack_address \$1 \$2 \$3 \$4;
 #X msg 71 427 hello \$1;
 #X obj 22 419 symbol;
+#X msg 24 494;
+#X obj 39 573 print hello-msg;
+#X obj 91 619 print req;
 #X connect 0 0 7 0;
 #X connect 0 0 1 0;
 #X connect 2 0 0 0;
@@ -43,8 +46,10 @@ the network to an array of semi-autonomous instruments.;
 #X connect 9 0 11 0;
 #X connect 10 0 9 0;
 #X connect 11 0 14 0;
+#X connect 11 0 25 0;
 #X connect 12 0 9 1;
 #X connect 13 0 22 0;
+#X connect 13 0 24 0;
 #X connect 13 1 10 0;
 #X connect 13 2 17 0;
 #X connect 14 0 19 0;
@@ -52,6 +57,7 @@ the network to an array of semi-autonomous instruments.;
 #X connect 18 0 14 0;
 #X connect 20 0 12 0;
 #X connect 21 0 9 0;
+#X connect 21 0 24 0;
 #X connect 22 0 21 0;
 #X restore 475 139 pd receiver;
 #X obj 25 171 channel 0;
@@ -113,6 +119,11 @@ vote 42;
 #X obj 25 363 channel 3;
 #X obj 25 427 channel 4;
 #X obj 25 491 channel 5;
-#X obj 414 82 cnv 15 200 30 empty ip-display 128.237.226.237 20 12
-0 14 -204786 -66577 0;
+#X obj 25 555 channel 6;
+#X obj 25 619 channel 7;
+#X obj 25 683 channel 8;
+#X obj 25 747 channel 9;
+#X obj 25 811 channel 10;
+#X obj 414 82 cnv 15 200 30 empty ip-display 128.237.251.32 20 12 0
+14 -204786 -66577 0;
 #X text 444 64 Conductor IP Address;
