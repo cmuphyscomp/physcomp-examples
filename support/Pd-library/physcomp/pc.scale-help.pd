@@ -1,0 +1,32 @@
+#N canvas 68 63 598 482 10;
+#X obj 79 88 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X floatatom 76 378 5 0 0 0 - - -, f 5;
+#X obj 76 279 pc.scale 0 127 12 45;
+#X floatatom 109 126 5 0 0 0 - - -, f 5;
+#X obj 79 329 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X text 215 279 this abstraction scales floating points linearly;
+#X text 225 320 arg 3 - arg 4: output min/max;
+#X text 225 302 arg 1 - arg 2: input min/max;
+#X floatatom 105 229 5 0 0 0 - - -, f 5;
+#X floatatom 143 229 5 0 0 0 - - -, f 5;
+#X floatatom 183 229 5 0 0 0 - - -, f 5;
+#X floatatom 221 229 5 0 0 0 - - -, f 5;
+#X obj 270 75 loadbang;
+#X msg 271 126 0 127 12 45;
+#X obj 271 160 unpack 1 1 1 1;
+#X connect 0 0 2 0;
+#X connect 0 0 3 0;
+#X connect 2 0 4 0;
+#X connect 4 0 1 0;
+#X connect 8 0 2 1;
+#X connect 9 0 2 2;
+#X connect 10 0 2 3;
+#X connect 11 0 2 4;
+#X connect 12 0 13 0;
+#X connect 13 0 14 0;
+#X connect 14 0 8 0;
+#X connect 14 1 9 0;
+#X connect 14 2 10 0;
+#X connect 14 3 11 0;

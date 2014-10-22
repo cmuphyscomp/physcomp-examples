@@ -1,0 +1,52 @@
+#N canvas 68 63 746 627 10;
+#X obj 74 218 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 5400 1;
+#X floatatom 98 418 5 0 0 0 - - -, f 5;
+#X obj 32 31 cnv 15 600 100 empty empty 2.a.ii.1_one-to-one-mapping
+20 12 0 14 -204800 -66577 0;
+#X obj 50 141 cnv 15 400 60 empty empty empty 20 12 0 14 -262130 -66577
+0;
+#X obj 71 486 pc.scale -1 1 0 127;
+#X floatatom 91 315 5 0 0 0 - - -, f 5;
+#X obj 73 527 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 4445 1;
+#X text 69 59 Mapping one input to many outputs;
+#X text 65 147 We use several different tables to map the same input
+value to several different output values;
+#X obj 519 145 table table1 127;
+#X obj 71 352 tabread table1;
+#X obj 518 168 table table2 127;
+#X obj 518 191 table table3 127;
+#X obj 518 213 table table4 127;
+#X floatatom 253 417 5 0 0 0 - - -, f 5;
+#X obj 226 485 pc.scale -1 1 0 127;
+#X obj 228 526 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 6223 1;
+#X floatatom 408 417 5 0 0 0 - - -, f 5;
+#X obj 381 485 pc.scale -1 1 0 127;
+#X obj 383 526 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 8255 1;
+#X floatatom 579 417 5 0 0 0 - - -, f 5;
+#X obj 552 485 pc.scale -1 1 0 127;
+#X obj 554 526 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 6392 1;
+#X obj 226 351 tabread table2;
+#X obj 381 351 tabread table3;
+#X obj 552 351 tabread table4;
+#X connect 0 0 5 0;
+#X connect 0 0 10 0;
+#X connect 0 0 23 0;
+#X connect 0 0 24 0;
+#X connect 0 0 25 0;
+#X connect 4 0 6 0;
+#X connect 10 0 1 0;
+#X connect 10 0 4 0;
+#X connect 15 0 16 0;
+#X connect 18 0 19 0;
+#X connect 21 0 22 0;
+#X connect 23 0 14 0;
+#X connect 23 0 15 0;
+#X connect 24 0 17 0;
+#X connect 24 0 18 0;
+#X connect 25 0 20 0;
+#X connect 25 0 21 0;

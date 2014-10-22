@@ -1,0 +1,69 @@
+#N canvas 68 63 1285 662 10;
+#X obj 79 226 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X floatatom 76 516 5 0 0 0 - - -, f 5;
+#X obj 76 417 pc.scale 0 127 12 45;
+#X floatatom 109 264 5 0 0 0 - - -, f 5;
+#X obj 79 467 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X text 215 417 this abstraction scales floating points linearly;
+#X text 225 458 arg 3 - arg 4: output min/max;
+#X text 225 440 arg 1 - arg 2: input min/max;
+#X floatatom 105 367 5 0 0 0 - - -, f 5;
+#X floatatom 143 367 5 0 0 0 - - -, f 5;
+#X floatatom 183 367 5 0 0 0 - - -, f 5;
+#X floatatom 221 367 5 0 0 0 - - -, f 5;
+#X obj 270 213 loadbang;
+#X msg 271 264 0 127 12 45;
+#X obj 271 298 unpack 1 1 1 1;
+#X obj 558 222 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 12700 1;
+#X obj 555 356 tabread mytable;
+#X floatatom 582 422 5 0 0 0 - - -, f 5;
+#X obj 700 272 table mytable 127;
+#X obj 32 31 cnv 15 600 100 empty empty 2.a.ii.1_one-to-one-mapping
+20 12 0 14 -204800 -66577 0;
+#X obj 32 144 cnv 15 400 60 empty empty empty 20 12 0 14 -262130 -66577
+0;
+#X text 69 59 Doing arithmetic mappings in PD;
+#X text 69 96;
+#X text 47 150 Move the top slider and see the results in the bottom
+one. This examples uses an abstraction called "pd.scale" to do linear
+mapping from an input range \, to a desired output range;
+#X obj 534 145 cnv 15 400 60 empty empty empty 20 12 0 14 -262130 -66577
+0;
+#X text 549 151 An alternative is to use the "table" object as a look-up
+table \, and use the values stored in the table as a transfer function
+;
+#X obj 555 490 pc.scale -1 1 0 127;
+#X floatatom 575 319 5 0 0 0 - - -, f 5;
+#X obj 557 531 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 12700 1;
+#X text 818 272 < click on this object to see the function;
+#X text 621 444 table's output is from -1 to 1;
+#X text 654 355 < use "tabread" to read values from a table;
+#X text 817 293 arg 1: table name;
+#X text 818 309 arg 2: table size;
+#X text 612 317 < interpretted as table index;
+#X text 618 419 < table value;
+#X text 678 491 change range back to 0 to 127 to visualize on slider
+;
+#X connect 0 0 2 0;
+#X connect 0 0 3 0;
+#X connect 2 0 4 0;
+#X connect 4 0 1 0;
+#X connect 8 0 2 1;
+#X connect 9 0 2 2;
+#X connect 10 0 2 3;
+#X connect 11 0 2 4;
+#X connect 12 0 13 0;
+#X connect 13 0 14 0;
+#X connect 14 0 8 0;
+#X connect 14 1 9 0;
+#X connect 14 2 10 0;
+#X connect 14 3 11 0;
+#X connect 15 0 16 0;
+#X connect 15 0 27 0;
+#X connect 16 0 17 0;
+#X connect 16 0 26 0;
+#X connect 26 0 28 0;
