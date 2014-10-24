@@ -1,0 +1,94 @@
+#N canvas 3 22 956 993 10;
+#X obj 32 31 cnv 15 600 100 empty empty 2.a.ii.3_many-to-one-mapping
+20 12 0 14 -204800 -66577 0;
+#X obj 232 141 cnv 15 400 120 empty empty empty 20 12 0 14 -262130
+-66577 0;
+#X text 69 59 Mapping many inputs to many outputs;
+#X obj 38 151 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 61 151 dumpOSC 10000;
+#X obj 62 316 route /gyro /accelerometer;
+#X obj 62 367 unpack 1 1 1 1 1 1;
+#X text 76 336 from the "Control" app;
+#X obj 314 316 route /accxyz;
+#X text 334 338 from the "TouchOSC" app;
+#X obj 314 365 unpack 1 1 1 1 1 1;
+#X floatatom 64 416 5 0 0 0 - - -, f 5;
+#X floatatom 102 416 5 0 0 0 - - -, f 5;
+#X floatatom 140 416 5 0 0 0 - - -, f 5;
+#X floatatom 178 416 5 0 0 0 - - -, f 5;
+#X floatatom 218 416 5 0 0 0 - - -, f 5;
+#X floatatom 256 416 5 0 0 0 - - -, f 5;
+#X text 245 216 this is a 3rd party exteranl from the "oscx" package
+;
+#X text 177 435 pitch;
+#X text 218 437 roll;
+#X text 260 436 yaw;
+#X text 67 435 x;
+#X text 110 436 y;
+#X text 148 436 z;
+#X text 247 147 We use the example of a sensor data from a mobile phone
+\, sent over a wireless network (UDP protocal) \, using an app for
+iOS or Android (e.g. "TouchOSC" \, or "Control") we receive the UDP
+data with the 'dumpOSC' external.;
+#X obj 154 829 osc~;
+#X floatatom 217 604 5 0 0 0 - - -, f 5;
+#X floatatom 83 603 5 0 0 0 - - -, f 5;
+#X obj 83 569 pc.scale 0 127 0.5 0;
+#X obj 83 833 line~;
+#X msg 83 631 \$1 20;
+#X obj 154 881 *~;
+#X obj 147 946 dac~;
+#X obj 218 637 / 12;
+#X obj 262 636 % 12;
+#X floatatom 262 669 5 0 0 0 - - -, f 5;
+#X floatatom 218 695 5 0 0 0 - - -, f 5;
+#X obj 218 666 int;
+#N canvas 0 22 450 278 (subpatch) 0;
+#X array scales 12 float 3;
+#A 0 0 0 2 2 4 4 7 7 7 9 9 0;
+#X coords 0 12 11 0 200 140 1 0 0;
+#X restore 366 652 graph;
+#X obj 262 695 tabread scales;
+#X obj 247 764 +;
+#X obj 218 722 * 12;
+#X obj 247 793 mtof;
+#X obj 217 570 pc.scale 0 127 40 100;
+#X text 308 799 use this table to limit the number of notes to a "pentatonic
+scale" (http://en.wikipedia.org/wiki/Pentatonic_scale);
+#X text 227 505 map "roll" to frequency;
+#X text 50 509 map "pitch" to amplitude;
+#X text 7 776 use "line~" to change amplitudes smoothly and avoid clicks
+;
+#X connect 4 0 3 0;
+#X connect 4 0 5 0;
+#X connect 4 0 8 0;
+#X connect 5 0 6 0;
+#X connect 6 0 11 0;
+#X connect 6 1 12 0;
+#X connect 6 2 13 0;
+#X connect 6 3 14 0;
+#X connect 6 4 15 0;
+#X connect 6 5 16 0;
+#X connect 8 0 10 0;
+#X connect 14 0 28 0;
+#X connect 15 0 43 0;
+#X connect 25 0 31 0;
+#X connect 26 0 34 0;
+#X connect 26 0 33 0;
+#X connect 27 0 30 0;
+#X connect 28 0 27 0;
+#X connect 29 0 31 1;
+#X connect 30 0 29 0;
+#X connect 31 0 32 0;
+#X connect 31 0 32 1;
+#X connect 33 0 37 0;
+#X connect 34 0 35 0;
+#X connect 35 0 39 0;
+#X connect 36 0 41 0;
+#X connect 37 0 36 0;
+#X connect 39 0 40 1;
+#X connect 40 0 42 0;
+#X connect 41 0 40 0;
+#X connect 42 0 25 0;
+#X connect 43 0 26 0;
