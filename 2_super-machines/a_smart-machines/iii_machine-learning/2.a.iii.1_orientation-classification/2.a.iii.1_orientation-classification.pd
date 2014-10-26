@@ -1,5 +1,5 @@
 #N canvas 3 22 901 756 10;
-#X obj -166 -214 cnv 15 600 100 empty empty 2.a.iii.1_gesture-recognition
+#X obj -166 -214 cnv 15 600 100 empty empty 2.a.iii.1_orientation-classification
 20 12 0 14 -204800 -66577 0;
 #X obj 34 -104 cnv 15 400 120 empty empty empty 20 12 0 14 -262130
 -66577 0;
@@ -24,7 +24,7 @@ of a mobile phone based on sensor data from the phone;
 #N canvas 897 73 838 738 training-and-mapping 0;
 #X obj 131 643 outlet;
 #X floatatom 93 410 5 0 0 0 - - -, f 5;
-#X msg 424 268 64.9948 53.1278 38.6673;
+#X msg 424 268 63.6168 64.1098 36.0461;
 #X msg 284 645 add 5 63.6655 59.3139 90.4449;
 #X obj 188 338 t b float;
 #X text 396 294 accelerometer data from mobile phone;
@@ -111,7 +111,7 @@ of a mobile phone based on sensor data from the phone;
 #X text -119 242 4 train;
 #X text 309 198 class;
 #X obj 185 198 hradio 15 1 0 8 empty empty empty 0 -8 0 10 -262144
--1 -1 4;
+-1 -1 0;
 #X text 192 175 3 give examples;
 #X msg 3 264 map;
 #X msg 82 191 learn;

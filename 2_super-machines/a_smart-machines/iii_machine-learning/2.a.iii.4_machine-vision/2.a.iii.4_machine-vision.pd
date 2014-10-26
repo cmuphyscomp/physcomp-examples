@@ -36,17 +36,17 @@
 #X obj -152 122 routeOSC /pose /gesture /found;
 #X text 175 54 2012 Dan Wilcox danomatika.com for the IACD class at
 the CMU School of Art;
-#X floatatom 176 558 5 0 0 0 - - -, f 5;
-#X floatatom 357 559 5 0 0 0 - - -, f 5;
-#X obj 176 586 osc~;
-#X obj 176 616 *~;
-#X obj 176 643 dac~;
-#X text 170 405 mouth height controls oscilator pitch \, raise left
+#X floatatom 306 564 5 0 0 0 - - -, f 5;
+#X floatatom 487 565 5 0 0 0 - - -, f 5;
+#X obj 306 592 osc~;
+#X obj 306 622 *~;
+#X obj 306 649 dac~;
+#X text 240 395 mouth height controls oscilator pitch \, raise left
 eyebrow for volume boost;
 #X text 176 96 based on the example max by Craig Fahner http://cmuems.com/2011/a/unit-60-pd/
 ;
-#X obj 176 529 pc.scale 0 10 150 800;
-#X obj 357 531 pc.scale 6 9 0 0.6;
+#X obj 306 535 pc.scale 0 10 150 800;
+#X obj 487 537 pc.scale 6 9 0 0.6;
 #X connect 4 0 5 0;
 #X connect 5 0 30 0;
 #X connect 6 0 8 0;
