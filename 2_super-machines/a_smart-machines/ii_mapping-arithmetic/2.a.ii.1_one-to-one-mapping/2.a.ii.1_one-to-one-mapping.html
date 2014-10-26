@@ -12,22 +12,26 @@
   </head>
   <body>
 
-    <h3>Exercise: Title</h3>
+    <h4>Objective: </h4>
 
-    <p>Objective: ...</p>
-
-    <p>Brief introductory comments.</p>
-
+    <p>Learn how to use linear scaling to map data from sensors to computational control (of actuation, of sound synthesis, etc.)</p>
+    <p>We can use linear scaling to change the range of a data stream (i.e. the smallest value to the largest value), to a new desired range (e.g. between 30 degrees and 60 degrees of rotation of a servo). In mathematical terms, if <em>x</em> is within the range  [<em>A,B</em>], and we want to linearly scale it to the range [<em>C,D</em>], we follow:</p>
+    <p>[latex] f(x)=C\left(1-\frac{x-A}{B-A}\right)+D\left(\frac{x-A}{B-A}\right) = C + (D-C)\dfrac{x-A}{B-A}[/latex]</p>
+    <p>The function is commonly used in the arduino environment (&quot;map&quot;), in PureData (look for the abstraction <a href="https://github.com/cmuphyscomp/physcomp-examples/blob/master/support/Pd-library/physcomp/pc.scale.pd">&quot;pc.scale&quot;</a> and its associated <a href="https://github.com/cmuphyscomp/physcomp-examples/blob/master/support/Pd-library/physcomp/pc.scale-help.pd">help file</a> in our repository).</p>
     <h4>Steps and observations</h4>
     <ol>
 
-      <li>Specific actions...</li>
-      <li>Specific observations...</li>
+      <li>This example uses the &quot;pc.scale&quot; abstraction to perform linear scaling. Move the slider marked &quot;input&quot; and see the resultant range change in the &quot;output&quot; slider; change the &quot;output min&quot; and &quot;output max&quot; values to see the result in range changes. The four arguments to the &quot;pc.scale&quot; object are [<em>input range min, input range max, output range min, output range max</em>]</li>
+      <li>This example uses a &quot;table&quot; object to do map a stream of numbers from an input range, to a different output range. The &quot;table&quot; object functions as a look-up-table where the x-axis (or index) is the input value and the y-axis (or value) is the output range. Draw new values into the table and move the input slider to see changes in the mapping.</li>
+      <li>This example uses an &quot;array&quot; object for the same purpose. The object offers a visual interface in the patch, and you can draw values direclty in the patch. The array's Properties allow you to set the range of values and the number of elements. Since the input slide has a size of 128, we select the same for the array. Draw new values into the array and move the input slider, to see changes in the mapping ranges.</li>
     </ol>
 
-    <h4>Comments</h4>
+    <h4>Comments and Challenges</h4>
 
-    <p>Brief review comments.  Links to other information.</p>
+    <ul>
+      <li>Use the above techniques to map values from a simple 1-dimensional sensor (like a light sensor) to the movements of a servo</li>
+      <li> use tables or arrays to compose a particular <em>gesture</em> for the movement of the servo, using data in the array/table</li>
+    </ul>
 
   </body>
 </html>
