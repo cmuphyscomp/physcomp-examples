@@ -1,94 +1,153 @@
-#N canvas 3 22 956 993 10;
-#X obj 32 31 cnv 15 600 100 empty empty 2.a.ii.3_many-to-one-mapping
+#N canvas 0 22 1254 955 10;
+#X obj -23 29 cnv 15 600 100 empty empty 2.a.ii.3_many-to-one-mapping
 20 12 0 14 -204800 -66577 0;
-#X obj 232 141 cnv 15 400 120 empty empty empty 20 12 0 14 -262130
+#X obj 273 141 cnv 15 400 120 empty empty empty 20 12 0 14 -262130
 -66577 0;
-#X text 69 59 Mapping many inputs to many outputs;
-#X obj 38 151 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
--1;
-#X obj 61 151 dumpOSC 10000;
-#X obj 62 316 route /gyro /accelerometer;
-#X obj 62 367 unpack 1 1 1 1 1 1;
-#X text 76 336 from the "Control" app;
-#X obj 314 316 route /accxyz;
-#X text 334 338 from the "TouchOSC" app;
-#X obj 314 365 unpack 1 1 1 1 1 1;
-#X floatatom 64 416 5 0 0 0 - - -, f 5;
-#X floatatom 102 416 5 0 0 0 - - -, f 5;
-#X floatatom 140 416 5 0 0 0 - - -, f 5;
-#X floatatom 178 416 5 0 0 0 - - -, f 5;
-#X floatatom 218 416 5 0 0 0 - - -, f 5;
-#X floatatom 256 416 5 0 0 0 - - -, f 5;
-#X text 245 216 this is a 3rd party exteranl from the "oscx" package
-;
-#X text 177 435 pitch;
-#X text 218 437 roll;
-#X text 260 436 yaw;
-#X text 67 435 x;
-#X text 110 436 y;
-#X text 148 436 z;
-#X text 247 147 We use the example of a sensor data from a mobile phone
-\, sent over a wireless network (UDP protocal) \, using an app for
-iOS or Android (e.g. "TouchOSC" \, or "Control") we receive the UDP
-data with the 'dumpOSC' external.;
-#X obj 154 829 osc~;
-#X floatatom 217 604 5 0 0 0 - - -, f 5;
-#X floatatom 83 603 5 0 0 0 - - -, f 5;
-#X obj 83 569 pc.scale 0 127 0.5 0;
-#X obj 83 833 line~;
-#X msg 83 631 \$1 20;
-#X obj 154 881 *~;
-#X obj 147 946 dac~;
-#X obj 218 637 / 12;
-#X obj 262 636 % 12;
-#X floatatom 262 669 5 0 0 0 - - -, f 5;
-#X floatatom 218 695 5 0 0 0 - - -, f 5;
-#X obj 218 666 int;
+#X text 14 57 Mapping many inputs to many outputs;
+#X obj -21 153 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 2 153 dumpOSC 10000;
+#X floatatom 105 513 5 0 0 0 - - -, f 5;
+#X floatatom 143 513 5 0 0 0 - - -, f 5;
+#X floatatom 181 513 5 0 0 0 - - -, f 5;
+#X floatatom 219 513 5 0 0 0 - - -, f 5;
+#X floatatom 259 513 5 0 0 0 - - -, f 5;
+#X floatatom 297 513 5 0 0 0 - - -, f 5;
+#X text 218 532 pitch;
+#X text 259 534 roll;
+#X text 301 533 yaw;
+#X text 108 532 x;
+#X text 151 533 y;
+#X text 189 533 z;
+#X obj 195 829 osc~;
+#X floatatom 258 604 5 0 0 0 - - -, f 5;
+#X floatatom 124 603 5 0 0 0 - - -, f 5;
+#X obj 124 569 pc.scale 0 127 0.5 0;
+#X obj 124 833 line~;
+#X msg 124 631 \$1 20;
+#X obj 195 881 *~;
+#X obj 188 946 dac~;
+#X obj 259 637 / 12;
+#X obj 303 636 % 12;
+#X floatatom 303 669 5 0 0 0 - - -, f 5;
+#X floatatom 259 695 5 0 0 0 - - -, f 5;
+#X obj 259 666 int;
 #N canvas 0 22 450 278 (subpatch) 0;
 #X array scales 12 float 3;
 #A 0 0 0 2 2 4 4 7 7 7 9 9 0;
 #X coords 0 12 11 0 200 140 1 0 0;
-#X restore 366 652 graph;
-#X obj 262 695 tabread scales;
-#X obj 247 764 +;
-#X obj 218 722 * 12;
-#X obj 247 793 mtof;
-#X obj 217 570 pc.scale 0 127 40 100;
-#X text 308 799 use this table to limit the number of notes to a "pentatonic
+#X restore 496 629 graph;
+#X obj 303 695 tabread scales;
+#X obj 288 764 +;
+#X obj 259 722 * 12;
+#X obj 288 793 mtof;
+#X obj 258 570 pc.scale 0 127 40 100;
+#X text 438 776 use this table to limit the number of notes to a "pentatonic
 scale" (http://en.wikipedia.org/wiki/Pentatonic_scale);
-#X text 227 505 map "roll" to frequency;
-#X text 50 509 map "pitch" to amplitude;
-#X text 7 776 use "line~" to change amplitudes smoothly and avoid clicks
-;
+#X text 395 571 map "roll" to frequency;
+#X text -30 571 map "pitch" to amplitude;
+#X floatatom 354 510 5 0 0 0 - - -, f 5;
+#X floatatom 392 510 5 0 0 0 - - -, f 5;
+#X floatatom 430 510 5 0 0 0 - - -, f 5;
+#X obj 352 461 unpack 1 1 1;
+#X floatatom 483 512 5 0 0 0 - - -, f 5;
+#X floatatom 521 512 5 0 0 0 - - -, f 5;
+#X floatatom 559 512 5 0 0 0 - - -, f 5;
+#X text 486 531 x;
+#X text 529 532 y;
+#X text 567 532 z;
+#X obj 481 463 unpack 1 1 1;
+#X text 349 532 pitch;
+#X text 395 532 roll;
+#X text 438 532 yaw;
+#X obj 103 464 unpack 1 1 1;
+#X obj 202 464 unpack 1 1 1;
+#X obj -6 392 print;
+#X obj 832 410 OSCroute /orientation /accelerometer /light /proximiti
+/gps;
+#X obj 591 412 OSCroute /accxyz;
+#X obj 352 415 OSCroute /ori /acc /touch;
+#X obj 103 413 OSCroute /accelerometer /gyro;
+#X obj 102 352 spigot;
+#X obj 135 328 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 349 363 spigot;
+#X obj 382 339 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 588 367 spigot;
+#X obj 621 343 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 831 367 spigot;
+#X obj 864 343 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj -5 358 spigot;
+#X obj 28 334 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X text -34 416 See what is coming in;
+#X text 601 441 etc....;
+#X text 840 449 etc....;
+#X text 288 147 For working with live streams of gesture data \, we'll
+use mobile phones (loaded with many sensors) and wireless transmission
+(with iOS or Android Apps that use the OpenSoundControl--OSC for short--to
+send numbers from the phone to your computer.;
+#X text 286 221 this patch requires 3rd party exteranls from the "oscx"
+package (the "dumpOSC" and "OSCroute" objects);
+#X text 399 339 andOSC App (Android);
+#X text 155 326 "Control" app (iOS/Andrpod_;
+#X text 637 344 "TouchOSC" app (iOS/Android);
+#X text 881 343 "OSChook" app (Andoird);
+#X text -23 832 use "line~" to change amplitudes smoothly and avoid
+clicks;
 #X connect 4 0 3 0;
-#X connect 4 0 5 0;
-#X connect 4 0 8 0;
-#X connect 5 0 6 0;
-#X connect 6 0 11 0;
-#X connect 6 1 12 0;
-#X connect 6 2 13 0;
-#X connect 6 3 14 0;
-#X connect 6 4 15 0;
-#X connect 6 5 16 0;
-#X connect 8 0 10 0;
-#X connect 14 0 28 0;
-#X connect 15 0 43 0;
-#X connect 25 0 31 0;
-#X connect 26 0 34 0;
-#X connect 26 0 33 0;
-#X connect 27 0 30 0;
-#X connect 28 0 27 0;
-#X connect 29 0 31 1;
-#X connect 30 0 29 0;
-#X connect 31 0 32 0;
+#X connect 4 0 60 0;
+#X connect 4 0 62 0;
+#X connect 4 0 64 0;
+#X connect 4 0 66 0;
+#X connect 4 0 68 0;
+#X connect 8 0 20 0;
+#X connect 9 0 35 0;
+#X connect 17 0 23 0;
+#X connect 18 0 26 0;
+#X connect 18 0 25 0;
+#X connect 19 0 22 0;
+#X connect 20 0 19 0;
+#X connect 21 0 23 1;
+#X connect 22 0 21 0;
+#X connect 23 0 24 0;
+#X connect 23 0 24 1;
+#X connect 25 0 29 0;
+#X connect 26 0 27 0;
+#X connect 27 0 31 0;
+#X connect 28 0 33 0;
+#X connect 29 0 28 0;
 #X connect 31 0 32 1;
-#X connect 33 0 37 0;
-#X connect 34 0 35 0;
-#X connect 35 0 39 0;
-#X connect 36 0 41 0;
-#X connect 37 0 36 0;
-#X connect 39 0 40 1;
-#X connect 40 0 42 0;
-#X connect 41 0 40 0;
-#X connect 42 0 25 0;
-#X connect 43 0 26 0;
+#X connect 32 0 34 0;
+#X connect 33 0 32 0;
+#X connect 34 0 17 0;
+#X connect 35 0 18 0;
+#X connect 42 0 39 0;
+#X connect 42 1 40 0;
+#X connect 42 2 41 0;
+#X connect 49 0 43 0;
+#X connect 49 1 44 0;
+#X connect 49 2 45 0;
+#X connect 53 0 5 0;
+#X connect 53 1 6 0;
+#X connect 53 2 7 0;
+#X connect 54 0 8 0;
+#X connect 54 1 9 0;
+#X connect 54 2 10 0;
+#X connect 58 0 42 0;
+#X connect 58 1 49 0;
+#X connect 59 0 53 0;
+#X connect 59 1 54 0;
+#X connect 60 0 59 0;
+#X connect 61 0 60 1;
+#X connect 62 0 58 0;
+#X connect 63 0 62 1;
+#X connect 64 0 57 0;
+#X connect 65 0 64 1;
+#X connect 66 0 56 0;
+#X connect 67 0 66 1;
+#X connect 68 0 55 0;
+#X connect 69 0 68 1;
