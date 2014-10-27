@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <title>Unit 1A: Basic Circuits</title>
+    <style type="text/css">
+      body { margin: 36pt; max-width: 50em; }
+      span.eqn { white-space: nowrap; }
+    </style>
+    <meta name="description" content="Unit 1A Notes">
+    <meta name="author" content="garthz">
+  </head>
+  <body>
+
+    <h4>Objective</h4>
+
+    <p>Map multi-dimensional data from a mobile phone to parameters for audio synthesis using PureData</p>
+    <h4>Steps and observations</h4>
+    <ol>
+
+      <li>Set up a mobile phone to send accelerometer data to a computer using UDP over a wireless network. The easiest way is to download one of many free (&quot;Control&quot; for iOS or Android, &quot;andOSC&quot; or &quot;OSChook&quot; for Android, etc.); join CMU-SECURE wireless with your computer and your mobile phone; <a href="https://www.google.com/webhp?sourceid=chrome-instant&ion=1&espv=2&ie=UTF-8#q=what's my ip">find the IP address of your computer</a> and set it as the &quot;destination&quot; or &quot;host&quot; in the mobile App; set the destionation &quot;port&quot; to 10000; activate a user interface with accelerometers</li>
+      <li>Learn how to receive, unpack and route <a href="http://opensoundcontrol.org/introduction-osc">OpenSoundControl</a> messages in PureData with the &quot;udpreceive&quot;, &quot;unpackOSC&quot; and &quot;routeOSC&quot; objects. &quot;Open Sound Control (OSC) is a protocol for communication among computers, sound synthesizers, and other multimedia devices that is optimized for modern networking technology. &quot;</li>
+      <li>Take apart multi-dimensional sensor data and map different elements to different parameters of audio synthesis.</li>
+    </ol>
+
+    <h4>Comments and Challenges</h4>
+
+    <ul>
+      <li>Use this scheme to get access to every sensor on your mobile phone, within PureData</li>
+      <li>Use PureData to communicate bewteen two cellphones, running two Apps that can send and receive OSC</li>
+    </ul>
+  </body>
+</html>

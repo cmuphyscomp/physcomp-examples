@@ -1,0 +1,110 @@
+#N canvas 20 48 671 755 10;
+#X obj 79 258 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X floatatom 76 516 5 0 0 0 - - -, f 5;
+#X obj 76 417 pc.scale 0 127 12 45;
+#X floatatom 109 296 5 0 0 0 - - -, f 5;
+#X obj 79 467 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X text 215 417 this abstraction scales floating points linearly;
+#X text 225 458 arg 3 - arg 4: output min/max;
+#X text 225 440 arg 1 - arg 2: input min/max;
+#X floatatom 155 336 5 0 0 0 input_min - -, f 5;
+#X floatatom 184 367 5 0 0 0 input_max - -, f 5;
+#X floatatom 282 336 5 0 0 1 output_min - -, f 5;
+#X floatatom 305 368 5 0 0 1 output_max - -, f 5;
+#X obj 271 230 loadbang;
+#X msg 271 264 0 127 12 45;
+#X obj 271 298 unpack 1 1 1 1;
+#X obj 40 668 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X obj 37 764 tabread mytable;
+#X floatatom 64 830 5 0 0 0 - - -, f 5;
+#X obj 183 669 table mytable 127;
+#X obj 32 31 cnv 15 600 100 empty empty 2.a.ii.1_one-to-one-mapping
+20 12 0 14 -204800 -66577 0;
+#X obj 32 144 cnv 15 400 60 empty empty empty 20 12 0 14 -262130 -66577
+0;
+#X obj 33 553 cnv 15 400 60 empty empty empty 20 12 0 14 -262130 -66577
+0;
+#X obj 37 877 pc.scale -1 1 0 127;
+#X floatatom 57 727 5 0 0 0 - - -, f 5;
+#X obj 39 918 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X text 103 852 table's output is from -1 to 1;
+#X text 136 763 < use "tabread" to read values from a table;
+#X text 299 701 arg 1: table name;
+#X text 300 717 arg 2: table size;
+#X text 94 725 < interpretted as table index;
+#X text 100 827 < table value;
+#X text 160 878 change range back to 0 to 127 to visualize on slider
+;
+#X text 343 352 change these numbers to change the scaling;
+#X text 121 238 input;
+#X text 121 486 output;
+#X text 80 647 input;
+#X text 77 938 output;
+#X text 300 669 < click on this object and draw into it;
+#X obj 41 978 cnv 15 400 60 empty empty empty 20 12 0 14 -262130 -66577
+0;
+#N canvas 0 22 450 278 (subpatch) 0;
+#X array myarray 127 float 3;
+#A 0 3.05176e-05 0.907166 1.8143 3.175 4.53571 7.25711 8.61781 9.97852
+11.3392 12.6999 14.0606 19.0499 21.7713 24.4927 27.2141 29.9355 39.914
+45.3568 47.1711 48.9853 50.7996 52.6139 54.4281 56.2424 58.0567 58.5102
+58.9638 59.8709 60.7781 60.7781 60.7781 60.7781 60.7781 60.7781 60.7781
+60.7781 60.7781 60.3245 59.8709 59.4174 58.9638 58.359 57.7543 57.1495
+56.2424 55.7888 55.3353 54.8817 54.4281 53.9746 53.521 53.521 53.521
+53.521 53.521 53.521 53.521 55.3353 57.1495 59.8709 61.6852 63.4995
+68.9423 72.5708 76.1994 81.6422 86.1779 92.5278 96.1563 97.0635 97.9706
+98.8777 99.7849 100.692 101.146 101.599 101.599 101.599 102.053 102.506
+102.506 102.506 102.506 102.506 102.506 102.506 102.506 102.506 102.506
+102.506 102.506 102.506 102.506 102.506 102.506 102.506 102.506 102.506
+102.506 102.96 103.413 104.321 105.228 106.135 107.042 107.949 109.31
+110.671 111.578 113.392 114.753 116.113 117.928 120.649 121.556 122.463
+124.278 126.092 126.092 126.999 126.999 126.999 126.999 126.999 126.092
+126.092 125.185;
+#X coords 0 127 126 0 200 140 1 0 0;
+#X restore 249 1102 graph;
+#X obj 66 1101 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 900 1;
+#X floatatom 83 1160 5 0 0 0 - - -, f 5;
+#X text 106 1077 input;
+#X obj 61 1220 array get myarray;
+#X obj 63 1326 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 1270 1;
+#X text 101 1346 output;
+#X text 258 1251 you can draw write into this;
+#X text 47 150 1 Move the top slider and see the results in the bottom
+one. This examples uses an abstraction called "pd.scale" to do linear
+mapping from an input range \, to a desired output range;
+#X text 31 559 2 An alternative is to use the "table" object as a look-up
+table \, and use the values stored in the table as a transfer function
+;
+#X text 55 981 3 An alternative is to use the "array" object as a look-up
+table \, and use the values stored in the table as a transfer function
+;
+#X text 491 214;
+#X text 69 59 Doing linear mappings in PD in several ways;
+#X connect 0 0 2 0;
+#X connect 0 0 3 0;
+#X connect 2 0 4 0;
+#X connect 4 0 1 0;
+#X connect 8 0 2 1;
+#X connect 9 0 2 2;
+#X connect 10 0 2 3;
+#X connect 11 0 2 4;
+#X connect 12 0 13 0;
+#X connect 13 0 14 0;
+#X connect 14 0 8 0;
+#X connect 14 1 9 0;
+#X connect 14 2 10 0;
+#X connect 14 3 11 0;
+#X connect 15 0 16 0;
+#X connect 15 0 23 0;
+#X connect 16 0 17 0;
+#X connect 16 0 22 0;
+#X connect 22 0 24 0;
+#X connect 40 0 41 0;
+#X connect 40 0 43 0;
+#X connect 43 0 44 0;

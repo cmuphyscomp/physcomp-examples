@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <title>Assignment: Mechanical Prototype for Autonomous Machine</title>
+    <style type="text/css">span.eqn { white-space: nowrap; }</style>
+    <meta name="description" content="assignement notes.">
+    <meta name="author" content="garthz">
+  </head>
+  <body>
+
+    <h4>Objective</h4>
+
+    <p>Create an <em>autonomous</em> machine.  This first phase focuses on
+      mechanical design in the context of integrated electronics, software, and
+      behavioral design.</p>
+
+    <h4>Rationale</h4>
+
+    <p>It's possible to breadboard an illustrative circuit in five minutes, but
+      less possible for mechanical design examples, so the "quick exercise"
+      model we used for circuits doesn't work as well.  This assignment
+      introduces mechanical design and fabrication by incorporating it into
+      a <b>technical assignment</b> which will just be evaluated on technical
+      merit.  The purpose of the assignment is to learn and demonstrate
+      technical skills. But even this assignment should allow some free choices,
+      and ideally, it would inspire ideas for more human-centric projects.</p>
+
+    <p>Learning goals:</p>
+    <ol>
+      <li>use of idiomatic mechanical structures, including bushing and ball
+	bearing joints, turntables, hinges, gears, timing belts, motor mounts,
+	sensor mounting, slender members and I-beams</li>
+      <li>basic use of CAD (of any form)</li>
+      <li>laser cutter use on masonite and acrylic</li>
+      <li>single-axis PD control</li>
+      <li>simple behavior: optimization, memory, or history (needs clarification)</li>
+    </ol>
+
+    <p>The minimum goal is to build upon the one-in-one-out theme by designing
+      a <em>single-axis controlled mechanism</em>.  Even a single actuated freedom
+      can have complex behavior by using <em>time</em> effectively.  In a
+      conventional controls class, the feedback would normally be taken directly
+      from the axis in order to control the velocity and position of the actuator.
+      However, successful feedback control only requires that the property being
+      sensed be a function of the system state.  So for example, a motor could
+      swing around a sonar sensor taking measurements of the local world geometry,
+      and a controller could send currents to the motor which achieve some desired
+      pointing goal such as aiming the sensor at the nearest object.  In general,
+      this is much <em>harder</em> than simply sensing a joint, but it paves the
+      way for more interesting applications.</p>
+
+    <p>For an example of what can be possible with just a single motor (and
+      possibly passive freedoms), search for "Acrobot" on line and you can find
+      examples like
+      this <a href="https://www.youtube.com/watch?v=sMZRnE3q72c">this acrobot
+      demo</a> or <a href="https://www.youtube.com/watch?v=FeCwtvrD76I">this
+      one</a>.
+
+      <h3>Procedure</h3>
+
+      <ol>
+	<li>Choose a property to measure with a sensor</li>
+	<li>Choose an appropriate mechanical structure with a single actuated axis which can move that sensor</li>
+	<li>Sketch a complete design on paper for the mechanical structure and components.</li>
+	<li>Design review. (Mon, Oct 20)</li>
+	<li>Revise the mechanical design on paper.</li>
+	<li>Sketch the basic electronic design on paper.</li>
+        <li>Write two-sentence description of proposed <em>behavior</em>.
+	<li>Outline proposed control strategy on paper.</li>
+	<li>Design review. (Wed, Oct 22)</li>
+	<li>Draw in CAD any parts which require fabrication.</li>
+	<li>Fabricate mechanism and electronics. (Mon, Oct 27)</li>
+	<li>Implement control strategy in software. (Wed, Oct 29)</li>
+      </ol>
+
+    <p>The performance of the device will be evaluated subjectively on the design
+      and on how well it achieves the stated behavioral goal.  If the performance can
+      be quantified we can incorporate an objective measure.</p>
+
+
+    <h3>Engineering Design Review Criteria for <em>Autonomous Machine</em></h3>
+
+    <p>Criteria for an engineering review:</p>
+    <ol>
+      <li>could someone else build it from your drawings?</li>
+      <li>what tools and machines are required for fabrication?</li>
+      <li>are all standard components identified?</li>
+      <li>are all materials identified?</li>
+      <li>is it kinematically well-defined?</li>
+      <li>how is friction managed?</li>
+      <li>are the structural components appropriate for expected loads?</li>
+      <li>are the actuators sized appropriately?</li>
+      <li>are the transmission ratios appropriate?</li>
+      <li>what kind of embedded computation is required?</li>
+      <li>are the interface circuits appropriate?</li>
+      <li>what kind of power source is required?</li>
+      <li>is there an estimate of overall cost?</li>
+      <li>is there an estimate of overall fabrication time?</li>
+    </ol>
+
+    <p>Criteria for a project review:</p>
+    <ol>
+      <li>What is your two-sentence description of proposed <em>behavior?</em></li>
+      <li>What are the fundamental inputs and outputs?</li>
+      <li>Is it autonomous?  (See below for additional prompts.)</li>
+      <li>Is the outcome congruous with the complexity?</li>
+      <li>Are the physical and computational dynamics complementary?</li>
+    </ol>
+
+    <p>Is it autonomous?</p>
+    <ol>
+      <li>what does it do with no humans present?</li>
+      <li>what does it do in an unfamiliar test environment?</li>
+      <li>does it exhibit logic and memory?</li>
+      <li>does the physical performance indicate an internal state?</li>
+      <li>does the action change over time?</li>
+      <li>how does it handle physical contact?</li>
+      <li>can a goal or purpose be inferred by observation?  over what time scale?</li>
+    </ol>
+  </body>
+</html>
+
+

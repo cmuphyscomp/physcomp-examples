@@ -1,0 +1,142 @@
+#N canvas 3 22 731 759 10;
+#X obj -166 -214 cnv 15 600 100 empty empty 2.a.iii.1_orientation-classification
+20 12 0 14 -204800 -66577 0;
+#X obj 34 -104 cnv 15 400 120 empty empty empty 20 12 0 14 -262130
+-66577 0;
+#X obj -160 -94 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X text -122 18 from the "Control" app;
+#X floatatom -54 115 5 0 0 0 - - -, f 5;
+#X floatatom -16 115 5 0 0 0 - - -, f 5;
+#X floatatom 22 115 5 0 0 0 - - -, f 5;
+#X text -40 93 x;
+#X text 3 94 y;
+#X text 41 94 z;
+#X obj -136 -2 route /accelerometer /gryo;
+#X obj -56 66 unpack 1 1 1;
+#X obj -137 423 ml.svm;
+#N canvas 30 22 838 738 training-and-mapping 0;
+#X obj 131 643 outlet;
+#X floatatom 93 410 5 0 0 0 - - -, f 5;
+#X msg 424 268 63.1812 64.2077 35.8449;
+#X msg 284 645 add 5 63.6655 59.3139 90.4449;
+#X obj 188 338 t b float;
+#X text 447 256 accelerometer data from mobile phone;
+#X obj 317 411 list prepend map;
+#X obj 194 486 list prepend;
+#X obj 193 507 list prepend add;
+#X obj 280 563 list prepend set;
+#X obj 190 393 list append;
+#X obj 422 171 list prepend set;
+#X obj 319 269 spigot;
+#X obj 261 269 spigot;
+#X obj 422 215 list trim;
+#X obj 317 512 list trim;
+#X obj 162 564 list trim;
+#X obj 292 601 list trim;
+#X obj 170 304 + 1;
+#X obj 276 309 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 341 308 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X msg 213 179 1;
+#X msg 242 178 0;
+#X obj 210 148 t bang bang;
+#X obj 324 151 t bang bang;
+#X msg 327 179 1;
+#X msg 356 178 0;
+#X obj 54 37 inlet;
+#X obj 279 48 inlet;
+#X obj 458 61 inlet;
+#X obj 139 30 inlet;
+#X obj 281 102 route learn map;
+#X connect 4 0 10 0;
+#X connect 4 1 1 0;
+#X connect 4 1 7 1;
+#X connect 6 0 15 0;
+#X connect 7 0 8 0;
+#X connect 8 0 9 0;
+#X connect 8 0 16 0;
+#X connect 9 0 17 0;
+#X connect 10 0 7 0;
+#X connect 11 0 14 0;
+#X connect 12 0 6 0;
+#X connect 12 0 20 0;
+#X connect 13 0 10 1;
+#X connect 13 0 19 0;
+#X connect 14 0 2 0;
+#X connect 15 0 0 0;
+#X connect 16 0 0 0;
+#X connect 17 0 3 0;
+#X connect 18 0 4 0;
+#X connect 21 0 13 1;
+#X connect 22 0 12 1;
+#X connect 23 0 21 0;
+#X connect 23 1 22 0;
+#X connect 24 0 25 0;
+#X connect 24 1 26 0;
+#X connect 25 0 12 1;
+#X connect 26 0 13 1;
+#X connect 27 0 11 0;
+#X connect 27 0 12 0;
+#X connect 27 0 13 0;
+#X connect 28 0 31 0;
+#X connect 29 0 18 0;
+#X connect 30 0 0 0;
+#X connect 31 0 23 0;
+#X connect 31 1 24 0;
+#X restore -137 378 pd training-and-mapping;
+#X msg -80 196 clear;
+#X msg -110 265 train;
+#X text -119 242 4 train;
+#X text 309 198 class;
+#X obj 185 198 hradio 15 1 0 8 empty empty empty 0 -8 0 10 -262144
+-1 -1 0;
+#X text 192 175 3 give examples;
+#X msg 3 264 map;
+#X msg 82 191 learn;
+#X text -124 176 1 clear the model;
+#X text 24 173 2 enter training mode;
+#X text -8 239 5 enter mapping mode;
+#X floatatom -135 477 5 0 0 0 - - -, f 5;
+#X text 185 218 each of the 8 squares corresponds with a "class" each
+time you click on a square \, you provide the sensor data at that moment
+\, as an example of that class SO: once sensor data is coming in from
+your phone \, hold it in a particular orientation and click on the
+1st sqaure a few times (call that class 1) \, then hold in in a different
+orientation and click on the 2nd square a bunch of times (call that
+class 2) \, etc. at the end \, click on "train" \, and then "map" to
+enter mapping mode;
+#X text -82 476 classifcation;
+#X obj -136 -95 udpreceive 10000;
+#X obj -136 -62 unpackOSC;
+#X text -129 -182 Using support vector machines to recognize the orientations
+of a mobile phone based on sensor data from the phone http://en.wikipedia.org/wiki/Support_vector_machine
+;
+#X text 61 -97 With gesture data from a mobile phone streaming into
+PureData wirelessly using OpenSoundControl \; we use a support vector
+machine \, a standard machine learning algorithm \, to train on- and
+then classify--recognize--different orientations of the mobile phone
+This patch requires "ml.svm" \, part of the "ml.lib" package: https://github.com/cmuartfab/ml-lib/releases
+;
+#X obj -47 401 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X msg -47 432 probs \$1;
+#X text -26 401 < try this!;
+#X connect 10 0 11 0;
+#X connect 10 0 13 0;
+#X connect 11 0 4 0;
+#X connect 11 1 5 0;
+#X connect 11 2 6 0;
+#X connect 12 0 25 0;
+#X connect 13 0 12 0;
+#X connect 14 0 13 1;
+#X connect 15 0 13 1;
+#X connect 18 0 13 3;
+#X connect 20 0 13 2;
+#X connect 21 0 13 2;
+#X connect 28 0 29 0;
+#X connect 28 0 2 0;
+#X connect 29 0 10 0;
+#X connect 32 0 33 0;
+#X connect 33 0 12 0;

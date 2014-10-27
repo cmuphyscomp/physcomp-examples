@@ -1,0 +1,82 @@
+#N canvas 8 29 919 956 12;
+#X obj -166 -214 cnv 15 600 100 empty empty 2.a.iii.4_machine-vision
+20 12 0 14 -204800 -66577 0;
+#X obj 30 -113 cnv 15 400 120 empty empty empty 20 12 0 14 -262130
+-66577 0;
+#X text 43 -95 comments;
+#X text -129 -182 Machine Vision applied to face tracking \, using
+"FaceOSC" from https://github.com/kylemcdonald/ofxFaceTracker/downloads
+;
+#X obj -152 42 udpreceive 8338;
+#X obj -152 72 unpackOSC;
+#X obj -152 544 routeOSC /position /scale /orientation;
+#X obj -2 600 unpack f f f;
+#X obj -152 597 unpack f f;
+#X floatatom -77 599 5 0 0 1 scale - -, f 5;
+#X floatatom -152 640 5 0 0 1 x - -, f 5;
+#X floatatom -95 641 5 0 0 1 y - -, f 5;
+#X floatatom -2 641 5 0 0 1 x - -, f 5;
+#X floatatom 54 641 5 0 0 1 y - -, f 5;
+#X floatatom 109 642 5 0 0 1 z - -, f 5;
+#X floatatom -93 512 5 0 0 1 mouth_width - -, f 5;
+#X obj -93 451 routeOSC /width /height;
+#X floatatom -26 487 5 0 0 1 mouth_height - -, f 5;
+#X obj -93 181 routeOSC /mouth /eyebrow /eye /jaw /nostrils;
+#X floatatom -41 416 5 0 0 1 L_eyebrow - -, f 5;
+#X floatatom 20 392 5 0 0 1 R_eyebrow - -, f 5;
+#X obj -41 356 routeOSC /left /right;
+#X floatatom 63 236 5 0 0 1 jaw - -, f 5;
+#X floatatom 115 213 5 0 0 1 nostrils - -, f 5;
+#X floatatom 11 324 5 0 0 1 L_eye - -, f 5;
+#X floatatom 72 305 5 0 0 1 R_eye - -, f 5;
+#X obj 11 269 routeOSC /left /right;
+#X floatatom -34 152 5 0 0 1 num_faces_found - -, f 5;
+#X text -139 100 OSC message breakout;
+#X text -153 14 FaceOSC sends on port 8338 by default;
+#X obj -152 122 routeOSC /pose /gesture /found;
+#X text 175 54 2012 Dan Wilcox danomatika.com for the IACD class at
+the CMU School of Art;
+#X floatatom 306 564 5 0 0 0 - - -, f 5;
+#X floatatom 487 565 5 0 0 0 - - -, f 5;
+#X obj 306 592 osc~;
+#X obj 306 622 *~;
+#X obj 306 649 dac~;
+#X text 240 395 mouth height controls oscilator pitch \, raise left
+eyebrow for volume boost;
+#X text 176 96 based on the example max by Craig Fahner http://cmuems.com/2011/a/unit-60-pd/
+;
+#X obj 306 535 pc.scale 0 10 150 800;
+#X obj 487 537 pc.scale 6 9 0 0.6;
+#X connect 4 0 5 0;
+#X connect 5 0 30 0;
+#X connect 6 0 8 0;
+#X connect 6 1 9 0;
+#X connect 6 2 7 0;
+#X connect 7 0 12 0;
+#X connect 7 1 13 0;
+#X connect 7 2 14 0;
+#X connect 8 0 10 0;
+#X connect 8 1 11 0;
+#X connect 16 0 15 0;
+#X connect 16 1 17 0;
+#X connect 17 0 39 0;
+#X connect 18 0 16 0;
+#X connect 18 1 21 0;
+#X connect 18 2 26 0;
+#X connect 18 3 22 0;
+#X connect 18 4 23 0;
+#X connect 19 0 40 0;
+#X connect 21 0 19 0;
+#X connect 21 1 20 0;
+#X connect 26 0 24 0;
+#X connect 26 1 25 0;
+#X connect 30 0 6 0;
+#X connect 30 1 18 0;
+#X connect 30 2 27 0;
+#X connect 32 0 34 0;
+#X connect 33 0 35 1;
+#X connect 34 0 35 0;
+#X connect 35 0 36 0;
+#X connect 35 0 36 1;
+#X connect 39 0 32 0;
+#X connect 40 0 33 0;
