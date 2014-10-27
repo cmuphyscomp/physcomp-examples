@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="../../../../support/github-web/physcomp.css" />
+    <title>Unit 1A: Basic Circuits</title>
+  </head>
+  <body>
+    <h2>Unit 1A: Basic Circuits</h2>
+<h3>Objective </h3>
+  <p>Learn to use <a href="http://en.wikipedia.org/wiki/Dynamic_time_warping">dynamic time warping</a> (DTW) to recognize a time-based signal--in this case sensor data describing a gesture--among a group of pre-defined and learned gestures.</p>
+  <h4>Steps and observations</h4>
+  <p>Begin by setting up a mobile phone to send accelerometer data to a computer using UDP over a wireless network. </p>
+  <ol>
+    <li>Click on "clear" to clear the SVM model</li>
+    <li>Choose the gesture number you wish to learn by clicking on the corresponding squre GUI</li>
+    <li>Hold your mobile phone in the orientation the is the begining point for the gesture; turn ON "learn" and perform the gesture; then turn OFF "learn"; repeat steps 2-3 for two more gestures.</li>
+    <li>Click on "train" to create the DTW model</li>
+    <li>Hold your mobile phone in the orientation that is the begining point of a gesture; turn ON "classify" and perform the gesture; look at the output of "ml.dtw" for the classification result; repeat with other gestures.</li>
+  </ol>
+  <h4>Comments</h4>
+  <ul>
+    <li>How else can this technique be used?</li>
+    <li>How many gestures can you recognize with this technique?</li>
+    <li>During classificaiton, forcing the user to indicate the start and stop of a gesture is a major hinderence (requires an additional controller/sensor, forces the user to be partly responsible for the gesture recognition). Can you devise a system where the start/stop action in the classification stage can be automated?</li></ul>    <h4>Other Files</h4>
+    <ol>
+      <li><a href="2.a.iii.3_gesture-recognition.pd">2.a.iii.3_gesture-recognition.pd</a></li>
+    </ol>
+  </body>
+</html>

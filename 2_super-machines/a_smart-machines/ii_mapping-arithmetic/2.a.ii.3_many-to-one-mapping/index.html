@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="../../../../support/github-web/physcomp.css" />
+    <title>Unit 1A: Basic Circuits</title>
+  </head>
+  <body>
+    <h2>Unit 1A: Basic Circuits</h2>
+<h4>Objective</h4>
+
+    <p>Map multi-dimensional data from a mobile phone to parameters for audio synthesis using PureData</p>
+    <h4>Steps and observations</h4>
+    <ol>
+
+      <li>Set up a mobile phone to send accelerometer data to a computer using UDP over a wireless network. The easiest way is to download one of many free ("Control" for iOS or Android, "andOSC" or "OSChook" for Android, etc.); join CMU-SECURE wireless with your computer and your mobile phone; <a href="https://www.google.com/webhp?sourceid=chrome-instant&amp;ion=1&amp;espv=2&amp;ie=UTF-8#q=what's my ip">find the IP address of your computer</a> and set it as the "destination" or "host" in the mobile App; set the destionation "port" to 10000; activate a user interface with accelerometers</li>
+      <li>Learn how to receive, unpack and route <a href="http://opensoundcontrol.org/introduction-osc">OpenSoundControl</a> messages in PureData with the "udpreceive", "unpackOSC" and "routeOSC" objects. "Open Sound Control (OSC) is a protocol for communication among computers, sound synthesizers, and other multimedia devices that is optimized for modern networking technology.&#160;"</li>
+      <li>Take apart multi-dimensional sensor data and map different elements to different parameters of audio synthesis.</li>
+    </ol>
+
+    <h4>Comments and Challenges</h4>
+
+    <ul>
+      <li>Use this scheme to get access to every sensor on your mobile phone, within PureData</li>
+      <li>Use PureData to communicate bewteen two cellphones, running two Apps that can send and receive OSC</li>
+    </ul>
+      <h4>Other Files</h4>
+    <ol>
+      <li><a href="2.a.ii.3_many-to-one-mapping.pd">2.a.ii.3_many-to-one-mapping.pd</a></li>
+    </ol>
+  </body>
+</html>

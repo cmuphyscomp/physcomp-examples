@@ -265,7 +265,7 @@ if __name__ == "__main__":
         exit(1)
 
     walk_unit_pages( "../../1_energy-information-transduction" )
-    # walk_unit_pages( "../../1_energy-information-transduction/b_arduino-starter")
+    walk_unit_pages( "../../2_super-machines" )
 
     write_post_list_file( "assignments.json" )
 

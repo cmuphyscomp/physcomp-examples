@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="../../support/github-web/physcomp.css" />
+    <title>Smart Machines: Overview</title>
+  </head>
+  <body>
+    <h2>Smart Machines: Overview</h2>
+<p>This section is about encoding <em>behavior</em> in machines, where
+      behavior is loosely interpreted as the response of a machine to a varying
+      environment in order to achieve an implicit goal.  At the limit, this
+      encompasses all of robotics.  However, machines can achieve their smarts
+      through many means including physical form which passively interacts with
+      the world, mechanical action which responds to forces, and computational
+      models which span complexity from simple reflex reactivity to detailed
+      world models.</p>
+
+    <h3>Takeaway Lessons</h3>
+
+    <p>Machines have parts which move relative to each other; the elements or
+      surfaces where relative motion occurs are <em>bearings</em> and serve the
+      functions of controlling relative motion and friction.  These can be
+      rolling-contact devices such as <em>ball bearings</em> in which small
+      steel balls roll between concentric surfaces, but many common bearings
+      are <em>plain bearings</em> in which two surfaces simply slide over each
+      other.  Even a book sliding on a table can be considered to be using a
+      planar sliding bearing formed by the book jacket and the smooth table: the
+      shape constrains motion to the plane, and the smooth materials limit
+      friction.</p>
+
+    <p>The common types of bearing components we will use are <em>bushings</em>
+      and ball bearings.  Bushings are plain bearings made from a low-friction
+      material such as bronze.</p>
+
+    <p>The key principles of shaft bearing design are to consider the <em>radial
+	force</em> acting perpendicular to the shaft, the <em>axial force</em>
+	(or <em>thrust</em>) acting along the shaft, the <em>bending
+	moments</em> induced by the loads, and the <em>torque</em> carried by
+	the shaft.</p>
+
+    <p>Most ball bearings have limits on the moments they can support, so a good
+      rule of thumb is to <em>always use bearings in pairs</em> such that the
+      shaft bending moments are counted by radial forces.</p>
+
+    <p>Common ball bearings can support higher radial loads than axial
+      loads.  <em>Thrust bearings</em> are specifically designed to carry axial
+      loads, such as in a turntable.</p>
+
+    <p>Electric motors are generally high-speed low-torque devices.  Actuating a
+      mechanism almost always requires some form of <em>transmission</em> to
+      reduce speed and increase torque to match a load.</p>
+
+    <p>For our purposes, transmissions will be built from rollers, timing
+      pulleys and belts, winches and cable drives, and gears.  These are
+      mechanisms with constant-ratio <em>transfer functions</em> in which an
+      input to output velocities have a fixed ratio.</p>
+
+    <p>In general, any mechanism with a transfer function between input and
+      output can act as a type of transmission.  Structures with non-constant
+      ratios include levers, cams, and linkages.</p>
+
+    <p>Gear tooth design comes down to a straighforward idea: find compatible
+      shapes which interact to produce a constant velocity ratio from input to
+      output.  The classic involute gear tooth shape essentially creates the
+      simple input-output behavior of two non-slipping rollers, but with the
+      increased load capacity of face contact instead of frictional contact.</p>
+
+    <p>In practice, gears have many problems: the teeth must slide across each
+      other, creating noise and friction; involute teeth induce forces which
+      press the gears apart; high-torque metal gears are often expensive
+      precision parts.  However, low-cost gears can be laser-cut and careful
+      attention to shaft stiffness can manage tooth pressure forces.</p>
+
+    <p>Other common design problems we will face: attaching gears and pulleys to
+      shafts; mounting motors and actuators; attaching feedback sensors; using
+      bearings to reduce friction; translating rotational to linear motion;
+      building rigid structures; designing for assembly; creating 3D structures
+      from flat parts; creating snap-fit and locking features; designing using
+      standard parts and fasteners.</p>
+
+    <h3>Reference Links</h3>
+    <ol>
+
+      <li><a href="http://en.wikipedia.org/wiki/Simple_machine">Wikipedia: Simple Machines</a></li>
+      <li><a href="http://en.wikipedia.org/wiki/Kinematic_pair">Wikipedia: Kinematic Pairs</a></li>
+      <li><a href="http://en.wikipedia.org/wiki/Involute_gear">Wikipedia: Involute Gear</a></li>
+      <li><a href="http://en.wikipedia.org/wiki/Bearing_%28mechanical%29">Wikipedia: Bearing</a></li>
+
+      <li><a href="http://books.google.com/books?id=vOhIAAAAMAAJ&amp;dq=mechanical%20movements&amp;pg=PR1#v=onepage&amp;q&amp;f=false">Google Books: 507 Mechanical Movements</a></li>
+
+      <li><a href="http://books.google.com/books?id=LlYSAAAAIAAJ&amp;dq=mechanical%20movements&amp;pg=PP1#v=onepage&amp;q&amp;f=false">Google
+	  Books: The Engineer's Sketch-book of Mechanical Movements, Devices,
+	  Appliances, Contrivances, and Details</a></li>
+
+    </ol>
+
+    <h3>Resource Links</h3>
+    <ol>
+      <li><a href="http://www.thingiverse.com/thing:16627">Parametric pulley - lots of tooth profiles</a></li>
+      <li><a href="http://hessmer.org/gears/InvoluteSpurGearBuilder.html">Involute Spur Gear Builder</a></li>
+      <li><a href="http://woodgears.ca/gear_cutting/template.html">Gear template generator</a></li>
+      <li><a href="http://www.thingiverse.com/thing:7881">Gear Profile Generator</a></li>
+      <li><a href="http://boxmaker.rahulbotics.com/">BoxMaker</a></li>
+      <li><a href="http://www.thingiverse.com/">thingiverse</a></li>
+      <li><a href="https://sketchfab.com/">sketchfab</a></li>
+      <li><a href="https://3dwarehouse.sketchup.com/">3D Warehouse</a></li>
+      <li><a href="http://www.3dcontentcentral.com/">3D Content Central</a></li>
+    </ol>
+
+    <hr/><!-- --------------------------------------------------------------- -->
+    <h3>Lab Exercises</h3>
+
+    <p>The lab exercises are intended to be performed by pairs of students or
+      small groups.</p>
+
+    <hr/><!-- --------------------------------------------------------------- -->
+    <h3>Graded Project:</h3>
+
+    <hr/><!-- --------------------------------------------------------------- -->
+    <h3>Challenge Yourself</h3>
+
+
+    <!-- --------------------------------------------------------------- -->
+    <h3>Examples</h3>
+    <p>Inspiration for project ideas can be found on
+      the <a href="http://physcomp.org/wow/">course website</a>.</p>
+
+      <h4>Sub-Folders</h4>
+    <ol>
+      <li><a href="i_mechanical-intelligence">i_mechanical-intelligence</a></li>
+      <li><a href="ii_mapping-arithmetic">ii_mapping-arithmetic</a></li>
+      <li><a href="iii_machine-learning">iii_machine-learning</a></li>
+    </ol>
+  </body>
+</html>

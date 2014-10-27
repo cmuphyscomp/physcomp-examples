@@ -376,5 +376,155 @@
 "permalink": "assignments/1-energy-information-transduction/c-pd-starter/v-dream-machine", 
 "parent": "1-energy-information-transduction/c-pd-starter", 
 "title": "Part v: Assignment: Dream Machine"
+}, 
+{
+"post": "http://cmuphyscomp.github.io/physcomp-examples/2_super-machines/post.html", 
+"permalink": "assignments/2-super-machines", 
+"parent": "", 
+"title": "Unit 2: Super Machines: Overview"
+}, 
+{
+"post": "http://cmuphyscomp.github.io/physcomp-examples/2_super-machines/a_smart-machines/post.html", 
+"permalink": "assignments/2-super-machines/a-smart-machines", 
+"parent": "2-super-machines", 
+"title": "Section A: Smart Machines: Overview"
+}, 
+{
+"post": "http://cmuphyscomp.github.io/physcomp-examples/2_super-machines/a_smart-machines/i_mechanical-intelligence/post.html", 
+"permalink": "assignments/2-super-machines/a-smart-machines/i-mechanical-intelligence", 
+"parent": "2-super-machines/a-smart-machines", 
+"title": "Part i: Assignment: Mechanical Prototype for Autonomous Machine"
+}, 
+{
+"post": "http://cmuphyscomp.github.io/physcomp-examples/2_super-machines/a_smart-machines/ii_mapping-arithmetic/2.a.ii.1_one-to-one-mapping/post.html", 
+"permalink": "assignments/2-super-machines/a-smart-machines/ii-mapping-arithmetic/2.a.ii.1-one-to-one-mapping", 
+"parent": "2-super-machines/a-smart-machines/ii-mapping-arithmetic", 
+"title": "2.a.ii.1 Unit 1A: Basic Circuits"
+}, 
+{
+"post": "http://cmuphyscomp.github.io/physcomp-examples/2_super-machines/a_smart-machines/ii_mapping-arithmetic/2.a.ii.2_one-to-many-mapping/post.html", 
+"permalink": "assignments/2-super-machines/a-smart-machines/ii-mapping-arithmetic/2.a.ii.2-one-to-many-mapping", 
+"parent": "2-super-machines/a-smart-machines/ii-mapping-arithmetic", 
+"title": "2.a.ii.2 Unit 1A: Basic Circuits"
+}, 
+{
+"post": "http://cmuphyscomp.github.io/physcomp-examples/2_super-machines/a_smart-machines/ii_mapping-arithmetic/2.a.ii.3_many-to-one-mapping/post.html", 
+"permalink": "assignments/2-super-machines/a-smart-machines/ii-mapping-arithmetic/2.a.ii.3-many-to-one-mapping", 
+"parent": "2-super-machines/a-smart-machines/ii-mapping-arithmetic", 
+"title": "2.a.ii.3 Unit 1A: Basic Circuits"
+}, 
+{
+"post": "http://cmuphyscomp.github.io/physcomp-examples/2_super-machines/a_smart-machines/ii_mapping-arithmetic/2.a.ii.4_a-little-calculus/post.html", 
+"permalink": "assignments/2-super-machines/a-smart-machines/ii-mapping-arithmetic/2.a.ii.4-a-little-calculus", 
+"parent": "2-super-machines/a-smart-machines/ii-mapping-arithmetic", 
+"title": "2.a.ii.4 Unit 1A: Basic Circuits"
+}, 
+{
+"post": "http://cmuphyscomp.github.io/physcomp-examples/2_super-machines/a_smart-machines/iii_machine-learning/2.a.iii.1_orientation-classification/post.html", 
+"permalink": "assignments/2-super-machines/a-smart-machines/iii-machine-learning/2.a.iii.1-orientation-classification", 
+"parent": "2-super-machines/a-smart-machines/iii-machine-learning", 
+"title": "2.a.iii.1 Unit 1A: Basic Circuits"
+}, 
+{
+"post": "http://cmuphyscomp.github.io/physcomp-examples/2_super-machines/a_smart-machines/iii_machine-learning/2.a.iii.2_gesture-recognition/post.html", 
+"permalink": "assignments/2-super-machines/a-smart-machines/iii-machine-learning/2.a.iii.2-gesture-recognition", 
+"parent": "2-super-machines/a-smart-machines/iii-machine-learning", 
+"title": "2.a.iii.2 Unit 1A: Basic Circuits"
+}, 
+{
+"post": "http://cmuphyscomp.github.io/physcomp-examples/2_super-machines/a_smart-machines/iii_machine-learning/2.a.iii.3_touch-and-activate/post.html", 
+"permalink": "assignments/2-super-machines/a-smart-machines/iii-machine-learning/2.a.iii.3-touch-and-activate", 
+"parent": "2-super-machines/a-smart-machines/iii-machine-learning", 
+"title": "2.a.iii.3 Unit 1A: Basic Circuits"
+}, 
+{
+"post": "http://cmuphyscomp.github.io/physcomp-examples/2_super-machines/a_smart-machines/iii_machine-learning/2.a.iii.4_machine-vision/post.html", 
+"permalink": "assignments/2-super-machines/a-smart-machines/iii-machine-learning/2.a.iii.4-machine-vision", 
+"parent": "2-super-machines/a-smart-machines/iii-machine-learning", 
+"title": "2.a.iii.4 Unit 1A: Basic Circuits"
+}, 
+{
+"post": "http://cmuphyscomp.github.io/physcomp-examples/2_super-machines/a_smart-machines/iii_machine-learning/2.a.iii.5_autonomous-robot/post.html", 
+"permalink": "assignments/2-super-machines/a-smart-machines/iii-machine-learning/2.a.iii.5-autonomous-robot", 
+"parent": "2-super-machines/a-smart-machines/iii-machine-learning", 
+"title": "2.a.iii.5 Unit 1A: Basic Circuits"
+}, 
+{
+"post": "http://cmuphyscomp.github.io/physcomp-examples/2_super-machines/b_state-machines/post.html", 
+"permalink": "assignments/2-super-machines/b-state-machines", 
+"parent": "2-super-machines", 
+"title": "Section B: Overview"
+}, 
+{
+"post": "http://cmuphyscomp.github.io/physcomp-examples/2_super-machines/b_state-machines/i_ideation/post.html", 
+"permalink": "assignments/2-super-machines/b-state-machines/i-ideation", 
+"parent": "2-super-machines/b-state-machines", 
+"title": "Part i: Unit 1A: Basic Circuits"
+}, 
+{
+"post": "http://cmuphyscomp.github.io/physcomp-examples/2_super-machines/b_state-machines/ii_something-else/post.html", 
+"permalink": "assignments/2-super-machines/b-state-machines/ii-something-else", 
+"parent": "2-super-machines/b-state-machines", 
+"title": "Part ii: Unit 1A: Basic Circuits"
+}, 
+{
+"post": "http://cmuphyscomp.github.io/physcomp-examples/2_super-machines/b_state-machines/iii_autonomous-robot/post.html", 
+"permalink": "assignments/2-super-machines/b-state-machines/iii-autonomous-robot", 
+"parent": "2-super-machines/b-state-machines", 
+"title": "Part iii: Unit 1A: Basic Circuits"
+}, 
+{
+"post": "http://cmuphyscomp.github.io/physcomp-examples/2_super-machines/c_get-real/post.html", 
+"permalink": "assignments/2-super-machines/c-get-real", 
+"parent": "2-super-machines", 
+"title": "Section C: Overview"
+}, 
+{
+"post": "http://cmuphyscomp.github.io/physcomp-examples/2_super-machines/c_get-real/i_the-insides/2.c.i.1_batteries/post.html", 
+"permalink": "assignments/2-super-machines/c-get-real/i-the-insides/2.c.i.1-batteries", 
+"parent": "2-super-machines/c-get-real/i-the-insides", 
+"title": "2.c.i.1 Unit 1A: Basic Circuits"
+}, 
+{
+"post": "http://cmuphyscomp.github.io/physcomp-examples/2_super-machines/c_get-real/i_the-insides/2.c.i.2_proto-board/post.html", 
+"permalink": "assignments/2-super-machines/c-get-real/i-the-insides/2.c.i.2-proto-board", 
+"parent": "2-super-machines/c-get-real/i-the-insides", 
+"title": "2.c.i.2 Unit 1A: Basic Circuits"
+}, 
+{
+"post": "http://cmuphyscomp.github.io/physcomp-examples/2_super-machines/c_get-real/i_the-insides/2.c.i.3_pcb-fabrication/post.html", 
+"permalink": "assignments/2-super-machines/c-get-real/i-the-insides/2.c.i.3-pcb-fabrication", 
+"parent": "2-super-machines/c-get-real/i-the-insides", 
+"title": "2.c.i.3 Unit 1A: Basic Circuits"
+}, 
+{
+"post": "http://cmuphyscomp.github.io/physcomp-examples/2_super-machines/c_get-real/ii_the-outsides/2.c.ii.1_making-a-box/post.html", 
+"permalink": "assignments/2-super-machines/c-get-real/ii-the-outsides/2.c.ii.1-making-a-box", 
+"parent": "2-super-machines/c-get-real/ii-the-outsides", 
+"title": "2.c.ii.1 Unit 1A: Basic Circuits"
+}, 
+{
+"post": "http://cmuphyscomp.github.io/physcomp-examples/2_super-machines/c_get-real/ii_the-outsides/2.c.ii.2_weather-proofing/post.html", 
+"permalink": "assignments/2-super-machines/c-get-real/ii-the-outsides/2.c.ii.2-weather-proofing", 
+"parent": "2-super-machines/c-get-real/ii-the-outsides", 
+"title": "2.c.ii.2 Unit 1A: Basic Circuits"
+}, 
+{
+"post": "http://cmuphyscomp.github.io/physcomp-examples/2_super-machines/c_get-real/iii_autonomous-robot/post.html", 
+"permalink": "assignments/2-super-machines/c-get-real/iii-autonomous-robot", 
+"parent": "2-super-machines/c-get-real", 
+"title": "Part iii: Unit 1A: Basic Circuits"
+}, 
+{
+"post": "http://cmuphyscomp.github.io/physcomp-examples/2_super-machines/c_get-real/iii_making_box/post.html", 
+"permalink": "assignments/2-super-machines/c-get-real/iii-making-box", 
+"parent": "2-super-machines/c-get-real", 
+"title": "Part iii: Unit 1A: Basic Circuits"
+}, 
+{
+"post": "http://cmuphyscomp.github.io/physcomp-examples/2_super-machines/c_get-real/iv_autonomous-robot/post.html", 
+"permalink": "assignments/2-super-machines/c-get-real/iv-autonomous-robot", 
+"parent": "2-super-machines/c-get-real", 
+"title": "Part iv: Unit 1A: Basic Circuits"
 }
 ]

@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="../../../../support/github-web/physcomp.css" />
+    <title>Unit 1A: Basic Circuits</title>
+  </head>
+  <body>
+    <h2>Unit 1A: Basic Circuits</h2>
+<h3>Objective </h3>
+
+    <p>Learn to use a <a href="http://en.wikipedia.org/wiki/Support_vector_machine">support vector machine</a> (SVM)for classifying multi-dimensional sensor data, among a group of pre-defined classes of feature vectors. Specificlly, learn to utilize SVM to recognize the orientation of a mobile phone, based on its accelerometer sensors and a series of pre-defined orientations.</p>
+
+    <h4>Steps and observations</h4>
+    <p>Begin by setting up a mobile phone to send accelerometer data to a computer using UDP over a wireless network. </p>
+    <ol>
+
+      <li>Click on "clear" to clear the SVM model</li>
+      <li>Click on "learn" to enter training mode</li>
+      <li>Hold your mobile phone in a particular orientation and click on the first square 10-20 times. Each time you click, a 3-dimensional "feature vector" made up of the x, y and z acceleration values is sent into the SVM as an example of class 1.</li>
+      <li>Hold your mobile phone in a different orientation and click on the second square 10-20 times. Each time you click, a 3-dimensional "feature vector" made up of the x, y and z acceleration values is sent into the SVM as an example of class 2.</li>
+      <li>Repeate steps 3-4 for several more poses</li>
+      <li>Click on "train" to create the SVM model</li>
+      <li>Click on "map" to enter mapping mode</li>
+      <li>Move your phone among different trained orientations, compare with the the classification results show in the interger box under "ml.svm"</li>
+      <li>Turn ON "probs" to see the likelyhood of each class as a continuous variable</li>
+    </ol>
+
+    <h4>Comments</h4>
+
+    <ul>
+      <li>How else can this technique be used?</li>
+      <li>How many orientations can you recognize with this technique?</li>
+      <li>How can you help the SVM be more accurate, but adding additional sensor information to the feature vectors?</li>
+    </ul>
+
+      <h4>Other Files</h4>
+    <ol>
+      <li><a href="2.a.iii.1_orientation-classification.pd">2.a.iii.1_orientation-classification.pd</a></li>
+    </ol>
+  </body>
+</html>
