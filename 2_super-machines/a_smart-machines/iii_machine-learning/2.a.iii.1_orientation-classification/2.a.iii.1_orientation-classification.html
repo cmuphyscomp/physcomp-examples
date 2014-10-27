@@ -12,22 +12,32 @@
   </head>
   <body>
 
-    <h3>Exercise: Title</h3>
+    <h3>Objective </h3>
 
-    <p>Objective: ...</p>
-
-    <p>Brief introductory comments.</p>
+    <p>Learn to use a support vector machine (SVM)for classifying multi-dimensional sensor data, among a group of pre-defined classes of feature vectors. Specificlly, learn to utilize SVM to recognize the orientation of a mobile phone, based on its accelerometer sensors and a series of pre-defined orientations.</p>
 
     <h4>Steps and observations</h4>
+    <p>Begin by setting up a mobile phone to send accelerometer data to a computer using UDP over a wireless network. </p>
     <ol>
 
-      <li>Specific actions...</li>
-      <li>Specific observations...</li>
+      <li>Click on &quot;clear&quot; to clear the SVM model</li>
+      <li>Click on &quot;learn&quot; to enter training mode</li>
+      <li>Hold your mobile phone in a particular orientation and click on the first square 10-20 times. Each time you click, a 3-dimensional &quot;feature vector&quot; made up of the x, y and z acceleration values is sent into the SVM as an example of class 1.</li>
+      <li>Hold your mobile phone in a different orientation and click on the second square 10-20 times. Each time you click, a 3-dimensional &quot;feature vector&quot; made up of the x, y and z acceleration values is sent into the SVM as an example of class 2.</li>
+      <li>Repeate steps 3-4 for several more poses</li>
+      <li>Click on &quot;train&quot; to create the SVM model</li>
+      <li>Click on &quot;map&quot; to enter mapping mode</li>
+      <li>Move your phone among different trained orientations, compare with the the classification results show in the interger box under &quot;ml.svm&quot;</li>
+      <li>Turn ON &quot;probs&quot; to see the likelyhood of each class as a continuous variable</li>
     </ol>
 
     <h4>Comments</h4>
 
-    <p>Brief review comments.  Links to other information.</p>
+    <ul>
+      <li>How else can this technique be used?</li>
+      <li>How many orientations can you recognize with this technique?</li>
+      <li>How can you help the SVM be more accurate, but adding additional sensor information to the feature vectors?</li>
+    </ul>
 
   </body>
 </html>

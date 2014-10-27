@@ -12,22 +12,22 @@
   </head>
   <body>
 
-    <h4>Objective: </h4>
+    <h4>Objective</h4>
 
-    <p>Use several &quot;Arrays&quot; to store several different transfer functions; use these arrays to map an incoming stream of numbers to several different destinations.    </p>
+    <p>Map multi-dimensional data from a mobile phone to parameters for audio synthesis using PureData</p>
     <h4>Steps and observations</h4>
     <ol>
 
-      <li>Draw four different transfer functions in the four different arrays</li>
-      <li>Move the &quot;input&quot; slider and analyze the results in the &quot;output&quot; sliders</li>
-      <li>Change the transfer functions and repeat step 2</li>
+      <li>Set up a mobile phone to send accelerometer data to a computer using UDP over a wireless network. The easiest way is to download one of many free (&quot;Control&quot; for iOS or Android, &quot;andOSC&quot; or &quot;OSChook&quot; for Android, etc.); join CMU-SECURE wireless with your computer and your mobile phone; <a href="https://www.google.com/webhp?sourceid=chrome-instant&ion=1&espv=2&ie=UTF-8#q=what's my ip">find the IP address of your computer</a> and set it as the &quot;destination&quot; or &quot;host&quot; in the mobile App; set the destionation &quot;port&quot; to 10000; activate a user interface with accelerometers</li>
+      <li>Learn how to receive, unpack and route <a href="http://opensoundcontrol.org/introduction-osc">OpenSoundControl</a> messages in PureData with the &quot;udpreceive&quot;, &quot;unpackOSC&quot; and &quot;routeOSC&quot; objects. &quot;Open Sound Control (OSC) is a protocol for communication among computers, sound synthesizers, and other multimedia devices that is optimized for modern networking technology. &quot;</li>
+      <li>Take apart multi-dimensional sensor data and map different elements to different parameters of audio synthesis.</li>
     </ol>
 
     <h4>Comments and Challenges</h4>
 
     <ul>
-      <li>Use this patch to map one sensor to several different servo rotations so as to create a coordinated cooperative action among all servos</li>
-      <li>Use this patch to create a sound composition with four independent tracks</li>
+      <li>Use this scheme to get access to every sensor on your mobile phone, within PureData</li>
+      <li>Use PureData to communicate bewteen two cellphones, running two Apps that can send and receive OSC</li>
     </ul>
   </body>
 </html>

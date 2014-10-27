@@ -1,10 +1,8 @@
-#N canvas 10 22 901 756 10;
+#N canvas 10 22 762 721 10;
 #X obj -166 -214 cnv 15 600 100 empty empty 2.a.iii.3_gesture-recognition
 20 12 0 14 -204800 -66577 0;
-#X obj 34 -104 cnv 15 400 120 empty empty empty 20 12 0 14 -262130
--66577 0;
-#X obj -160 -94 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
--1 -1;
+#X obj 34 -104 cnv 15 400 60 empty empty empty 20 12 0 14 -262130 -66577
+0;
 #X text -122 18 from the "Control" app;
 #X floatatom -54 115 5 0 0 0 - - -, f 5;
 #X floatatom -16 115 5 0 0 0 - - -, f 5;
@@ -12,11 +10,10 @@
 #X text -40 93 x;
 #X text 3 94 y;
 #X text 41 94 z;
-#X obj -136 -2 route /accelerometer /gryo;
 #X obj -56 66 unpack 1 1 1;
-#N canvas 842 57 1023 943 training-and-mapping 1;
+#N canvas 842 57 1023 943 training-and-mapping 0;
 #X obj 131 643 outlet;
-#X msg 540 277 63.1863 64.2753 35.9406;
+#X msg 540 277 63.2421 64.5294 35.9906;
 #X text 512 303 accelerometer data from mobile phone;
 #X obj 131 396 list prepend map;
 #X obj 538 180 list prepend set;
@@ -67,7 +64,7 @@
 #X msg -67 265 train;
 #X text -76 242 4 train;
 #X obj 57 209 hradio 15 1 0 3 empty empty empty 0 -8 0 10 -262144 -1
--1 2;
+-1 0;
 #X text -137 176 1 clear the model;
 #X floatatom -135 477 5 0 0 0 - - -, f 5;
 #X text -82 476 classifcation;
@@ -82,7 +79,6 @@ to recognize several different gestures;
 #X obj 116 265 tgl 50 0 empty empty classify 17 7 0 10 -262144 -1 -1
 0 1;
 #X text 10 176 2 choose what gesture number you're training;
-#X obj -137 -94 dumpOSC 10000;
 #X text 210 207 each of the 3 squares corresponds with a festure "class"
 in order to train \, select the class number by clicking on one of
 the three squares \, then turn ON "learn" and perform the gesture (e.g.
@@ -93,17 +89,24 @@ gesture" and watch tht output of "ml.dtw" below. turn OFF "classify"
 at the end of each gesture. repeat for classifying other gestures.
 ;
 #X text 106 209 <---------------;
-#X connect 10 0 11 0;
-#X connect 10 0 12 3;
-#X connect 11 0 4 0;
-#X connect 11 1 5 0;
-#X connect 11 2 6 0;
-#X connect 12 0 22 0;
-#X connect 13 0 22 0;
-#X connect 14 0 22 0;
-#X connect 16 0 12 0;
-#X connect 22 0 18 0;
-#X connect 23 0 12 1;
-#X connect 24 0 12 2;
-#X connect 26 0 2 0;
-#X connect 26 0 10 0;
+#X obj -160 -94 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj -136 -95 udpreceive 10000;
+#X obj -136 -62 unpackOSC;
+#X obj -136 -2 routeOSC /accelerometer /gryo;
+#X text 58 247 3 learn;
+#X connect 9 0 3 0;
+#X connect 9 1 4 0;
+#X connect 9 2 5 0;
+#X connect 10 0 20 0;
+#X connect 11 0 20 0;
+#X connect 12 0 20 0;
+#X connect 14 0 10 0;
+#X connect 20 0 16 0;
+#X connect 21 0 10 1;
+#X connect 22 0 10 2;
+#X connect 27 0 28 0;
+#X connect 27 0 26 0;
+#X connect 28 0 29 0;
+#X connect 29 0 9 0;
+#X connect 29 0 10 3;

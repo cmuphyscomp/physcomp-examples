@@ -1,33 +1,30 @@
 #N canvas 3 22 824 981 10;
-#X obj -166 -214 cnv 15 600 100 empty empty 2.a.ii.3_many-to-one-mapping
+#X obj -166 -214 cnv 15 600 100 empty empty 2.a.ii.3_a-little-calculus
 20 12 0 14 -204800 -66577 0;
-#X obj 34 -104 cnv 15 400 120 empty empty empty 20 12 0 14 -262130
+#X obj 57 -105 cnv 15 400 120 empty empty empty 20 12 0 14 -262130
 -66577 0;
-#X text -129 -186 Mapping many inputs to many outputs;
 #X obj -160 -94 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X obj -137 -94 dumpOSC 10000;
-#X text -122 54 from the "Control" app;
-#X floatatom -134 134 5 0 0 0 - - -, f 5;
-#X floatatom -96 134 5 0 0 0 - - -, f 5;
-#X floatatom -58 134 5 0 0 0 - - -, f 5;
-#X text -120 112 x;
-#X text -77 113 y;
-#X text -39 113 z;
-#X obj -136 34 route /accelerometer /gryo;
-#X text 61 -66 With gesture data from a mobile phone streaming into
+#X text -124 1 from the "Control" app;
+#X floatatom -136 81 5 0 0 0 - - -, f 5;
+#X floatatom -98 81 5 0 0 0 - - -, f 5;
+#X floatatom -60 81 5 0 0 0 - - -, f 5;
+#X text -122 59 x;
+#X text -79 60 y;
+#X text -41 60 z;
+#X text 84 -67 With gesture data from a mobile phone streaming into
 PureData wirelessly using OpenSoundControl \, we begin analyzing and
 processing the data for richer mappings;
-#X obj -136 85 unpack 1 1 1;
-#X text 78 285 visualize;
-#X obj 55 255 vsl 15 64 -1 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 3600 1;
-#X obj 28 326 hsl 64 15 -1 1 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 3521 1;
-#X obj -13 212 pc.scale 30 90 -1 1;
-#X obj -136 213 pc.scale 30 90 -1 1;
-#X text 112 214 scale input range to -1 to 1;
-#X floatatom -100 375 5 0 0 0 - - -, f 5;
+#X obj -138 32 unpack 1 1 1;
+#X text 78 205 visualize;
+#X obj 55 175 vsl 15 64 -1 1 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 3590 1;
+#X obj 28 246 hsl 64 15 -1 1 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 3488 1;
+#X obj -13 132 pc.scale 30 90 -1 1;
+#X obj -136 133 pc.scale 30 90 -1 1;
+#X text 112 134 scale input range to -1 to 1;
+#X floatatom -100 295 5 0 0 0 - - -, f 5;
 #N canvas 0 22 450 300 calculate-magnitude 0;
 #X obj 85 98 *;
 #X obj 120 98 *;
@@ -44,8 +41,8 @@ processing the data for richer mappings;
 #X connect 4 0 0 1;
 #X connect 5 0 1 0;
 #X connect 5 0 1 1;
-#X restore -136 325 pd calculate-magnitude;
-#X obj -134 446 signal_plot;
+#X restore -136 245 pd calculate-magnitude;
+#X obj -134 366 signal_plot;
 #N canvas 0 22 450 300 take-derivative 0;
 #X obj 101 33 inlet;
 #X obj 147 234 outlet;
@@ -55,9 +52,9 @@ processing the data for richer mappings;
 #X connect 2 0 3 1;
 #X connect 2 1 3 0;
 #X connect 3 0 1 0;
-#X restore 120 374 pd take-derivative;
-#X obj 119 443 signal_plot;
-#X obj 119 412 abs;
+#X restore 120 294 pd take-derivative;
+#X obj 119 363 signal_plot;
+#X obj 119 332 abs;
 #X obj 396 448 > 0.3;
 #X obj 396 486 sel 1;
 #X obj 396 513 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
@@ -67,26 +64,32 @@ processing the data for richer mappings;
 #X obj 434 343 loadbang;
 #X msg 438 372 0.3;
 #X text 471 410 detect sudden movements;
-#X connect 4 0 3 0;
-#X connect 4 0 12 0;
-#X connect 6 0 19 0;
-#X connect 7 0 18 0;
-#X connect 12 0 14 0;
-#X connect 14 0 6 0;
-#X connect 14 1 7 0;
-#X connect 14 2 8 0;
-#X connect 18 0 16 0;
-#X connect 18 0 22 1;
-#X connect 19 0 17 0;
-#X connect 19 0 22 0;
-#X connect 22 0 21 0;
-#X connect 22 0 23 0;
-#X connect 22 0 24 0;
-#X connect 24 0 26 0;
-#X connect 26 0 25 0;
-#X connect 26 0 27 0;
-#X connect 27 0 28 0;
-#X connect 28 0 29 0;
-#X connect 31 0 27 1;
+#X obj -129 -96 udpreceive 10000;
+#X obj -129 -63 unpackOSC;
+#X obj -138 -19 routeOSC /accelerometer /gryo;
+#X text -129 -186 Applying calculus \, the study of how things changes
+\, to sensor data;
+#X connect 4 0 16 0;
+#X connect 5 0 15 0;
+#X connect 11 0 4 0;
+#X connect 11 1 5 0;
+#X connect 11 2 6 0;
+#X connect 15 0 13 0;
+#X connect 15 0 19 1;
+#X connect 16 0 14 0;
+#X connect 16 0 19 0;
+#X connect 19 0 18 0;
+#X connect 19 0 20 0;
+#X connect 19 0 21 0;
+#X connect 21 0 23 0;
+#X connect 23 0 22 0;
+#X connect 23 0 24 0;
+#X connect 24 0 25 0;
+#X connect 25 0 26 0;
+#X connect 28 0 24 1;
+#X connect 29 0 30 0;
+#X connect 30 0 28 0;
 #X connect 32 0 33 0;
-#X connect 33 0 31 0;
+#X connect 32 0 2 0;
+#X connect 33 0 34 0;
+#X connect 34 0 11 0;

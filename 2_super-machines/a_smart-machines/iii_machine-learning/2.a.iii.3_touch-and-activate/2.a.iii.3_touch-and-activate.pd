@@ -1151,15 +1151,15 @@ of "fft".;
 #X text 120 549 Classification with libsvm;
 #X text 59 -59 Signal Generation;
 #X obj 192 70 vsl 15 128 0 500 0 0 empty empty Amp_Multiplier 0 -9
-0 10 -262144 -1 -1 2600 1;
+0 10 -262144 -1 -1 0 1;
 #X obj 77 387 hsl 256 15 0 4096 0 0 empty empty freq_max -60 7 0 10
--262144 -1 -1 25500 1;
+-262144 -1 -1 0 1;
 #X obj 76 368 hsl 256 15 0 4096 0 0 empty empty freq_min -60 7 0 10
--262144 -1 -1 22400 1;
-#X obj 526 -129 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 1
-1;
-#X floatatom 619 -87 5 0 0 0 - - -, f 5;
-#X obj 526 -26 s display;
+-262144 -1 -1 0 1;
+#X obj 419 26 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0 1
+;
+#X floatatom 512 68 5 0 0 0 - - -, f 5;
+#X obj 419 129 s display;
 #N canvas 4 22 1180 888 preprocess 0;
 #X obj 238 173 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
@@ -1224,11 +1224,11 @@ of "fft".;
 #X connect 28 0 21 0;
 #X connect 28 0 27 0;
 #X restore 73 417 pd preprocess;
-#N canvas 355 27 957 702 signal-generation 1;
-#X obj 215 288 osc~;
-#X floatatom 272 287 5 0 0 0 - - -, f 5;
-#X obj 216 332 *~ 0.9;
-#X obj 217 64 loadbang;
+#N canvas 355 27 667 652 signal-generation 0;
+#X obj 33 268 osc~;
+#X floatatom 90 267 5 0 0 0 - - -, f 5;
+#X obj 34 312 *~ 0.9;
+#X obj 35 44 loadbang;
 #N canvas 259 133 442 511 triangle-wave 0;
 #X obj 37 36 inlet~;
 #X obj 111 401 outlet~;
@@ -1259,15 +1259,15 @@ of "fft".;
 #X connect 10 0 11 1;
 #X connect 11 0 1 0;
 #X connect 14 0 4 0;
-#X restore 215 158 pd triangle-wave;
-#X msg 216 118 50;
-#X msg 341 284 0.9;
-#X msg 388 290 0;
-#X obj 217 398 dac~ 2;
-#X obj 215 227 +~ 22000;
-#X obj 215 198 *~ 2000;
-#X text 223 256 between 20KHz-24KHz;
-#X floatatom 272 118 5 0 0 0 - - -, f 5;
+#X restore 33 138 pd triangle-wave;
+#X msg 34 98 50;
+#X msg 159 264 0.9;
+#X msg 206 270 0;
+#X obj 35 378 dac~ 2;
+#X obj 33 207 +~ 22000;
+#X obj 33 178 *~ 2000;
+#X text 41 236 between 20KHz-24KHz;
+#X floatatom 90 98 5 0 0 0 - - -, f 5;
 #N canvas 0 22 450 278 (subpatch) 0;
 #X array sig-sweep 100 float 3;
 #A 0 0.262105 -0.324225 0.383445 -0.439547 0.492416 -0.541902 0.587976
@@ -1284,18 +1284,18 @@ of "fft".;
 0.0669268 -0.0204158 -0.0274388 0.0765335 -0.126675 0.177716 -0.229417
 0.281573 -0.333901 0.386141 -0.437957 0.489053 -0.53903 0.587551;
 #X coords 0 1 99 -1 200 140 1 0 0;
-#X restore 329 446 graph;
-#X obj 326 334 r display;
+#X restore 147 426 graph;
+#X obj 144 314 r display;
 #N canvas 0 22 450 278 (subpatch) 0;
 #X array freq-sweep 1000 float 2;
 #X coords 0 24000 1000 0 200 140 1 0 0;
-#X restore 548 448 graph;
-#X floatatom 295 200 5 0 0 0 - - -, f 5;
-#X floatatom 296 229 5 0 0 0 - - -, f 5;
-#X obj 546 399 tabwrite~ freq-sweep;
-#X obj 327 401 tabwrite~ sig-sweep;
-#X text 760 573 0 Hz;
-#X text 754 435 24 KHz;
+#X restore 366 428 graph;
+#X floatatom 113 180 5 0 0 0 - - -, f 5;
+#X floatatom 114 209 5 0 0 0 - - -, f 5;
+#X obj 364 379 tabwrite~ freq-sweep;
+#X obj 145 381 tabwrite~ sig-sweep;
+#X text 578 553 0 Hz;
+#X text 572 415 24 KHz;
 #X connect 0 0 2 0;
 #X connect 1 0 2 1;
 #X connect 2 0 8 0;
@@ -1317,8 +1317,8 @@ of "fft".;
 #X obj 5 418 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
 #X obj 74 53 adc~ 1;
-#X msg 440 -58 \; pd dsp \$1;
-#X obj 527 -57 metro 500;
+#X msg 333 97 \; pd dsp \$1;
+#X obj 420 98 metro 500;
 #N canvas 0 22 450 278 (subpatch) 0;
 #X array spectrum-slice 497 float 3;
 #A 0 0.0784349 0.0610507 0.0571822 0.0786905 0.00728998 0.0872205 0.0393233
@@ -1404,7 +1404,7 @@ of "fft".;
 #X msg 313 103 2;
 #X msg 38 135 clear;
 #X obj 170 280 hradio 15 1 0 8 empty empty empty 0 -8 0 10 -262144
--1 -1 2;
+-1 -1 0;
 #X floatatom 237 403 5 0 0 0 - - -, f 5;
 #X obj 555 112 OSCroute /accxyz;
 #X msg 650 199 0.0107269 0.0167389 -1.01175;
@@ -1476,6 +1476,12 @@ of "fft".;
 ;
 #X text 24 -123 comment;
 #X floatatom 73 549 5 0 0 0 - - -, f 5;
+#X text 439 23 1 turn ON everything;
+#X text 279 -84 0 connect two piezos to your audio input and output
+\; set PD's audio input and outputs to those piezos;
+#X text 186 33 2 adjust amplitudes;
+#X text 193 405 3 select min and max frequencies;
+#X text 245 504 4 go in here and follow the instructions;
 #X connect 4 0 0 1;
 #X connect 5 0 10 1;
 #X connect 6 0 10 0;
