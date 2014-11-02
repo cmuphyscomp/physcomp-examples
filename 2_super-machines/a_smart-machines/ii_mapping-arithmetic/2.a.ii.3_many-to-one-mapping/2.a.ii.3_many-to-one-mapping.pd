@@ -1,7 +1,7 @@
-#N canvas 0 22 878 802 10;
+#N canvas 76 30 1114 638 10;
 #X obj -23 29 cnv 15 600 100 empty empty 2.a.ii.3_many-to-one-mapping
 20 12 0 14 -204800 -66577 0;
-#X obj 385 134 cnv 15 400 120 empty empty empty 20 12 0 14 -262130
+#X obj 385 134 cnv 15 400 130 empty empty empty 20 12 0 14 -262130
 -66577 0;
 #X text 14 57 Mapping many inputs to many outputs;
 #X obj 122 181 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
@@ -75,7 +75,7 @@ scale" (http://en.wikipedia.org/wiki/Pentatonic_scale);
 #X obj 864 281 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj -5 296 spigot;
-#X obj 28 272 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 28 272 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X text -34 354 See what is coming in;
 #X text 601 379 etc....;
@@ -104,6 +104,13 @@ clicks;
 #X obj 591 350 routeOSC /accxyz;
 #X obj 832 348 routeOSC /orientation /accelerometer /light /proximiti
 /gps;
+#X obj 659 428 cnv 15 400 110 empty empty empty 20 12 0 14 -204786
+-66577 0;
+#X text 674 443 1 find the ip address of computer;
+#X text 674 498 3 set port number of "udpreceive" object \, and turn
+on the toggle for spigot object/;
+#X text 674 465 2 in iOS or Android apps \, set destination using ip
+address and port number;
 #X connect 7 0 19 0;
 #X connect 8 0 34 0;
 #X connect 16 0 22 0;

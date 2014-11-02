@@ -1,4 +1,4 @@
-#N canvas 10 22 762 721 10;
+#N canvas 209 30 762 655 10;
 #X obj -166 -214 cnv 15 600 100 empty empty 2.a.iii.3_gesture-recognition
 20 12 0 14 -204800 -66577 0;
 #X obj 34 -104 cnv 15 400 60 empty empty empty 20 12 0 14 -262130 -66577
@@ -95,6 +95,9 @@ at the end of each gesture. repeat for classifying other gestures.
 #X obj -136 -62 unpackOSC;
 #X obj -136 -2 routeOSC /accelerometer /gryo;
 #X text 58 247 3 learn;
+#X text 211 371 Note: increase the update rate in your mobile apps
+to get better classification results \, especially when your gestures
+are fast;
 #X connect 9 0 3 0;
 #X connect 9 1 4 0;
 #X connect 9 2 5 0;
