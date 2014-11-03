@@ -1,0 +1,14 @@
+#N canvas 494 23 1098 739 10;
+#X obj 159 -348 ml.zerox;
+#X msg 159 -402 map \$1;
+#X floatatom 159 -447 5 0 0 0 - - -;
+#X obj 158 -301 unpack f f;
+#X text 27 -249 zero crossing count;
+#X text 69 -228 zero crossing magnitude;
+#X floatatom 158 -248 5 0 0 0 - - -;
+#X floatatom 215 -229 5 0 0 0 - - -;
+#X connect 0 0 3 0;
+#X connect 1 0 0 0;
+#X connect 2 0 1 0;
+#X connect 3 0 6 0;
+#X connect 3 1 7 0;
