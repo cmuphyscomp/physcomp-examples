@@ -3,56 +3,87 @@
   <head>
     <meta charset="utf-8" />
     <link rel="stylesheet" type="text/css" href="../../support/github-web/physcomp.css" />
-    <title>Overview</title>
+    <title>Finite State Machines: Overview</title>
   </head>
   <body>
-    <h2>Overview</h2>
-<h1>Template: Overview</h1>
-
-    <p>Write about the section here</p>
+    <h2>Finite State Machines: Overview</h2>
+<p>This section is about developing a better understanding of computing as a
+      symbolic process spanning time.  This will specifically explore the idea
+      of the finite state machine as a representation of a process with history
+      which can model an external process.  In the context of physical
+      computing, this will assist in conceiving of programs which generate more
+      complex time behavior, or which can discover and represent some
+      information about the world outside the computer.</p>
 
     <h3>Takeaway Lessons</h3>
 
-    <ul>
-      <li>List the take away</li>
-      <li>lessons</li>
-      <li>here</li>
-      <li>one</li>
-      <li>by</li>
-      <li>one</li>
-    </ul>
+    <p>A <a href="http://en.wikipedia.org/wiki/Finite-state_machine">Finite-state
+	Machine</a> is an abstract model of computing which assumes the machine
+	exists in one of a finite set of <em>states</em>, with <em>transition
+	rules</em> governing under what conditions the machine moves from
+	the <em>current state</em> to a <em>successor state</em>.</p>
 
-    <hr/>
-    <h3>Graded Project    </h3>
-    <p>Describe the graded project here</p>
-<hr/>
-    <!-- --------------------------------------------------------------- -->
-    <h3>Challenge Yourself</h3>
-    <p>Challenge youreslf by trying</p>
-    <ol>
-      <li>this</li>
-      <li>that</li>
-      <li>other</li>
-      <li>else...</li>
-      <li/>
-    </ol>
-    <hr/>
-    <!-- --------------------------------------------------------------- -->
-    <h3>Examples</h3>
-  <p>Link to a page on the site</p>
-    <hr/>
+    <p>Finite-state machines are
+      frequently <a href="http://en.wikipedia.org/wiki/State_diagram">illustrated
+	as a directed graph</a><a/> of state nodes linked by transition edges.
+	Conceptually, the machine has one active node (the current state), which
+	has rules for each edge defining when the active state transitions to
+	another state.  States can have <em>self-transitions</em> which return to
+	the same state for a particular input.  States can be <em>final
+	  states</em> if there are no edges leaving the state to another state; the
+	machine will not leave this state once it is reached.</p>
+
+    <p>Every computer has finite memory and thus can be theoretically described
+      as a single finite-state machine, however this is not generally useful.
+      Even an Arduino UNO with 2K SRAM has at minimum 2<sup>16384</sup> states
+      (about 10<sup>4932</sup>); only an infinitesmal fraction of these
+      (approx. 10<sup>-4907</sup>) could be achieved in the lifetime of the
+      universe.</p>
+
+    <p>Finite-state machines can practically be used to describe certain types
+      of <em>parsers</em>, <em>protocols</em>, <em>interpreters</em>, user
+      interfaces, and simple world models.</p>
+
+    <p>The idea of <em>state</em> is very powerful in that it encapsulates all
+      history of a system.  This is closely related to the control-theory notion
+      of the <em>state vector</em>.  In both cases, the idea is that the state
+      of a system captures enough information that all future behavior can be
+      predicted given the inputs.  Put another way, all past inputs and behavior
+      is captured in the set of variables comprising the state vector.</p>
+
     <h3>Reference Links</h3>
     <ol>
-      <li><a href="http://en.wikipedia.org/wiki/Electronic_color_code">Wikipedia: one</a><a href="http://en.wikipedia.org/wiki/Force_Sensitive_Resistor"/></li>
-      <li><a href="http://en.wikipedia.org/wiki/Electronic_color_code">Wikipedia: two</a></li>
-      <li><a href="http://en.wikipedia.org/wiki/Electronic_color_code">Wikipedia: three</a><a href="http://en.wikipedia.org/wiki/Force_Sensitive_Resistor"/></li>
+      <li><a href="http://en.wikipedia.org/wiki/Finite-state_machine">Wikipedia: Finite-state Machine</a></li>
+      <li><a href="http://en.wikipedia.org/wiki/State_variable">Wikipedia: State variable (from control theory)</a></li>
     </ol>
-    <p>&#160;</p>
 
+    <hr/><!-- --------------------------------------------------------------- -->
+    <h3>Lab Exercises</h3>
+
+    <p>The lab exercises are intended to be performed by pairs of students. The
+      exercises will be performed in the lab during class time, but also outside
+      class as needed.  The lab exercises are not graded but are essential for
+      developing the vocabulary and skills to fulfill the graded
+      assignments.</p>
+
+    <hr/><!-- --------------------------------------------------------------- -->
+    <h3>Challenge Yourself</h3>
+
+    <p>Any one who completes the basic exercises should consider undertaking
+      some of the optional challenge exercises.</p>
+
+    <ol>
+    </ol>
+    <hr/>
+
+    <!-- --------------------------------------------------------------- -->
+    <h3>Examples</h3>
+    <p>Inspiration for project ideas can be found on
+      the <a href="http://physcomp.org/wow/">course website</a>.</p>
       <h4>Sub-Folders</h4>
     <ol>
       <li><a href="i_ideation">i_ideation</a></li>
-      <li><a href="ii_something-else">ii_something-else</a></li>
+      <li><a href="ii_state-machines">ii_state-machines</a></li>
       <li><a href="iii_autonomous-robot">iii_autonomous-robot</a></li>
     </ol>
   </body>

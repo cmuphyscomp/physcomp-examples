@@ -1,0 +1,38 @@
+<h4>Objective</h4>
+
+    <p>Understand a simple state machine expressed as a Pd graph.</p>
+
+    <p>This is a purely computational exercise, but paves the way for attaching
+      external inputs to a finite-state machine.</p>
+
+    <h4>Steps and observations</h4>
+    <ol>
+      <li>Open the parser-puzzle.pd Pure Data patch in the same folder as this file.
+
+      </li><li>Click the green input buttons in the right order until the yellow win
+	indicator is activated.  It shouldn't be too hard to figure out. :) The
+	game is trivial, but if the inputs were coming from a sensor the graph
+	could directly model a sequential process.</li>
+
+      <li>The finite-state machine is implemented using the state_node.pd
+	abstraction, which is instantiated six times across the bottom of the
+	puzzle patch with different creation arguments.</li>
+
+      <li>Look inside the state_node.pd abstraction.  Note the messaging buses
+	used to broadcast messages to all states to signal when to store new input
+	values, evaluate the inputs, and signal the state transitions.</li>
+
+      <li>An alternate version is implemented below using six instances of the
+	graphical_state abstraction.  This uses visible transition edges,
+	although some of the logic is still implemented using buses.</li>
+
+    </ol>
+
+    <h4>Comments</h4>
+
+      <h4>Other Files</h4>
+    <ol>
+      <li><a href="http://cmuphyscomp.github.io/physcomp-examples/2_super-machines/b_state-machines/ii_state-machines/2.b.ii.1_parser-puzzle/2.b.ii.1_parser-puzzle.pd">2.b.ii.1_parser-puzzle.pd</a></li>
+      <li><a href="http://cmuphyscomp.github.io/physcomp-examples/2_super-machines/b_state-machines/ii_state-machines/2.b.ii.1_parser-puzzle/graphical_state.pd">graphical_state.pd</a></li>
+      <li><a href="http://cmuphyscomp.github.io/physcomp-examples/2_super-machines/b_state-machines/ii_state-machines/2.b.ii.1_parser-puzzle/state_node.pd">state_node.pd</a></li>
+    </ol>
