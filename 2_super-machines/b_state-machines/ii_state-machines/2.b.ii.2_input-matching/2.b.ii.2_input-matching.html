@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <title>Exercise: Input Matching</title>
+    <style type="text/css">span.eqn { white-space: nowrap; }</style>
+    <meta name="description" content="exercise notes">
+    <meta name="author" content="garthz">
+  </head>
+  <body>
+
+    <h4>Objective</h4>
+
+    <p>Understand a simple pattern recognition state machine expressed as an
+      Arduino program using several idiomatic C/C++ program structures.</p>
+
+    <p>This is a very simple single-input binary pattern recognition system.
+      However, even this state machine could be used to recognize synchronous
+      inputs from a communications channel.</p>
+
+    <h4>Steps and observations</h4>
+    <ol>
+      <li>Set up an Arduino UNO with a 10K pullup resistor on PIN4 and a switch
+	connecting PIN4 to ground, e.g. a simple binary input sensor which you
+	can operate.</li>
+
+      <li>Upload the InputMatcher1 program found in this folder.</li>
+
+      <li>Open the Serial Console and set to 115200 baud.</li>
+
+      <li>Observe the console messages and the onboard LED.  Can you deduce an
+	input sequence which will get to State 3 and turn on the LED?</li>
+
+      <li>Examine the code; you will be comparing this program structure to the
+	following two versions.</li>
+
+      <li>Repeat the test for InputMatcher2 and InputMatcher3.</li>
+
+      <li>Choose a new pattern for the system to recognize, and choose the input
+	example you prefer to modify.  Rewrite the finite-state machine to
+	recognize the pattern of your choosing.</li>
+
+    </ol>
+
+    <h4>Comments</h4>
+
+    <p>This same recognition exercise could be extended to any binary input:
+      optical switches, wall contact switches.  It could also be extended to any
+      possible sampling rate, including cycling loop() as fast as possible.</p>
+
+    <p>The transition properties could be extended to include other predicates:
+      comparisons on elapsed time to prevent exiting a state before time has
+      elapsed, more elaborate mappings of linear inputs to transition
+      state.</p>
+
+    <p>You may now recognize that the switch debouncing code introduced much
+      earlier is a specific case of a finite-state machine implementing
+      time-based hysteresis.</p>
+
+  </body>
+</html>

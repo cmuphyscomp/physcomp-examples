@@ -1,0 +1,61 @@
+#N canvas 38 -896 857 722 10;
+#X obj 22 1 cnv 15 600 120 empty empty Graphical_State 20 12 0 14 -204800
+-66577 0;
+#X obj 132 255 tgl 20 0 empty empty empty 17 7 0 10 -4032 -1 -1 0 1
+;
+#X obj 357 274 r input;
+#X obj 102 513 t b b;
+#X obj 532 200 r transitions;
+#X msg 183 193 1;
+#X obj 102 379 spigot;
+#X msg 197 554 0;
+#X text 211 8 Abstraction representing a single state node in a state
+graph which implements a simple pattern recognizer.;
+#X symbolatom 114 279 10 0 0 0 - - -;
+#X obj 71 162 loadbang;
+#X obj 163 514 t b b;
+#X text 202 623 messages to transition to successor states;
+#X text 231 554 leave this state by resetting state flag;
+#X obj 71 189 symbol \$1;
+#X obj 102 482 route \$2;
+#X text 213 199 enter this state by setting state flag;
+#X text 149 372 if state is active \, process input events to determine
+next transition;
+#X text 206 481 select possible transitions;
+#X obj 102 351 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X text 130 419 store current input event;
+#X msg 102 419 H;
+#X obj 357 297 list prepend set;
+#X obj 357 323 list trim;
+#X obj 91 627 outlet;
+#X obj 154 626 outlet;
+#X obj 183 165 inlet;
+#X obj 532 225 route _reset _update;
+#X text 628 198 receive synchronization messages;
+#X text 179 145 input bang to enter state;
+#X text 214 66 Creation args: <state-name> <input-symbol>;
+#X text 162 649 match;
+#X text 83 651 no match;
+#X connect 1 0 6 1;
+#X connect 2 0 22 0;
+#X connect 3 0 25 0;
+#X connect 3 1 7 0;
+#X connect 4 0 27 0;
+#X connect 5 0 1 0;
+#X connect 6 0 21 0;
+#X connect 7 0 1 0;
+#X connect 10 0 14 0;
+#X connect 11 0 24 0;
+#X connect 11 1 7 0;
+#X connect 14 0 9 0;
+#X connect 15 0 3 0;
+#X connect 15 1 11 0;
+#X connect 19 0 6 0;
+#X connect 21 0 15 0;
+#X connect 22 0 23 0;
+#X connect 23 0 21 0;
+#X connect 26 0 5 0;
+#X connect 27 0 7 0;
+#X connect 27 1 19 0;
+#X coords 0 -1 1 1 85 50 2 100 250;

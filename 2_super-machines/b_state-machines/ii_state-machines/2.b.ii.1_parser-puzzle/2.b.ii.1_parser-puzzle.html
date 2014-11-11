@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <title>Exercise: Parser Puzzle</title>
+    <style type="text/css">span.eqn { white-space: nowrap; }</style>
+    <meta name="description" content="exercise notes">
+    <meta name="author" content="garthz">
+  </head>
+  <body>
+
+    <h4>Objective</h4>
+
+    <p>Understand a simple state machine expressed as a Pd graph.</p>
+
+    <p>This is a purely computational exercise, but paves the way for attaching
+      external inputs to a finite-state machine.</p>
+
+    <h4>Steps and observations</h4>
+    <ol>
+      <li>Open the parser-puzzle.pd Pure Data patch in the same folder as this file.
+
+      <li>Click the green input buttons in the right order until the yellow win
+	indicator is activated.  It shouldn't be too hard to figure out. :) The
+	game is trivial, but if the inputs were coming from a sensor the graph
+	could directly model a sequential process.</li>
+
+      <li>The finite-state machine is implemented using the state_node.pd
+	abstraction, which is instantiated six times across the bottom of the
+	puzzle patch with different creation arguments.</li>
+
+      <li>Look inside the state_node.pd abstraction.  Note the messaging buses
+	used to broadcast messages to all states to signal when to store new input
+	values, evaluate the inputs, and signal the state transitions.</li>
+
+      <li>An alternate version is implemented below using six instances of the
+	graphical_state abstraction.  This uses visible transition edges,
+	although some of the logic is still implemented using buses.</li>
+
+    </ol>
+
+    <h4>Comments</h4>
+
+  </body>
+</html>

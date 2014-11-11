@@ -1,0 +1,88 @@
+#N canvas 798 -1058 733 780 10;
+#X obj 22 1 cnv 15 600 120 empty empty Parser_Puzzle 20 12 0 14 -204800
+-66577 0;
+#X text 215 4 Demonstration of a simple finite-state machine.;
+#X obj 73 169 bng 25 250 50 0 empty empty H 8 -10 0 16 -204786 -1 -1
+;
+#X msg 73 202 H;
+#X obj 113 169 bng 25 250 50 0 empty empty E 8 -10 0 16 -204786 -1
+-1;
+#X obj 152 169 bng 25 250 50 0 empty empty L 8 -10 0 16 -204786 -1
+-1;
+#X obj 190 170 bng 25 250 50 0 empty empty O 8 -10 0 16 -204786 -1
+-1;
+#X msg 113 202 E;
+#X msg 152 202 L;
+#X obj 100 313 s input;
+#X obj 449 299 print input-symbol;
+#X obj 449 273 r input;
+#X obj 449 186 loadbang;
+#X obj 449 236 s transitions;
+#X obj 46 423 state_node start H state1;
+#X obj 450 327 r transitions;
+#X obj 450 352 print transition-messages;
+#X msg 73 339 _update;
+#X obj 73 366 s transitions;
+#X msg 449 211 _reset \, start;
+#X obj 73 284 t b a;
+#X msg 190 203 O;
+#X obj 141 423 state_node state1 E state2;
+#X obj 236 423 state_node state2 L state3;
+#X obj 329 423 state_node state3 L state4;
+#X obj 423 424 state_node state4 O state5;
+#X obj 521 423 state_node state5 x start;
+#X obj 282 241 r transitions;
+#X obj 282 262 route state5;
+#X obj 282 309 tgl 30 0 empty empty WIN! 35 15 0 16 -257985 -1 -1 1
+1;
+#X msg 282 286 1;
+#X msg 312 286 0;
+#X text 216 62 Click the right input sequence to win!;
+#X obj 174 754 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 45 653 graphical_state start H;
+#X obj 161 654 graphical_state state1 E;
+#X obj 270 655 graphical_state state2 L;
+#X obj 374 655 graphical_state state3 L;
+#X obj 481 654 graphical_state state4 O;
+#X obj 583 654 graphical_state terminal x;
+#X text 44 580 Following is an alternate implementation using a different
+abstraction which graphically shows the transition edges:;
+#X text 47 473 Each abstraction instance represents a single state
+in the finite state machine graph. The successor states are specified
+using the hidden creation arguments.;
+#X obj 45 623 loadbang;
+#X connect 2 0 3 0;
+#X connect 3 0 20 0;
+#X connect 4 0 7 0;
+#X connect 5 0 8 0;
+#X connect 6 0 21 0;
+#X connect 7 0 20 0;
+#X connect 8 0 20 0;
+#X connect 11 0 10 0;
+#X connect 12 0 19 0;
+#X connect 15 0 16 0;
+#X connect 17 0 18 0;
+#X connect 19 0 13 0;
+#X connect 20 0 17 0;
+#X connect 20 1 9 0;
+#X connect 21 0 20 0;
+#X connect 27 0 28 0;
+#X connect 28 0 30 0;
+#X connect 28 1 31 0;
+#X connect 30 0 29 0;
+#X connect 31 0 29 0;
+#X connect 33 0 34 0;
+#X connect 34 0 33 0;
+#X connect 34 1 35 0;
+#X connect 35 0 33 0;
+#X connect 35 1 36 0;
+#X connect 36 0 33 0;
+#X connect 36 1 37 0;
+#X connect 37 0 33 0;
+#X connect 37 1 38 0;
+#X connect 38 0 33 0;
+#X connect 38 1 39 0;
+#X connect 39 0 33 0;
+#X connect 39 1 33 0;
+#X connect 42 0 34 0;
